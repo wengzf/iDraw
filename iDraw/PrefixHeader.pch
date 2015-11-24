@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  iDraw
+//
+//  Created by 翁志方 on 15/4/2.
+//  Copyright (c) 2015年 WZF. All rights reserved.
+//
+
+#ifndef iDraw_PrefixHeader_pch
+#define iDraw_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import "Macro.h"
+
+
+#endif
