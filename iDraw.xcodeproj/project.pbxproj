@@ -33,6 +33,8 @@
 		21578BD61ACF7E8800C09D49 /* Canvas+IFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 21578BD51ACF7E8800C09D49 /* Canvas+IFS.m */; };
 		2170C88B1BAA6C9200F8B0AD /* Canvas+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 2170C88A1BAA6C9200F8B0AD /* Canvas+Path.m */; };
 		219D431E1AF771FC00D4561C /* myVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D431D1AF771FC00D4561C /* myVC.m */; };
+		ADB7C6E81CC49097000D9FE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */; };
+		ADB7C6EA1CC4909E000D9FE1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		2170C88A1BAA6C9200F8B0AD /* Canvas+Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Canvas+Path.m"; sourceTree = "<group>"; };
 		219D431C1AF771FC00D4561C /* myVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myVC.h; sourceTree = "<group>"; };
 		219D431D1AF771FC00D4561C /* myVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myVC.m; sourceTree = "<group>"; };
+		ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB7C6EA1CC4909E000D9FE1 /* QuartzCore.framework in Frameworks */,
+				ADB7C6E81CC49097000D9FE1 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				21578B611ACD29A700C09D49 /* iDraw */,
+				ADB7C6EB1CC490AD000D9FE1 /* Framework */,
 				21578B7E1ACD29A700C09D49 /* iDrawTests */,
 				21578B601ACD29A700C09D49 /* Products */,
 			);
@@ -217,6 +224,15 @@
 			path = Image/TurtleAndCanvas;
 			sourceTree = "<group>";
 		};
+		ADB7C6EB1CC490AD000D9FE1 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */,
+				ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,6 +282,8 @@
 				TargetAttributes = {
 					21578B5E1ACD29A700C09D49 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 6T6K856R56;
+						ProvisioningStyle = Manual;
 					};
 					21578B7A1ACD29A700C09D49 = {
 						CreatedOnToolsVersion = 6.2;
@@ -460,11 +478,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6T6K856R56;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iDraw/PrefixHeader.pch;
 				INFOPLIST_FILE = iDraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzf.iDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9e6d3c93-36e3-4c5c-9966-3b9bcfde06ca";
+				PROVISIONING_PROFILE_SPECIFIER = WZFWildCard;
 			};
 			name = Debug;
 		};
@@ -472,10 +495,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iDraw/PrefixHeader.pch;
 				INFOPLIST_FILE = iDraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzf.iDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

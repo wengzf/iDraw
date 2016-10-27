@@ -122,69 +122,69 @@
     }
     
     // 添加动画
-    {
-        CGMutablePathRef path = CGPathCreateMutable();
-        CGPathAddArc(path, NULL, self.bounds.size.width/2, self.bounds.size.height/2, 100, 0, 6.28, 0);
-        
-        
-        DRAWINVIEW(self);
-
-        PU BK(60) LT(90)  FD(100) RT(90) PD
-        
-        for (int i=0; i<3; ++i) {
-            FD(200)
-            RT(120)
-        }
-
-        CGPathRef path1 = TURTLE.shapePath;
-        
-        DRAWINVIEW(self);
-        LT(90) PU  FD(30) RT(90) PD
-        for (int i=0; i<4; ++i) {
-            FD(60)
-            RT(90)
-        }
-        CGPathRef path2 = TURTLE.shapePath;
-        
-        
-    
-        
-        CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] initWithLayer:self.layer];
-        
-        shapeLayer.path = path2;
-        shapeLayer.fillColor = [UIColor clearColor].CGColor;
-        
-        shapeLayer.strokeColor = [UIColor orangeColor].CGColor;
-        shapeLayer.lineWidth = 3;
-        
-        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
-        animation.duration = 3;
-        animation.fromValue = (__bridge id)(path1);
-        animation.toValue = (__bridge id)(path2);
-        [shapeLayer addAnimation:animation forKey:@"animation"];
-        
-        [self.layer addSublayer:shapeLayer];
-    }
-    
-//    // 添加动画
 //    {
+//        CGMutablePathRef path = CGPathCreateMutable();
+//        CGPathAddArc(path, NULL, self.bounds.size.width/2, self.bounds.size.height/2, 100, 0, 6.28, 0);
+//        
+//        
+//        DRAWINVIEW(self);
+//
+//        PU BK(60) LT(90)  FD(100) RT(90) PD
+//        
+//        for (int i=0; i<3; ++i) {
+//            FD(200)
+//            RT(120)
+//        }
+//
+//        CGPathRef path1 = TURTLE.shapePath;
+//        
+//        DRAWINVIEW(self);
+//        LT(90) PU  FD(30) RT(90) PD
+//        for (int i=0; i<4; ++i) {
+//            FD(60)
+//            RT(90)
+//        }
+//        CGPathRef path2 = TURTLE.shapePath;
+//        
+//        
+//    
+//        
 //        CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] initWithLayer:self.layer];
 //        
-//        shapeLayer.path = TURTLE.shapePath;
-//        
+//        shapeLayer.path = path2;
 //        shapeLayer.fillColor = [UIColor clearColor].CGColor;
 //        
 //        shapeLayer.strokeColor = [UIColor orangeColor].CGColor;
 //        shapeLayer.lineWidth = 3;
 //        
-//        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+//        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
 //        animation.duration = 3;
-//        animation.fromValue = @0;
-//        animation.toValue = @1;
+//        animation.fromValue = (__bridge id)(path1);
+//        animation.toValue = (__bridge id)(path2);
 //        [shapeLayer addAnimation:animation forKey:@"animation"];
 //        
 //        [self.layer addSublayer:shapeLayer];
 //    }
+    
+    // 添加动画
+    {
+        CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] initWithLayer:self.layer];
+        
+        shapeLayer.path = TURTLE.shapePath;
+        
+        shapeLayer.fillColor = [UIColor clearColor].CGColor;
+        
+        shapeLayer.strokeColor = [UIColor orangeColor].CGColor;
+        shapeLayer.lineWidth = 3;
+        
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+        animation.duration = 3;
+        animation.fromValue = @0;
+        animation.toValue = @1;
+        [shapeLayer addAnimation:animation forKey:@"animation"];
+        
+        [self.layer addSublayer:shapeLayer];
+    }
 }
 
 // 绘制从中心旋转的5个圆
