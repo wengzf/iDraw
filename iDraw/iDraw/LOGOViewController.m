@@ -39,7 +39,7 @@
                                   @[@"圆形正方形错觉"],
                                   @[@"普通螺线", @"多边形螺线", @"黄金分割螺线", @"正多边形螺线"],
                                   @[@"IFSSierpinski", @"IFS拼贴树", @"IFS螺旋", @"IFS羊齿叶", @"IFS二叉树"],
-                                  @[@"支付宝完成动画", @"路径"],
+                                  @[@"支付宝完成动画", @"路径",@"优步启动页"],
                                   @[@"太阳", @"团锦" ],
                                   ];
     }
@@ -52,7 +52,7 @@
     
     Canvas *canvas = [[Canvas alloc] initWithFrame:vc.view.bounds ];
     
-    canvas.controlStr = @"莲花";
+    canvas.controlStr = @"优步启动页";
     
     [canvas drawPicture];
     

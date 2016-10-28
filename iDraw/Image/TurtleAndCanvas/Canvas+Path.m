@@ -8,6 +8,11 @@
 
 #import "Canvas.h"
 
+/*
+ * 仿写的路径动画
+ */
+
+
 #define T(x) ((x)*unitWidth)
 #define TX(x) ((x)*unitWidth + leftMargin)
 #define TY(x) ((x)*unitWidth + topMargin)
@@ -52,8 +57,6 @@ CAShapeLayer *shapeLayer6;
 #pragma mark - 科技感动画
 - (void) pathAnimation
 {
-    
-    
     // 根据屏幕大小进行适配
     leftMargin = ScreenWidth/24 * 2 + 30;
     topMargin = 200;

@@ -81,7 +81,10 @@
 //        [self windmill];
         [self pathAnimation];
         return;
-
+        
+    }else if ([_controlStr isEqualToString:@"优步启动页"]){           // 分形部分
+        [self uberAnimation];
+        
     }else if ([_controlStr isEqualToString:@"线条二叉树"]){           // 分形部分
         [self binaryTree];
         

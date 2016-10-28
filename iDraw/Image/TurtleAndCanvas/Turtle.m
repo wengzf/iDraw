@@ -22,7 +22,7 @@
     return obj;
 }
 
-// 通过视图来初始化， curpos，curContext等参数
+// 通过视图来初始化， curpos
 - (void) initWithView:(UIView *) view{
     
     // 初始化海龟位置
@@ -36,21 +36,9 @@
     // 方向向量初始化
     angleVec.x = 0;
     angleVec.y = 1;
-    
-    // 笔粗
-    self.curWidth = 1;
-    CGContextSetLineWidth(self.curContextRef, 1);
-    
-    // 画笔颜色
-    self.curColor = [UIColor blackColor];
-    [self.curColor set];
-    
-    fillColor = [UIColor blackColor];
-    [fillColor setFill];
-    
+
     // 抬笔设置
     flagPenDown = YES;
-    
     
     // 形状绘制初始化
     shapePath = CGPathCreateMutable();
@@ -173,16 +161,8 @@
 }
 - (void) endPath
 {
-}
-
-- (void) setFillColor:(UIColor *)color
-{
-    fillColor = color;
     
-    [fillColor setFill];
 }
-
-
 
 - (void) solidPolygon:(CGFloat) len edgeNum:(int) num angle:(CGFloat) angle
 {

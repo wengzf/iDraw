@@ -66,8 +66,6 @@
     
     CGMutablePathRef shapePath;     // 需要保证区间的闭合
     
-    UIColor *fillColor;
-    
     
     // 用于备份的位置信息
     CGPoint backUpPos;
@@ -83,10 +81,6 @@
 @property (nonatomic) CGPoint curPos;       // 位置
 
 @property (nonatomic) CGFloat curAngle;     // 角度，默认90°
-
-@property (nonatomic) CGFloat curWidth;     // 画笔笔粗，默认1
-
-@property (nonatomic) UIColor *curColor;    // 颜色, 默认白色
 
 
 - (void) initWithView:(UIView *) view;

@@ -120,6 +120,16 @@
 @end
 
 
+@interface Canvas (UBER)
+
+- (void) uberAnimation;
+
+@end
+
+
+
+
+
 
 
 
