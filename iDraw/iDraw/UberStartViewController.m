@@ -60,10 +60,10 @@ UIColor *thinColor;
     // 竖直边界 offset = radius/2;
     // 一个基本单位 radius*3
     
-    CGFloat sx = -radius/3 + ScreenWidth/2;
-    CGFloat sy = -radius/2 + ScreenWidth/2;
+    CGFloat sx = -radius/3 + diameter;
+    CGFloat sy = -radius/2;
     
-    for (int k=0; k<1; ++k) {
+    for (int k=0; k<4; ++k) {
         
         // 绘制粗线
         DRAW
@@ -93,19 +93,14 @@ UIColor *thinColor;
         wideLayer.path = TURTLE.shapePath;
         [self.view.layer addSublayer:wideLayer];
         
-        
-        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        animation.duration = 10;
-        animation.fromValue = @0;
-        animation.toValue = @1;
-        [wideLayer addAnimation:animation forKey:nil];
-        
         // 绘制细线
         DRAW
         MOVETOXY(sx, sy);
         RT(180)
         for (int j=0; j<8; ++j) {
-            PU FD(radius) RT90  PD
+            PU FD(radius) RT90  FD(radius)  PD
+            BK(diameter)
+            PU FD(radius) LT90  FD(radius) PD
             RT90
             LARC(radius, 180)
             
@@ -131,13 +126,93 @@ UIColor *thinColor;
         thinLayer.path = TURTLE.shapePath;
         [self.view.layer addSublayer:thinLayer];
         
+        sx += diameter*3;
+    }
+    
+    
+    // 奇数位
+    sx = -radius/3 + diameter + diameter + radius;
+    sy = -radius/2;
+    
+    for (int k=0; k<3; ++k) {
         
-        CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        animation1.duration = 10;
-        animation1.fromValue = @0;
-        animation1.toValue = @1;
-        animation1.beginTime = CACurrentMediaTime()+10;
-        [thinLayer addAnimation:animation1 forKey:nil];
+        // 绘制细线
+        DRAW
+        MOVETOXY(sx, sy);
+        RT(180)
+        for (int j=0; j<8; ++j) {
+            PU FD(radius) RT90  FD(radius)  PD
+            BK(diameter)
+            PU FD(radius) LT90  FD(radius) PD
+            
+            LT90
+            ARC(radius, 180)
+            
+            SAVE
+            RT90
+            ARC(radius, 180)
+            RESTORE
+            
+            LT90
+            ARC(radius, 180)
+            RESTORE
+            
+            LARC(radius, 180)
+            RT90
+        }
+        CAShapeLayer *wideLayer = [[CAShapeLayer alloc] initWithLayer:self.view.layer];
+        wideLayer.strokeColor =  wideColor.CGColor;
+        wideLayer.lineWidth = 3;
+        wideLayer.fillColor = [UIColor clearColor].CGColor;
+        wideLayer.path = TURTLE.shapePath;
+        [self.view.layer addSublayer:wideLayer];
+        
+        
+        //        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+        //        animation.duration = 10;
+        //        animation.fromValue = @0;
+        //        animation.toValue = @1;
+        //        [wideLayer addAnimation:animation forKey:nil];
+        
+        // 绘制粗线
+        DRAW
+        MOVETOXY(sx, sy);
+        RT(180)
+        for (int j=0; j<8; ++j) {
+            
+            FD(diameter)
+            RT90
+            LARC(radius, 180)
+            
+            SAVE
+            LT90
+            LARC(radius, 180)
+            RESTORE
+            
+            RT90
+            LARC(radius, 180)
+            RT90
+            FD(diameter)
+            RESTORE
+            
+            ARC(radius, 180)
+            LT90
+        }
+        
+        CAShapeLayer *thinLayer = [CAShapeLayer layer];
+        thinLayer.strokeColor =  thinColor.CGColor;
+        thinLayer.lineWidth = 1;
+        thinLayer.fillColor = [UIColor clearColor].CGColor;
+        thinLayer.path = TURTLE.shapePath;
+        [self.view.layer addSublayer:thinLayer];
+        
+        //
+        //        CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+        //        animation1.duration = 10;
+        //        animation1.fromValue = @0;
+        //        animation1.toValue = @1;
+        //        animation1.beginTime = CACurrentMediaTime()+10;
+        //        [thinLayer addAnimation:animation1 forKey:nil];
         
         sx += radius*3;
     }
