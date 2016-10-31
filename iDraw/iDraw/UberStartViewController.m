@@ -14,9 +14,14 @@ CGFloat diameter = 30;
 UIColor *wideColor;
 UIColor *thinColor;
 
+const CGFloat wideWidth = 1.75;
+const CGFloat thinWidth = 0.75;
+
 
 @interface UberStartViewController ()
-
+{
+    NSTimer *generateTimer;             // 定时器，每秒定时生成随机路径
+}
 @end
 
 @implementation UberStartViewController
@@ -63,6 +68,7 @@ UIColor *thinColor;
     CGFloat sx = -radius/3 + diameter;
     CGFloat sy = -radius/2;
     
+    // 偶数位线
     for (int k=0; k<4; ++k) {
         
         // 绘制粗线
@@ -88,7 +94,7 @@ UIColor *thinColor;
         }
         CAShapeLayer *wideLayer = [[CAShapeLayer alloc] initWithLayer:self.view.layer];
         wideLayer.strokeColor =  wideColor.CGColor;
-        wideLayer.lineWidth = 3;
+        wideLayer.lineWidth = wideWidth;
         wideLayer.fillColor = [UIColor clearColor].CGColor;
         wideLayer.path = TURTLE.shapePath;
         [self.view.layer addSublayer:wideLayer];
@@ -121,7 +127,7 @@ UIColor *thinColor;
         
         CAShapeLayer *thinLayer = [CAShapeLayer layer];
         thinLayer.strokeColor =  thinColor.CGColor;
-        thinLayer.lineWidth = 1;
+        thinLayer.lineWidth = thinWidth;
         thinLayer.fillColor = [UIColor clearColor].CGColor;
         thinLayer.path = TURTLE.shapePath;
         [self.view.layer addSublayer:thinLayer];
@@ -131,10 +137,10 @@ UIColor *thinColor;
     
     
     // 奇数位
-    sx = -radius/3 + diameter + diameter + radius;
-    sy = -radius/2;
+    sx = -radius/3 - radius;
+    sy = -radius/2 - 3*radius;
     
-    for (int k=0; k<3; ++k) {
+    for (int k=0; k<5; ++k) {
         
         // 绘制细线
         DRAW
@@ -160,19 +166,12 @@ UIColor *thinColor;
             LARC(radius, 180)
             RT90
         }
-        CAShapeLayer *wideLayer = [[CAShapeLayer alloc] initWithLayer:self.view.layer];
-        wideLayer.strokeColor =  wideColor.CGColor;
-        wideLayer.lineWidth = 3;
-        wideLayer.fillColor = [UIColor clearColor].CGColor;
-        wideLayer.path = TURTLE.shapePath;
-        [self.view.layer addSublayer:wideLayer];
-        
-        
-        //        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        //        animation.duration = 10;
-        //        animation.fromValue = @0;
-        //        animation.toValue = @1;
-        //        [wideLayer addAnimation:animation forKey:nil];
+        CAShapeLayer *thinLayer = [CAShapeLayer layer];
+        thinLayer.strokeColor =  thinColor.CGColor;
+        thinLayer.lineWidth = thinWidth;
+        thinLayer.fillColor = [UIColor clearColor].CGColor;
+        thinLayer.path = TURTLE.shapePath;
+        [self.view.layer addSublayer:thinLayer];
         
         // 绘制粗线
         DRAW
@@ -198,34 +197,40 @@ UIColor *thinColor;
             ARC(radius, 180)
             LT90
         }
+        CAShapeLayer *wideLayer = [[CAShapeLayer alloc] initWithLayer:self.view.layer];
+        wideLayer.strokeColor =  wideColor.CGColor;
+        wideLayer.lineWidth = wideWidth;
+        wideLayer.fillColor = [UIColor clearColor].CGColor;
+        wideLayer.path = TURTLE.shapePath;
+        [self.view.layer addSublayer:wideLayer];
         
-        CAShapeLayer *thinLayer = [CAShapeLayer layer];
-        thinLayer.strokeColor =  thinColor.CGColor;
-        thinLayer.lineWidth = 1;
-        thinLayer.fillColor = [UIColor clearColor].CGColor;
-        thinLayer.path = TURTLE.shapePath;
-        [self.view.layer addSublayer:thinLayer];
-        
-        //
-        //        CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        //        animation1.duration = 10;
-        //        animation1.fromValue = @0;
-        //        animation1.toValue = @1;
-        //        animation1.beginTime = CACurrentMediaTime()+10;
-        //        [thinLayer addAnimation:animation1 forKey:nil];
-        
-        sx += radius*3;
+        sx += diameter*3;
     }
-    
-    
-    
-    
     
     
 }
 - (void)uberPathAnimation
 {
+    // 首个2~4秒， 后面都是在 0~3秒内随机生成
     
+    
+    generateTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 repeats:<#(BOOL)#> block:<#^(NSTimer * _Nonnull timer)block#>];
+    
+    
+    //        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    //        animation.duration = 10;
+    //        animation.fromValue = @0;
+    //        animation.toValue = @1;
+    //        [wideLayer addAnimation:animation forKey:nil];
+    
+    
+    //
+    //        CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    //        animation1.duration = 10;
+    //        animation1.fromValue = @0;
+    //        animation1.toValue = @1;
+    //        animation1.beginTime = CACurrentMediaTime()+10;
+    //        [thinLayer addAnimation:animation1 forKey:nil];
 }
 
 @end
