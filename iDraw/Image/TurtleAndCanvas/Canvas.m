@@ -260,7 +260,6 @@
     CGFloat leafAngle = 80;
     
     LT(leafAngle/2+90);
-    [TURTLE setCurWidth:3];
     for (int i=0; i<7; ++i) {
         // 画叶子
         for (int j=0; j<2; ++j) {
@@ -373,7 +372,7 @@
 {
     int num = 20;
     CGFloat radius = 50;
-    [TURTLE setCurWidth:2];
+
     for (int i=0; i<num; ++i) {
         [TURTLE circleArcWithRadius:radius angle:120];
         

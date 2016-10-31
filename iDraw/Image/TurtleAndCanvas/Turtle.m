@@ -22,6 +22,33 @@
     return obj;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    [self reset];
+    
+    return self;
+}
+
+- (void)reset
+{
+    // 海龟角度
+    _curAngle = 90;
+    
+    // 方向向量初始化
+    angleVec.x = 0;
+    angleVec.y = 1;
+    
+    // 抬笔设置
+    flagPenDown = YES;
+    
+    // 形状绘制初始化
+    [self beginPath];
+    shapePath = CGPathCreateMutable();
+    CGPathMoveToPoint(shapePath, NULL, self.curPos.x, self.curPos.y);
+}
+
 // 通过视图来初始化， curpos
 - (void) initWithView:(UIView *) view{
     
@@ -30,19 +57,7 @@
     height = view.bounds.size.height/2;
     self.curPos = CGPointMake(view.bounds.size.width/2 , view.bounds.size.height/2);
     
-    // 海龟角度
-    _curAngle = 90;
-    
-    // 方向向量初始化
-    angleVec.x = 0;
-    angleVec.y = 1;
-
-    // 抬笔设置
-    flagPenDown = YES;
-    
-    // 形状绘制初始化
-    shapePath = CGPathCreateMutable();
-    CGPathMoveToPoint(shapePath, NULL, self.curPos.x, self.curPos.y);
+    [self reset];
 }
 
 - (void) penup     // 抬笔
@@ -53,7 +68,6 @@
 {
     flagPenDown = YES;
 }
-
 
 - (void) moveToPoint:(CGPoint) pos
 {
@@ -144,7 +158,7 @@
 }
 - (void) restorePosState   // 恢复到最近的一次位置保存信息
 {
-    self.curPos = backUpPos;
+    [self moveToPoint:backUpPos];
     self.curAngle = backUpAngle;
 }
 
@@ -186,7 +200,6 @@
         [self fd:len];
         [self rt:angle];
     }
-        
 }
 
 - (void) circleRadius:(CGFloat) radius
@@ -240,14 +253,7 @@
 }
 
 
-
-
 #pragma mark - getter and setter
-- (void) setCurWidth:(CGFloat)curWidth
-{
-    _curWidth = curWidth;
-    CGContextSetLineWidth(self.curContextRef, curWidth);
-}
 - (void) setCurAngle:(CGFloat)curAngle
 {
     while (curAngle<0) {

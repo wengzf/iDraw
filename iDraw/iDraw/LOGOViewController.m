@@ -9,6 +9,7 @@
 #import "LOGOViewController.h"
 #import "Canvas.h"
 
+#import "UberStartViewController.h"
 
 @interface LOGOViewController ()
 {
@@ -48,17 +49,20 @@
 //    tmpView.backgroundColor = [UIColor whiteColor];
 //    [self.view addSubview:tmpView];
     
-    UIViewController *vc = [[UIViewController alloc] init];
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    
+//    Canvas *canvas = [[Canvas alloc] initWithFrame:vc.view.bounds ];
+//    
+//    canvas.controlStr = @"优步启动页";
+//    
+//    [canvas drawPicture];
+//    
+//    [vc.view addSubview:canvas];
+//    
+//    [self.navigationController pushViewController:vc animated:NO];
     
-    Canvas *canvas = [[Canvas alloc] initWithFrame:vc.view.bounds ];
-    
-    canvas.controlStr = @"优步启动页";
-    
-    [canvas drawPicture];
-    
-    [vc.view addSubview:canvas];
-    
-    [self.navigationController pushViewController:vc animated:NO];
+    UberStartViewController *vc = [UberStartViewController new];
+    [self presentViewController:vc animated:NO completion:NULL];
 }
 
 - (void)viewWillAppear:(BOOL)animated

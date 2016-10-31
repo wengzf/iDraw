@@ -17,11 +17,11 @@
  预定义宏来实现， DRAW 来实现这个的初始化（需要获取当前view和对应的context）
  */
 
-
 #define RADIAN(x) ((x)*M_PI/180.0)
 
 #define TURTLE [Turtle shareInstance]
 
+#define DRAW [TURTLE reset];
 #define DRAWINVIEW(view) [TURTLE initWithView:view];
 
 
@@ -85,6 +85,8 @@
 
 - (void) initWithView:(UIView *) view;
 
+- (void) reset;
+
 - (void) penup;     // 抬笔
 
 - (void) pendown;   // 落笔
@@ -101,15 +103,11 @@
 
 - (void) lt:(CGFloat) angle;
 
-//- (void) setStrokeColor:(UIColor *) color;  // 设置线条颜色
-
 - (void) savePosState;      // 保存当前位置信息，（包括海龟角度）
 - (void) restorePosState;   // 恢复到最近的一次位置保存信息
 
 
 - (void) beginPath;     // 开始绘制路径
-
-- (void) setFillColor:(UIColor *) color;    // 设置填充颜色
 
 - (void) endPath;       // 结束绘制路径
 
