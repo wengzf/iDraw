@@ -21,6 +21,8 @@ const CGFloat thinWidth = 0.75;
 @interface UberStartViewController ()
 {
     NSTimer *generateTimer;             // 定时器，每秒定时生成随机路径
+    
+    CGFloat animationDuration;
 }
 @end
 
@@ -33,6 +35,7 @@ const CGFloat thinWidth = 0.75;
     wideColor = [UIColor colorWithRed:157/255.0 green:20/255.0 blue:20/255.0 alpha:1];
     thinColor = [UIColor colorWithRed:150/255.0 green:16/255.0 blue:16/255.0 alpha:1];
     
+    animationDuration = 5;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -44,6 +47,7 @@ const CGFloat thinWidth = 0.75;
     // 路径动画
     [self uberPathAnimation];
     
+    [self generateUberPath];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -214,7 +218,7 @@ const CGFloat thinWidth = 0.75;
     // 首个2~4秒， 后面都是在 0~3秒内随机生成
     
     
-    generateTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 repeats:<#(BOOL)#> block:<#^(NSTimer * _Nonnull timer)block#>];
+//    generateTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 repeats:<#(BOOL)#> block:<#^(NSTimer * _Nonnull timer)block#>];
     
     
     //        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
@@ -231,6 +235,97 @@ const CGFloat thinWidth = 0.75;
     //        animation1.toValue = @1;
     //        animation1.beginTime = CACurrentMediaTime()+10;
     //        [thinLayer addAnimation:animation1 forKey:nil];
+}
+- (void)generateUberPath
+{
+    // 0xFFFF
+    
+    // 0xFFFF
+    // 使用8进制表示法表示4个象限的12种路线走法
+    
+    
+    NSArray *arr1 = @[@"010001000100", @"000000000000", @"001000100011",
+                      @"000000000000", @"000010011001", @"000000000000" ];
+    
+    NSArray *arr2 = @[@"100100100100", @"001000100010", @"000000000000",
+                      @"011011011011", @"000000000000", @"100010001000" ];
+    
+    NSArray *arr3 = @[@"000100100001", @"000000000000", @"011001000010",
+                      @"000000000000", @"010011001000", @"000000000000" ];
+    
+    NSArray *arr4 = @[@"000000000000", @"000010011001", @"000000000000",
+                      @"010001000100", @"000000000000", @"001000010011" ];
+    
+    NSArray *arr5 = @[@"011011011011", @"000000000000", @"100010001000",
+                      @"100100100100", @"001000100010", @"000000000000" ];
+    
+    NSArray *arr6 = @[@"000000000000", @"010011001000", @"000000000000",
+                      @"000100010001", @"000000000000", @"011001000010" ];
+    
+    NSArray *arr = @[arr1, arr2, arr3, arr4, arr5, arr6];
+    
+    // 每种走法之后对应的角度
+    int inAngleArr = {0, 0, 90,         90, 90, 180,
+                          180, 180, 270,    270, 270, 0};
+    
+    int outAngleArr = {  0,  90,  0,     90, 180,  90,
+                           180, 270, 180,   270,   0, 270};
+    
+    
+    
+    CGFloat sx = -radius/3 - radius + 3*diameter;
+    CGFloat sy = -radius/2 - 3*radius + 6*diameter;
+    
+    int curx = 0;
+    int cury = 0;
+    
+    int preAngle;
+    
+    // 给出任意一点，根据当前所在位置进行选择
+    // 考虑当前角度，
+    CGMutablePathRef path;
+    DRAW
+    MOVETOXY(sx, sy)
+    for (int i=0; i<40; ++i) {
+        NSString *str = arr[curx][cury];
+        
+        int cnt = 0;
+        int chooseIndexs[8];
+        for (int j=0; j<str.length; ++j) {
+            unichar ch = [str characterAtIndex:j];
+            if (ch == '1') {
+                chooseIndexs[cnt++] = j;
+            }
+        }
+        
+        // 在几个选择中挑选出一个角度出来
+        
+        
+    }
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = TURTLE.shapePath;
+    
+    
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    shapeLayer.lineWidth = 1.5;
+    
+    CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
+    animation1.duration = animationDuration;
+    animation1.fromValue = @0;
+    animation1.toValue = @0.7;
+    animation1.repeatCount = 100;
+    [shapeLayer addAnimation:animation1 forKey:nil];
+    
+    CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation2.duration = animationDuration;
+    animation2.fromValue = @0.3;
+    animation2.toValue = @1;
+    animation2.delegate = self;
+    animation2.repeatCount = 100;
+    [shapeLayer addAnimation:animation2 forKey:nil];
+    
+    [self.view.layer addSublayer:shapeLayer];
 }
 
 @end
