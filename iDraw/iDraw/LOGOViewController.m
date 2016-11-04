@@ -11,6 +11,8 @@
 
 #import "UberStartViewController.h"
 
+#import "TableViewController.h"
+
 @interface LOGOViewController ()
 {
     NSArray *sectionNamesArr;
@@ -60,9 +62,13 @@
 //    [vc.view addSubview:canvas];
 //    
 //    [self.navigationController pushViewController:vc animated:NO];
+
     
     UberStartViewController *vc = [UberStartViewController new];
     [self presentViewController:vc animated:NO completion:NULL];
+    
+//    TableViewController *vc = [TableViewController new];
+//    [self presentViewController:vc animated:YES completion:NULL];
 }
 
 - (void)viewWillAppear:(BOOL)animated
