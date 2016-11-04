@@ -96,6 +96,22 @@ CGFloat margin = 8;
         
         // 滚动关闭按钮图层
         
+        CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"position"];
+        animation1.duration = 0.15;
+        animation1.fromValue = @0;
+        animation1.toValue = @0.95;
+        animation1.repeatCount = 100;
+        [shapeLayer addAnimation:animation1 forKey:nil];
+        
+        CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+        animation2.duration = animationDuration;
+        animation2.fromValue = @0.05;
+        animation2.toValue = @1;
+        animation2.delegate = self;
+        animation2.repeatCount = 100;
+        [shapeLayer addAnimation:animation2 forKey:nil];
+        
+        
         
         // 自身向左伸长
         CGRect frame = self.frame;
