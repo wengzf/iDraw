@@ -33,6 +33,9 @@ const CGFloat thinWidth = 0.75;
     wideColor = [UIColor colorWithRed:157/255.0 green:20/255.0 blue:20/255.0 alpha:1];
     thinColor = [UIColor colorWithRed:150/255.0 green:16/255.0 blue:16/255.0 alpha:1];
     
+    NSString *str = @"你妹啊";
+    NSLog(@"%lu",(unsigned long)str.length);
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -212,18 +215,40 @@ const CGFloat thinWidth = 0.75;
 - (void)uberPathAnimation
 {
     // 首个2~4秒， 后面都是在 0~3秒内随机生成
+    generateTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        CGFloat delay = arc4random()%100/100.0*3.5;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+            // 动画路径
+            CGMutablePathRef animationPath = [self generateRandomPath];
+            
+            // 生成随机路径，并开始动画
+            CAShapeLayer *layer = [CAShapeLayer layer];
+            layer.path = [self generateRandomPath];
+            layer.strokeColor = [UIColor whiteColor].CGColor;
+            [self.view.layer addSublayer:layer];
+            
+            // 小白点
+            CAShapeLayer *pointLayer = [CAShapeLayer layer];
+            pointLayer.bounds = CGRectMake(0, 0, 6, 6);
+            
+            CGMutablePathRef pointPath = CGPathCreateMutable();
+            CGPathAddEllipseInRect(pointPath, nil, CGRectMake(0, 0, 6, 6));
+            layer.fillColor = [UIColor whiteColor].CGColor;
+            layer.path = pointPath;
+            
+            CAKeyframeAnimation *keyframeAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+            keyframeAnimation.path = pointPath;
+            keyframeAnimation.duration = 10;
+            
+            [pointLayer addAnimation:keyframeAnimation forKey:nil];
+            
+            
+        });
+    }];
+    [generateTimer fire];
     
-    
-    generateTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 repeats:<#(BOOL)#> block:<#^(NSTimer * _Nonnull timer)block#>];
-    
-    
-    //        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    //        animation.duration = 10;
-    //        animation.fromValue = @0;
-    //        animation.toValue = @1;
-    //        [wideLayer addAnimation:animation forKey:nil];
-    
-    
+
     //
     //        CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     //        animation1.duration = 10;
@@ -231,6 +256,27 @@ const CGFloat thinWidth = 0.75;
     //        animation1.toValue = @1;
     //        animation1.beginTime = CACurrentMediaTime()+10;
     //        [thinLayer addAnimation:animation1 forKey:nil];
+}
+
+
+- (CGMutablePathRef)generateRandomPath
+{
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    /*
+        sx = -radius/3 - radius;
+        sy = -radius/2 - 3*radius;
+     
+     
+
+     */
+    
+    
+    // 随机选取动画开始点,给定出事能量点，前进或者转弯都要耗费不同能量点，生成路径知道结束
+    // 前进，转折数量
+    //
+    
+    return path;
 }
 
 @end
