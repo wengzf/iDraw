@@ -12,6 +12,9 @@
 #import "UberStartViewController.h"
 
 #import "TableViewController.h"
+#import "FSCloseSwithView.h"
+
+
 
 @interface LOGOViewController ()
 {
@@ -64,11 +67,21 @@
 //    [self.navigationController pushViewController:vc animated:NO];
 
     
-    UberStartViewController *vc = [UberStartViewController new];
-    [self presentViewController:vc animated:NO completion:NULL];
+//    UberStartViewController *vc = [UberStartViewController new];
+//    [self presentViewController:vc animated:NO completion:NULL];
     
 //    TableViewController *vc = [TableViewController new];
 //    [self presentViewController:vc animated:YES completion:NULL];
+    
+    
+    // 添加closeView
+    UIView *view = [[UIView alloc] initWithFrame:ScreenBounds];
+    view.backgroundColor = [UIColor whiteColor];
+    FSCloseSwithView *closeView = [[FSCloseSwithView alloc] init];
+    closeView.center = CGPointMake(ScreenWidth/2.0, ScreenHeight/2);
+    [view addSubview:closeView];
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

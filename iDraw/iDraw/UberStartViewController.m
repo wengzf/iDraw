@@ -211,7 +211,6 @@ const CGFloat thinWidth = 0.75;
         sx += diameter*3;
     }
     
-    
 }
 - (void)uberPathAnimation
 {
@@ -385,8 +384,6 @@ const CGFloat thinWidth = 0.75;
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"strokeStart"];
     
-    
-    []
     
     // 变速
     

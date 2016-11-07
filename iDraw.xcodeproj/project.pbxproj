@@ -39,7 +39,6 @@
 		ADA1200B1DCC615700264B37 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA120091DCC615700264B37 /* TableViewController.xib */; };
 		ADA1200F1DCC619100264B37 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA1200D1DCC619100264B37 /* TableViewCell.m */; };
 		ADA120101DCC619100264B37 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA1200E1DCC619100264B37 /* TableViewCell.xib */; };
-		ADA120181DCCB94300264B37 /* FSCloseSwithButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA120151DCCB94300264B37 /* FSCloseSwithButton.m */; };
 		ADA120191DCCB94300264B37 /* FSCloseSwithView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA120171DCCB94300264B37 /* FSCloseSwithView.m */; };
 		ADB7C6E81CC49097000D9FE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */; };
 		ADB7C6EA1CC4909E000D9FE1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */; };
@@ -106,8 +105,6 @@
 		ADA1200C1DCC619100264B37 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		ADA1200D1DCC619100264B37 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		ADA1200E1DCC619100264B37 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		ADA120141DCCB94300264B37 /* FSCloseSwithButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCloseSwithButton.h; sourceTree = "<group>"; };
-		ADA120151DCCB94300264B37 /* FSCloseSwithButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCloseSwithButton.m; sourceTree = "<group>"; };
 		ADA120161DCCB94300264B37 /* FSCloseSwithView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCloseSwithView.h; sourceTree = "<group>"; };
 		ADA120171DCCB94300264B37 /* FSCloseSwithView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCloseSwithView.m; sourceTree = "<group>"; };
 		ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -158,8 +155,6 @@
 		21578B611ACD29A700C09D49 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
-				ADA120141DCCB94300264B37 /* FSCloseSwithButton.h */,
-				ADA120151DCCB94300264B37 /* FSCloseSwithButton.m */,
 				ADA120161DCCB94300264B37 /* FSCloseSwithView.h */,
 				ADA120171DCCB94300264B37 /* FSCloseSwithView.m */,
 				217076381B40E47200D72AD3 /* Thinking.h */,
@@ -386,7 +381,6 @@
 				21578BCB1ACD7C6600C09D49 /* Canvas.m in Sources */,
 				219D431E1AF771FC00D4561C /* myVC.m in Sources */,
 				AD4726E11DC71F820069A206 /* UberStartViewController.m in Sources */,
-				ADA120181DCCB94300264B37 /* FSCloseSwithButton.m in Sources */,
 				21578BCA1ACD7C6600C09D49 /* Canvas+Spiral.m in Sources */,
 				21578B6B1ACD29A700C09D49 /* iDraw.xcdatamodeld in Sources */,
 				21578B681ACD29A700C09D49 /* AppDelegate.m in Sources */,
