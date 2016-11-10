@@ -74,9 +74,15 @@
 //    [self presentViewController:vc animated:YES completion:NULL];
     
     
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sun.jpg"]];
+    imgView.bounds = ScreenBounds;
+    imgView.contentMode = UIViewContentModeScaleToFill;
+    [[UIApplication sharedApplication].keyWindow addSubview:imgView];
+    
     // 添加closeView
     UIView *view = [[UIView alloc] initWithFrame:ScreenBounds];
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor = [UIColor clearColor];
     FSCloseSwithView *closeView = [[FSCloseSwithView alloc] init];
     closeView.center = CGPointMake(ScreenWidth/2.0, ScreenHeight/2);
     [view addSubview:closeView];
