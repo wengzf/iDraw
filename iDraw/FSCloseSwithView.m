@@ -21,8 +21,6 @@
     
     CGFloat animationDuration;
     
-    UIColor *backgroundColor;
-    
     
     CAShapeLayer *closeLayer;
     UIView *closeView;
@@ -33,6 +31,7 @@
     UIButton *screenBtn;
     UIButton *curBtn;
     
+    UIView *backgroundView;
     UIButton *button;
     
     CGFloat *animationParametersArr;
@@ -51,15 +50,14 @@
     
     // 全局参数配置
     width = 54;
-    height = 21;
+    height = 30;
     margin = 8;
     
-    stickWith = 10;
+    stickWith = 9;
     
     
     animationDuration = 0.3;
     
-    backgroundColor = [UIColor colorWithWhite:1 alpha:0.4];
     
     // 动画参数初始化
     [self animationParametersInit];
@@ -68,10 +66,17 @@
     // 自身layout设置
     self.bounds = CGRectMake(0, 0, width, height);
     
-//    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor clearColor];
+
     
-//    self.layer.masksToBounds = YES;
-//    self.layer.cornerRadius = height/2.0;
+    // 关闭按钮
+    backgroundView = [[UIView alloc] initWithFrame:CGRectMake(width-height, 0, height, height)];
+    
+    backgroundView.layer.masksToBounds = YES;
+    backgroundView.layer.cornerRadius = height/2.0;
+    backgroundView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.4];
+    [self addSubview:backgroundView];
+    
     
     // 关闭X初始化
     CGFloat st = (height-stickWith)/2.0;
@@ -90,7 +95,6 @@
     closeLayer.fillColor = [UIColor clearColor].CGColor;
     closeLayer.strokeColor = [UIColor blackColor].CGColor;
     
-    
     closeView = [[UIView alloc] initWithFrame:CGRectMake(width-height, 0, height, height)];
     
     [closeView.layer addSublayer:closeLayer];
@@ -103,7 +107,7 @@
     qingLabel.font = [UIFont systemFontOfSize:14];
     qingLabel.textColor = [UIColor blackColor];
     [qingLabel sizeToFit];
-//    qingLabel.alpha = 0;
+    qingLabel.alpha = 0;
     qingLabel.center = CGPointMake(width/2.0-margin, height/2);
     [self addSubview:qingLabel];
     
@@ -113,18 +117,13 @@
     chuLabel.font = [UIFont systemFontOfSize:14];
     chuLabel.textColor = [UIColor blackColor];
     [chuLabel sizeToFit];
-//    chuLabel.alpha = 0;
+    chuLabel.alpha = 0;
     chuLabel.center = CGPointMake(width/2 + width/4.0-margin/2.0, height/2);
     [self addSubview:chuLabel];
     
     
-    // 关闭按钮
     button = [[UIButton alloc] initWithFrame:CGRectMake(width-height, 0, height, height)];
-    
-    button.layer.masksToBounds = YES;
-    button.layer.cornerRadius = height/2.0;
-    button.backgroundColor = backgroundColor;
-    
+    button.backgroundColor = [UIColor clearColor];
     [button addTarget:self action:@selector(btnClked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     
@@ -178,7 +177,6 @@
 //        角度transform
 //        缩放参数
 //        透明度
-//        self.backgroundColor = [UIColor cyanColor];
         
         // 滚动关闭按钮图层
         {
@@ -235,6 +233,11 @@
                                delay:0
                              keyPath:@"bounds"
                                 vals:vals];
+            [self configureAnimation:backgroundView.layer
+                            duration:animationDuration*2
+                               delay:0
+                             keyPath:@"bounds"
+                                vals:vals];
             
             // position
             arr = [self calArrWithStartVal:button.layer.position.x endVal:width/2];
@@ -245,6 +248,11 @@
                 [vals addObject:val];
             }
             [self configureAnimation:button.layer
+                            duration:animationDuration*2
+                               delay:0
+                             keyPath:@"position"
+                                vals:vals];
+            [self configureAnimation:backgroundView.layer
                             duration:animationDuration*2
                                delay:0
                              keyPath:@"position"
@@ -322,6 +330,11 @@
                            delay:0
                          keyPath:@"bounds"
                             vals:vals];
+        [self configureAnimation:backgroundView.layer
+                        duration:animationDuration*2
+                           delay:0
+                         keyPath:@"bounds"
+                            vals:vals];
         
         // position
         arr = [self calArrWithStartVal:width/2 endVal:button.layer.position.x];
@@ -332,6 +345,11 @@
             [vals addObject:val];
         }
         [self configureAnimation:button.layer
+                        duration:animationDuration*2
+                           delay:0
+                         keyPath:@"position"
+                            vals:vals];
+        [self configureAnimation:backgroundView.layer
                         duration:animationDuration*2
                            delay:0
                          keyPath:@"position"

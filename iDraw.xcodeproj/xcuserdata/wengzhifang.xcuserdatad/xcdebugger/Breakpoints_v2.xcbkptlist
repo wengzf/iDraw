@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iDraw/FSCloseSwithView.m"
-            timestampString = "500553352.902064"
+            timestampString = "500555990.426353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "519"
+            endingLineNumber = "519"
             landmarkName = "-calArrWithStartVal:endVal:"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iDraw/FSCloseSwithView.m"
-            timestampString = "500553352.902064"
+            timestampString = "500555990.426353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
             landmarkName = "-cancel"
             landmarkType = "7">
          </BreakpointContent>
