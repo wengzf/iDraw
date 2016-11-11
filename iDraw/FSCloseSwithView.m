@@ -56,9 +56,10 @@
     
     stickWith = 10;
     
-    animationDuration = 0.15;
     
-    backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+    animationDuration = 0.3;
+    
+    backgroundColor = [UIColor colorWithWhite:1 alpha:0.4];
     
     // 动画参数初始化
     [self animationParametersInit];
@@ -67,7 +68,7 @@
     // 自身layout设置
     self.bounds = CGRectMake(0, 0, width, height);
     
-    self.backgroundColor = [UIColor clearColor];
+//    self.backgroundColor = [UIColor clearColor];
     
 //    self.layer.masksToBounds = YES;
 //    self.layer.cornerRadius = height/2.0;
@@ -102,7 +103,7 @@
     qingLabel.font = [UIFont systemFontOfSize:14];
     qingLabel.textColor = [UIColor blackColor];
     [qingLabel sizeToFit];
-    qingLabel.alpha = 0;
+//    qingLabel.alpha = 0;
     qingLabel.center = CGPointMake(width/2.0-margin, height/2);
     [self addSubview:qingLabel];
     
@@ -112,7 +113,7 @@
     chuLabel.font = [UIFont systemFontOfSize:14];
     chuLabel.textColor = [UIColor blackColor];
     [chuLabel sizeToFit];
-    chuLabel.alpha = 0;
+//    chuLabel.alpha = 0;
     chuLabel.center = CGPointMake(width/2 + width/4.0-margin/2.0, height/2);
     [self addSubview:chuLabel];
     
@@ -170,8 +171,6 @@
 
 - (void)btnClked
 {
-    CGPoint posEd = CGPointMake(width/2, height/2);
-    
     if (state == 0) {
         state = 1;
         
@@ -179,6 +178,7 @@
 //        角度transform
 //        缩放参数
 //        透明度
+//        self.backgroundColor = [UIColor cyanColor];
         
         // 滚动关闭按钮图层
         {
@@ -192,7 +192,7 @@
             }
             [self configureAnimation:closeView.layer
                             duration:animationDuration
-                               delay:0
+                               delay:animationDuration*0.
                              keyPath:@"position"
                                 vals:vals];
             
@@ -210,58 +210,86 @@
                              keyPath:@"transform"
                                 vals:vals];
             
-            
             // 透明度
-            [UIView animateWithDuration:animationDuration/2 delay:animationDuration/2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                closeView.alpha = 0;
-                
-            } completion:^(BOOL finished) {
-                
-            }];
+            [self configureAnimation:closeView.layer
+                            duration:animationDuration*0.6
+                               delay:animationDuration*0.6
+                             keyPath:@"opacity"
+                                vals:@[@1, @0.6, @0.4, @0.1, @0]];
         }
         
         // 自身向左伸长
         {
+            // bounds
             NSArray *arr = [self calArrWithStartVal:height endVal:width]
             ;
             NSMutableArray *vals = [NSMutableArray array];
             for (int i=0; i<arr.count; ++i) {
                 CGFloat tmp = [arr[i] floatValue];
-                CGRect frame = CGRectMake(width-tmp, 0, tmp, height);
-                NSValue *val = [NSValue valueWithCGRect:frame];
+                CGRect bounds = CGRectMake(0, 0, tmp, height);
+                NSValue *val = [NSValue valueWithCGRect:bounds];
                 [vals addObject:val];
             }
             [self configureAnimation:button.layer
                             duration:animationDuration*2
                                delay:0
-                             keyPath:@"frame"
+                             keyPath:@"bounds"
                                 vals:vals];
+            
+            // position
+            arr = [self calArrWithStartVal:button.layer.position.x endVal:width/2];
+            vals = [NSMutableArray array];
+            for (int i=0; i<arr.count; ++i) {
+                CGFloat tmp = [arr[i] floatValue];
+                NSValue *val = [NSValue valueWithCGPoint:CGPointMake(tmp, button.layer.position.y)];
+                [vals addObject:val];
+            }
+            [self configureAnimation:button.layer
+                            duration:animationDuration*2
+                               delay:0
+                             keyPath:@"position"
+                                vals:vals];
+            
         }
         
         // 依次弹出清除文字
-        qingLabel.transform = CGAffineTransformMakeScale(0.1, 0.1);
-        chuLabel.transform = CGAffineTransformMakeScale(0.1, 0.1);
-        
-        [UIView animateWithDuration:animationDuration*0.4 delay:animationDuration*0.6 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            chuLabel.alpha = 1;
-        } completion:^(BOOL finished) {
-        }];
-        
-        [UIView animateWithDuration:animationDuration*0.4 delay:animationDuration*0.85 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            qingLabel.alpha = 1;
-        } completion:^(BOOL finished) {
-        }];
-        
-        
-        [UIView animateWithDuration:animationDuration delay:animationDuration*0.6 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            chuLabel.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-        }];
-        [UIView animateWithDuration:animationDuration delay:animationDuration*0.85 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            qingLabel.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-        }];
-        
+        {
+            qingLabel.transform = CGAffineTransformMakeScale(0.2, 0.2);
+            chuLabel.transform = CGAffineTransformMakeScale(0.2, 0.2);
+            
+            [UIView animateWithDuration:animationDuration*0.3 delay:animationDuration*0.6 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                chuLabel.alpha = 1;
+            } completion:^(BOOL finished) {
+            }];
+            
+            [UIView animateWithDuration:animationDuration*0.3 delay:animationDuration*0.85 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                qingLabel.alpha = 1;
+            } completion:^(BOOL finished) {
+            }];
+            
+            
+            // 缩放数组
+            NSArray *arr = [self calArrWithStartVal:0.1 endVal:1];
+            
+            NSMutableArray *vals = [NSMutableArray array];
+            for (int i=0; i<arr.count; ++i) {
+                CGFloat tmp = [arr[i] floatValue];
+                NSValue *val = [NSValue valueWithCATransform3D:CATransform3DMakeScale(tmp, tmp, 1)];
+                [vals addObject:val];
+            }
+            [self configureAnimation:chuLabel.layer
+                            duration:animationDuration*1.2
+                               delay:animationDuration*0.6
+                             keyPath:@"transform"
+                                vals:vals];
+            
+            [self configureAnimation:qingLabel.layer
+                            duration:animationDuration*1.2
+                               delay:animationDuration*0.85
+                             keyPath:@"transform"
+                                vals:vals];
+            
+        }
         // 添加点击全屏按钮退出
         [self addMaskButton];
     }else{
@@ -279,53 +307,124 @@
     state = 0;
     
     // 向右缩短
-    [UIView animateWithDuration:animationDuration*2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        button.frame = CGRectMake(width-height, 0, height, height);
-    } completion:^(BOOL finished) {
-    }];
-    
+    {
+        // bounds
+        NSArray *arr = [self calArrWithStartVal:width endVal:height];
+        NSMutableArray *vals = [NSMutableArray array];
+        for (int i=0; i<arr.count; ++i) {
+            CGFloat tmp = [arr[i] floatValue];
+            CGRect bounds = CGRectMake(0, 0, tmp, height);
+            NSValue *val = [NSValue valueWithCGRect:bounds];
+            [vals addObject:val];
+        }
+        [self configureAnimation:button.layer
+                        duration:animationDuration*2
+                           delay:0
+                         keyPath:@"bounds"
+                            vals:vals];
+        
+        // position
+        arr = [self calArrWithStartVal:width/2 endVal:button.layer.position.x];
+        vals = [NSMutableArray array];
+        for (int i=0; i<arr.count; ++i) {
+            CGFloat tmp = [arr[i] floatValue];
+            NSValue *val = [NSValue valueWithCGPoint:CGPointMake(tmp, button.layer.position.y)];
+            [vals addObject:val];
+        }
+        [self configureAnimation:button.layer
+                        duration:animationDuration*2
+                           delay:0
+                         keyPath:@"position"
+                            vals:vals];
+    }
     // 清除文字
-    CGFloat delay1 = animationDuration*0.1;
-    CGFloat delay2 = animationDuration*0.2;
-    [UIView animateWithDuration:animationDuration delay:delay1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+    {
+        CGFloat delay1 = animationDuration*0.;
+        CGFloat delay2 = animationDuration*0.2;
+        [UIView animateWithDuration:animationDuration*0.5 delay:delay1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            
+            chuLabel.transform = CGAffineTransformMakeScale(0.1, 0.1);
+            
+        } completion:^(BOOL finished) {
+        }];
+        [UIView animateWithDuration:animationDuration*0.5 delay:delay1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            
+            qingLabel.transform = CGAffineTransformMakeScale(0.1, 0.1);
+            
+        } completion:^(BOOL finished) {
+        }];
         
-        chuLabel.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        [UIView animateWithDuration:animationDuration*0.33 delay:delay1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            chuLabel.alpha = 0;
+        } completion:^(BOOL finished) {
+        }];
         
-    } completion:^(BOOL finished) {
-    }];
-    [UIView animateWithDuration:animationDuration delay:delay1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [UIView animateWithDuration:animationDuration*0.33 delay:delay2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            qingLabel.alpha = 0;
+        } completion:^(BOOL finished) {
+        }];
         
-        qingLabel.transform = CGAffineTransformMakeScale(0.1, 0.1);
         
-    } completion:^(BOOL finished) {
-    }];
-    
-    [UIView animateWithDuration:animationDuration*0.4 delay:delay2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        chuLabel.alpha = 0;
-    } completion:^(BOOL finished) {
-    }];
-    
-    [UIView animateWithDuration:animationDuration*0.4 delay:delay2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        qingLabel.alpha = 0;
-    } completion:^(BOOL finished) {
-    }];
-    
-    
-    CGPoint posSt = CGPointMake(width-height/2, height/2);
+        
+        // 缩放数组
+        NSArray *arr = [self calArrWithStartVal:1 endVal:0.1];
+        
+        NSMutableArray *vals = [NSMutableArray array];
+        for (int i=0; i<arr.count; ++i) {
+            CGFloat tmp = [arr[i] floatValue];
+            NSValue *val = [NSValue valueWithCATransform3D:CATransform3DMakeScale(tmp, tmp, 1)];
+            [vals addObject:val];
+        }
+        [self configureAnimation:chuLabel.layer
+                        duration:animationDuration*0.33
+                           delay:delay1
+                         keyPath:@"transform"
+                            vals:vals];
+        
+        [self configureAnimation:qingLabel.layer
+                        duration:animationDuration*0.33
+                           delay:delay2
+                         keyPath:@"transform"
+                            vals:vals];
+        
+        
+    }
     // 滚动关闭按钮
-    [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        closeView.layer.position = posSt;
-        closeView.transform = CGAffineTransformIdentity;
-    } completion:^(BOOL finished) {
+    {
+        // 移动
+        NSArray *arr = [self calArrWithStartVal:width/2-margin endVal:width-height/2]
+        ;
+        NSMutableArray *vals = [NSMutableArray array];
+        for (int i=0; i<arr.count; ++i) {
+            NSValue *val = [NSValue valueWithCGPoint:CGPointMake([arr[i] floatValue], height/2)];
+            [vals addObject:val];
+        }
+        [self configureAnimation:closeView.layer
+                        duration:animationDuration*1.75
+                           delay:animationDuration*0.25
+                         keyPath:@"position"
+                            vals:vals];
         
-    }];
-    [UIView animateWithDuration:animationDuration/2 delay:animationDuration/2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        closeView.alpha = 1;
+        // 旋转
+        arr = [self calArrWithStartVal:-M_PI endVal:0];
+        vals = [NSMutableArray array];
+        for (int i=0; i<arr.count; ++i) {
+            NSValue *val = [NSValue valueWithCATransform3D:CATransform3DMakeRotation([arr[i] floatValue], 0, 0, 1)];
+            [vals addObject:val];
+        }
+        [self configureAnimation:closeView.layer
+                        duration:animationDuration*1.75
+                           delay:animationDuration*0.25
+                         keyPath:@"transform"
+                            vals:vals];
         
-    } completion:^(BOOL finished) {
-        
-    }];
-    
+        // 透明度
+        [self configureAnimation:closeView.layer
+                        duration:animationDuration*0.25
+                           delay:animationDuration*0.25
+                         keyPath:@"opacity"
+                            vals:@[@0, @0.1, @0.4, @0.6, @1]];
+    }
     
     // 清除mask按钮
     [self removeMaskButton];
@@ -363,6 +462,7 @@
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
+    NSLog(@"%@",closeView);
 }
 
 
@@ -377,6 +477,7 @@
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:keyPath];
     
     animation.calculationMode = kCAAnimationLinear;
+    
     animation.fillMode = kCAFillModeBoth;
     animation.removedOnCompletion = NO;
     
@@ -384,6 +485,9 @@
 
     animation.beginTime = CACurrentMediaTime() + delay;
     animation.duration = duration;
+    
+    animation.delegate = self;
+    
     [layer addAnimation:animation forKey:nil];
 }
 
@@ -400,8 +504,6 @@
     
     return arr;
 }
-
-
 
 
 @end

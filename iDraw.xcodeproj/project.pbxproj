@@ -33,7 +33,6 @@
 		21578BD61ACF7E8800C09D49 /* Canvas+IFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 21578BD51ACF7E8800C09D49 /* Canvas+IFS.m */; };
 		2170C88B1BAA6C9200F8B0AD /* Canvas+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 2170C88A1BAA6C9200F8B0AD /* Canvas+Path.m */; };
 		219D431E1AF771FC00D4561C /* myVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D431D1AF771FC00D4561C /* myVC.m */; };
-		AD237CFD1DD44D200076DF98 /* sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD237CFC1DD44D200076DF98 /* sun.jpg */; };
 		AD4726E11DC71F820069A206 /* UberStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4726DF1DC71F820069A206 /* UberStartViewController.m */; };
 		AD4726E21DC71F820069A206 /* UberStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4726E01DC71F820069A206 /* UberStartViewController.xib */; };
 		ADA1200A1DCC615700264B37 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA120081DCC615700264B37 /* TableViewController.m */; };
@@ -44,6 +43,8 @@
 		ADB7C6E81CC49097000D9FE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */; };
 		ADB7C6EA1CC4909E000D9FE1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */; };
 		ADEF4A951DC2F1DA00B86B61 /* CanvasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF4A941DC2F1DA00B86B61 /* CanvasModel.m */; };
+		ADF29ECC1DD5CF7B00E103E4 /* closeSwitchBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF29ECB1DD5CF7B00E103E4 /* closeSwitchBackground.png */; };
+		ADF29ECF1DD5CFC800E103E4 /* FSTestCloseSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF29ECE1DD5CFC800E103E4 /* FSTestCloseSwitchView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +98,6 @@
 		2170C88A1BAA6C9200F8B0AD /* Canvas+Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Canvas+Path.m"; sourceTree = "<group>"; };
 		219D431C1AF771FC00D4561C /* myVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myVC.h; sourceTree = "<group>"; };
 		219D431D1AF771FC00D4561C /* myVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myVC.m; sourceTree = "<group>"; };
-		AD237CFC1DD44D200076DF98 /* sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sun.jpg; sourceTree = "<group>"; };
 		AD4726DE1DC71F820069A206 /* UberStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberStartViewController.h; sourceTree = "<group>"; };
 		AD4726DF1DC71F820069A206 /* UberStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberStartViewController.m; sourceTree = "<group>"; };
 		AD4726E01DC71F820069A206 /* UberStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UberStartViewController.xib; sourceTree = "<group>"; };
@@ -113,6 +113,9 @@
 		ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ADEF4A931DC2F1DA00B86B61 /* CanvasModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasModel.h; sourceTree = "<group>"; };
 		ADEF4A941DC2F1DA00B86B61 /* CanvasModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasModel.m; sourceTree = "<group>"; };
+		ADF29ECB1DD5CF7B00E103E4 /* closeSwitchBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeSwitchBackground.png; sourceTree = "<group>"; };
+		ADF29ECD1DD5CFC800E103E4 /* FSTestCloseSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestCloseSwitchView.h; sourceTree = "<group>"; };
+		ADF29ECE1DD5CFC800E103E4 /* FSTestCloseSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestCloseSwitchView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +160,11 @@
 		21578B611ACD29A700C09D49 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
-				AD237CFC1DD44D200076DF98 /* sun.jpg */,
+				ADF29ECB1DD5CF7B00E103E4 /* closeSwitchBackground.png */,
 				ADA120161DCCB94300264B37 /* FSCloseSwithView.h */,
 				ADA120171DCCB94300264B37 /* FSCloseSwithView.m */,
+				ADF29ECD1DD5CFC800E103E4 /* FSTestCloseSwitchView.h */,
+				ADF29ECE1DD5CFC800E103E4 /* FSTestCloseSwitchView.m */,
 				217076381B40E47200D72AD3 /* Thinking.h */,
 				21578BA61ACD643900C09D49 /* Image */,
 				21578BBC1ACD7C6600C09D49 /* TurtleAndCanvas */,
@@ -353,7 +358,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				21578B711ACD29A700C09D49 /* Main.storyboard in Resources */,
-				AD237CFD1DD44D200076DF98 /* sun.jpg in Resources */,
 				ADA120101DCC619100264B37 /* TableViewCell.xib in Resources */,
 				21578BA91ACD6DBD00C09D49 /* fractal.png in Resources */,
 				21578BAA1ACD6DBD00C09D49 /* pen.png in Resources */,
@@ -363,6 +367,7 @@
 				ADA1200B1DCC615700264B37 /* TableViewController.xib in Resources */,
 				21578B731ACD29A700C09D49 /* Images.xcassets in Resources */,
 				AD4726E21DC71F820069A206 /* UberStartViewController.xib in Resources */,
+				ADF29ECC1DD5CF7B00E103E4 /* closeSwitchBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +391,7 @@
 				219D431E1AF771FC00D4561C /* myVC.m in Sources */,
 				AD4726E11DC71F820069A206 /* UberStartViewController.m in Sources */,
 				21578BCA1ACD7C6600C09D49 /* Canvas+Spiral.m in Sources */,
+				ADF29ECF1DD5CFC800E103E4 /* FSTestCloseSwitchView.m in Sources */,
 				21578B6B1ACD29A700C09D49 /* iDraw.xcdatamodeld in Sources */,
 				21578B681ACD29A700C09D49 /* AppDelegate.m in Sources */,
 				21578BC71ACD7C6600C09D49 /* Canvas+KochSnow.m in Sources */,

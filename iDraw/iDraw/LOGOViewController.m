@@ -12,8 +12,8 @@
 #import "UberStartViewController.h"
 
 #import "TableViewController.h"
-#import "FSCloseSwithView.h"
 
+#import "FSTestCloseSwitchView.h"
 
 
 @interface LOGOViewController ()
@@ -75,30 +75,21 @@
     
     
     
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sun.jpg"]];
-    imgView.bounds = ScreenBounds;
-    imgView.contentMode = UIViewContentModeScaleToFill;
-    [[UIApplication sharedApplication].keyWindow addSubview:imgView];
-    
-    // 添加closeView
-    UIView *view = [[UIView alloc] initWithFrame:ScreenBounds];
-    view.backgroundColor = [UIColor clearColor];
-    FSCloseSwithView *closeView = [[FSCloseSwithView alloc] init];
-    closeView.center = CGPointMake(ScreenWidth/2.0, ScreenHeight/2);
-    [view addSubview:closeView];
-    [[UIApplication sharedApplication].keyWindow addSubview:view];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
-
+ 
 }
 
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    FSTestCloseSwitchView *closeSwitchView = [[FSTestCloseSwitchView alloc] init];
+    [closeSwitchView configureView];
+    [[UIApplication sharedApplication].keyWindow addSubview:closeSwitchView];
+
+    
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 120, 100)];
 //    view.backgroundColor = [UIColor redColor];
 //    CAGradientLayer *gradientLayer1 = [CAGradientLayer layer];
