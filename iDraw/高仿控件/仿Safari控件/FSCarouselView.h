@@ -11,7 +11,7 @@
 @class FSCarouselView;
 
 
-@protocol  FSCarouselViewDelegate<NSObject>
+@protocol  FSCarouselViewDatasource<NSObject>
 
 // item数量
 - (NSInteger)numberOfItemsInCarouselView:(FSCarouselView *)carouselView;
@@ -25,9 +25,22 @@
 
 @end
 
+@protocol  FSCarouselViewDelegate<NSObject>
+
+@optional
+- (void)carouselView:(FSCarouselView *)carouselView didSelectedAtIndex:(NSInteger) index;
+
+@end
+
 
 
 @interface FSCarouselView : UIView
+
+
+@property (nonatomic, weak) IBOutlet id<FSCarouselViewDatasource> dataSource;
+@property (nonatomic, weak) IBOutlet id<FSCarouselViewDelegate> delegate;
+
+@property (nonatomic, assign) CGFloat scrollOffset;
 
 
 
