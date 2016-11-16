@@ -13,8 +13,10 @@
 {
     int state;                  // 0=正常  1=再次点击清除
     
+    CGFloat top;
     CGFloat width;
     CGFloat height;
+    CGFloat boundHeight;
     CGFloat margin;
     
     CGFloat stickWith;
@@ -40,7 +42,6 @@
 @end
 
 
-
 @implementation FSCloseSwithView
 
 
@@ -50,27 +51,28 @@
     
     // 全局参数配置
     width = 54;
-    height = 30;
+    boundHeight = 30;
+    height = 21;
+    
+    top = (boundHeight-height)/2.0;
+    
     margin = 8;
     
     stickWith = 9;
     
-    
-    animationDuration = 0.3;
+    animationDuration = 0.2;
     
     
     // 动画参数初始化
     [self animationParametersInit];
     
-    
     // 自身layout设置
-    self.bounds = CGRectMake(0, 0, width, height);
-    
+    self.bounds = CGRectMake(0, 0, width, boundHeight);
     self.backgroundColor = [UIColor clearColor];
 
     
     // 关闭按钮
-    backgroundView = [[UIView alloc] initWithFrame:CGRectMake(width-height, 0, height, height)];
+    backgroundView = [[UIView alloc] initWithFrame:CGRectMake(width-height, top, height, height)];
     
     backgroundView.layer.masksToBounds = YES;
     backgroundView.layer.cornerRadius = height/2.0;
@@ -95,7 +97,7 @@
     closeLayer.fillColor = [UIColor clearColor].CGColor;
     closeLayer.strokeColor = [UIColor blackColor].CGColor;
     
-    closeView = [[UIView alloc] initWithFrame:CGRectMake(width-height, 0, height, height)];
+    closeView = [[UIView alloc] initWithFrame:CGRectMake(width-height, top, height, height)];
     
     [closeView.layer addSublayer:closeLayer];
     [self addSubview:closeView];
@@ -108,7 +110,7 @@
     qingLabel.textColor = [UIColor blackColor];
     [qingLabel sizeToFit];
     qingLabel.alpha = 0;
-    qingLabel.center = CGPointMake(width/2.0-margin, height/2);
+    qingLabel.center = CGPointMake(width/2.0-margin, boundHeight/2);
     [self addSubview:qingLabel];
     
     chuLabel = [UILabel new];
@@ -118,11 +120,11 @@
     chuLabel.textColor = [UIColor blackColor];
     [chuLabel sizeToFit];
     chuLabel.alpha = 0;
-    chuLabel.center = CGPointMake(width/2 + width/4.0-margin/2.0, height/2);
+    chuLabel.center = CGPointMake(width/2 + width/4.0-margin/2.0, boundHeight/2);
     [self addSubview:chuLabel];
     
-    
-    button = [[UIButton alloc] initWithFrame:CGRectMake(width-height, 0, height, height)];
+    // 点击事件
+    button = [[UIButton alloc] initWithFrame:CGRectMake(width-height, 0, height, boundHeight)];
     button.backgroundColor = [UIColor clearColor];
     [button addTarget:self action:@selector(btnClked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
@@ -132,6 +134,7 @@
 
 - (void)animationParametersInit
 {
+    // 动画参数设置
     animationParametersCount = 31;
     static CGFloat vals[] = {1.000000,
         0.943262,
@@ -185,7 +188,7 @@
             ;
             NSMutableArray *vals = [NSMutableArray array];
             for (int i=0; i<arr.count; ++i) {
-                NSValue *val = [NSValue valueWithCGPoint:CGPointMake([arr[i] floatValue], height/2)];
+                NSValue *val = [NSValue valueWithCGPoint:CGPointMake([arr[i] floatValue], boundHeight/2)];
                 [vals addObject:val];
             }
             [self configureAnimation:closeView.layer
@@ -405,7 +408,6 @@
                          keyPath:@"transform"
                             vals:vals];
         
-        
     }
     // 滚动关闭按钮
     {
@@ -414,7 +416,7 @@
         ;
         NSMutableArray *vals = [NSMutableArray array];
         for (int i=0; i<arr.count; ++i) {
-            NSValue *val = [NSValue valueWithCGPoint:CGPointMake([arr[i] floatValue], height/2)];
+            NSValue *val = [NSValue valueWithCGPoint:CGPointMake([arr[i] floatValue], boundHeight/2)];
             [vals addObject:val];
         }
         [self configureAnimation:closeView.layer
@@ -480,7 +482,6 @@
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-    NSLog(@"%@",closeView);
 }
 
 
@@ -516,7 +517,6 @@
     
     for (int i=0; i<animationParametersCount; ++i) {
         NSNumber *num = @((st-ed)*animationParametersArr[i] + ed);
-        NSLog(@"%@",num);
         [arr addObject:num];
     }
     
