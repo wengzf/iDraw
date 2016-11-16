@@ -32,7 +32,7 @@
     NSInteger itemCount;
     
     
-    CADisplayLink *displayTimer;
+    CADisplayLink *displayLink;
     
     CGFloat scrollDuration;
     
@@ -41,6 +41,7 @@
     
     NSTimeInterval startTime;
     NSTimeInterval endTime;
+    NSTimeInterval lastTime;
     
     CGFloat startVelocity;
     CGFloat decelerationRate;
@@ -123,6 +124,11 @@
     [CATransaction begin];
     [CATransaction setDisableActions:!enabled];
 }
+- (void)popAnimationState
+{
+    [CATransaction commit];
+}
+
 
 - (void)reloadData
 {
@@ -192,6 +198,12 @@
 
 
 #pragma mark - Scrolling
+
+- (CGFloat)easyInOut:(CGFloat)time
+{
+    // 关于（0.5，0.5）中心对称
+    return (time<0.5)? 4*time*time*time : 1-4*(1-time)*(1-time)*(1-time);
+}
 - (void)disableApp
 {
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
@@ -224,18 +236,51 @@
 }
 - (void)startAnimation
 {
-    if (!displayTimer) {
-        displayTimer = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
+    if (!displayLink) {
+        displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     }
 }
 - (void)stopAnimation
 {
-    if (displayTimer) {
-        displayTimer conformsToProtocol:<#(Protocol *)#>
+    if (displayLink) {
+        [displayLink removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        displayLink = nil;
+    }
+}
+- (CGFloat)decelerationDistance
+{
+    CGFloat acceleration = -startVelocity * DECELERATION_MULTIPLIER * (1.0 - decelerationRate);
+    return startVelocity*startVelocity / (2*acceleration);
+}
+- (void)startDecelerating
+{
+    CGFloat distance = [self decelerationDistance];
+    startOffset = _scrollOffset;
+    endOffset = startOffset+distance;
+    
+    startTime = CACurrentMediaTime();
+    scrollDuration = fabs(distance) / fabs(0.5*startVelocity);
+    
+    if (distance != 0) {
+        decelerating = YES;
+        [self startAnimation];
     }
 }
 - (void)step
 {
+    [self pushAnimationState:NO];
+    
+    NSTimeInterval currentTime = CACurrentMediaTime();
+    double delta = lastTime-currentTime;
+    lastTime = currentTime;
+    
+    if (scrolling) {
+        NSTimeInterval time = fminf(1.0, (currentTime-startTime)/scrollDuration);
+        CGFloat delta = [self easyInOut:time];
+        _scrollOffset = startOffset + (endOffset - startOffset)*delta;
+    }
+    
     
 }
 
