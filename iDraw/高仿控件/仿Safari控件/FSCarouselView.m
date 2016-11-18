@@ -220,6 +220,8 @@
     CGFloat offsety = width * offset - width;
     CGFloat angle = -M_PI/8;
     
+    NSLog(@"%d",offsety);
+    
     transform = CATransform3DTranslate(transform, 0, offsety, -160);
     transform = CATransform3DRotate(transform, angle, 1, 0, 0);
     
@@ -230,8 +232,7 @@
 - (CGFloat)offsetForItemAtIndex:(NSInteger)index
 {
     CGFloat offset = index - _scrollOffset;
-    offset +=_scrollOffset;
-    
+
     return offset;
 }
 
@@ -268,8 +269,6 @@
             [contentView addSubview:view];
             flag = YES;
         }
-        
-        NSLog(@"index %d:  %@  color:%@",i, view,view.backgroundColor);
     }
     if (flag) {
         [self depthSortViews];
@@ -401,25 +400,25 @@
 }
 - (void)didScroll
 {
-    CGFloat min = -bounceDistance;
-    CGFloat max = fmaxf(numberOfItems - 1, 0.0f) + bounceDistance;
-    if (_scrollOffset < min)
-    {
-        _scrollOffset = min;
-        startVelocity = 0.0f;
-    }
-    else if (_scrollOffset > max)
-    {
-        _scrollOffset = max;
-        startVelocity = 0.0f;
-    }
-    
-    
-    NSInteger currentIndex = roundf(_scrollOffset);
-    NSInteger difference = currentIndex - previousIndex;
-    if (difference) {
-        [self startAnimation];
-    }
+//    CGFloat min = -bounceDistance;
+//    CGFloat max = fmaxf(numberOfItems - 1, 0.0f) + bounceDistance;
+//    if (_scrollOffset < min)
+//    {
+//        _scrollOffset = min;
+//        startVelocity = 0.0f;
+//    }
+//    else if (_scrollOffset > max)
+//    {
+//        _scrollOffset = max;
+//        startVelocity = 0.0f;
+//    }
+//    
+//    
+//    NSInteger currentIndex = roundf(_scrollOffset);
+//    NSInteger difference = currentIndex - previousIndex;
+//    if (difference) {
+//        [self startAnimation];
+//    }
     
     // 加载未加载的item到contentView
     [self loadUnloadViews];
@@ -427,7 +426,7 @@
     // 根据offset计算transform
     [self transformItemViews];
     
-    previousIndex = currentIndex;
+//    previousIndex = currentIndex;
 }
 
 - (void)transformItemViews
@@ -442,9 +441,6 @@
 {
     //calculate offset
     CGFloat offset = [self offsetForItemAtIndex:index];
-    
-    
-    NSLog(@"%lf",offset);
     
     view.alpha = [self alphaForItemWithOffset:offset];
     view.layer.transform = [self transformForItemViewWithOffset:offset];
