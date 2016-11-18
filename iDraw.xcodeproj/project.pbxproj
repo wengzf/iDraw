@@ -49,7 +49,16 @@
 		ADB7C6E81CC49097000D9FE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */; };
 		ADB7C6EA1CC4909E000D9FE1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */; };
 		ADEF4A951DC2F1DA00B86B61 /* CanvasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF4A941DC2F1DA00B86B61 /* CanvasModel.m */; };
+		ADF23B161DDDA2AC003EE458 /* FSTestCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF23B151DDDA2AC003EE458 /* FSTestCarouselView.m */; };
 		ADF29ECC1DD5CF7B00E103E4 /* closeSwitchBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF29ECB1DD5CF7B00E103E4 /* closeSwitchBackground.png */; };
+		ADFEB9781DDEF16C00F39C23 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9701DDEF16C00F39C23 /* 0.jpg */; };
+		ADFEB9791DDEF16C00F39C23 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9711DDEF16C00F39C23 /* 1.jpg */; };
+		ADFEB97A1DDEF16C00F39C23 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9721DDEF16C00F39C23 /* 2.jpg */; };
+		ADFEB97B1DDEF16C00F39C23 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9731DDEF16C00F39C23 /* 3.jpg */; };
+		ADFEB97C1DDEF16C00F39C23 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9741DDEF16C00F39C23 /* 4.jpg */; };
+		ADFEB97D1DDEF16C00F39C23 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9751DDEF16C00F39C23 /* 5.jpg */; };
+		ADFEB97E1DDEF16C00F39C23 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9761DDEF16C00F39C23 /* 6.jpg */; };
+		ADFEB97F1DDEF16C00F39C23 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9771DDEF16C00F39C23 /* 7.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,7 +136,17 @@
 		ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ADEF4A931DC2F1DA00B86B61 /* CanvasModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasModel.h; sourceTree = "<group>"; };
 		ADEF4A941DC2F1DA00B86B61 /* CanvasModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasModel.m; sourceTree = "<group>"; };
+		ADF23B141DDDA2AC003EE458 /* FSTestCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestCarouselView.h; sourceTree = "<group>"; };
+		ADF23B151DDDA2AC003EE458 /* FSTestCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestCarouselView.m; sourceTree = "<group>"; };
 		ADF29ECB1DD5CF7B00E103E4 /* closeSwitchBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closeSwitchBackground.png; path = ../closeSwitchBackground.png; sourceTree = "<group>"; };
+		ADFEB9701DDEF16C00F39C23 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		ADFEB9711DDEF16C00F39C23 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		ADFEB9721DDEF16C00F39C23 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		ADFEB9731DDEF16C00F39C23 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		ADFEB9741DDEF16C00F39C23 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		ADFEB9751DDEF16C00F39C23 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		ADFEB9761DDEF16C00F39C23 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		ADFEB9771DDEF16C00F39C23 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +264,14 @@
 				ADF29ECB1DD5CF7B00E103E4 /* closeSwitchBackground.png */,
 				21578BA71ACD6DBD00C09D49 /* fractal.png */,
 				21578BA81ACD6DBD00C09D49 /* pen.png */,
+				ADFEB9701DDEF16C00F39C23 /* 0.jpg */,
+				ADFEB9711DDEF16C00F39C23 /* 1.jpg */,
+				ADFEB9721DDEF16C00F39C23 /* 2.jpg */,
+				ADFEB9731DDEF16C00F39C23 /* 3.jpg */,
+				ADFEB9741DDEF16C00F39C23 /* 4.jpg */,
+				ADFEB9751DDEF16C00F39C23 /* 5.jpg */,
+				ADFEB9761DDEF16C00F39C23 /* 6.jpg */,
+				ADFEB9771DDEF16C00F39C23 /* 7.jpg */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -298,6 +325,8 @@
 			children = (
 				AD1E5CAD1DDC3750008084DE /* FSCarouselView.h */,
 				AD1E5CAE1DDC3750008084DE /* FSCarouselView.m */,
+				ADF23B141DDDA2AC003EE458 /* FSTestCarouselView.h */,
+				ADF23B151DDDA2AC003EE458 /* FSTestCarouselView.m */,
 			);
 			path = "仿Safari控件";
 			sourceTree = "<group>";
@@ -416,12 +445,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADFEB97E1DDEF16C00F39C23 /* 6.jpg in Resources */,
 				21578B711ACD29A700C09D49 /* Main.storyboard in Resources */,
+				ADFEB97D1DDEF16C00F39C23 /* 5.jpg in Resources */,
 				ADA120101DCC619100264B37 /* TableViewCell.xib in Resources */,
 				AD1E5CA01DDC11AB008084DE /* UberStartViewController.xib in Resources */,
 				21578BA91ACD6DBD00C09D49 /* fractal.png in Resources */,
 				21578BAA1ACD6DBD00C09D49 /* pen.png in Resources */,
+				ADFEB97A1DDEF16C00F39C23 /* 2.jpg in Resources */,
+				ADFEB97C1DDEF16C00F39C23 /* 4.jpg in Resources */,
+				ADFEB9791DDEF16C00F39C23 /* 1.jpg in Resources */,
 				21578B761ACD29A700C09D49 /* LaunchScreen.xib in Resources */,
+				ADFEB97F1DDEF16C00F39C23 /* 7.jpg in Resources */,
+				ADFEB9781DDEF16C00F39C23 /* 0.jpg in Resources */,
+				ADFEB97B1DDEF16C00F39C23 /* 3.jpg in Resources */,
 				21578BA41ACD2C3A00C09D49 /* LOGOViewController.xib in Resources */,
 				21578B9D1ACD2C2000C09D49 /* FractalViewController.xib in Resources */,
 				ADA1200B1DCC615700264B37 /* TableViewController.xib in Resources */,
@@ -449,6 +486,7 @@
 			files = (
 				2170C88B1BAA6C9200F8B0AD /* Canvas+Path.m in Sources */,
 				21578BD61ACF7E8800C09D49 /* Canvas+IFS.m in Sources */,
+				ADF23B161DDDA2AC003EE458 /* FSTestCarouselView.m in Sources */,
 				21578BCB1ACD7C6600C09D49 /* Canvas.m in Sources */,
 				219D431E1AF771FC00D4561C /* myVC.m in Sources */,
 				21578BCA1ACD7C6600C09D49 /* Canvas+Spiral.m in Sources */,

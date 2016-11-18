@@ -14,7 +14,7 @@
 #import "TableViewController.h"
 
 #import "FSTestCloseSwitchView.h"
-
+#import "FSTestCarouselView.h"
 
 @interface LOGOViewController ()
 {
@@ -73,22 +73,30 @@
 //    TableViewController *vc = [TableViewController new];
 //    [self presentViewController:vc animated:YES completion:NULL];
     
-    
+ 
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
- 
 }
 
-
-- (void)viewDidAppear:(BOOL)animated
+- (void)testCloseSwitchView
 {
     FSTestCloseSwitchView *closeSwitchView = [[FSTestCloseSwitchView alloc] init];
     [closeSwitchView configureView];
     [[UIApplication sharedApplication].keyWindow addSubview:closeSwitchView];
+}
+- (void)testCarouselView
+{
+    FSTestCarouselView *view= [[FSTestCarouselView alloc] init];
+    view.backgroundColor = [UIColor whiteColor];
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self testCarouselView];
     
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 120, 100)];
 //    view.backgroundColor = [UIColor redColor];

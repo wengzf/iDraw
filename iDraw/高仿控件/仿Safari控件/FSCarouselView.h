@@ -40,6 +40,17 @@
 @property (nonatomic, weak) IBOutlet id<FSCarouselViewDatasource> dataSource;
 @property (nonatomic, weak) IBOutlet id<FSCarouselViewDelegate> delegate;
 
+@property (nonatomic, assign) NSInteger currentItemIndex;
+
+@property (nonatomic, assign) BOOL scrollEnabled;
+@property (nonatomic, assign) BOOL bounces;
+
+@property (nonatomic, readonly, getter=isDragging) BOOL dragging;
+@property (nonatomic, readonly) BOOL didDrag;
+@property (nonatomic, readonly, getter=isScrolling) BOOL scrolling;
+@property (nonatomic, readonly, getter=isDecelerating) BOOL decelerating;
+
+
 @property (nonatomic, assign) CGFloat scrollOffset;
 
 
