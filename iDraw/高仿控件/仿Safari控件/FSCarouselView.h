@@ -46,9 +46,10 @@
 @property (nonatomic, assign) BOOL bounces;
 
 @property (nonatomic, readonly, getter=isDragging) BOOL dragging;
-@property (nonatomic, readonly) BOOL didDrag;
 @property (nonatomic, readonly, getter=isScrolling) BOOL scrolling;
 @property (nonatomic, readonly, getter=isDecelerating) BOOL decelerating;
+
+@property (nonatomic, readonly) BOOL didDrag;
 
 
 @property (nonatomic, assign) CGFloat scrollOffset;

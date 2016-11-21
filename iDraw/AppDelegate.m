@@ -77,7 +77,7 @@
 //        [actionSheet showInView:view];
 //        
         
-        NSLog(@"\%@,\"woshi\"\f",@"ddd");
+        
         
         int x;
         x = 017;

@@ -66,24 +66,21 @@
 - (void)setUp
 {
     // 参数初始化
-    decelerationRate = 0.95;
+    itemWidth = 120;
+    scrollSpeed = 1.0;
     perspective = -1/500.0;
     bounceDistance = 1.0;
-    scrollSpeed = 1.0;
+    decelerationRate = 0.95;
     
-    itemWidth = 120;
- 
-    _scrollEnabled = YES;
     stopAtItemBoundary = YES;
     scrollToItemBoundary = YES;
     
     _bounces = YES;
+    _scrollEnabled = YES;
     
     // 添加容器视图
     contentView = [[UIView alloc] initWithFrame:ScreenBounds];
-    
     contentView.backgroundColor = [UIColor lightGrayColor];
-
     [self addSubview:contentView];
     
     // 添加手势
@@ -220,7 +217,7 @@
     CGFloat offsety = width * offset - width;
     CGFloat angle = -M_PI/8;
     
-    NSLog(@"%d",offsety);
+    NSLog(@"%f",offsety);
     
     transform = CATransform3DTranslate(transform, 0, offsety, -160);
     transform = CATransform3DRotate(transform, angle, 1, 0, 0);
@@ -272,7 +269,6 @@
     }
     if (flag) {
         [self depthSortViews];
-        
         
         [self transformItemViews];
     }
@@ -400,25 +396,25 @@
 }
 - (void)didScroll
 {
-//    CGFloat min = -bounceDistance;
-//    CGFloat max = fmaxf(numberOfItems - 1, 0.0f) + bounceDistance;
-//    if (_scrollOffset < min)
-//    {
-//        _scrollOffset = min;
-//        startVelocity = 0.0f;
-//    }
-//    else if (_scrollOffset > max)
-//    {
-//        _scrollOffset = max;
-//        startVelocity = 0.0f;
-//    }
-//    
-//    
-//    NSInteger currentIndex = roundf(_scrollOffset);
-//    NSInteger difference = currentIndex - previousIndex;
-//    if (difference) {
-//        [self startAnimation];
-//    }
+    CGFloat min = -bounceDistance;
+    CGFloat max = fmaxf(numberOfItems - 1, 0.0f) + bounceDistance;
+    if (_scrollOffset < min)
+    {
+        _scrollOffset = min;
+        startVelocity = 0.0f;
+    }
+    else if (_scrollOffset > max)
+    {
+        _scrollOffset = max;
+        startVelocity = 0.0f;
+    }
+    
+    
+    NSInteger currentIndex = roundf(_scrollOffset);
+    NSInteger difference = currentIndex - previousIndex;
+    if (difference) {
+        [self startAnimation];
+    }
     
     // 加载未加载的item到contentView
     [self loadUnloadViews];
