@@ -42,6 +42,7 @@
 		AD1E5CAA1DDC1222008084DE /* weixinScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD1E5CA71DDC1222008084DE /* weixinScan.mp3 */; };
 		AD1E5CAC1DDC1249008084DE /* sao.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1E5CAB1DDC1249008084DE /* sao.png */; };
 		AD1E5CAF1DDC3750008084DE /* FSCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1E5CAE1DDC3750008084DE /* FSCarouselView.m */; };
+		AD4286991DE309BB0052E3FE /* FSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4286981DE309BB0052E3FE /* FSScrollView.m */; };
 		ADA1200A1DCC615700264B37 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA120081DCC615700264B37 /* TableViewController.m */; };
 		ADA1200B1DCC615700264B37 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA120091DCC615700264B37 /* TableViewController.xib */; };
 		ADA1200F1DCC619100264B37 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA1200D1DCC619100264B37 /* TableViewCell.m */; };
@@ -126,6 +127,8 @@
 		AD1E5CAB1DDC1249008084DE /* sao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sao.png; sourceTree = "<group>"; };
 		AD1E5CAD1DDC3750008084DE /* FSCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCarouselView.h; sourceTree = "<group>"; };
 		AD1E5CAE1DDC3750008084DE /* FSCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCarouselView.m; sourceTree = "<group>"; };
+		AD4286971DE309BB0052E3FE /* FSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScrollView.h; sourceTree = "<group>"; };
+		AD4286981DE309BB0052E3FE /* FSScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSScrollView.m; sourceTree = "<group>"; };
 		ADA120071DCC615700264B37 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		ADA120081DCC615700264B37 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		ADA120091DCC615700264B37 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
@@ -191,10 +194,9 @@
 		21578B611ACD29A700C09D49 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
-				AD1E5C941DDC11AB008084DE /* 高仿控件 */,
-				21578BA61ACD643900C09D49 /* Image */,
 				217076381B40E47200D72AD3 /* Thinking.h */,
 				21578BBC1ACD7C6600C09D49 /* Canvas 海龟画布 */,
+				AD1E5C941DDC11AB008084DE /* 高仿控件 */,
 				21578B951ACD2C2000C09D49 /* iDraw */,
 				21578B661ACD29A700C09D49 /* AppDelegate.h */,
 				21578B671ACD29A700C09D49 /* AppDelegate.m */,
@@ -206,6 +208,7 @@
 				21578B721ACD29A700C09D49 /* Images.xcassets */,
 				21578B741ACD29A700C09D49 /* LaunchScreen.xib */,
 				21578B691ACD29A700C09D49 /* iDraw.xcdatamodeld */,
+				21578BA61ACD643900C09D49 /* Image */,
 				21578B621ACD29A700C09D49 /* Supporting Files */,
 			);
 			path = iDraw;
@@ -327,6 +330,8 @@
 				AD1E5CAE1DDC3750008084DE /* FSCarouselView.m */,
 				ADF23B141DDDA2AC003EE458 /* FSTestCarouselView.h */,
 				ADF23B151DDDA2AC003EE458 /* FSTestCarouselView.m */,
+				AD4286971DE309BB0052E3FE /* FSScrollView.h */,
+				AD4286981DE309BB0052E3FE /* FSScrollView.m */,
 			);
 			path = "仿Safari控件";
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				21578BD61ACF7E8800C09D49 /* Canvas+IFS.m in Sources */,
 				ADF23B161DDDA2AC003EE458 /* FSTestCarouselView.m in Sources */,
 				21578BCB1ACD7C6600C09D49 /* Canvas.m in Sources */,
+				AD4286991DE309BB0052E3FE /* FSScrollView.m in Sources */,
 				219D431E1AF771FC00D4561C /* myVC.m in Sources */,
 				21578BCA1ACD7C6600C09D49 /* Canvas+Spiral.m in Sources */,
 				21578B6B1ACD29A700C09D49 /* iDraw.xcdatamodeld in Sources */,

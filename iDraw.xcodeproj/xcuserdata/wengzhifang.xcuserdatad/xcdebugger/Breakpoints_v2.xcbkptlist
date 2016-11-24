@@ -84,12 +84,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSCarouselView.m"
-            timestampString = "501406169.235085"
+            timestampString = "501676939.944008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "-loadUnloadViews"
+            startingLineNumber = "389"
+            endingLineNumber = "389"
+            landmarkName = "-step"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSCarouselView.m"
+            timestampString = "501676939.944008"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
+            landmarkName = "-step"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSCarouselView.m"
+            timestampString = "501676939.944008"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "560"
+            endingLineNumber = "560"
+            landmarkName = "-didPan:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSCarouselView.m"
+            timestampString = "501676939.944008"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "607"
+            endingLineNumber = "607"
+            landmarkName = "-shouldDecelerate"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -15,6 +15,7 @@
 
 #import "FSTestCloseSwitchView.h"
 #import "FSTestCarouselView.h"
+#import "FSScrollView.h"
 
 @interface LOGOViewController ()
 {
@@ -67,55 +68,66 @@
 //    [self.navigationController pushViewController:vc animated:NO];
 
     
-//    UberStartViewController *vc = [UberStartViewController new];
-//    [self presentViewController:vc animated:NO completion:NULL];
     
 //    TableViewController *vc = [TableViewController new];
 //    [self presentViewController:vc animated:YES completion:NULL];
-    
- 
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self testScrollView];
+}
+- (void)testUberStartViewController
+{
+    // 仿Uber开启启动页面
+    UberStartViewController *vc = [UberStartViewController new];
+    [self presentViewController:vc animated:NO completion:NULL];
+}
 - (void)testCloseSwitchView
 {
+    // 仿系统通知开关
     FSTestCloseSwitchView *closeSwitchView = [[FSTestCloseSwitchView alloc] init];
     [closeSwitchView configureView];
     [[UIApplication sharedApplication].keyWindow addSubview:closeSwitchView];
 }
 - (void)testCarouselView
 {
+    // 仿Safari
     FSTestCarouselView *view= [[FSTestCarouselView alloc] init];
     view.backgroundColor = [UIColor whiteColor];
     [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
-
-- (void)viewDidAppear:(BOOL)animated
+- (void)testScrollView
 {
-    [self testCarouselView];
+    // 仿系统ScrollView
+    FSScrollView *view= [[FSScrollView alloc] init];
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
+}
+- (void)testGradientView
+{
+    // 渐变view学习
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 120, 100)];
+    view.backgroundColor = [UIColor redColor];
+    CAGradientLayer *gradientLayer1 = [CAGradientLayer layer];
+    gradientLayer1.colors = [NSArray arrayWithObjects:(id)[UIColor redColor].CGColor,
+                             (id)[UIColor blueColor].CGColor, nil];
+    gradientLayer1.locations = @[@0, @1];
+    gradientLayer1.startPoint = CGPointMake(0, 0);
+    gradientLayer1.endPoint = CGPointMake(1, 1);
     
-//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 120, 100)];
-//    view.backgroundColor = [UIColor redColor];
-//    CAGradientLayer *gradientLayer1 = [CAGradientLayer layer];
-//    gradientLayer1.colors = [NSArray arrayWithObjects:(id)[UIColor redColor].CGColor,
-//                             (id)[UIColor blueColor].CGColor, nil];
-//    gradientLayer1.locations = @[@0, @1];
-//    gradientLayer1.startPoint = CGPointMake(0, 0);
-//    gradientLayer1.endPoint = CGPointMake(1, 1);
-//    
-//    [view.layer addSublayer:gradientLayer1];
-//
-//    [self.view addSubview:view];
+    [view.layer addSublayer:gradientLayer1];
     
-//    [self tianmaoAnimation];
+    [self.view addSubview:view];
 }
 
-- (void)tianmaoAnimation
+- (void)testTianmaoAnimation
 {
+    // 仿天猫刷新动画
+    
     // 绘制路径
     DRAWINVIEW(self.view);
     
@@ -138,7 +150,7 @@
     FD(73.5);
     [turtle circleArcWithRadius:10 angle:90];
     
-    //
+    // 添加动画图层
     {
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         
@@ -187,16 +199,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - table view delegate
 

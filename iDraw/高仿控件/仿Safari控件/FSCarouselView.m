@@ -30,6 +30,8 @@
     NSMutableArray *itemViewsArr;   // 所有显示的页面
     NSInteger numberOfItems;
     
+    NSTimer *steptimer;
+    
     CADisplayLink *displayLink;
     
     NSInteger previousIndex;
@@ -53,6 +55,7 @@
     
     BOOL stopAtItemBoundary;
     BOOL scrollToItemBoundary;
+    
     
 }
 
@@ -92,13 +95,11 @@
     tapGesture.delegate = (id<UIGestureRecognizerDelegate>)self;
     [contentView addGestureRecognizer:tapGesture];
     
-    
     // 重新加载数据
     if (_dataSource){
         [self reloadData];
     }
 }
-
 
 - (void)setScrollOffset:(CGFloat)scrollOffset
 {
@@ -184,8 +185,16 @@
         numberOfItems = 0;
     }
     
+    // 移除当前所有页面
+    for (UIView *view in contentView.subviews){
+        [view removeFromSuperview];
+    }
+    
+    [self loadUnloadViews];
+    [self transformItemViews];
+    
     // offset 移动到零位置
-    [self scrollByOffset:0 duration:SCROLL_DURATION];
+//    [self scrollByOffset:0 duration:SCROLL_DURATION];
 }
 
 - (void)removeItemAtIndex:(NSInteger)index
@@ -217,7 +226,7 @@
     CGFloat offsety = width * offset - width;
     CGFloat angle = -M_PI/8;
     
-    NSLog(@"%f",offsety);
+//    NSLog("%f",offsety);
     
     transform = CATransform3DTranslate(transform, 0, offsety, -160);
     transform = CATransform3DRotate(transform, angle, 1, 0, 0);
@@ -268,6 +277,8 @@
         }
     }
     if (flag) {
+        
+        
         [self depthSortViews];
         
         [self transformItemViews];
@@ -322,10 +333,15 @@
 }
 - (void)startAnimation
 {
-    if (!displayLink) {
-        displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
-        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    if (!steptimer) {
+        steptimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(step) userInfo:nil repeats:YES];
+        [steptimer fire];
     }
+    
+//    if (!displayLink) {
+//        displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
+//        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+//    }
 }
 - (void)stopAnimation
 {
@@ -355,12 +371,19 @@
 }
 - (void)step
 {
+    static int count = 0;
+    ++count;
+    if (count%10 == 0) {
+
+        printf("step %d\n", count/10);
+    }
     [self pushAnimationState:NO];
     
     NSTimeInterval currentTime = CACurrentMediaTime();
     lastTime = currentTime;
 
     NSTimeInterval time = fminf(scrollDuration, currentTime-startTime);
+    
     if (_scrolling) {
         CGFloat increment = [self easyInOut:time/scrollDuration];
         _scrollOffset = startOffset + (endOffset - startOffset)*increment;
@@ -391,11 +414,14 @@
             [self popAnimationState];
             
         }
+    }else{
+        // 检查scrollViewoffset 是否超过边界 【0,numberofitems-1】
         
     }
 }
 - (void)didScroll
 {
+    printf("%f\n",_scrollOffset);
     CGFloat min = -bounceDistance;
     CGFloat max = fmaxf(numberOfItems - 1, 0.0f) + bounceDistance;
     if (_scrollOffset < min)
@@ -483,11 +509,11 @@
 }
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gesture
 {
-    if ([gesture isKindOfClass:[UIPanGestureRecognizer class]]){
-        UIPanGestureRecognizer *panGesture = (UIPanGestureRecognizer *)gesture;
-        CGPoint translation = [panGesture translationInView:self];
-        return fabs(translation.x) <= fabs(translation.y);
-    }
+//    if ([gesture isKindOfClass:[UIPanGestureRecognizer class]]){
+//        UIPanGestureRecognizer *panGesture = (UIPanGestureRecognizer *)gesture;
+//        CGPoint translation = [panGesture translationInView:self];
+//        return fabs(translation.x) <= fabs(translation.y);
+//    }
     
     return YES;
 }
@@ -518,12 +544,15 @@
                 previousTranslation = [panGesture translationInView:contentView].y;
                 
                 // 调用代理 willBeginDragging
+                printf("%d",previousTranslation);
                 
                 break;
             }
                 
             case UIGestureRecognizerStateEnded:
             case UIGestureRecognizerStateCancelled:{
+                
+                
                 _dragging = NO;
                 _didDrag = YES;
                 if ([self shouldDecelerate]) {
@@ -536,6 +565,8 @@
                 if (!_decelerating) {
                     
                 }
+                
+                
                 
                 break;
             }
@@ -571,13 +602,18 @@
 
 - (BOOL)shouldDecelerate
 {
-    return (fabs(startVelocity) > SCROLL_SPEED_THRESHOLD) && (fabs([self decelerationDistance]) > DECELERATE_THRESHOLD);
+    CGFloat decelerationDis = fabs([self decelerationDistance]);
+    
+    return (fabs(startVelocity) > SCROLL_SPEED_THRESHOLD) && (decelerationDis > DECELERATE_THRESHOLD);
 }
 - (BOOL)shouldScroll
 {
     return (fabs(startVelocity) > SCROLL_SPEED_THRESHOLD) &&
            (fabs(_scrollOffset - self.currentItemIndex) > SCROLL_DISTANCE_THRESHOLD);
 }
+
+
+
 
 @end
 

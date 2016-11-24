@@ -7,7 +7,7 @@
 //
 
 #import "FSTestCarouselView.h"
-
+#import "FSScrollView.h"
 
 @implementation FSTestCarouselView
 
@@ -17,11 +17,24 @@
     
     self.frame = ScreenBounds;
     self.backgroundColor = [UIColor lightGrayColor];
-    [self  configureView];
     
+    
+    FSScrollView *view = [[FSScrollView alloc] init];
+    [self addSubview:view];
+    
+//    [self  configureView];
+    
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(test)];
+//    [self addGestureRecognizer:tap];
+//    
     return self;
 }
 
+- (void)test
+{
+    CGFloat curtime = CACurrentMediaTime();
+    NSLog(@"%f",curtime);
+}
 - (void)configureView
 {
     // 添加closeView
@@ -38,7 +51,7 @@
 // item数量
 - (NSInteger)numberOfItemsInCarouselView:(FSCarouselView *)carouselView
 {
-    return 5;
+    return 12;
 }
 
 // item视图
@@ -47,7 +60,7 @@
     UIImageView *view = [[UIImageView alloc] initWithFrame:ScreenBounds];
     
     
-    view.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)index]];
+    view.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)index%8]];
     
     return view;
 }
