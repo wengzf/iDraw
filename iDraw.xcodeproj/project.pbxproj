@@ -37,10 +37,6 @@
 		AD1E5CA01DDC11AB008084DE /* UberStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1E5C981DDC11AB008084DE /* UberStartViewController.xib */; };
 		AD1E5CA11DDC11AB008084DE /* FSCloseSwithView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1E5C9C1DDC11AB008084DE /* FSCloseSwithView.m */; };
 		AD1E5CA21DDC11AB008084DE /* FSTestCloseSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1E5C9E1DDC11AB008084DE /* FSTestCloseSwitchView.m */; };
-		AD1E5CA81DDC1222008084DE /* FSScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1E5CA51DDC1222008084DE /* FSScanQRCodeViewController.m */; };
-		AD1E5CA91DDC1222008084DE /* FSScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1E5CA61DDC1222008084DE /* FSScanQRCodeViewController.xib */; };
-		AD1E5CAA1DDC1222008084DE /* weixinScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD1E5CA71DDC1222008084DE /* weixinScan.mp3 */; };
-		AD1E5CAC1DDC1249008084DE /* sao.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1E5CAB1DDC1249008084DE /* sao.png */; };
 		AD1E5CAF1DDC3750008084DE /* FSCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1E5CAE1DDC3750008084DE /* FSCarouselView.m */; };
 		AD4286991DE309BB0052E3FE /* FSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4286981DE309BB0052E3FE /* FSScrollView.m */; };
 		ADA1200A1DCC615700264B37 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA120081DCC615700264B37 /* TableViewController.m */; };
@@ -49,7 +45,14 @@
 		ADA120101DCC619100264B37 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA1200E1DCC619100264B37 /* TableViewCell.xib */; };
 		ADB7C6E81CC49097000D9FE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */; };
 		ADB7C6EA1CC4909E000D9FE1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */; };
+		ADEACE7C1DF7F47000BC66F2 /* FSScrollView+AnimationParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEACE7B1DF7F47000BC66F2 /* FSScrollView+AnimationParameter.m */; };
 		ADEF4A951DC2F1DA00B86B61 /* CanvasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEF4A941DC2F1DA00B86B61 /* CanvasModel.m */; };
+		ADF00AE91DF90ACB00FAD800 /* FSScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF00AE51DF90ACB00FAD800 /* FSScanQRCodeViewController.m */; };
+		ADF00AEA1DF90ACB00FAD800 /* FSScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF00AE61DF90ACB00FAD800 /* FSScanQRCodeViewController.xib */; };
+		ADF00AEB1DF90ACB00FAD800 /* sao.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF00AE71DF90ACB00FAD800 /* sao.png */; };
+		ADF00AEC1DF90ACB00FAD800 /* weixinScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADF00AE81DF90ACB00FAD800 /* weixinScan.mp3 */; };
+		ADF00AF01DF90CF200FAD800 /* AnimationCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF00AEE1DF90CF200FAD800 /* AnimationCurveViewController.m */; };
+		ADF00AF11DF90CF200FAD800 /* AnimationCurveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF00AEF1DF90CF200FAD800 /* AnimationCurveViewController.xib */; };
 		ADF23B161DDDA2AC003EE458 /* FSTestCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF23B151DDDA2AC003EE458 /* FSTestCarouselView.m */; };
 		ADF29ECC1DD5CF7B00E103E4 /* closeSwitchBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF29ECB1DD5CF7B00E103E4 /* closeSwitchBackground.png */; };
 		ADFEB9781DDEF16C00F39C23 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9701DDEF16C00F39C23 /* 0.jpg */; };
@@ -120,11 +123,6 @@
 		AD1E5C9C1DDC11AB008084DE /* FSCloseSwithView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCloseSwithView.m; sourceTree = "<group>"; };
 		AD1E5C9D1DDC11AB008084DE /* FSTestCloseSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestCloseSwitchView.h; sourceTree = "<group>"; };
 		AD1E5C9E1DDC11AB008084DE /* FSTestCloseSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestCloseSwitchView.m; sourceTree = "<group>"; };
-		AD1E5CA41DDC1222008084DE /* FSScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScanQRCodeViewController.h; sourceTree = "<group>"; };
-		AD1E5CA51DDC1222008084DE /* FSScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSScanQRCodeViewController.m; sourceTree = "<group>"; };
-		AD1E5CA61DDC1222008084DE /* FSScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSScanQRCodeViewController.xib; sourceTree = "<group>"; };
-		AD1E5CA71DDC1222008084DE /* weixinScan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = weixinScan.mp3; sourceTree = "<group>"; };
-		AD1E5CAB1DDC1249008084DE /* sao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sao.png; sourceTree = "<group>"; };
 		AD1E5CAD1DDC3750008084DE /* FSCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCarouselView.h; sourceTree = "<group>"; };
 		AD1E5CAE1DDC3750008084DE /* FSCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCarouselView.m; sourceTree = "<group>"; };
 		AD4286971DE309BB0052E3FE /* FSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScrollView.h; sourceTree = "<group>"; };
@@ -137,8 +135,18 @@
 		ADA1200E1DCC619100264B37 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ADB7C6E91CC4909E000D9FE1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ADEACE7A1DF7F47000BC66F2 /* FSScrollView+AnimationParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSScrollView+AnimationParameter.h"; sourceTree = "<group>"; };
+		ADEACE7B1DF7F47000BC66F2 /* FSScrollView+AnimationParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSScrollView+AnimationParameter.m"; sourceTree = "<group>"; };
 		ADEF4A931DC2F1DA00B86B61 /* CanvasModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasModel.h; sourceTree = "<group>"; };
 		ADEF4A941DC2F1DA00B86B61 /* CanvasModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasModel.m; sourceTree = "<group>"; };
+		ADF00AE41DF90ACB00FAD800 /* FSScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScanQRCodeViewController.h; sourceTree = "<group>"; };
+		ADF00AE51DF90ACB00FAD800 /* FSScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSScanQRCodeViewController.m; sourceTree = "<group>"; };
+		ADF00AE61DF90ACB00FAD800 /* FSScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSScanQRCodeViewController.xib; sourceTree = "<group>"; };
+		ADF00AE71DF90ACB00FAD800 /* sao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sao.png; sourceTree = "<group>"; };
+		ADF00AE81DF90ACB00FAD800 /* weixinScan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = weixinScan.mp3; sourceTree = "<group>"; };
+		ADF00AED1DF90CF200FAD800 /* AnimationCurveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationCurveViewController.h; sourceTree = "<group>"; };
+		ADF00AEE1DF90CF200FAD800 /* AnimationCurveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationCurveViewController.m; sourceTree = "<group>"; };
+		ADF00AEF1DF90CF200FAD800 /* AnimationCurveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimationCurveViewController.xib; sourceTree = "<group>"; };
 		ADF23B141DDDA2AC003EE458 /* FSTestCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestCarouselView.h; sourceTree = "<group>"; };
 		ADF23B151DDDA2AC003EE458 /* FSTestCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestCarouselView.m; sourceTree = "<group>"; };
 		ADF29ECB1DD5CF7B00E103E4 /* closeSwitchBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = closeSwitchBackground.png; path = ../closeSwitchBackground.png; sourceTree = "<group>"; };
@@ -195,8 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				217076381B40E47200D72AD3 /* Thinking.h */,
-				21578BBC1ACD7C6600C09D49 /* Canvas 海龟画布 */,
-				AD1E5C941DDC11AB008084DE /* 高仿控件 */,
+				21578BBC1ACD7C6600C09D49 /* Canvas 画布 */,
+				AD1E5C941DDC11AB008084DE /* Imitation */,
 				21578B951ACD2C2000C09D49 /* iDraw */,
 				21578B661ACD29A700C09D49 /* AppDelegate.h */,
 				21578B671ACD29A700C09D49 /* AppDelegate.m */,
@@ -279,7 +287,7 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		21578BBC1ACD7C6600C09D49 /* Canvas 海龟画布 */ = {
+		21578BBC1ACD7C6600C09D49 /* Canvas 画布 */ = {
 			isa = PBXGroup;
 			children = (
 				ADEF4A931DC2F1DA00B86B61 /* CanvasModel.h */,
@@ -298,28 +306,31 @@
 				21578BC31ACD7C6600C09D49 /* Canvas.h */,
 				21578BC41ACD7C6600C09D49 /* Canvas.m */,
 			);
-			name = "Canvas 海龟画布";
+			name = "Canvas 画布";
 			path = Image/TurtleAndCanvas;
 			sourceTree = "<group>";
 		};
-		AD1E5C941DDC11AB008084DE /* 高仿控件 */ = {
+		AD1E5C941DDC11AB008084DE /* Imitation */ = {
 			isa = PBXGroup;
 			children = (
-				AD1E5CA31DDC1213008084DE /* 支付宝扫一扫 */,
-				AD1E5C951DDC11AB008084DE /* UBER启动页动画 */,
 				AD1E5C991DDC11AB008084DE /* 仿Safari控件 */,
+				ADF00AE31DF90ACB00FAD800 /* ScanQRCode【扫一扫】 */,
+				ADF00AD81DF90A6500FAD800 /* AnimationCurve【动画曲线】 */,
+				AD1E5C951DDC11AB008084DE /* GuideAnimation【优步启动页动画】 */,
 				AD1E5C9A1DDC11AB008084DE /* 系统关闭按钮 */,
 			);
+			name = Imitation;
 			path = "高仿控件";
 			sourceTree = "<group>";
 		};
-		AD1E5C951DDC11AB008084DE /* UBER启动页动画 */ = {
+		AD1E5C951DDC11AB008084DE /* GuideAnimation【优步启动页动画】 */ = {
 			isa = PBXGroup;
 			children = (
 				AD1E5C961DDC11AB008084DE /* UberStartViewController.h */,
 				AD1E5C971DDC11AB008084DE /* UberStartViewController.m */,
 				AD1E5C981DDC11AB008084DE /* UberStartViewController.xib */,
 			);
+			name = "GuideAnimation【优步启动页动画】";
 			path = "UBER启动页动画";
 			sourceTree = "<group>";
 		};
@@ -332,6 +343,8 @@
 				ADF23B151DDDA2AC003EE458 /* FSTestCarouselView.m */,
 				AD4286971DE309BB0052E3FE /* FSScrollView.h */,
 				AD4286981DE309BB0052E3FE /* FSScrollView.m */,
+				ADEACE7A1DF7F47000BC66F2 /* FSScrollView+AnimationParameter.h */,
+				ADEACE7B1DF7F47000BC66F2 /* FSScrollView+AnimationParameter.m */,
 			);
 			path = "仿Safari控件";
 			sourceTree = "<group>";
@@ -347,18 +360,6 @@
 			path = "系统关闭按钮";
 			sourceTree = "<group>";
 		};
-		AD1E5CA31DDC1213008084DE /* 支付宝扫一扫 */ = {
-			isa = PBXGroup;
-			children = (
-				AD1E5CAB1DDC1249008084DE /* sao.png */,
-				AD1E5CA71DDC1222008084DE /* weixinScan.mp3 */,
-				AD1E5CA41DDC1222008084DE /* FSScanQRCodeViewController.h */,
-				AD1E5CA51DDC1222008084DE /* FSScanQRCodeViewController.m */,
-				AD1E5CA61DDC1222008084DE /* FSScanQRCodeViewController.xib */,
-			);
-			path = "支付宝扫一扫";
-			sourceTree = "<group>";
-		};
 		ADB7C6EB1CC490AD000D9FE1 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +367,28 @@
 				ADB7C6E71CC49097000D9FE1 /* CoreGraphics.framework */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		ADF00AD81DF90A6500FAD800 /* AnimationCurve【动画曲线】 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF00AED1DF90CF200FAD800 /* AnimationCurveViewController.h */,
+				ADF00AEE1DF90CF200FAD800 /* AnimationCurveViewController.m */,
+				ADF00AEF1DF90CF200FAD800 /* AnimationCurveViewController.xib */,
+			);
+			path = "AnimationCurve【动画曲线】";
+			sourceTree = "<group>";
+		};
+		ADF00AE31DF90ACB00FAD800 /* ScanQRCode【扫一扫】 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF00AE41DF90ACB00FAD800 /* FSScanQRCodeViewController.h */,
+				ADF00AE51DF90ACB00FAD800 /* FSScanQRCodeViewController.m */,
+				ADF00AE61DF90ACB00FAD800 /* FSScanQRCodeViewController.xib */,
+				ADF00AE71DF90ACB00FAD800 /* sao.png */,
+				ADF00AE81DF90ACB00FAD800 /* weixinScan.mp3 */,
+			);
+			path = "ScanQRCode【扫一扫】";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,22 +479,23 @@
 				ADA120101DCC619100264B37 /* TableViewCell.xib in Resources */,
 				AD1E5CA01DDC11AB008084DE /* UberStartViewController.xib in Resources */,
 				21578BA91ACD6DBD00C09D49 /* fractal.png in Resources */,
+				ADF00AEA1DF90ACB00FAD800 /* FSScanQRCodeViewController.xib in Resources */,
 				21578BAA1ACD6DBD00C09D49 /* pen.png in Resources */,
 				ADFEB97A1DDEF16C00F39C23 /* 2.jpg in Resources */,
+				ADF00AEB1DF90ACB00FAD800 /* sao.png in Resources */,
 				ADFEB97C1DDEF16C00F39C23 /* 4.jpg in Resources */,
 				ADFEB9791DDEF16C00F39C23 /* 1.jpg in Resources */,
 				21578B761ACD29A700C09D49 /* LaunchScreen.xib in Resources */,
 				ADFEB97F1DDEF16C00F39C23 /* 7.jpg in Resources */,
 				ADFEB9781DDEF16C00F39C23 /* 0.jpg in Resources */,
+				ADF00AF11DF90CF200FAD800 /* AnimationCurveViewController.xib in Resources */,
 				ADFEB97B1DDEF16C00F39C23 /* 3.jpg in Resources */,
 				21578BA41ACD2C3A00C09D49 /* LOGOViewController.xib in Resources */,
 				21578B9D1ACD2C2000C09D49 /* FractalViewController.xib in Resources */,
 				ADA1200B1DCC615700264B37 /* TableViewController.xib in Resources */,
-				AD1E5CAC1DDC1249008084DE /* sao.png in Resources */,
-				AD1E5CA91DDC1222008084DE /* FSScanQRCodeViewController.xib in Resources */,
 				21578B731ACD29A700C09D49 /* Images.xcassets in Resources */,
 				ADF29ECC1DD5CF7B00E103E4 /* closeSwitchBackground.png in Resources */,
-				AD1E5CAA1DDC1222008084DE /* weixinScan.mp3 in Resources */,
+				ADF00AEC1DF90ACB00FAD800 /* weixinScan.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +518,7 @@
 				ADF23B161DDDA2AC003EE458 /* FSTestCarouselView.m in Sources */,
 				21578BCB1ACD7C6600C09D49 /* Canvas.m in Sources */,
 				AD4286991DE309BB0052E3FE /* FSScrollView.m in Sources */,
+				ADF00AF01DF90CF200FAD800 /* AnimationCurveViewController.m in Sources */,
 				219D431E1AF771FC00D4561C /* myVC.m in Sources */,
 				21578BCA1ACD7C6600C09D49 /* Canvas+Spiral.m in Sources */,
 				21578B6B1ACD29A700C09D49 /* iDraw.xcdatamodeld in Sources */,
@@ -512,11 +537,12 @@
 				AD1E5C9F1DDC11AB008084DE /* UberStartViewController.m in Sources */,
 				21578BCE1ACD835A00C09D49 /* Turtle.m in Sources */,
 				21578BC91ACD7C6600C09D49 /* Canvas+SierpinskiTriangle.m in Sources */,
+				ADF00AE91DF90ACB00FAD800 /* FSScanQRCodeViewController.m in Sources */,
 				AD1E5CAF1DDC3750008084DE /* FSCarouselView.m in Sources */,
-				AD1E5CA81DDC1222008084DE /* FSScanQRCodeViewController.m in Sources */,
 				ADA1200A1DCC615700264B37 /* TableViewController.m in Sources */,
 				21578B651ACD29A700C09D49 /* main.m in Sources */,
 				AD1E5CA11DDC11AB008084DE /* FSCloseSwithView.m in Sources */,
+				ADEACE7C1DF7F47000BC66F2 /* FSScrollView+AnimationParameter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

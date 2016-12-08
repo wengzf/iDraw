@@ -26,7 +26,6 @@
     //
     UIView *tmpView;
     Turtle *turtle;
-    
 }
 
 @end
@@ -71,6 +70,16 @@
     
 //    TableViewController *vc = [TableViewController new];
 //    [self presentViewController:vc animated:YES completion:NULL];
+    
+    self.count = 0;
+
+}
+
+- (void)calculate
+{
+    for (int i=0; i<1000000; ++i) {
+        ++self.count;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -81,6 +90,7 @@
 {
     [self testScrollView];
 }
+
 - (void)testUberStartViewController
 {
     // 仿Uber开启启动页面

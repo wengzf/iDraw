@@ -17,4 +17,11 @@
 
 
 
+@property (atomic, assign) NSInteger count;
+
+@property (atomic, strong) NSMutableString *name;
+
+//@property (nonatomic, assign) NSInteger count;
+
+
 @end

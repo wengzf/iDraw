@@ -17,8 +17,7 @@
 #define DECELERATE_THRESHOLD 0.1f
 #define SCROLL_SPEED_THRESHOLD 2.0f
 #define SCROLL_DISTANCE_THRESHOLD 0.1f
-#define DECELERATION_MULTIPLIER 30.0f
-
+#define DECELERATION_MULTIPLIER 20.0f
 
 
 @interface FSScrollView()
@@ -52,8 +51,9 @@
     CGFloat contentHeight;
     
     CGFloat decelerationRate;
+    
+    CGFloat bounceParameter[50];
 }
-
 
 @end
 
@@ -64,7 +64,11 @@
 {
     decelerationRate = 0.95;
     bounceDistance = 300;
-    contentHeight = 20*90;
+    int number = 100;
+    contentHeight = number*90;
+    
+    // bounce 动画参数
+
     
     // 添加容器视图
     contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, contentHeight)];
@@ -77,11 +81,11 @@
     [self addGestureRecognizer:panGesture];
     
     // 添加20个页面
-    for (int i=0; i<20; ++i) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, i*90, 375, 80)];
+    for (int i=0; i<number; ++i) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, i*90, 375, 74)];
         label.backgroundColor = [UIColor lightGrayColor];
-        label.textColor = [UIColor blackColor];
-        label.text = [NSString stringWithFormat:@"%d",i];
+        label.textColor = [UIColor colorWithWhite:0.3 alpha:1];
+        label.text = [NSString stringWithFormat:@"    %d",i];
         label.font = [UIFont systemFontOfSize:30];
         
         [contentView addSubview:label];
@@ -102,18 +106,7 @@
     return fminf(0, fmax(offset, contentHeight));
 }
 
-- (CGFloat)decelerationDistance
-{
-    CGFloat acceleration = -startVelocity * DECELERATION_MULTIPLIER * (1.0 - decelerationRate);
-    return startVelocity*startVelocity / (2*acceleration);
-}
 
-- (BOOL)shouldDecelerate
-{
-    CGFloat decelerationDis = fabs([self decelerationDistance]);
-    
-    return (fabs(startVelocity) > SCROLL_SPEED_THRESHOLD) && (decelerationDis > DECELERATE_THRESHOLD);
-}
 
 - (void)disableApp
 {
@@ -141,6 +134,9 @@
     }
     else
     {
+        decelerating = NO;
+        scrolling = NO;
+        
         scrollOffset = offset;
         [self layoutToScrollOffset];
     }
@@ -182,11 +178,11 @@
         // 开始减速
         // 计算每一帧的scrollOffset
         CGFloat time = fminf(scrollDuration, CACurrentMediaTime()-startTime);
-        CGFloat acceleration = startVelocity * (1 - decelerationRate);
+        CGFloat acceleration = -startVelocity * DECELERATION_MULTIPLIER * (1 - decelerationRate);
         // 当前加速度
         CGFloat offset = startVelocity*time + 0.5*acceleration*time*time;
         
-        scrollOffset += offset;
+        scrollOffset = startOffset - offset;
         
         [self layoutToScrollOffset];
         
@@ -220,7 +216,6 @@
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:{
             
-            
             dragging = NO;
             didDrag = YES;
             if ([self shouldDecelerate]) {
@@ -238,11 +233,24 @@
         
             scrollOffset -= translation;
             
+            NSLog(@"%lf %lf",scrollOffset,startVelocity);
+            
             [self layoutToScrollOffset];
         }
     }
 }
+- (CGFloat)decelerationDistance
+{
+    CGFloat acceleration = -startVelocity * DECELERATION_MULTIPLIER * (1.0 - decelerationRate);
+    return startVelocity*startVelocity / (2*acceleration);
+}
 
+- (BOOL)shouldDecelerate
+{
+    CGFloat decelerationDis = fabs([self decelerationDistance]);
+    
+    return (fabs(startVelocity) > SCROLL_SPEED_THRESHOLD) && (decelerationDis > DECELERATE_THRESHOLD);
+}
 - (void)startDecelerating
 {
     CGFloat distance = [self decelerationDistance];
@@ -278,6 +286,8 @@
     frame.origin.y = -scrollOffset;
     contentView.frame = frame;
 }
+
+
 
 
 
