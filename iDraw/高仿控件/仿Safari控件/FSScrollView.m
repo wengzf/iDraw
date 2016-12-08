@@ -20,6 +20,25 @@
 #define DECELERATION_MULTIPLIER 20.0f
 
 
+// bounce 动画参数
+
+CGFloat bounceParameters[38] = {1.000000, 0.972881, 0.928814, 0.869492, 0.803390,
+    0.732203, 0.661017, 0.594915, 0.528814, 0.464407,
+    0.408475, 0.362712, 0.318644, 0.279661, 0.242373,
+    0.211864, 0.184746, 0.161017, 0.140678, 0.122034,
+    0.103390, 0.088136, 0.074576, 0.066102, 0.057627,
+    0.050847, 0.044068, 0.037288, 0.032203, 0.027119,
+    0.022034, 0.016949, 0.013559, 0.010169, 0.006780,
+    0.003390, 0.001695, 0.000000};
+
+CGFloat decelerateBounceParameters[6] = {1.000000,
+    0.564644,
+    0.287599,
+    0.118734,
+    0.023747,
+    0.000000};
+
+
 @interface FSScrollView()
 {
     BOOL didDrag;
@@ -27,6 +46,9 @@
     BOOL dragging;
     BOOL scrolling;
     BOOL decelerating;
+    
+    BOOL deceleratingBounceFlag;            // 减速过程中碰到回弹
+    
     
     UIView *contentView;
     
@@ -51,8 +73,6 @@
     CGFloat contentHeight;
     
     CGFloat decelerationRate;
-    
-    CGFloat bounceParameter[50];
 }
 
 @end
@@ -66,9 +86,6 @@
     bounceDistance = 300;
     int number = 100;
     contentHeight = number*90;
-    
-    // bounce 动画参数
-
     
     // 添加容器视图
     contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, contentHeight)];
@@ -105,7 +122,6 @@
 {
     return fminf(0, fmax(offset, contentHeight));
 }
-
 
 
 - (void)disableApp
@@ -147,6 +163,40 @@
     // 关于（0.5，0.5）中心对称
     return (time<0.5)? 4*time*time*time : 1-4*(1-time)*(1-time)*(1-time);
 }
+- (CGFloat)calculateBounceParameter:(CGFloat)time
+{
+//    CGFloat decelerateBounceParameter[6];
+    CGFloat res = 0;
+    CGFloat delta = 1/37.0;
+    int count = (int)(time / delta);
+    
+    if (count < 37) {
+        // 线性插值
+        res = bounceParameters[count] + (bounceParameters[count+1]-bounceParameters[count])*(time-count*delta)/delta;
+    }else{
+        res = bounceParameters[count];
+    }
+    if (res <0 || res>1) {
+        NSLog(@"异常");
+    }
+    
+    return res;
+}
+- (CGFloat)calculateDecelerateBounceParameter:(CGFloat)time
+{
+    CGFloat res = 0;
+    CGFloat delta = 1/5.0;
+    int count = (int)(time / delta);
+    
+    if (count < 5) {
+        // 线性插值
+        res = decelerateBounceParameters[count] + (decelerateBounceParameters[count+1]-decelerateBounceParameters[count])*(time-count)/delta;
+    }else{
+        res = bounceParameters[count];
+    }
+    
+    return res;
+}
 
 - (void)startAnimation
 {
@@ -160,42 +210,75 @@
     if (scrolling){
         CGFloat time = fminf(scrollDuration, CACurrentMediaTime()-startTime);
         
-        CGFloat increment = [self easyInOut:time/scrollDuration];
-        scrollOffset = startOffset + (endOffset - startOffset)*increment;
+        scrollOffset = startOffset + (endOffset - startOffset)*(1-[self calculateBounceParameter:time/scrollDuration]) ;
         
         if (time >= scrollDuration){
             scrolling = NO;
-//            [self pushAnimationState:YES];
             
             [self layoutToScrollOffset];
-            
-            // 添加结束动画代理
             
             [self enableApp];
         }
         
     }else if (decelerating){
         // 开始减速
-        // 计算每一帧的scrollOffset
-        CGFloat time = fminf(scrollDuration, CACurrentMediaTime()-startTime);
-        CGFloat acceleration = -startVelocity * DECELERATION_MULTIPLIER * (1 - decelerationRate);
-        // 当前加速度
-        CGFloat offset = startVelocity*time + 0.5*acceleration*time*time;
+//        // 计算每一帧的scrollOffset
+//        CGFloat time = fminf(scrollDuration, CACurrentMediaTime()-startTime);
+//        CGFloat acceleration = -startVelocity * DECELERATION_MULTIPLIER * (1 - decelerationRate);
+//        // 当前加速度
+//        CGFloat offset = startVelocity*time + 0.5*acceleration*time*time;
+//        
+//        scrollOffset = startOffset - offset;
+
         
-        scrollOffset = startOffset - offset;
+        NSTimeInterval curTime = CACurrentMediaTime();
+        CGFloat time = fminf(scrollDuration, curTime-startTime);
+ 
+        CGFloat proportion = (1-[self calculateBounceParameter:time/scrollDuration]);
+        scrollOffset = startOffset + (endOffset - startOffset)*proportion;
+        
+        
+        printf("%lf %lf    Duration:%lf   ScrollOffset: %lf    比例:%lf\n",startOffset,endOffset,time, scrollOffset,proportion);
+        
+        // 判断是否越界
+        CGFloat upperBound = contentHeight - ScreenHeight;
+        if (!deceleratingBounceFlag && (scrollOffset<0 || scrollOffset>upperBound) )
+        {
+            deceleratingBounceFlag = YES;
+            
+            NSLog(@"碰到边界");
+
+            // 耗费时间计算
+            CGFloat costTime = CACurrentMediaTime()-startTime;
+            scrollDuration = costTime+(scrollDuration-costTime)*0.5;
+            
+            // 最终里程计算       控制到范围内部 ViewHeight
+            if (endOffset<0) {
+                
+                if (-endOffset*0.1> ScreenHeight) {
+                    endOffset = -ScreenHeight/2;
+                }else{
+                    endOffset = -endOffset*0.2;
+                }
+                
+            }else if (endOffset>upperBound) {
+                endOffset = upperBound + (endOffset-upperBound)*0.2;
+            }
+        }
         
         [self layoutToScrollOffset];
         
         // 判断当前时间是否已经结束
         if (time >= scrollDuration) {
             decelerating = NO;
-            
-            // bounce 回弹
-            if (scrollOffset - [self clampOffset:scrollOffset] != 0){
-                // 进入滑动状态
-                [self scrollToOffset:[self clampOffset:scrollOffset]
-                            duration:SCROLL_DURATION];
-            }
+            deceleratingBounceFlag = NO;
+//
+//            // bounce 回弹
+//            if ((scrollOffset<0 || scrollOffset>upperBound)){
+//                
+//                [self scrollToOffset:[self clampOffset:scrollOffset]
+//                            duration:SCROLL_DURATION];
+//            }
         }
     }
 }
@@ -233,7 +316,7 @@
         
             scrollOffset -= translation;
             
-            NSLog(@"%lf %lf",scrollOffset,startVelocity);
+            printf("ScrollOffset:%lf  StartVelocity:%lf\n",scrollOffset,startVelocity);
             
             [self layoutToScrollOffset];
         }
@@ -268,19 +351,6 @@
 
 - (void)layoutToScrollOffset
 {
-    CGFloat min = -bounceDistance;
-    CGFloat max = contentHeight + bounceDistance - ScreenHeight;
-    if (scrollOffset < min)
-    {
-        scrollOffset = min;
-        startVelocity = 0.0f;
-    }
-    else if (scrollOffset > max)
-    {
-        scrollOffset = max;
-        startVelocity = 0.0f;
-    }
-    
     // 调整contentView的frame
     CGRect frame = contentView.frame;
     frame.origin.y = -scrollOffset;

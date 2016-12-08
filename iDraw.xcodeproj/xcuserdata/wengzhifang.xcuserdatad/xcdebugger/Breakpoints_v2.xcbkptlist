@@ -148,11 +148,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSScrollView.m"
-            timestampString = "502793767.761963"
+            timestampString = "502890186.898925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-step"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSScrollView.m"
+            timestampString = "502891446.239027"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "-step"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSScrollView.m"
+            timestampString = "502891637.729686"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "-step"
             landmarkType = "7">
          </BreakpointContent>
