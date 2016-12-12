@@ -11,7 +11,7 @@
 @interface UIImageView (FSWebCache)
 
 
-- (void)fs_setImageURLStr:(NSString *)url placeHolderImage:()
+- (void)fs_setImageURLStr:(NSString *)url placeHolderImage:(UIImage *)placeholder;
 
 
 

@@ -65,6 +65,9 @@
 		ADFEB97D1DDEF16C00F39C23 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9751DDEF16C00F39C23 /* 5.jpg */; };
 		ADFEB97E1DDEF16C00F39C23 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9761DDEF16C00F39C23 /* 6.jpg */; };
 		ADFEB97F1DDEF16C00F39C23 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADFEB9771DDEF16C00F39C23 /* 7.jpg */; };
+		B32900321DFAAD860037A207 /* FSWebImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B32900311DFAAD860037A207 /* FSWebImageCache.m */; };
+		B32900381DFAC23A0037A207 /* UIImage+FSForceDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = B32900371DFAC23A0037A207 /* UIImage+FSForceDecode.m */; };
+		B329003B1DFAD2EB0037A207 /* FSWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B329003A1DFAD2EB0037A207 /* FSWebImageManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +167,12 @@
 		ADFEB9751DDEF16C00F39C23 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		ADFEB9761DDEF16C00F39C23 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
 		ADFEB9771DDEF16C00F39C23 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		B32900301DFAAD860037A207 /* FSWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWebImageCache.h; sourceTree = "<group>"; };
+		B32900311DFAAD860037A207 /* FSWebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSWebImageCache.m; sourceTree = "<group>"; };
+		B32900361DFAC23A0037A207 /* UIImage+FSForceDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSForceDecode.h"; sourceTree = "<group>"; };
+		B32900371DFAC23A0037A207 /* UIImage+FSForceDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSForceDecode.m"; sourceTree = "<group>"; };
+		B32900391DFAD2EB0037A207 /* FSWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWebImageManager.h; sourceTree = "<group>"; };
+		B329003A1DFAD2EB0037A207 /* FSWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSWebImageManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +329,12 @@
 		AD07AC5D1DFA4C0E005F2A78 /* FSFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				B32900301DFAAD860037A207 /* FSWebImageCache.h */,
+				B32900311DFAAD860037A207 /* FSWebImageCache.m */,
+				B32900391DFAD2EB0037A207 /* FSWebImageManager.h */,
+				B329003A1DFAD2EB0037A207 /* FSWebImageManager.m */,
+				B32900361DFAC23A0037A207 /* UIImage+FSForceDecode.h */,
+				B32900371DFAC23A0037A207 /* UIImage+FSForceDecode.m */,
 				AD07AC5E1DFA4C32005F2A78 /* FSWebImage.h */,
 				AD07AC5F1DFA4C32005F2A78 /* FSWebImage.m */,
 				AD07AC611DFAA5DB005F2A78 /* UIImageView+FSWebCache.h */,
@@ -537,11 +552,13 @@
 				21578BCB1ACD7C6600C09D49 /* Canvas.m in Sources */,
 				AD07AC601DFA4C32005F2A78 /* FSWebImage.m in Sources */,
 				AD07AC631DFAA5DB005F2A78 /* UIImageView+FSWebCache.m in Sources */,
+				B329003B1DFAD2EB0037A207 /* FSWebImageManager.m in Sources */,
 				AD4286991DE309BB0052E3FE /* FSScrollView.m in Sources */,
 				ADF00AF01DF90CF200FAD800 /* AnimationCurveViewController.m in Sources */,
 				219D431E1AF771FC00D4561C /* myVC.m in Sources */,
 				21578BCA1ACD7C6600C09D49 /* Canvas+Spiral.m in Sources */,
 				21578B6B1ACD29A700C09D49 /* iDraw.xcdatamodeld in Sources */,
+				B32900321DFAAD860037A207 /* FSWebImageCache.m in Sources */,
 				AD1E5CA21DDC11AB008084DE /* FSTestCloseSwitchView.m in Sources */,
 				21578B681ACD29A700C09D49 /* AppDelegate.m in Sources */,
 				21578BC71ACD7C6600C09D49 /* Canvas+KochSnow.m in Sources */,
@@ -553,6 +570,7 @@
 				21578BD31ACE60C900C09D49 /* Canvas+Mandelbrot.m in Sources */,
 				21578BA31ACD2C3A00C09D49 /* LOGOViewController.m in Sources */,
 				21578BC51ACD7C6600C09D49 /* Canvas+AboresentLung.m in Sources */,
+				B32900381DFAC23A0037A207 /* UIImage+FSForceDecode.m in Sources */,
 				ADEF4A951DC2F1DA00B86B61 /* CanvasModel.m in Sources */,
 				AD1E5C9F1DDC11AB008084DE /* UberStartViewController.m in Sources */,
 				21578BCE1ACD835A00C09D49 /* Turtle.m in Sources */,

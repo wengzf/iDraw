@@ -8,9 +8,22 @@
 
 #import "UIImageView+FSWebCache.h"
 
-#import "FSWebImage.h"
+#import "FSWebImageManager.h"
+
 
 
 @implementation UIImageView (FSWebCache)
+
+
+
+- (void)fs_setImageURLStr:(NSString *)url placeHolderImage:(UIImage *)placeholder
+{
+    //
+    self.image = placeholder;
+    
+    
+    
+    
+}
 
 @end
