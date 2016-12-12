@@ -65,6 +65,8 @@
 		ADF1C0B01DFE8247002D5594 /* weixinScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0A01DFE8247002D5594 /* weixinScan.mp3 */; };
 		ADF1C0B11DFE8247002D5594 /* UberStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0A31DFE8247002D5594 /* UberStartViewController.m */; };
 		ADF1C0B21DFE8247002D5594 /* UberStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0A41DFE8247002D5594 /* UberStartViewController.xib */; };
+		ADF1C0B91DFEBA42002D5594 /* LMSTaskpoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0B61DFEBA42002D5594 /* LMSTaskpoolTableViewCell.xib */; };
+		ADF1C0BA1DFEBA42002D5594 /* LMSTaskpoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0B71DFEBA42002D5594 /* LMSTaskpoolTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +157,9 @@
 		ADF1C0A21DFE8247002D5594 /* UberStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberStartViewController.h; sourceTree = "<group>"; };
 		ADF1C0A31DFE8247002D5594 /* UberStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberStartViewController.m; sourceTree = "<group>"; };
 		ADF1C0A41DFE8247002D5594 /* UberStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UberStartViewController.xib; sourceTree = "<group>"; };
+		ADF1C0B61DFEBA42002D5594 /* LMSTaskpoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LMSTaskpoolTableViewCell.xib; sourceTree = "<group>"; };
+		ADF1C0B71DFEBA42002D5594 /* LMSTaskpoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMSTaskpoolTableViewCell.m; sourceTree = "<group>"; };
+		ADF1C0B81DFEBA42002D5594 /* LMSTaskpoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMSTaskpoolTableViewCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +192,9 @@
 		ADF1BFC01DFE5B7A002D5594 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
+				ADF1C0B81DFEBA42002D5594 /* LMSTaskpoolTableViewCell.h */,
+				ADF1C0B71DFEBA42002D5594 /* LMSTaskpoolTableViewCell.m */,
+				ADF1C0B61DFEBA42002D5594 /* LMSTaskpoolTableViewCell.xib */,
 				ADF1C0881DFE8247002D5594 /* Effect【效果】 */,
 				ADF1BFE31DFE5BD6002D5594 /* iDraw【业务逻辑】 */,
 				ADF1BFD81DFE5BD6002D5594 /* FSFoundation【FS基本库】 */,
@@ -473,6 +481,7 @@
 				ADF1C0481DFE5BD6002D5594 /* TableViewCell.xib in Resources */,
 				ADF1C0A61DFE8247002D5594 /* AnimationCurveViewController.xib in Resources */,
 				ADF1C04C1DFE5BD6002D5594 /* 1.jpg in Resources */,
+				ADF1C0B91DFEBA42002D5594 /* LMSTaskpoolTableViewCell.xib in Resources */,
 				ADF1C0661DFE5BD6002D5594 /* LaunchScreen.xib in Resources */,
 				ADF1C0461DFE5BD6002D5594 /* LOGOViewController.xib in Resources */,
 				ADF1C04F1DFE5BD6002D5594 /* 4.jpg in Resources */,
@@ -502,6 +511,7 @@
 				ADF1C0421DFE5BD6002D5594 /* Turtle.m in Sources */,
 				ADF1C0371DFE5BD6002D5594 /* Canvas+AboresentLung.m in Sources */,
 				ADF1C0A81DFE8247002D5594 /* FSScrollView+AnimationParameter.m in Sources */,
+				ADF1C0BA1DFEBA42002D5594 /* LMSTaskpoolTableViewCell.m in Sources */,
 				ADF1C0671DFE5BD6002D5594 /* main.m in Sources */,
 				ADF1C0361DFE5BD6002D5594 /* AppDelegate.m in Sources */,
 				ADF1C0451DFE5BD6002D5594 /* LOGOViewController.m in Sources */,

@@ -11,9 +11,7 @@
 #import "FSWebImageManager.h"
 
 
-
 @implementation UIImageView (FSWebCache)
-
 
 
 - (void)fs_setImageURLStr:(NSString *)url placeHolderImage:(UIImage *)placeholder
