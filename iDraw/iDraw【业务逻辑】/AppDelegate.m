@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "myVC.h"
 
 
 @interface AppDelegate ()

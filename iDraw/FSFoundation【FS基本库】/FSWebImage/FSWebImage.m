@@ -12,7 +12,6 @@
 
 
 
-@property (nonatomic, strong) NSString *str;
 
 
 @end
