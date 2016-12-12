@@ -10,4 +10,8 @@
 
 @interface FSWebImage : NSObject
 
+
+@property (nonatomic, strong) NSString *str;
+
+
 @end

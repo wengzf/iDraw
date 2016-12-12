@@ -13,4 +13,11 @@
 
 @implementation UIImageView (FSWebCache)
 
+
+- (void)fs_setImageURLStr:(NSString *)url placeHolderImage:(UIImage *)img
+{
+    
+}
+
+
 @end
