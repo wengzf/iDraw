@@ -60,6 +60,9 @@
 		ADF1C0661DFE5BD6002D5594 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C02F1DFE5BD6002D5594 /* LaunchScreen.xib */; };
 		ADF1C0671DFE5BD6002D5594 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0301DFE5BD6002D5594 /* main.m */; };
 		ADF1C06A1DFE788B002D5594 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0691DFE788B002D5594 /* Info.plist */; };
+		ADF1C07B1DFE7A3A002D5594 /* FSWebImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0761DFE7A3A002D5594 /* FSWebImageCache.m */; };
+		ADF1C07C1DFE7A3A002D5594 /* FSWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0781DFE7A3A002D5594 /* FSWebImageManager.m */; };
+		ADF1C07D1DFE7A3A002D5594 /* UIImage+FSForceDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C07A1DFE7A3A002D5594 /* UIImage+FSForceDecode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +143,12 @@
 		ADF1C0321DFE5BD6002D5594 /* Thinking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thinking.h; sourceTree = "<group>"; };
 		ADF1C0681DFE7828002D5594 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		ADF1C0691DFE788B002D5594 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADF1C0751DFE7A3A002D5594 /* FSWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWebImageCache.h; sourceTree = "<group>"; };
+		ADF1C0761DFE7A3A002D5594 /* FSWebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSWebImageCache.m; sourceTree = "<group>"; };
+		ADF1C0771DFE7A3A002D5594 /* FSWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWebImageManager.h; sourceTree = "<group>"; };
+		ADF1C0781DFE7A3A002D5594 /* FSWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSWebImageManager.m; sourceTree = "<group>"; };
+		ADF1C0791DFE7A3A002D5594 /* UIImage+FSForceDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSForceDecode.h"; sourceTree = "<group>"; };
+		ADF1C07A1DFE7A3A002D5594 /* UIImage+FSForceDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSForceDecode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +215,12 @@
 		ADF1BFDC1DFE5BD6002D5594 /* FSWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				ADF1C0751DFE7A3A002D5594 /* FSWebImageCache.h */,
+				ADF1C0761DFE7A3A002D5594 /* FSWebImageCache.m */,
+				ADF1C0771DFE7A3A002D5594 /* FSWebImageManager.h */,
+				ADF1C0781DFE7A3A002D5594 /* FSWebImageManager.m */,
+				ADF1C0791DFE7A3A002D5594 /* UIImage+FSForceDecode.h */,
+				ADF1C07A1DFE7A3A002D5594 /* UIImage+FSForceDecode.m */,
 				ADF1BFDD1DFE5BD6002D5594 /* FSWebImage.h */,
 				ADF1BFDE1DFE5BD6002D5594 /* FSWebImage.m */,
 				ADF1BFDF1DFE5BD6002D5594 /* UIImageView+FSWebCache.h */,
@@ -467,6 +482,7 @@
 				ADF1C0431DFE5BD6002D5594 /* FractalViewController.m in Sources */,
 				ADF1C03C1DFE5BD6002D5594 /* Canvas+Path.m in Sources */,
 				ADF1C0401DFE5BD6002D5594 /* Canvas.m in Sources */,
+				ADF1C07C1DFE7A3A002D5594 /* FSWebImageManager.m in Sources */,
 				ADF1C0491DFE5BD6002D5594 /* TableViewController.m in Sources */,
 				ADF1C05B1DFE5BD6002D5594 /* FSScrollView.m in Sources */,
 				ADF1C0381DFE5BD6002D5594 /* Canvas+BinaryTree.m in Sources */,
@@ -478,6 +494,7 @@
 				ADF1C0361DFE5BD6002D5594 /* AppDelegate.m in Sources */,
 				ADF1C0451DFE5BD6002D5594 /* LOGOViewController.m in Sources */,
 				ADF1C03E1DFE5BD6002D5594 /* Canvas+SierpinskiTriangle.m in Sources */,
+				ADF1C07B1DFE7A3A002D5594 /* FSWebImageCache.m in Sources */,
 				ADF1C03B1DFE5BD6002D5594 /* Canvas+Mandelbrot.m in Sources */,
 				ADF1C0391DFE5BD6002D5594 /* Canvas+IFS.m in Sources */,
 				ADF1C0471DFE5BD6002D5594 /* TableViewCell.m in Sources */,
@@ -490,6 +507,7 @@
 				ADF1C05D1DFE5BD6002D5594 /* FSCloseSwithView.m in Sources */,
 				ADF1C05E1DFE5BD6002D5594 /* FSTestCloseSwitchView.m in Sources */,
 				ADF1C05C1DFE5BD6002D5594 /* FSTestCarouselView.m in Sources */,
+				ADF1C07D1DFE7A3A002D5594 /* UIImage+FSForceDecode.m in Sources */,
 				ADF1C03F1DFE5BD6002D5594 /* Canvas+Spiral.m in Sources */,
 				ADF1C0411DFE5BD6002D5594 /* CanvasModel.m in Sources */,
 				ADF1C03A1DFE5BD6002D5594 /* Canvas+KochSnow.m in Sources */,
