@@ -11,7 +11,6 @@
 
 @interface FSWebImageCache()
 {
-    
 }
 @property (nonatomic, strong) NSMutableDictionary *cacheDic;
 
@@ -43,6 +42,12 @@
 {
     @synchronized (self) {
         [self.cacheDic setObject:img forKey:key];
+        
+        NSString *path = [self pathWithKey:key];
+        
+        // 存储图片到硬盘中
+        NSData *imageData = UIImagePNGRepresentation(img);
+        [imageData writeToFile:path atomically:YES];
     }
     return YES;
     

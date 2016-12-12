@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
+
+
+
+
+
 @interface FSWebImage : NSObject
-
-
-@property (nonatomic, strong) NSString *str;
 
 
 @end

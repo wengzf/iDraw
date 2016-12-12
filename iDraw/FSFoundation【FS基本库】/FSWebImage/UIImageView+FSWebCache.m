@@ -18,12 +18,12 @@
 
 - (void)fs_setImageURLStr:(NSString *)url placeHolderImage:(UIImage *)placeholder
 {
-    //
     self.image = placeholder;
-    
-    
-    
-    
+ 
+    [[FSWebImageManager sharedWebImageManager] loadImageWithURL:url completedBlock:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+        
+        self.image = image;
+    }];
 }
 
 @end

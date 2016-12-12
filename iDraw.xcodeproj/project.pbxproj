@@ -43,26 +43,28 @@
 		ADF1C0541DFE5BD6002D5594 /* fractal.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C00D1DFE5BD6002D5594 /* fractal.png */; };
 		ADF1C0551DFE5BD6002D5594 /* pen.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C00E1DFE5BD6002D5594 /* pen.png */; };
 		ADF1C0561DFE5BD6002D5594 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C00F1DFE5BD6002D5594 /* Images.xcassets */; };
-		ADF1C0571DFE5BD6002D5594 /* AnimationCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0131DFE5BD6002D5594 /* AnimationCurveViewController.m */; };
-		ADF1C0581DFE5BD6002D5594 /* AnimationCurveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0141DFE5BD6002D5594 /* AnimationCurveViewController.xib */; };
-		ADF1C0591DFE5BD6002D5594 /* FSCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0171DFE5BD6002D5594 /* FSCarouselView.m */; };
-		ADF1C05A1DFE5BD6002D5594 /* FSScrollView+AnimationParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0191DFE5BD6002D5594 /* FSScrollView+AnimationParameter.m */; };
-		ADF1C05B1DFE5BD6002D5594 /* FSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C01B1DFE5BD6002D5594 /* FSScrollView.m */; };
-		ADF1C05C1DFE5BD6002D5594 /* FSTestCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C01D1DFE5BD6002D5594 /* FSTestCarouselView.m */; };
-		ADF1C05D1DFE5BD6002D5594 /* FSCloseSwithView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0201DFE5BD6002D5594 /* FSCloseSwithView.m */; };
-		ADF1C05E1DFE5BD6002D5594 /* FSTestCloseSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0221DFE5BD6002D5594 /* FSTestCloseSwitchView.m */; };
-		ADF1C05F1DFE5BD6002D5594 /* FSScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0251DFE5BD6002D5594 /* FSScanQRCodeViewController.m */; };
-		ADF1C0601DFE5BD6002D5594 /* FSScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0261DFE5BD6002D5594 /* FSScanQRCodeViewController.xib */; };
-		ADF1C0611DFE5BD6002D5594 /* sao.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0271DFE5BD6002D5594 /* sao.png */; };
-		ADF1C0621DFE5BD6002D5594 /* weixinScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0281DFE5BD6002D5594 /* weixinScan.mp3 */; };
-		ADF1C0631DFE5BD6002D5594 /* UberStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C02B1DFE5BD6002D5594 /* UberStartViewController.m */; };
-		ADF1C0641DFE5BD6002D5594 /* UberStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C02C1DFE5BD6002D5594 /* UberStartViewController.xib */; };
 		ADF1C0661DFE5BD6002D5594 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C02F1DFE5BD6002D5594 /* LaunchScreen.xib */; };
 		ADF1C0671DFE5BD6002D5594 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0301DFE5BD6002D5594 /* main.m */; };
 		ADF1C06A1DFE788B002D5594 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0691DFE788B002D5594 /* Info.plist */; };
 		ADF1C07B1DFE7A3A002D5594 /* FSWebImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0761DFE7A3A002D5594 /* FSWebImageCache.m */; };
 		ADF1C07C1DFE7A3A002D5594 /* FSWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0781DFE7A3A002D5594 /* FSWebImageManager.m */; };
 		ADF1C07D1DFE7A3A002D5594 /* UIImage+FSForceDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C07A1DFE7A3A002D5594 /* UIImage+FSForceDecode.m */; };
+		ADF1C0831DFE7BA3002D5594 /* FSNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0801DFE7BA3002D5594 /* FSNavigationRouter.m */; };
+		ADF1C0841DFE7BA3002D5594 /* NSObject+FSKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0821DFE7BA3002D5594 /* NSObject+FSKeyValue.m */; };
+		ADF1C0A51DFE8247002D5594 /* AnimationCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C08B1DFE8247002D5594 /* AnimationCurveViewController.m */; };
+		ADF1C0A61DFE8247002D5594 /* AnimationCurveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C08C1DFE8247002D5594 /* AnimationCurveViewController.xib */; };
+		ADF1C0A71DFE8247002D5594 /* FSCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C08F1DFE8247002D5594 /* FSCarouselView.m */; };
+		ADF1C0A81DFE8247002D5594 /* FSScrollView+AnimationParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0911DFE8247002D5594 /* FSScrollView+AnimationParameter.m */; };
+		ADF1C0A91DFE8247002D5594 /* FSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0931DFE8247002D5594 /* FSScrollView.m */; };
+		ADF1C0AA1DFE8247002D5594 /* FSTestCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0951DFE8247002D5594 /* FSTestCarouselView.m */; };
+		ADF1C0AB1DFE8247002D5594 /* FSCloseSwithView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0981DFE8247002D5594 /* FSCloseSwithView.m */; };
+		ADF1C0AC1DFE8247002D5594 /* FSTestCloseSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C09A1DFE8247002D5594 /* FSTestCloseSwitchView.m */; };
+		ADF1C0AD1DFE8247002D5594 /* FSScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C09D1DFE8247002D5594 /* FSScanQRCodeViewController.m */; };
+		ADF1C0AE1DFE8247002D5594 /* FSScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C09E1DFE8247002D5594 /* FSScanQRCodeViewController.xib */; };
+		ADF1C0AF1DFE8247002D5594 /* sao.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C09F1DFE8247002D5594 /* sao.png */; };
+		ADF1C0B01DFE8247002D5594 /* weixinScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0A01DFE8247002D5594 /* weixinScan.mp3 */; };
+		ADF1C0B11DFE8247002D5594 /* UberStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0A31DFE8247002D5594 /* UberStartViewController.m */; };
+		ADF1C0B21DFE8247002D5594 /* UberStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF1C0A41DFE8247002D5594 /* UberStartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,29 +117,6 @@
 		ADF1C00D1DFE5BD6002D5594 /* fractal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fractal.png; sourceTree = "<group>"; };
 		ADF1C00E1DFE5BD6002D5594 /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
 		ADF1C00F1DFE5BD6002D5594 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		ADF1C0121DFE5BD6002D5594 /* AnimationCurveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationCurveViewController.h; sourceTree = "<group>"; };
-		ADF1C0131DFE5BD6002D5594 /* AnimationCurveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationCurveViewController.m; sourceTree = "<group>"; };
-		ADF1C0141DFE5BD6002D5594 /* AnimationCurveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimationCurveViewController.xib; sourceTree = "<group>"; };
-		ADF1C0161DFE5BD6002D5594 /* FSCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCarouselView.h; sourceTree = "<group>"; };
-		ADF1C0171DFE5BD6002D5594 /* FSCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCarouselView.m; sourceTree = "<group>"; };
-		ADF1C0181DFE5BD6002D5594 /* FSScrollView+AnimationParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSScrollView+AnimationParameter.h"; sourceTree = "<group>"; };
-		ADF1C0191DFE5BD6002D5594 /* FSScrollView+AnimationParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSScrollView+AnimationParameter.m"; sourceTree = "<group>"; };
-		ADF1C01A1DFE5BD6002D5594 /* FSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScrollView.h; sourceTree = "<group>"; };
-		ADF1C01B1DFE5BD6002D5594 /* FSScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSScrollView.m; sourceTree = "<group>"; };
-		ADF1C01C1DFE5BD6002D5594 /* FSTestCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestCarouselView.h; sourceTree = "<group>"; };
-		ADF1C01D1DFE5BD6002D5594 /* FSTestCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestCarouselView.m; sourceTree = "<group>"; };
-		ADF1C01F1DFE5BD6002D5594 /* FSCloseSwithView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCloseSwithView.h; sourceTree = "<group>"; };
-		ADF1C0201DFE5BD6002D5594 /* FSCloseSwithView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCloseSwithView.m; sourceTree = "<group>"; };
-		ADF1C0211DFE5BD6002D5594 /* FSTestCloseSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestCloseSwitchView.h; sourceTree = "<group>"; };
-		ADF1C0221DFE5BD6002D5594 /* FSTestCloseSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestCloseSwitchView.m; sourceTree = "<group>"; };
-		ADF1C0241DFE5BD6002D5594 /* FSScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScanQRCodeViewController.h; sourceTree = "<group>"; };
-		ADF1C0251DFE5BD6002D5594 /* FSScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSScanQRCodeViewController.m; sourceTree = "<group>"; };
-		ADF1C0261DFE5BD6002D5594 /* FSScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSScanQRCodeViewController.xib; sourceTree = "<group>"; };
-		ADF1C0271DFE5BD6002D5594 /* sao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sao.png; sourceTree = "<group>"; };
-		ADF1C0281DFE5BD6002D5594 /* weixinScan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = weixinScan.mp3; sourceTree = "<group>"; };
-		ADF1C02A1DFE5BD6002D5594 /* UberStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberStartViewController.h; sourceTree = "<group>"; };
-		ADF1C02B1DFE5BD6002D5594 /* UberStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberStartViewController.m; sourceTree = "<group>"; };
-		ADF1C02C1DFE5BD6002D5594 /* UberStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UberStartViewController.xib; sourceTree = "<group>"; };
 		ADF1C02F1DFE5BD6002D5594 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		ADF1C0301DFE5BD6002D5594 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADF1C0321DFE5BD6002D5594 /* Thinking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thinking.h; sourceTree = "<group>"; };
@@ -149,6 +128,33 @@
 		ADF1C0781DFE7A3A002D5594 /* FSWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSWebImageManager.m; sourceTree = "<group>"; };
 		ADF1C0791DFE7A3A002D5594 /* UIImage+FSForceDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSForceDecode.h"; sourceTree = "<group>"; };
 		ADF1C07A1DFE7A3A002D5594 /* UIImage+FSForceDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSForceDecode.m"; sourceTree = "<group>"; };
+		ADF1C07F1DFE7BA3002D5594 /* FSNavigationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNavigationRouter.h; sourceTree = "<group>"; };
+		ADF1C0801DFE7BA3002D5594 /* FSNavigationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNavigationRouter.m; sourceTree = "<group>"; };
+		ADF1C0811DFE7BA3002D5594 /* NSObject+FSKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FSKeyValue.h"; sourceTree = "<group>"; };
+		ADF1C0821DFE7BA3002D5594 /* NSObject+FSKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FSKeyValue.m"; sourceTree = "<group>"; };
+		ADF1C08A1DFE8247002D5594 /* AnimationCurveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationCurveViewController.h; sourceTree = "<group>"; };
+		ADF1C08B1DFE8247002D5594 /* AnimationCurveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationCurveViewController.m; sourceTree = "<group>"; };
+		ADF1C08C1DFE8247002D5594 /* AnimationCurveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimationCurveViewController.xib; sourceTree = "<group>"; };
+		ADF1C08E1DFE8247002D5594 /* FSCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCarouselView.h; sourceTree = "<group>"; };
+		ADF1C08F1DFE8247002D5594 /* FSCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCarouselView.m; sourceTree = "<group>"; };
+		ADF1C0901DFE8247002D5594 /* FSScrollView+AnimationParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSScrollView+AnimationParameter.h"; sourceTree = "<group>"; };
+		ADF1C0911DFE8247002D5594 /* FSScrollView+AnimationParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSScrollView+AnimationParameter.m"; sourceTree = "<group>"; };
+		ADF1C0921DFE8247002D5594 /* FSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScrollView.h; sourceTree = "<group>"; };
+		ADF1C0931DFE8247002D5594 /* FSScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSScrollView.m; sourceTree = "<group>"; };
+		ADF1C0941DFE8247002D5594 /* FSTestCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestCarouselView.h; sourceTree = "<group>"; };
+		ADF1C0951DFE8247002D5594 /* FSTestCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestCarouselView.m; sourceTree = "<group>"; };
+		ADF1C0971DFE8247002D5594 /* FSCloseSwithView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCloseSwithView.h; sourceTree = "<group>"; };
+		ADF1C0981DFE8247002D5594 /* FSCloseSwithView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCloseSwithView.m; sourceTree = "<group>"; };
+		ADF1C0991DFE8247002D5594 /* FSTestCloseSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestCloseSwitchView.h; sourceTree = "<group>"; };
+		ADF1C09A1DFE8247002D5594 /* FSTestCloseSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTestCloseSwitchView.m; sourceTree = "<group>"; };
+		ADF1C09C1DFE8247002D5594 /* FSScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScanQRCodeViewController.h; sourceTree = "<group>"; };
+		ADF1C09D1DFE8247002D5594 /* FSScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSScanQRCodeViewController.m; sourceTree = "<group>"; };
+		ADF1C09E1DFE8247002D5594 /* FSScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSScanQRCodeViewController.xib; sourceTree = "<group>"; };
+		ADF1C09F1DFE8247002D5594 /* sao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sao.png; sourceTree = "<group>"; };
+		ADF1C0A01DFE8247002D5594 /* weixinScan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = weixinScan.mp3; sourceTree = "<group>"; };
+		ADF1C0A21DFE8247002D5594 /* UberStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberStartViewController.h; sourceTree = "<group>"; };
+		ADF1C0A31DFE8247002D5594 /* UberStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberStartViewController.m; sourceTree = "<group>"; };
+		ADF1C0A41DFE8247002D5594 /* UberStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UberStartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,13 +187,13 @@
 		ADF1BFC01DFE5B7A002D5594 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
+				ADF1C0881DFE8247002D5594 /* Effect【效果】 */,
+				ADF1BFE31DFE5BD6002D5594 /* iDraw【业务逻辑】 */,
+				ADF1BFD81DFE5BD6002D5594 /* FSFoundation【FS基本库】 */,
+				ADF1C0021DFE5BD6002D5594 /* Resource【资源】 */,
+				ADF1C02D1DFE5BD6002D5594 /* Supporting Files */,
 				ADF1C0691DFE788B002D5594 /* Info.plist */,
 				ADF1C0681DFE7828002D5594 /* PrefixHeader.pch */,
-				ADF1BFD81DFE5BD6002D5594 /* FSFoundation【FS基本库】 */,
-				ADF1BFE31DFE5BD6002D5594 /* iDraw【业务逻辑】 */,
-				ADF1C0021DFE5BD6002D5594 /* Resource【资源】 */,
-				ADF1C0101DFE5BD6002D5594 /* CustomControl【自定义控件】 */,
-				ADF1C02D1DFE5BD6002D5594 /* Supporting Files */,
 			);
 			path = iDraw;
 			sourceTree = "<group>";
@@ -195,10 +201,10 @@
 		ADF1BFD81DFE5BD6002D5594 /* FSFoundation【FS基本库】 */ = {
 			isa = PBXGroup;
 			children = (
+				ADF1BFE11DFE5BD6002D5594 /* Macro.h */,
+				ADF1C07E1DFE7BA3002D5594 /* FSNavigationRouter */,
 				ADF1BFD91DFE5BD6002D5594 /* FSJSONModel */,
 				ADF1BFDC1DFE5BD6002D5594 /* FSWebImage */,
-				ADF1BFE11DFE5BD6002D5594 /* Macro.h */,
-				ADF1BFE21DFE5BD6002D5594 /* Turtle */,
 			);
 			path = "FSFoundation【FS基本库】";
 			sourceTree = "<group>";
@@ -215,25 +221,18 @@
 		ADF1BFDC1DFE5BD6002D5594 /* FSWebImage */ = {
 			isa = PBXGroup;
 			children = (
-				ADF1C0751DFE7A3A002D5594 /* FSWebImageCache.h */,
-				ADF1C0761DFE7A3A002D5594 /* FSWebImageCache.m */,
 				ADF1C0771DFE7A3A002D5594 /* FSWebImageManager.h */,
 				ADF1C0781DFE7A3A002D5594 /* FSWebImageManager.m */,
+				ADF1C0751DFE7A3A002D5594 /* FSWebImageCache.h */,
+				ADF1C0761DFE7A3A002D5594 /* FSWebImageCache.m */,
 				ADF1C0791DFE7A3A002D5594 /* UIImage+FSForceDecode.h */,
 				ADF1C07A1DFE7A3A002D5594 /* UIImage+FSForceDecode.m */,
-				ADF1BFDD1DFE5BD6002D5594 /* FSWebImage.h */,
-				ADF1BFDE1DFE5BD6002D5594 /* FSWebImage.m */,
 				ADF1BFDF1DFE5BD6002D5594 /* UIImageView+FSWebCache.h */,
 				ADF1BFE01DFE5BD6002D5594 /* UIImageView+FSWebCache.m */,
+				ADF1BFDD1DFE5BD6002D5594 /* FSWebImage.h */,
+				ADF1BFDE1DFE5BD6002D5594 /* FSWebImage.m */,
 			);
 			path = FSWebImage;
-			sourceTree = "<group>";
-		};
-		ADF1BFE21DFE5BD6002D5594 /* Turtle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Turtle;
 			sourceTree = "<group>";
 		};
 		ADF1BFE31DFE5BD6002D5594 /* iDraw【业务逻辑】 */ = {
@@ -307,76 +306,6 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		ADF1C0101DFE5BD6002D5594 /* CustomControl【自定义控件】 */ = {
-			isa = PBXGroup;
-			children = (
-				ADF1C0111DFE5BD6002D5594 /* AnimationCurve【动画曲线】 */,
-				ADF1C0151DFE5BD6002D5594 /* FSCarouselView【仿Safari控件】 */,
-				ADF1C01E1DFE5BD6002D5594 /* FSCloseSwithView 【系统关闭按钮】 */,
-				ADF1C0231DFE5BD6002D5594 /* FSScanQRCodeViewController【扫一扫】 */,
-				ADF1C0291DFE5BD6002D5594 /* UberStartViewController【优步启动页动画】 */,
-			);
-			path = "CustomControl【自定义控件】";
-			sourceTree = "<group>";
-		};
-		ADF1C0111DFE5BD6002D5594 /* AnimationCurve【动画曲线】 */ = {
-			isa = PBXGroup;
-			children = (
-				ADF1C0121DFE5BD6002D5594 /* AnimationCurveViewController.h */,
-				ADF1C0131DFE5BD6002D5594 /* AnimationCurveViewController.m */,
-				ADF1C0141DFE5BD6002D5594 /* AnimationCurveViewController.xib */,
-			);
-			path = "AnimationCurve【动画曲线】";
-			sourceTree = "<group>";
-		};
-		ADF1C0151DFE5BD6002D5594 /* FSCarouselView【仿Safari控件】 */ = {
-			isa = PBXGroup;
-			children = (
-				ADF1C0161DFE5BD6002D5594 /* FSCarouselView.h */,
-				ADF1C0171DFE5BD6002D5594 /* FSCarouselView.m */,
-				ADF1C0181DFE5BD6002D5594 /* FSScrollView+AnimationParameter.h */,
-				ADF1C0191DFE5BD6002D5594 /* FSScrollView+AnimationParameter.m */,
-				ADF1C01A1DFE5BD6002D5594 /* FSScrollView.h */,
-				ADF1C01B1DFE5BD6002D5594 /* FSScrollView.m */,
-				ADF1C01C1DFE5BD6002D5594 /* FSTestCarouselView.h */,
-				ADF1C01D1DFE5BD6002D5594 /* FSTestCarouselView.m */,
-			);
-			path = "FSCarouselView【仿Safari控件】";
-			sourceTree = "<group>";
-		};
-		ADF1C01E1DFE5BD6002D5594 /* FSCloseSwithView 【系统关闭按钮】 */ = {
-			isa = PBXGroup;
-			children = (
-				ADF1C01F1DFE5BD6002D5594 /* FSCloseSwithView.h */,
-				ADF1C0201DFE5BD6002D5594 /* FSCloseSwithView.m */,
-				ADF1C0211DFE5BD6002D5594 /* FSTestCloseSwitchView.h */,
-				ADF1C0221DFE5BD6002D5594 /* FSTestCloseSwitchView.m */,
-			);
-			path = "FSCloseSwithView 【系统关闭按钮】";
-			sourceTree = "<group>";
-		};
-		ADF1C0231DFE5BD6002D5594 /* FSScanQRCodeViewController【扫一扫】 */ = {
-			isa = PBXGroup;
-			children = (
-				ADF1C0241DFE5BD6002D5594 /* FSScanQRCodeViewController.h */,
-				ADF1C0251DFE5BD6002D5594 /* FSScanQRCodeViewController.m */,
-				ADF1C0261DFE5BD6002D5594 /* FSScanQRCodeViewController.xib */,
-				ADF1C0271DFE5BD6002D5594 /* sao.png */,
-				ADF1C0281DFE5BD6002D5594 /* weixinScan.mp3 */,
-			);
-			path = "FSScanQRCodeViewController【扫一扫】";
-			sourceTree = "<group>";
-		};
-		ADF1C0291DFE5BD6002D5594 /* UberStartViewController【优步启动页动画】 */ = {
-			isa = PBXGroup;
-			children = (
-				ADF1C02A1DFE5BD6002D5594 /* UberStartViewController.h */,
-				ADF1C02B1DFE5BD6002D5594 /* UberStartViewController.m */,
-				ADF1C02C1DFE5BD6002D5594 /* UberStartViewController.xib */,
-			);
-			path = "UberStartViewController【优步启动页动画】";
-			sourceTree = "<group>";
-		};
 		ADF1C02D1DFE5BD6002D5594 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +314,87 @@
 				ADF1C0321DFE5BD6002D5594 /* Thinking.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADF1C07E1DFE7BA3002D5594 /* FSNavigationRouter */ = {
+			isa = PBXGroup;
+			children = (
+				ADF1C07F1DFE7BA3002D5594 /* FSNavigationRouter.h */,
+				ADF1C0801DFE7BA3002D5594 /* FSNavigationRouter.m */,
+				ADF1C0811DFE7BA3002D5594 /* NSObject+FSKeyValue.h */,
+				ADF1C0821DFE7BA3002D5594 /* NSObject+FSKeyValue.m */,
+			);
+			path = FSNavigationRouter;
+			sourceTree = "<group>";
+		};
+		ADF1C0881DFE8247002D5594 /* Effect【效果】 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF1C0891DFE8247002D5594 /* AnimationCurve【动画曲线】 */,
+				ADF1C08D1DFE8247002D5594 /* FSCarouselView【仿Safari控件】 */,
+				ADF1C0961DFE8247002D5594 /* FSCloseSwithView 【系统关闭按钮】 */,
+				ADF1C09B1DFE8247002D5594 /* FSScanQRCodeViewController【扫一扫】 */,
+				ADF1C0A11DFE8247002D5594 /* UberStartViewController【优步启动页动画】 */,
+			);
+			path = "Effect【效果】";
+			sourceTree = "<group>";
+		};
+		ADF1C0891DFE8247002D5594 /* AnimationCurve【动画曲线】 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF1C08A1DFE8247002D5594 /* AnimationCurveViewController.h */,
+				ADF1C08B1DFE8247002D5594 /* AnimationCurveViewController.m */,
+				ADF1C08C1DFE8247002D5594 /* AnimationCurveViewController.xib */,
+			);
+			path = "AnimationCurve【动画曲线】";
+			sourceTree = "<group>";
+		};
+		ADF1C08D1DFE8247002D5594 /* FSCarouselView【仿Safari控件】 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF1C08E1DFE8247002D5594 /* FSCarouselView.h */,
+				ADF1C08F1DFE8247002D5594 /* FSCarouselView.m */,
+				ADF1C0901DFE8247002D5594 /* FSScrollView+AnimationParameter.h */,
+				ADF1C0911DFE8247002D5594 /* FSScrollView+AnimationParameter.m */,
+				ADF1C0921DFE8247002D5594 /* FSScrollView.h */,
+				ADF1C0931DFE8247002D5594 /* FSScrollView.m */,
+				ADF1C0941DFE8247002D5594 /* FSTestCarouselView.h */,
+				ADF1C0951DFE8247002D5594 /* FSTestCarouselView.m */,
+			);
+			path = "FSCarouselView【仿Safari控件】";
+			sourceTree = "<group>";
+		};
+		ADF1C0961DFE8247002D5594 /* FSCloseSwithView 【系统关闭按钮】 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF1C0971DFE8247002D5594 /* FSCloseSwithView.h */,
+				ADF1C0981DFE8247002D5594 /* FSCloseSwithView.m */,
+				ADF1C0991DFE8247002D5594 /* FSTestCloseSwitchView.h */,
+				ADF1C09A1DFE8247002D5594 /* FSTestCloseSwitchView.m */,
+			);
+			path = "FSCloseSwithView 【系统关闭按钮】";
+			sourceTree = "<group>";
+		};
+		ADF1C09B1DFE8247002D5594 /* FSScanQRCodeViewController【扫一扫】 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF1C09C1DFE8247002D5594 /* FSScanQRCodeViewController.h */,
+				ADF1C09D1DFE8247002D5594 /* FSScanQRCodeViewController.m */,
+				ADF1C09E1DFE8247002D5594 /* FSScanQRCodeViewController.xib */,
+				ADF1C09F1DFE8247002D5594 /* sao.png */,
+				ADF1C0A01DFE8247002D5594 /* weixinScan.mp3 */,
+			);
+			path = "FSScanQRCodeViewController【扫一扫】";
+			sourceTree = "<group>";
+		};
+		ADF1C0A11DFE8247002D5594 /* UberStartViewController【优步启动页动画】 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF1C0A21DFE8247002D5594 /* UberStartViewController.h */,
+				ADF1C0A31DFE8247002D5594 /* UberStartViewController.m */,
+				ADF1C0A41DFE8247002D5594 /* UberStartViewController.xib */,
+			);
+			path = "UberStartViewController【优步启动页动画】";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,29 +456,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADF1C0601DFE5BD6002D5594 /* FSScanQRCodeViewController.xib in Resources */,
 				ADF1C0511DFE5BD6002D5594 /* 6.jpg in Resources */,
 				ADF1C0561DFE5BD6002D5594 /* Images.xcassets in Resources */,
 				ADF1C0441DFE5BD6002D5594 /* FractalViewController.xib in Resources */,
 				ADF1C0501DFE5BD6002D5594 /* 5.jpg in Resources */,
 				ADF1C0541DFE5BD6002D5594 /* fractal.png in Resources */,
 				ADF1C0531DFE5BD6002D5594 /* closeSwitchBackground.png in Resources */,
+				ADF1C0B21DFE8247002D5594 /* UberStartViewController.xib in Resources */,
+				ADF1C0AE1DFE8247002D5594 /* FSScanQRCodeViewController.xib in Resources */,
 				ADF1C0521DFE5BD6002D5594 /* 7.jpg in Resources */,
-				ADF1C0641DFE5BD6002D5594 /* UberStartViewController.xib in Resources */,
 				ADF1C0551DFE5BD6002D5594 /* pen.png in Resources */,
+				ADF1C0AF1DFE8247002D5594 /* sao.png in Resources */,
 				ADF1C06A1DFE788B002D5594 /* Info.plist in Resources */,
 				ADF1C04B1DFE5BD6002D5594 /* 0.jpg in Resources */,
 				ADF1C04D1DFE5BD6002D5594 /* 2.jpg in Resources */,
 				ADF1C0481DFE5BD6002D5594 /* TableViewCell.xib in Resources */,
+				ADF1C0A61DFE8247002D5594 /* AnimationCurveViewController.xib in Resources */,
 				ADF1C04C1DFE5BD6002D5594 /* 1.jpg in Resources */,
 				ADF1C0661DFE5BD6002D5594 /* LaunchScreen.xib in Resources */,
 				ADF1C0461DFE5BD6002D5594 /* LOGOViewController.xib in Resources */,
 				ADF1C04F1DFE5BD6002D5594 /* 4.jpg in Resources */,
-				ADF1C0581DFE5BD6002D5594 /* AnimationCurveViewController.xib in Resources */,
-				ADF1C0611DFE5BD6002D5594 /* sao.png in Resources */,
-				ADF1C0621DFE5BD6002D5594 /* weixinScan.mp3 in Resources */,
 				ADF1C04A1DFE5BD6002D5594 /* TableViewController.xib in Resources */,
 				ADF1C04E1DFE5BD6002D5594 /* 3.jpg in Resources */,
+				ADF1C0B01DFE8247002D5594 /* weixinScan.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,33 +490,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADF1C0431DFE5BD6002D5594 /* FractalViewController.m in Sources */,
+				ADF1C0AA1DFE8247002D5594 /* FSTestCarouselView.m in Sources */,
 				ADF1C03C1DFE5BD6002D5594 /* Canvas+Path.m in Sources */,
 				ADF1C0401DFE5BD6002D5594 /* Canvas.m in Sources */,
 				ADF1C07C1DFE7A3A002D5594 /* FSWebImageManager.m in Sources */,
 				ADF1C0491DFE5BD6002D5594 /* TableViewController.m in Sources */,
-				ADF1C05B1DFE5BD6002D5594 /* FSScrollView.m in Sources */,
+				ADF1C0841DFE7BA3002D5594 /* NSObject+FSKeyValue.m in Sources */,
+				ADF1C0AB1DFE8247002D5594 /* FSCloseSwithView.m in Sources */,
 				ADF1C0381DFE5BD6002D5594 /* Canvas+BinaryTree.m in Sources */,
-				ADF1C0591DFE5BD6002D5594 /* FSCarouselView.m in Sources */,
-				ADF1C0631DFE5BD6002D5594 /* UberStartViewController.m in Sources */,
+				ADF1C0A91DFE8247002D5594 /* FSScrollView.m in Sources */,
 				ADF1C0421DFE5BD6002D5594 /* Turtle.m in Sources */,
 				ADF1C0371DFE5BD6002D5594 /* Canvas+AboresentLung.m in Sources */,
+				ADF1C0A81DFE8247002D5594 /* FSScrollView+AnimationParameter.m in Sources */,
 				ADF1C0671DFE5BD6002D5594 /* main.m in Sources */,
 				ADF1C0361DFE5BD6002D5594 /* AppDelegate.m in Sources */,
 				ADF1C0451DFE5BD6002D5594 /* LOGOViewController.m in Sources */,
 				ADF1C03E1DFE5BD6002D5594 /* Canvas+SierpinskiTriangle.m in Sources */,
 				ADF1C07B1DFE7A3A002D5594 /* FSWebImageCache.m in Sources */,
 				ADF1C03B1DFE5BD6002D5594 /* Canvas+Mandelbrot.m in Sources */,
+				ADF1C0B11DFE8247002D5594 /* UberStartViewController.m in Sources */,
+				ADF1C0A71DFE8247002D5594 /* FSCarouselView.m in Sources */,
 				ADF1C0391DFE5BD6002D5594 /* Canvas+IFS.m in Sources */,
 				ADF1C0471DFE5BD6002D5594 /* TableViewCell.m in Sources */,
 				ADF1C0331DFE5BD6002D5594 /* FSJSONModel.m in Sources */,
-				ADF1C0571DFE5BD6002D5594 /* AnimationCurveViewController.m in Sources */,
 				ADF1C0351DFE5BD6002D5594 /* UIImageView+FSWebCache.m in Sources */,
-				ADF1C05F1DFE5BD6002D5594 /* FSScanQRCodeViewController.m in Sources */,
+				ADF1C0AD1DFE8247002D5594 /* FSScanQRCodeViewController.m in Sources */,
 				ADF1C0341DFE5BD6002D5594 /* FSWebImage.m in Sources */,
-				ADF1C05A1DFE5BD6002D5594 /* FSScrollView+AnimationParameter.m in Sources */,
-				ADF1C05D1DFE5BD6002D5594 /* FSCloseSwithView.m in Sources */,
-				ADF1C05E1DFE5BD6002D5594 /* FSTestCloseSwitchView.m in Sources */,
-				ADF1C05C1DFE5BD6002D5594 /* FSTestCarouselView.m in Sources */,
+				ADF1C0A51DFE8247002D5594 /* AnimationCurveViewController.m in Sources */,
+				ADF1C0831DFE7BA3002D5594 /* FSNavigationRouter.m in Sources */,
+				ADF1C0AC1DFE8247002D5594 /* FSTestCloseSwitchView.m in Sources */,
 				ADF1C07D1DFE7A3A002D5594 /* UIImage+FSForceDecode.m in Sources */,
 				ADF1C03F1DFE5BD6002D5594 /* Canvas+Spiral.m in Sources */,
 				ADF1C0411DFE5BD6002D5594 /* CanvasModel.m in Sources */,
@@ -615,7 +627,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iDraw/PrefixHeader.pch";
 				INFOPLIST_FILE = iDraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iDraw;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzf.iDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -629,7 +641,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iDraw/PrefixHeader.pch";
 				INFOPLIST_FILE = iDraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iDraw;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzf.iDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

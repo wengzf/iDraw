@@ -24,7 +24,8 @@ typedef void(^FSWebImageDownloaderCompletedBlock)(UIImage *image, NSData *data, 
 
 + (FSWebImageManager *)sharedWebImageManager;
 
-- (void)loadImfgeWithURL:(NSString *)url ;
+- (void)loadImageWithURL:(NSString *)urlStr
+          completedBlock:(FSWebImageDownloaderCompletedBlock)completionBlock;
 
 
 @end
