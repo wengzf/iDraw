@@ -20,7 +20,10 @@
  
     [[FSWebImageManager sharedWebImageManager] loadImageWithURL:url completedBlock:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
         
-        self.image = image;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.image = image;            
+        });
+
     }];
 }
 

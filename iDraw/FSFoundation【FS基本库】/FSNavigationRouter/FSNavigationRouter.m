@@ -39,7 +39,7 @@
     
     [obj fs_setKeyValues:params];
     
-    [vc presentViewController:obj];
+    [vc presentViewController:obj animated:YES completion:NULL];
 }
 
 

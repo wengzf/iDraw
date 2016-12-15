@@ -1,5 +1,5 @@
 //
-//  FSJSONModel.h
+//  FSJSONSerialization.h
 //  SystemNavigation
 //
 //  Created by 翁志方 on 16/8/22.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FSJSONModel : NSObject
+@interface FSJSONSerialization : NSObject
 {
     NSMutableString *curStr;
     NSInteger curIndex;

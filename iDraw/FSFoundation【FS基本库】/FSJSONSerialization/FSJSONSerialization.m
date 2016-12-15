@@ -1,14 +1,14 @@
 //
-//  FSJSONModel.m
+//  FSJSONSerialization.m
 //  SystemNavigation
 //
 //  Created by 翁志方 on 16/8/22.
 //  Copyright © 2016年 翁志方. All rights reserved.
 //
 
-#import "FSJSONModel.h"
+#import "FSJSONSerialization.h"
 
-@implementation FSJSONModel
+@implementation FSJSONSerialization
 
 
 - (id)objectWithString:(NSString *)string

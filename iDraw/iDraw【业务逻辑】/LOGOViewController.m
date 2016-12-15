@@ -16,6 +16,7 @@
 #import "FSTestCloseSwitchView.h"
 #import "FSTestCarouselView.h"
 #import "FSScrollView.h"
+#import "UIImageView+FSWebCache.h"
 
 @interface LOGOViewController ()
 {
@@ -88,37 +89,68 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [self testScrollView];
+    
+    UIImageView *imgview = [[UIImageView alloc] initWithFrame:ScreenBounds];
+    imgview.backgroundColor = [UIColor lightGrayColor];
+    [[UIApplication sharedApplication].keyWindow addSubview:imgview];
+    
+    [imgview fs_setImageURLStr:@"http://pic69.nipic.com/file/20150614/20677594_124458962000_2.jpg" placeHolderImage:nil];
 }
 
+//
+
+
+// FSIndicator
+- (void)testFSIndicator
+{
+    
+}
+
+// ImageAnalysisViewController
+- (void)testImageAnalysisViewController
+{
+    // 
+}
+
+// Moving Arrow
+- (void)testMovingArrow
+{
+    
+}
+
+// 仿Uber开启启动页面
 - (void)testUberStartViewController
 {
-    // 仿Uber开启启动页面
     UberStartViewController *vc = [UberStartViewController new];
     [self presentViewController:vc animated:NO completion:NULL];
 }
+
+// 仿系统通知开关
 - (void)testCloseSwitchView
 {
-    // 仿系统通知开关
     FSTestCloseSwitchView *closeSwitchView = [[FSTestCloseSwitchView alloc] init];
     [closeSwitchView configureView];
     [[UIApplication sharedApplication].keyWindow addSubview:closeSwitchView];
 }
+
+// 仿Safari
 - (void)testCarouselView
 {
-    // 仿Safari
     FSTestCarouselView *view= [[FSTestCarouselView alloc] init];
     view.backgroundColor = [UIColor whiteColor];
     [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
+
+// 仿系统ScrollView
 - (void)testScrollView
 {
-    // 仿系统ScrollView
     FSScrollView *view= [[FSScrollView alloc] init];
     [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
+
+// 渐变view学习
 - (void)testGradientView
 {
-    // 渐变view学习
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 120, 100)];
     view.backgroundColor = [UIColor redColor];
     CAGradientLayer *gradientLayer1 = [CAGradientLayer layer];
@@ -133,10 +165,9 @@
     [self.view addSubview:view];
 }
 
+// 仿天猫刷新动画
 - (void)testTianmaoAnimation
 {
-    // 仿天猫刷新动画
-    
     // 绘制路径
     DRAWINVIEW(self.view);
     
