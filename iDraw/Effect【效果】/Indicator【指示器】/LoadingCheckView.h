@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+// 仿支付宝支付完成确认页面
 @interface LoadingCheckView : UIView
 {
     UIView *checkView;
