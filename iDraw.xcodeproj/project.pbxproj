@@ -86,6 +86,11 @@
 		AD1EECBD1E03BE3C001C00B0 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EECA81E03BE3C001C00B0 /* UIProgressView+AFNetworking.m */; };
 		AD1EECBE1E03BE3C001C00B0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EECAA1E03BE3C001C00B0 /* UIRefreshControl+AFNetworking.m */; };
 		AD1EECBF1E03BE3C001C00B0 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EECAC1E03BE3C001C00B0 /* UIWebView+AFNetworking.m */; };
+		AD8F67931E09197F00271848 /* FSEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67921E09197F00271848 /* FSEasing.m */; };
+		AD8F67961E093A5800271848 /* FSCharacterDiffResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67951E093A5800271848 /* FSCharacterDiffResult.m */; };
+		AD8F67991E09518500271848 /* FSCharacterLimbo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67981E09518500271848 /* FSCharacterLimbo.m */; };
+		AD8F679C1E09527900271848 /* FSMorphingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F679B1E09527900271848 /* FSMorphingLabel.m */; };
+		ADD15FD31E0A7E2B00A5200E /* FSGridLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */; };
 		ADD197BE1E0156D300FA3713 /* FSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */; };
 		ADE0DAAD1E038A160050BEB2 /* FSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE0DAAB1E038A160050BEB2 /* FSCollectionViewController.m */; };
 		ADE0DAAE1E038A160050BEB2 /* FSCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE0DAAC1E038A160050BEB2 /* FSCollectionViewController.xib */; };
@@ -324,6 +329,16 @@
 		AD1EECAA1E03BE3C001C00B0 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		AD1EECAB1E03BE3C001C00B0 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		AD1EECAC1E03BE3C001C00B0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		AD8F67911E09197F00271848 /* FSEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEasing.h; sourceTree = "<group>"; };
+		AD8F67921E09197F00271848 /* FSEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEasing.m; sourceTree = "<group>"; };
+		AD8F67941E093A5800271848 /* FSCharacterDiffResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCharacterDiffResult.h; sourceTree = "<group>"; };
+		AD8F67951E093A5800271848 /* FSCharacterDiffResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCharacterDiffResult.m; sourceTree = "<group>"; };
+		AD8F67971E09518500271848 /* FSCharacterLimbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCharacterLimbo.h; sourceTree = "<group>"; };
+		AD8F67981E09518500271848 /* FSCharacterLimbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCharacterLimbo.m; sourceTree = "<group>"; };
+		AD8F679A1E09527900271848 /* FSMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMorphingLabel.h; sourceTree = "<group>"; };
+		AD8F679B1E09527900271848 /* FSMorphingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMorphingLabel.m; sourceTree = "<group>"; };
+		ADD15FD11E0A7E2B00A5200E /* FSGridLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSGridLabel.h; sourceTree = "<group>"; };
+		ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSGridLabel.m; sourceTree = "<group>"; };
 		ADD197BC1E0156D300FA3713 /* FSJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSJSONSerialization.h; sourceTree = "<group>"; };
 		ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSJSONSerialization.m; sourceTree = "<group>"; };
 		ADE0DAAA1E038A160050BEB2 /* FSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCollectionViewController.h; sourceTree = "<group>"; };
@@ -446,7 +461,7 @@
 		ADF1C00F1DFE5BD6002D5594 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ADF1C02F1DFE5BD6002D5594 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		ADF1C0301DFE5BD6002D5594 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ADF1C0321DFE5BD6002D5594 /* Thinking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thinking.h; sourceTree = "<group>"; };
+		ADF1C0321DFE5BD6002D5594 /* Thinking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thinking.h; path = "Supporting Files/Thinking.h"; sourceTree = "<group>"; };
 		ADF1C0681DFE7828002D5594 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		ADF1C0691DFE788B002D5594 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADF1C0751DFE7A3A002D5594 /* FSWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWebImageCache.h; sourceTree = "<group>"; };
@@ -793,6 +808,23 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		AD8F67901E09192700271848 /* FSMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				ADD15FD11E0A7E2B00A5200E /* FSGridLabel.h */,
+				ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */,
+				AD8F67911E09197F00271848 /* FSEasing.h */,
+				AD8F67921E09197F00271848 /* FSEasing.m */,
+				AD8F67941E093A5800271848 /* FSCharacterDiffResult.h */,
+				AD8F67951E093A5800271848 /* FSCharacterDiffResult.m */,
+				AD8F67971E09518500271848 /* FSCharacterLimbo.h */,
+				AD8F67981E09518500271848 /* FSCharacterLimbo.m */,
+				AD8F679A1E09527900271848 /* FSMorphingLabel.h */,
+				AD8F679B1E09527900271848 /* FSMorphingLabel.m */,
+			);
+			path = FSMorphingLabel;
+			sourceTree = "<group>";
+		};
 		ADD197BB1E0156D300FA3713 /* FSJSONSerialization */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,6 +951,7 @@
 		ADF0D5F81E0274F9000C8126 /* Effect【效果】 */ = {
 			isa = PBXGroup;
 			children = (
+				AD8F67901E09192700271848 /* FSMorphingLabel */,
 				ADE0DAC31E038A910050BEB2 /* FSCloseSwithView 【通知关闭按钮】 */,
 				ADE0DAAF1E038A460050BEB2 /* FSCarouselView【仿Safari】 */,
 				ADE0DAA91E038A160050BEB2 /* FSCollectionViewController【极客快讯】 */,
@@ -1009,6 +1042,7 @@
 		ADF1BFC01DFE5B7A002D5594 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
+				ADF1C0321DFE5BD6002D5594 /* Thinking.h */,
 				ADE0DADB1E0392360050BEB2 /* Library【第三方库】 */,
 				ADF0D5F81E0274F9000C8126 /* Effect【效果】 */,
 				ADF1BFD81DFE5BD6002D5594 /* FSFoundation【FS基本库】 */,
@@ -1125,7 +1159,6 @@
 			children = (
 				ADF1C02F1DFE5BD6002D5594 /* LaunchScreen.xib */,
 				ADF1C0301DFE5BD6002D5594 /* main.m */,
-				ADF1C0321DFE5BD6002D5594 /* Thinking.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1244,6 +1277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1EEC7B1E03BE33001C00B0 /* MJRefreshConst.m in Sources */,
+				AD8F67991E09518500271848 /* FSCharacterLimbo.m in Sources */,
 				AD1EEBE71E03BE03001C00B0 /* SDImageCache.m in Sources */,
 				AD1EECBB1E03BE3C001C00B0 /* UIButton+AFNetworking.m in Sources */,
 				AD1EECB91E03BE3C001C00B0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1251,6 +1285,7 @@
 				AD1EEBEE1E03BE03001C00B0 /* UIButton+WebCache.m in Sources */,
 				ADF0D62E1E0274F9000C8126 /* UberStartViewController.m in Sources */,
 				ADF1C0431DFE5BD6002D5594 /* FractalViewController.m in Sources */,
+				AD8F679C1E09527900271848 /* FSMorphingLabel.m in Sources */,
 				AD1EEBF11E03BE03001C00B0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				ADE0DAEB1E0396740050BEB2 /* UINavigationBar+Addition.m in Sources */,
 				ADE0DADA1E0391D80050BEB2 /* UIView+Category.m in Sources */,
@@ -1311,6 +1346,7 @@
 				ADF1C0451DFE5BD6002D5594 /* LOGOViewController.m in Sources */,
 				ADF1C03E1DFE5BD6002D5594 /* Canvas+SierpinskiTriangle.m in Sources */,
 				AD1EEC831E03BE33001C00B0 /* NSString+Encrypt3DESandBase64.m in Sources */,
+				ADD15FD31E0A7E2B00A5200E /* FSGridLabel.m in Sources */,
 				AD1EEC741E03BE33001C00B0 /* MJRefreshBackGifFooter.m in Sources */,
 				ADF0D6281E0274F9000C8126 /* FSScanQRCodeViewController.m in Sources */,
 				ADF0D61E1E0274F9000C8126 /* ImageAnalysisViewController.m in Sources */,
@@ -1330,6 +1366,7 @@
 				ADE0DAD71E0391D80050BEB2 /* FSEffectLabel.m in Sources */,
 				AD1EECAE1E03BE3C001C00B0 /* AFHTTPRequestOperationManager.m in Sources */,
 				ADE0DAC91E038A910050BEB2 /* FSTestCloseSwitchView.m in Sources */,
+				AD8F67931E09197F00271848 /* FSEasing.m in Sources */,
 				AD1EEC811E03BE33001C00B0 /* ER3DESEncrypt.m in Sources */,
 				AD1EEC791E03BE33001C00B0 /* MJRefreshStateHeader.m in Sources */,
 				ADE0DAFF1E0397490050BEB2 /* NSString+NZExtended.m in Sources */,
@@ -1342,6 +1379,7 @@
 				AD1EEBF21E03BE03001C00B0 /* UIImageView+WebCache.m in Sources */,
 				AD1EECBC1E03BE3C001C00B0 /* UIImageView+AFNetworking.m in Sources */,
 				ADE0DAB91E038A460050BEB2 /* FSScrollView+AnimationParameter.m in Sources */,
+				AD8F67961E093A5800271848 /* FSCharacterDiffResult.m in Sources */,
 				ADE0DAE71E0396000050BEB2 /* UIView+ImageShot.m in Sources */,
 				ADE0DAE61E0396000050BEB2 /* UIView+Animation.m in Sources */,
 				AD1EEBF01E03BE03001C00B0 /* UIImage+MultiFormat.m in Sources */,

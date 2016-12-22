@@ -17,6 +17,7 @@
 #import "FSTestCarouselView.h"
 #import "FSScrollView.h"
 #import "UIImageView+FSWebCache.h"
+#import "FSMorphingLabel.h"
 
 @interface LOGOViewController ()
 {
@@ -95,10 +96,21 @@
     [[UIApplication sharedApplication].keyWindow addSubview:imgview];
     
     [imgview fs_setImageURLStr:@"http://pic69.nipic.com/file/20150614/20677594_124458962000_2.jpg" placeHolderImage:nil];
+    
+     // morphing Label 测试
+    [self testMorphingLabel];
 }
 
-//
 
+// morphing Label 测试
+- (void)testMorphingLabel
+{
+    FSMorphingLabel *label = [[FSMorphingLabel alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+    label.text = @"hello world!!";
+    label.textColor = [UIColor blackColor];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:label];
+}
 
 // FSIndicator
 - (void)testFSIndicator
