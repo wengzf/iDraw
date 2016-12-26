@@ -38,10 +38,6 @@
     
     [self setNeedsLayout];
     
-    if (!morphingEnabled) {
-        return;
-    }
-    
     if (![previousText isEqualToString:text]){
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayFrameTick)];
         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
@@ -70,9 +66,9 @@
     if (![previousText isEqualToString:self.text] && currentFrame<totalFrame+totalDelayFrame+5) {
         morphingProgress += 1.0 / totalFrame;
         
-//        if () {
-//            
-//        }
+        //        if () {
+        //
+        //        }
     }else{
         // 结束
     }
@@ -159,7 +155,7 @@
             break;
     }
     
-    FSCharacterLimbo *limbo;
+    FSCharacterLimbo *limbo = [FSCharacterLimbo new];
     limbo.ch = ch;
     limbo.rect = currentRect;
     limbo.alpha = currentAlpha;
@@ -169,8 +165,8 @@
     return limbo;
 }
 - (FSCharacterLimbo *)limboOfNewCharacter:(unichar) ch
-                                         index:(NSInteger) index
-                                       process:(float) progress
+                                    index:(NSInteger) index
+                                  process:(float) progress
 {
     CGRect currentRect = newRects[index];
     
@@ -189,7 +185,7 @@
         currentRect = rect;
     }
     
-    FSCharacterLimbo *limbo;
+    FSCharacterLimbo *limbo = [FSCharacterLimbo new];;
     limbo.ch = ch;
     limbo.rect = currentRect;
     limbo.alpha = morphingProgress;
@@ -234,7 +230,7 @@
         
         // 不绘制已经存在的字符
         if (NO){
-//            continue;
+            //            continue;
         }
         FSCharacterDiffResult *diffResult = diffResults[i];
         switch (diffResult.diffType) {

@@ -37,12 +37,14 @@
         for (int i=0; i<4; ++i) {
             UIView *view = [[UIView alloc] initWithFrame:frame];
             [contentScrollView addSubview:view];
+            NSString *name = [NSString stringWithFormat:@"%d-label",i+1];
+            UIImage *image = [UIImage imageNamed:name];
             
-            UIImageView *imgview = [UIImageView alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+            UIImageView *imgview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+            imgview.centerX = ScreenWidth/2 + ScreenWidth*i;
+            imgview.top = 32;
             [view addSubview:imgview];
         }
-        
-        [];
     }
     
     // 添加对应视图

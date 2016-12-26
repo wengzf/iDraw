@@ -17,7 +17,8 @@
 #import "FSTestCarouselView.h"
 #import "FSScrollView.h"
 #import "UIImageView+FSWebCache.h"
-#import "FSMorphingLabel.h"
+
+#import "TestMorphingLabelViewController.h"
 
 @interface LOGOViewController ()
 {
@@ -71,17 +72,9 @@
     
 //    TableViewController *vc = [TableViewController new];
 //    [self presentViewController:vc animated:YES completion:NULL];
-    
-    self.count = 0;
 
 }
 
-- (void)calculate
-{
-    for (int i=0; i<1000000; ++i) {
-        ++self.count;
-    }
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -89,14 +82,6 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self testScrollView];
-    
-    UIImageView *imgview = [[UIImageView alloc] initWithFrame:ScreenBounds];
-    imgview.backgroundColor = [UIColor lightGrayColor];
-    [[UIApplication sharedApplication].keyWindow addSubview:imgview];
-    
-    [imgview fs_setImageURLStr:@"http://pic69.nipic.com/file/20150614/20677594_124458962000_2.jpg" placeHolderImage:nil];
-    
      // morphing Label 测试
     [self testMorphingLabel];
 }
@@ -105,11 +90,8 @@
 // morphing Label 测试
 - (void)testMorphingLabel
 {
-    FSMorphingLabel *label = [[FSMorphingLabel alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
-    label.text = @"hello world!!";
-    label.textColor = [UIColor blackColor];
-    
-    [[UIApplication sharedApplication].keyWindow addSubview:label];
+    TestMorphingLabelViewController *vc = [TestMorphingLabelViewController new];
+    [self presentViewController:vc animated:YES completion:NULL];
 }
 
 // FSIndicator

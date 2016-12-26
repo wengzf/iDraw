@@ -35,7 +35,7 @@
                 continue;
             }
             
-            unichar rch = [rstr characterAtIndex:i];
+            unichar rch = [rstr characterAtIndex:j];
             if (lch == rch) {
                 findCharacter = YES;
                 chooseFlagArr[j] = YES;
