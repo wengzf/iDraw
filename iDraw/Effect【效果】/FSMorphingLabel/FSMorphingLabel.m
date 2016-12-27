@@ -39,8 +39,12 @@
     [self setNeedsLayout];
     
     if (![previousText isEqualToString:text]){
-        displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayFrameTick)];
-        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+        if (displayLink){
+            displayLink.paused = false;
+        }else{
+            displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayFrameTick)];
+            [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+        }
     }
 }
 
@@ -55,6 +59,9 @@
 
 - (void)displayFrameTick
 {
+    static NSInteger count = 0;
+    NSLog(@"%ld",(long)count++);
+    
     if (displayLink.duration>0 && totalFrame==0) {
         float frameRate = displayLink.duration / displayLink.frameInterval;
         totalFrame = ceil(morphingDuration / frameRate);
@@ -69,8 +76,10 @@
         //        if () {
         //
         //        }
+        [self setNeedsDisplay];
     }else{
         // 结束
+        displayLink.paused = YES;
     }
 }
 - (CGRect *)rectsOfEachCharacter:(NSString *)string withFont:(UIFont *)font

@@ -30,7 +30,7 @@ float easeOutBack(float t, float b, float c, float d)
 {
     float s = 2.70158;
     float t2 = t/d - 1.0;
-    return c * (t2*t2 * ((s+1.0)*t2+s) + 1.0 ) + b;
+    return (c * (t2*t2*((s+1.0)*t2+s) + 1.0)) + b;
 }
 
 float easeOutBounce(float t, float b, float c, float d)
