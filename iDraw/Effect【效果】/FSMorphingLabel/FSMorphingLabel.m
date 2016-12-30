@@ -10,19 +10,29 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
 
-
 //@interface FSMorphingLabel()
 //{
 //}
 //
 //@end
 
-
 @implementation FSMorphingLabel
+
+
+- (void)didMoveToSuperview
+{
+    self.effectDictionary = [NSMutableDictionary dictionary];
+    for (NSString *str in allKeysForEffect() ) {
+        NSString *selStr = [str stringByAppendingString:@"Load"];
+        SEL sel = NSSelectorFromString(selStr);
+        if ([self respondsToSelector:sel]) {
+            [self performSelector:sel withObject:nil afterDelay:0];
+        }
+    }
+}
 
 - (void)configureInit
 {
-    presentingInIB = YES;
 }
 
 - (void)setText:(NSString *)text
@@ -31,6 +41,9 @@
     super.text = text?:@"";
     
     diffResults = [FSCharacterDiffResult compareString:previousText withRightString:text];
+    
+    morphingDuration = 0.6;
+    morphingCharacterDelay = 0.026;
     
     morphingProgress = 0;
     currentFrame = 0;
@@ -44,6 +57,13 @@
         }else{
             displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayFrameTick)];
             [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+        }
+        
+        // startClosure
+        NSString *key = keyForEffectPhase(self.morphingEffect, kMorphingPhasesStart);
+        FSMorphingStartClosure closure = self.effectDictionary[key];
+        if (closure){
+            return closure();
         }
     }
 }
@@ -59,8 +79,8 @@
 
 - (void)displayFrameTick
 {
-    static NSInteger count = 0;
-    NSLog(@"%ld",(long)count++);
+//    static NSInteger count = 0;
+//    NSLog(@"%ld",(long)count++);
     
     if (displayLink.duration>0 && totalFrame==0) {
         float frameRate = displayLink.duration / displayLink.frameInterval;
@@ -73,10 +93,19 @@
     if (![previousText isEqualToString:self.text] && currentFrame<totalFrame+totalDelayFrame+5) {
         morphingProgress += 1.0 / totalFrame;
         
-        //        if () {
-        //
-        //        }
-        [self setNeedsDisplay];
+        NSString *key = keyForEffectPhase(self.morphingEffect, kMorphingPhasesSkipFrames);
+        FSMorphingSkipFramesClosure closure = self.effectDictionary[key];
+        
+        ++skipFramesCount;
+        
+        if (closure){
+            if (skipFramesCount > closure()){
+                skipFramesCount = 0;
+                [self setNeedsDisplay];
+            }
+        }else{
+            [self setNeedsDisplay];
+        }
     }else{
         // 结束
         displayLink.paused = YES;
@@ -116,7 +145,7 @@
         
         CGRect *p = offsetedCharRects+i;
         *p = charRects[i];
-        p->size.width += stringLeftOffset;
+        p->origin.x += stringLeftOffset;
     }
     
     free(charRects);
@@ -129,7 +158,7 @@
 {
     CGRect currentRect = previousRects[index];
     float oriX = currentRect.origin.x;
-    float newX = currentRect.origin.x;
+    float newX;
     
     FSCharacterDiffResult *diffResult = diffResults[index];
     float currentFontSize = self.font.pointSize;
@@ -137,29 +166,30 @@
     
     switch (diffResult.diffType) {
         case kCharacterDiffTypeSame:
-            newX = newRects[index].origin.x;
-            currentRect.origin.x = easeOutQuint(progress, oriX, newX - oriX, 1);
-            break;
-            
         case kCharacterDiffTypeMove:
+        case kCharacterDiffTypeMoveAndAdd:{
+            // 移动当前文字
             newX = newRects[index+diffResult.moveOffset].origin.x;
             currentRect.origin.x = easeOutQuint(progress, oriX, newX - oriX, 1);
             break;
-            
-        case kCharacterDiffTypeMoveAndAdd:
-            newX = newRects[index+diffResult.moveOffset].origin.x;
-            currentRect.origin.x = easeOutQuint(progress, oriX, newX - oriX, 1);
-            break;
+        }
             
         default:{
+            // 移除当前文字
+            NSString *key = keyForEffectPhase(self.morphingEffect, kMorphingPhasesDisappear);
+            FSMorphingEffectClosure closure = self.effectDictionary[key];
             
-            float fontEase = easeOutQuint(progress, 0, self.font.pointSize, 1);
-            currentFontSize = MAX(0.0001, self.font.pointSize-fontEase);
-            
-            currentAlpha = 1.0-progress;
-            CGRect rect = previousRects[index];
-            rect.origin.y += self.font.pointSize - currentFontSize;
-            currentRect = rect;
+            if (closure){
+                return closure(ch, index, progress);
+            }else{
+                float fontEase = easeOutQuint(progress, 0, self.font.pointSize, 1);
+                currentFontSize = MAX(0.0001, self.font.pointSize-fontEase);
+                
+                currentAlpha = 1.0-progress;
+                CGRect rect = previousRects[index];
+                rect.origin.y += self.font.pointSize - currentFontSize;
+                currentRect = rect;
+            }
         }
             break;
     }
@@ -182,16 +212,18 @@
     float currentFontSize = easeOutQuint(progress, 0, self.font.pointSize, 1);;
     float currentAlpha = 1.0;
     
-    if (NO) {
-        // 如果实现了效果计算
+    NSString *key = keyForEffectPhase(self.morphingEffect, kMorphingPhasesAppear);
+    FSMorphingEffectClosure closure = self.effectDictionary[key];
+    
+    if (closure){
+        return closure(ch, index, progress);
         
     }else{
-        currentFontSize = MAX(0.0001, self.font.pointSize-currentFontSize);
-        
+        currentFontSize = MAX(0.0001, easeOutQuint(progress, 0, self.font.pointSize, 1));
+    
         currentAlpha = 1.0-progress;
-        CGRect rect = previousRects[index];
-        rect.origin.y += self.font.pointSize - currentFontSize;
-        currentRect = rect;
+
+        currentRect.origin.y += self.font.pointSize - currentFontSize;
     }
     
     FSCharacterLimbo *limbo = [FSCharacterLimbo new];;
@@ -212,8 +244,12 @@
         
         float progress = 0;
         
-        if (NO) {
-            // progressClosures
+        // progressClosures
+        NSString *key = keyForEffectPhase(self.morphingEffect, kMorphingPhasesProgress);
+        FSMorphingManipulateProgressClosure closure = self.effectDictionary[key];
+        
+        if (closure){
+            progress = closure(i, morphingProgress, false);
         }else{
             progress = MIN(1.0, MAX(0, morphingProgress+morphingCharacterDelay*i));
         }
@@ -224,26 +260,29 @@
     
     // new characters
     for (int i=0; i<self.text.length; ++i) {
-        if (i>=diffResults.count) {
-            break;
-        }
+
         unichar ch = [self.text characterAtIndex:i];
         
         float progress = 0;
         
-        if (NO) {
-            // progressClosures
+        // progressClosures
+        NSString *key = keyForEffectPhase(self.morphingEffect, kMorphingPhasesProgress);
+        FSMorphingManipulateProgressClosure closure = self.effectDictionary[key];
+        
+        if (closure){
+            progress = closure(i, morphingProgress, true);
         }else{
             progress = MIN(1.0, MAX(0, morphingProgress - morphingCharacterDelay*i));
         }
         
-        // 不绘制已经存在的字符
-        if (NO){
-            //            continue;
-        }
         FSCharacterDiffResult *diffResult = diffResults[i];
+        
+        // 不绘制已经存在的字符
+        if (diffResult.skip){
+            continue;
+        }
         switch (diffResult.diffType) {
-            case kCharacterDiffTypeMove:
+            case kCharacterDiffTypeMoveAndAdd:
             case kCharacterDiffTypeReplace:
             case kCharacterDiffTypeAdd:
             case kCharacterDiffTypeDelete:
@@ -260,7 +299,25 @@
 
 - (void)drawTextInRect:(CGRect)rect
 {
-    for (FSCharacterLimbo *limbo in [self limboOfCharacter]) {
+    NSArray *limbos = [self limboOfCharacter];
+    if (self.morphingDisable || limbos.count == 0) {
+        [super drawTextInRect:rect];
+        return;
+    }
+    for (FSCharacterLimbo *limbo in limbos) {
+        
+        // drawClosure
+        NSString *key = keyForEffectPhase(self.morphingEffect, kMorphingPhasesDraw);
+        FSMorphingDrawingClosure closure = self.effectDictionary[key];
+        
+        BOOL willAvoidDefaultDrawing = NO;
+        if (closure){
+            willAvoidDefaultDrawing = closure(limbo);
+        }
+        if (willAvoidDefaultDrawing) {
+            continue;
+        }
+        
         CGRect rect = limbo.rect;
         
         // 绘制效果

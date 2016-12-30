@@ -91,6 +91,7 @@
 		AD8F67961E093A5800271848 /* FSCharacterDiffResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67951E093A5800271848 /* FSCharacterDiffResult.m */; };
 		AD8F67991E09518500271848 /* FSCharacterLimbo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67981E09518500271848 /* FSCharacterLimbo.m */; };
 		AD8F679C1E09527900271848 /* FSMorphingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F679B1E09527900271848 /* FSMorphingLabel.m */; };
+		ADA0BEC21E1676FA003AAD52 /* FSEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */; };
 		ADC8CA661E111BEF00EB377F /* TestMorphingLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8CA651E111BEF00EB377F /* TestMorphingLabelViewController.m */; };
 		ADD15FD31E0A7E2B00A5200E /* FSGridLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */; };
 		ADD197BE1E0156D300FA3713 /* FSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */; };
@@ -176,6 +177,9 @@
 		ADF1C07D1DFE7A3A002D5594 /* UIImage+FSForceDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C07A1DFE7A3A002D5594 /* UIImage+FSForceDecode.m */; };
 		ADF1C0831DFE7BA3002D5594 /* FSNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0801DFE7BA3002D5594 /* FSNavigationRouter.m */; };
 		ADF1C0841DFE7BA3002D5594 /* NSObject+FSKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1C0821DFE7BA3002D5594 /* NSObject+FSKeyValue.m */; };
+		ADF1DCFF1E14ED0900094A0A /* FSMorphingEffectPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1DCFE1E14ED0900094A0A /* FSMorphingEffectPhase.m */; };
+		ADF7CE571E15FEA50098797D /* FSMorphingLabel+Evaporate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF7CE561E15FEA50098797D /* FSMorphingLabel+Evaporate.m */; };
+		ADF7CE5A1E1638A00098797D /* FSMorphingLabel+Fall.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF7CE591E1638A00098797D /* FSMorphingLabel+Fall.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -341,6 +345,8 @@
 		AD8F67981E09518500271848 /* FSCharacterLimbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCharacterLimbo.m; sourceTree = "<group>"; };
 		AD8F679A1E09527900271848 /* FSMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMorphingLabel.h; sourceTree = "<group>"; };
 		AD8F679B1E09527900271848 /* FSMorphingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMorphingLabel.m; sourceTree = "<group>"; };
+		ADA0BEC01E1676FA003AAD52 /* FSEmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmitterView.h; sourceTree = "<group>"; };
+		ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmitterView.m; sourceTree = "<group>"; };
 		ADC8CA641E111BEF00EB377F /* TestMorphingLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMorphingLabelViewController.h; sourceTree = "<group>"; };
 		ADC8CA651E111BEF00EB377F /* TestMorphingLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMorphingLabelViewController.m; sourceTree = "<group>"; };
 		ADD15FD11E0A7E2B00A5200E /* FSGridLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSGridLabel.h; sourceTree = "<group>"; };
@@ -480,6 +486,12 @@
 		ADF1C0801DFE7BA3002D5594 /* FSNavigationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNavigationRouter.m; sourceTree = "<group>"; };
 		ADF1C0811DFE7BA3002D5594 /* NSObject+FSKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FSKeyValue.h"; sourceTree = "<group>"; };
 		ADF1C0821DFE7BA3002D5594 /* NSObject+FSKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FSKeyValue.m"; sourceTree = "<group>"; };
+		ADF1DCFD1E14EBA400094A0A /* FSMorphingEffectPhase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSMorphingEffectPhase.h; sourceTree = "<group>"; };
+		ADF1DCFE1E14ED0900094A0A /* FSMorphingEffectPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMorphingEffectPhase.m; sourceTree = "<group>"; };
+		ADF7CE551E15FEA50098797D /* FSMorphingLabel+Evaporate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSMorphingLabel+Evaporate.h"; sourceTree = "<group>"; };
+		ADF7CE561E15FEA50098797D /* FSMorphingLabel+Evaporate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Evaporate.m"; sourceTree = "<group>"; };
+		ADF7CE581E1638A00098797D /* FSMorphingLabel+Fall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSMorphingLabel+Fall.h"; sourceTree = "<group>"; };
+		ADF7CE591E1638A00098797D /* FSMorphingLabel+Fall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Fall.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -828,12 +840,17 @@
 			children = (
 				ADD15FD11E0A7E2B00A5200E /* FSGridLabel.h */,
 				ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */,
+				ADF1DD001E151F1F00094A0A /* FSMorphingEffectCategory */,
 				AD8F67911E09197F00271848 /* FSEasing.h */,
 				AD8F67921E09197F00271848 /* FSEasing.m */,
+				ADA0BEC01E1676FA003AAD52 /* FSEmitterView.h */,
+				ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */,
 				AD8F67941E093A5800271848 /* FSCharacterDiffResult.h */,
 				AD8F67951E093A5800271848 /* FSCharacterDiffResult.m */,
 				AD8F67971E09518500271848 /* FSCharacterLimbo.h */,
 				AD8F67981E09518500271848 /* FSCharacterLimbo.m */,
+				ADF1DCFD1E14EBA400094A0A /* FSMorphingEffectPhase.h */,
+				ADF1DCFE1E14ED0900094A0A /* FSMorphingEffectPhase.m */,
 				AD8F679A1E09527900271848 /* FSMorphingLabel.h */,
 				AD8F679B1E09527900271848 /* FSMorphingLabel.m */,
 				ADC8CA641E111BEF00EB377F /* TestMorphingLabelViewController.h */,
@@ -1192,6 +1209,17 @@
 			path = FSNavigationRouter;
 			sourceTree = "<group>";
 		};
+		ADF1DD001E151F1F00094A0A /* FSMorphingEffectCategory */ = {
+			isa = PBXGroup;
+			children = (
+				ADF7CE551E15FEA50098797D /* FSMorphingLabel+Evaporate.h */,
+				ADF7CE561E15FEA50098797D /* FSMorphingLabel+Evaporate.m */,
+				ADF7CE581E1638A00098797D /* FSMorphingLabel+Fall.h */,
+				ADF7CE591E1638A00098797D /* FSMorphingLabel+Fall.m */,
+			);
+			path = FSMorphingEffectCategory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1310,6 +1338,7 @@
 				AD1EEC7C1E03BE33001C00B0 /* UIScrollView+MJExtension.m in Sources */,
 				AD1EEC7E1E03BE33001C00B0 /* UIView+MJExtension.m in Sources */,
 				ADE0DAF71E0396D10050BEB2 /* NZProgressBarView.m in Sources */,
+				ADF7CE5A1E1638A00098797D /* FSMorphingLabel+Fall.m in Sources */,
 				AD1EECB31E03BE3C001C00B0 /* AFURLRequestSerialization.m in Sources */,
 				AD1EEC6E1E03BE33001C00B0 /* MJRefreshComponent.m in Sources */,
 				ADF1C03C1DFE5BD6002D5594 /* Canvas+Path.m in Sources */,
@@ -1389,6 +1418,7 @@
 				AD1EEC811E03BE33001C00B0 /* ER3DESEncrypt.m in Sources */,
 				AD1EEC791E03BE33001C00B0 /* MJRefreshStateHeader.m in Sources */,
 				ADE0DAFF1E0397490050BEB2 /* NSString+NZExtended.m in Sources */,
+				ADA0BEC21E1676FA003AAD52 /* FSEmitterView.m in Sources */,
 				AD1EEC5E1E03BE33001C00B0 /* Base64.m in Sources */,
 				AD1EEBEC1E03BE03001C00B0 /* SDWebImageManager.m in Sources */,
 				AD1EEC801E03BE33001C00B0 /* EncryptUtil.m in Sources */,
@@ -1414,7 +1444,9 @@
 				ADF1C0471DFE5BD6002D5594 /* TableViewCell.m in Sources */,
 				ADE0DAF21E03967D0050BEB2 /* UIColor+Extension.m in Sources */,
 				AD1EECBF1E03BE3C001C00B0 /* UIWebView+AFNetworking.m in Sources */,
+				ADF7CE571E15FEA50098797D /* FSMorphingLabel+Evaporate.m in Sources */,
 				AD1EECB11E03BE3C001C00B0 /* AFSecurityPolicy.m in Sources */,
+				ADF1DCFF1E14ED0900094A0A /* FSMorphingEffectPhase.m in Sources */,
 				ADE0DAE81E0396000050BEB2 /* UIView+XQ.m in Sources */,
 				AD1EEBFC1E03BE07001C00B0 /* SVProgressHUD.m in Sources */,
 				ADE0DAD81E0391D80050BEB2 /* FSPhotosView.m in Sources */,
@@ -1534,6 +1566,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iDraw/PrefixHeader.pch";
 				INFOPLIST_FILE = iDraw/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzf.iDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1551,6 +1584,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iDraw/PrefixHeader.pch";
 				INFOPLIST_FILE = iDraw/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzf.iDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";

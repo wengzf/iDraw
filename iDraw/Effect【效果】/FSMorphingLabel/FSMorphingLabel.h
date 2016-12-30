@@ -10,28 +10,20 @@
 #import "FSEasing.h"
 #import "FSCharacterDiffResult.h"
 #import "FSCharacterLimbo.h"
+#import "FSMorphingEffectPhase.h" 
 
-// 动画效果
-typedef NS_ENUM(NSInteger, FSMorphingEffect){
-    kMorphingEffectScale = 0,
-    kMorphingEffectEvaporate,
-    kMorphingEffectFall,
-    kMorphingEffectPixelate,
-    kMorphingEffectSparkle,
-    kMorphingEffectBurn,
-    kMorphingEffectAnvil
-    
-};
 
-// 动画状态枚举
-typedef NS_ENUM(NSInteger, FSMorphingPhases){
-    kMorphingPhasesStart,
-    kMorphingPhasesAppear,
-    kMorphingPhasesDisappear,
-    kMorphingPhasesDraw,
-    kMorphingPhasesProgress,
-    kMorphingPhasesSkipFrames,
-};
+typedef void (^FSMorphingStartClosure)(void);
+
+typedef FSCharacterLimbo * (^FSMorphingEffectClosure)(unichar ch, NSInteger index, float progress);
+
+typedef BOOL (^FSMorphingDrawingClosure)(FSCharacterLimbo *limbo);
+
+typedef float (^FSMorphingManipulateProgressClosure)(NSInteger index,float progress, BOOL isNewChar);
+
+typedef int (^FSMorphingSkipFramesClosure)(void);
+
+
 
 // 代理
 @class FSMorphingLabel;
@@ -48,13 +40,10 @@ typedef NS_ENUM(NSInteger, FSMorphingPhases){
 
 @interface FSMorphingLabel : UILabel
 {
-    FSMorphingEffect morphingEffect;            // 默认scale
-
     float morphingProgress;
     float morphingDuration;
     float morphingCharacterDelay;
-    BOOL morphingEnabled;
-    
+  
     NSString *previousText;
     NSArray *diffResults;           // 变化数组
     
@@ -68,17 +57,14 @@ typedef NS_ENUM(NSInteger, FSMorphingPhases){
     
     float charHeight;
     int skipFramesCount;
-
-    BOOL presentingInIB;
-    
     
     CADisplayLink *displayLink;
 }
+@property (nonatomic, assign) BOOL morphingDisable;
 
-@property (nonatomic, assign) float morphingProgress;
-@property (nonatomic, assign) float morphingDuration;
-@property (nonatomic, assign) float morphingCharacterDelay;
-@property (nonatomic, assign) BOOL morphingEnabled;
+@property (nonatomic, assign) FSMorphingEffect morphingEffect;            // 默认scale
+
+@property (nonatomic, strong) NSMutableDictionary *effectDictionary;
 
 
 @property (nonatomic, weak) id<FSMorphingLabelDelegate> delegate;
