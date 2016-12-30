@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+@interface FSEmitter : NSObject
+
+@property (nonatomic, strong) CAEmitterLayer *layer;
+
+@property (nonatomic, strong) CAEmitterCell *cell;
+
+@property (nonatomic, assign) float duration;
+
+
+- (instancetype)initWithName:(NSString *)name
+                 paticleName:(NSString *)paticleName
+                    duration:(float)duration;
+
+
+
+@end
+
+
 @interface FSEmitterView : UIView
 
 
