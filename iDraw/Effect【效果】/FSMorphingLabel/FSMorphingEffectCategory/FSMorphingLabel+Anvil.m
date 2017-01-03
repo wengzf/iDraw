@@ -12,20 +12,146 @@
 
 - (void)anvilLoad
 {
+    // start
+    {
+        FSMorphingStartClosure closure = ^(){
+            [self.emitterView removeAllEmitters];
+            
+            if (self.text.length == 0) {
+                return;
+            }
+            NSInteger centerIndex = self.text.length/2;
+            CGRect centerRect = newRects[centerIndex];
+            
+            [self.emitterView createEmitter:@"leftSmoke"
+                               particleName:@"smoke"
+                                   duration:0.6
+                           configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                               layer.emitterSize = CGSizeMake(1, 1);
+                               layer.emitterPosition = CGPointMake(centerRect.origin.x, centerRect.origin.y + centerRect.size.height / 1.3);
+                               
+                               cell.emissionLongitude = -M_PI_2;
+                               cell.emissionRange = M_PI_4 / 5.0;
+                               cell.scale = self.font.pointSize/90.0;
+                               cell.scaleSpeed = self.font.pointSize/130;
+                               cell.birthRate = 60;
+                               cell.velocity = 80 + arc4random_uniform(60);
+                               cell.velocityRange = 100;
+                               cell.yAcceleration = -40;
+                               cell.xAcceleration = 70;
+                               cell.lifetime = morphingDuration*2;
+                               cell.spin = 10;
+                               cell.alphaSpeed = - 0.5 / morphingDuration;
+                           }];
+            
+            [self.emitterView createEmitter:@"rightSmoke"
+                               particleName:@"smoke"
+                                   duration:0.6
+                           configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                               layer.emitterSize = CGSizeMake(1, 1);
+                               layer.emitterPosition = CGPointMake(centerRect.origin.x, centerRect.origin.y + centerRect.size.height / 1.3);
+                               
+                               cell.emissionLongitude = -M_PI_2;
+                               cell.emissionRange = M_PI_4 / 5.0;
+                               cell.scale = self.font.pointSize/90.0;
+                               cell.scaleSpeed = self.font.pointSize/130;
+                               cell.birthRate = 60;
+                               cell.velocity = 80 + arc4random_uniform(60);
+                               cell.velocityRange = 100;
+                               cell.yAcceleration = -40;
+                               cell.xAcceleration = -70;
+                               cell.lifetime = morphingDuration*2;
+                               cell.spin = -10;
+                               cell.alphaSpeed = - 0.5 / morphingDuration;
+                           }];
+            
+            [self.emitterView createEmitter:@"leftFragments"
+                               particleName:@"Fragment"
+                                   duration:0.6
+                           configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                               layer.emitterSize = CGSizeMake(self.font.pointSize, 1);
+                               layer.emitterPosition = CGPointMake(centerRect.origin.x, centerRect.origin.y + centerRect.size.height / 1.3);
+                               
+                               cell.scale = self.font.pointSize/90.0;
+                               cell.scaleSpeed = self.font.pointSize/40;
+                               cell.color = self.textColor.CGColor;
+                               cell.birthRate = 60;
+                               cell.velocity = 350;
+                               
+                               cell.yAcceleration = 0;
+                               cell.xAcceleration = 10 * arc4random_uniform(10);
+                               
+                               cell.emissionLongitude = -M_PI_2;
+                               cell.emissionRange = M_PI_4 / 5.0;
+                               cell.alphaSpeed = -2;
+                               
+                               cell.lifetime = morphingDuration;
+                           }];
+            
+            [self.emitterView createEmitter:@"rightFragments"
+                               particleName:@"Fragment"
+                                   duration:0.6
+                           configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                               layer.emitterSize = CGSizeMake(self.font.pointSize, 1);
+                               layer.emitterPosition = CGPointMake(centerRect.origin.x, centerRect.origin.y + centerRect.size.height / 1.3);
+                               
+                               cell.scale = self.font.pointSize/90.0;
+                               cell.scaleSpeed = self.font.pointSize/40;
+                               cell.color = self.textColor.CGColor;
+                               cell.birthRate = 60;
+                               cell.velocity = 350;
+                               
+                               cell.yAcceleration = 0;
+                               cell.xAcceleration = -10 * arc4random_uniform(10);
+                               
+                               cell.emissionLongitude = M_PI_2;
+                               cell.emissionRange = M_PI_4 / 5.0;
+                               cell.alphaSpeed = -2;
+                               
+                               cell.lifetime = morphingDuration;
+                           }];
+            
+            [self.emitterView createEmitter:@"fragments"
+                               particleName:@"Fragment"
+                                   duration:0.6
+                           configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                               layer.emitterSize = CGSizeMake(self.font.pointSize, 1);
+                               layer.emitterPosition = CGPointMake(centerRect.origin.x, centerRect.origin.y + centerRect.size.height / 1.3);
+                               
+                               cell.scale = self.font.pointSize/90.0;
+                               cell.scaleSpeed = self.font.pointSize/40;
+                               cell.color = self.textColor.CGColor;
+                               cell.birthRate = 60;
+                               cell.velocity = 250;
+                               cell.velocityRange = arc4random_uniform(20);
+                               
+                               cell.yAcceleration = 500;
+                               
+                               cell.emissionLongitude = -M_PI_2;
+                               cell.emissionRange = M_PI_4 / 5.0;
+                               cell.alphaSpeed = -1;
+                               
+                               cell.lifetime = morphingDuration;
+                           }];
+        };
+        NSString *key = keyForEffectPhase(kMorphingEffectAnvil, kMorphingPhasesStart);
+        [self.effectDictionary setObject:closure forKey:key];
+    }
+    
     // progress
     {
         FSMorphingManipulateProgressClosure closure = ^(NSInteger index,float progress, BOOL isNewChar){
-            
-            int j = round(cos(index)*1.2);
-            
-            float delay = morphingCharacterDelay;
+            float res;
             if (isNewChar) {
-                delay = -delay;
+                float j = sinf(index)*1.7;
+                res = MIN(1.0, MAX(0, progress + morphingCharacterDelay*j));
+      
+            }else{
+                res = MIN(1.0, MAX(0, progress));
             }
-            float res = MIN(1.0, MAX(0, morphingProgress + delay*j));
             return res;
         };
-        NSString *key = keyForEffectPhase(kMorphingEffectEvaporate, kMorphingPhasesProgress);
+        NSString *key = keyForEffectPhase(kMorphingEffectAnvil, kMorphingPhasesProgress);
         [self.effectDictionary setObject:closure forKey:key];
     }
     
@@ -33,20 +159,17 @@
     {
         FSMorphingEffectClosure closure = ^(unichar ch, NSInteger index, float progress){
             
-            float newProgress = easeOutQuint(progress, 0, 1.0, 1.0);
-            float yOffset = -0.8*self.font.pointSize*newProgress;
-            
             FSCharacterLimbo *limbo = [FSCharacterLimbo new];
             limbo.ch = ch;
-            limbo.rect = CGRectOffset(previousRects[index], 0, yOffset);
-            limbo.alpha = 1.0-newProgress;
+            limbo.rect = previousRects[index];
+            limbo.alpha = 1.0-progress;
             limbo.size = self.font.pointSize;
             limbo.drawingProgress = 0;
             
             return limbo;
         };
         
-        NSString *key = keyForEffectPhase(kMorphingEffectEvaporate, kMorphingPhasesDisappear);
+        NSString *key = keyForEffectPhase(kMorphingEffectAnvil, kMorphingPhasesDisappear);
         [self.effectDictionary setObject:closure forKey:key];
     }
     
@@ -55,12 +178,53 @@
     {
         FSMorphingEffectClosure closure = ^(unichar ch, NSInteger index, float progress){
             
-            float newProgress = 1.0 - easeOutQuint(progress, 0, 1.0, 1.0);
-            float yOffset = 1.2*self.font.pointSize*newProgress;
+            CGRect rect = newRects[index];
+            if (progress<=1.0) {
+                float ease = easeOutBounce(progress, 0, 1, 1);
+                rect.origin.y = rect.origin.y * ease;
+            }
+            
+            if (progress > morphingDuration * 0.5) {
+                float end = morphingDuration * 0.55;
+                [[self.emitterView createEmitter:@"fragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                    if (progress > end){
+                        layer.birthRate = 0;
+                    }
+                }];
+                [[self.emitterView createEmitter:@"leftFragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                    if (progress > end){
+                        layer.birthRate = 0;
+                    }
+                }];
+                [[self.emitterView createEmitter:@"rightFragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                    if (progress > end){
+                        layer.birthRate = 0;
+                    }
+                }];
+            }
+            if (progress > morphingDuration * 0.63) {
+                float end = morphingDuration * 0.7;
+                
+                [[self.emitterView createEmitter:@"leftSmoke" particleName:@"Smoke" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                    if (progress > end){
+                        layer.birthRate = 0;
+                    }
+                }];
+                [[self.emitterView createEmitter:@"rightSmoke" particleName:@"Smoke" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                    if (progress > end){
+                        layer.birthRate = 0;
+                    }
+                }];
+            }
             
             FSCharacterLimbo *limbo = [FSCharacterLimbo new];
             limbo.ch = ch;
-            limbo.rect = CGRectOffset(newRects[index], 0, yOffset);;
+            limbo.rect = rect;
             limbo.alpha = progress;
             limbo.size = self.font.pointSize;
             limbo.drawingProgress = 0;
@@ -68,7 +232,7 @@
             return limbo;
         };
         
-        NSString *key = keyForEffectPhase(kMorphingEffectEvaporate, kMorphingPhasesAppear);
+        NSString *key = keyForEffectPhase(kMorphingEffectAnvil, kMorphingPhasesAppear);
         [self.effectDictionary setObject:closure forKey:key];
     }
     

@@ -30,7 +30,7 @@
     morphingLabel.center = self.view.center;
     morphingLabel.textAlignment = NSTextAlignmentCenter;
     
-    morphingLabel.morphingEffect = kMorphingEffectFall;
+    morphingLabel.morphingEffect = kMorphingEffectAnvil;
     
     [self.view addSubview:morphingLabel];
     

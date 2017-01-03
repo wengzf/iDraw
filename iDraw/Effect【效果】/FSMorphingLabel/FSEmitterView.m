@@ -29,7 +29,7 @@
         _layer = [CAEmitterLayer new];
         _layer.emitterPosition = CGPointMake(10, 10);
         _layer.emitterSize = CGSizeMake(10, 1);
-        _layer.renderMode = kCAEmitterLayerOutline;
+        _layer.renderMode = kCAEmitterLayerAdditive;
         _layer.emitterShape = kCAEmitterLayerLine;
     }
     return _layer;
@@ -56,7 +56,33 @@
     return _cell;
 }
 
+- (void)play
+{
+    if (self.layer.emitterCells.count > 0) {
+        return ;
+    }
+    self.layer.emitterCells = @[self.cell];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.layer.birthRate = 0;
+    });
+}
+
+- (void)stop
+{
+    if (self.layer.superlayer) {
+        [self.layer removeFromSuperlayer];
+    }
+}
+
+- (FSEmitter *)update:(FSEmitterConfigureClosure) closure
+{
+    closure(self.layer, self.cell);
+    return self;
+}
+
 @end
+
 
 @implementation FSEmitterView
 

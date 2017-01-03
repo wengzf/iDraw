@@ -24,6 +24,13 @@ typedef void (^FSEmitterConfigureClosure)(CAEmitterLayer *layer, CAEmitterCell *
                  paticleName:(NSString *)paticleName
                     duration:(float)duration;
 
+- (void)play;
+
+- (void)stop;
+
+- (FSEmitter *)update:(FSEmitterConfigureClosure) closure;
+
+
 @end
 
 
