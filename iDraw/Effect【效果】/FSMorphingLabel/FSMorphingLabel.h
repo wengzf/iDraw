@@ -10,7 +10,9 @@
 #import "FSEasing.h"
 #import "FSCharacterDiffResult.h"
 #import "FSCharacterLimbo.h"
-#import "FSMorphingEffectPhase.h" 
+#import "FSMorphingEffectPhase.h"
+#import "FSEmitterView.h"
+
 
 
 typedef void (^FSMorphingStartClosure)(void);
@@ -65,6 +67,8 @@ typedef int (^FSMorphingSkipFramesClosure)(void);
 @property (nonatomic, assign) FSMorphingEffect morphingEffect;            // 默认scale
 
 @property (nonatomic, strong) NSMutableDictionary *effectDictionary;
+
+@property (nonatomic, strong) FSEmitterView *emitterView;
 
 
 @property (nonatomic, weak) id<FSMorphingLabelDelegate> delegate;

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^FSEmitterConfigureClosure)(CAEmitterLayer *layer, CAEmitterCell *cell);
+
+
 @interface FSEmitter : NSObject
 
 @property (nonatomic, strong) CAEmitterLayer *layer;
@@ -21,12 +24,22 @@
                  paticleName:(NSString *)paticleName
                     duration:(float)duration;
 
-
-
 @end
 
 
 @interface FSEmitterView : UIView
+
+@property (nonatomic, strong) NSMutableDictionary *emitters;
+
+- (FSEmitter *)createEmitter:(NSString *)name
+         particleName:(NSString *)particleName
+             duration:(float)duration
+     configureClosure:(FSEmitterConfigureClosure) closure;
+
+
+- (FSEmitter *)emitterByName:(NSString *)name;
+
+- (void)removeAllEmitters;
 
 
 @end

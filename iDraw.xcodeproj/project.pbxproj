@@ -91,6 +91,11 @@
 		AD8F67961E093A5800271848 /* FSCharacterDiffResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67951E093A5800271848 /* FSCharacterDiffResult.m */; };
 		AD8F67991E09518500271848 /* FSCharacterLimbo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67981E09518500271848 /* FSCharacterLimbo.m */; };
 		AD8F679C1E09527900271848 /* FSMorphingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F679B1E09527900271848 /* FSMorphingLabel.m */; };
+		AD98B4031E1B4F52004E3AFB /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = AD98B3FF1E1B4F52004E3AFB /* Fire.png */; };
+		AD98B4041E1B4F52004E3AFB /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = AD98B4001E1B4F52004E3AFB /* Fragment.png */; };
+		AD98B4051E1B4F52004E3AFB /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = AD98B4011E1B4F52004E3AFB /* Smoke.png */; };
+		AD98B4061E1B4F52004E3AFB /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = AD98B4021E1B4F52004E3AFB /* Sparkle.png */; };
+		AD98B4091E1B563B004E3AFB /* FSMorphingLabel+Anvil.m in Sources */ = {isa = PBXBuildFile; fileRef = AD98B4081E1B563B004E3AFB /* FSMorphingLabel+Anvil.m */; };
 		ADA0BEC21E1676FA003AAD52 /* FSEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */; };
 		ADC8CA661E111BEF00EB377F /* TestMorphingLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC8CA651E111BEF00EB377F /* TestMorphingLabelViewController.m */; };
 		ADD15FD31E0A7E2B00A5200E /* FSGridLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */; };
@@ -345,6 +350,12 @@
 		AD8F67981E09518500271848 /* FSCharacterLimbo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCharacterLimbo.m; sourceTree = "<group>"; };
 		AD8F679A1E09527900271848 /* FSMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMorphingLabel.h; sourceTree = "<group>"; };
 		AD8F679B1E09527900271848 /* FSMorphingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMorphingLabel.m; sourceTree = "<group>"; };
+		AD98B3FF1E1B4F52004E3AFB /* Fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fire.png; sourceTree = "<group>"; };
+		AD98B4001E1B4F52004E3AFB /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
+		AD98B4011E1B4F52004E3AFB /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		AD98B4021E1B4F52004E3AFB /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
+		AD98B4071E1B563B004E3AFB /* FSMorphingLabel+Anvil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSMorphingLabel+Anvil.h"; sourceTree = "<group>"; };
+		AD98B4081E1B563B004E3AFB /* FSMorphingLabel+Anvil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Anvil.m"; sourceTree = "<group>"; };
 		ADA0BEC01E1676FA003AAD52 /* FSEmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmitterView.h; sourceTree = "<group>"; };
 		ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmitterView.m; sourceTree = "<group>"; };
 		ADC8CA641E111BEF00EB377F /* TestMorphingLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMorphingLabelViewController.h; sourceTree = "<group>"; };
@@ -838,6 +849,7 @@
 		AD8F67901E09192700271848 /* FSMorphingLabel */ = {
 			isa = PBXGroup;
 			children = (
+				AD98B3FE1E1B4F52004E3AFB /* Particles */,
 				ADD15FD11E0A7E2B00A5200E /* FSGridLabel.h */,
 				ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */,
 				ADF1DD001E151F1F00094A0A /* FSMorphingEffectCategory */,
@@ -857,6 +869,17 @@
 				ADC8CA651E111BEF00EB377F /* TestMorphingLabelViewController.m */,
 			);
 			path = FSMorphingLabel;
+			sourceTree = "<group>";
+		};
+		AD98B3FE1E1B4F52004E3AFB /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				AD98B3FF1E1B4F52004E3AFB /* Fire.png */,
+				AD98B4001E1B4F52004E3AFB /* Fragment.png */,
+				AD98B4011E1B4F52004E3AFB /* Smoke.png */,
+				AD98B4021E1B4F52004E3AFB /* Sparkle.png */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 		ADD197BB1E0156D300FA3713 /* FSJSONSerialization */ = {
@@ -1216,6 +1239,8 @@
 				ADF7CE561E15FEA50098797D /* FSMorphingLabel+Evaporate.m */,
 				ADF7CE581E1638A00098797D /* FSMorphingLabel+Fall.h */,
 				ADF7CE591E1638A00098797D /* FSMorphingLabel+Fall.m */,
+				AD98B4071E1B563B004E3AFB /* FSMorphingLabel+Anvil.h */,
+				AD98B4081E1B563B004E3AFB /* FSMorphingLabel+Anvil.m */,
 			);
 			path = FSMorphingEffectCategory;
 			sourceTree = "<group>";
@@ -1280,12 +1305,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD98B4061E1B4F52004E3AFB /* Sparkle.png in Resources */,
 				ADF1C0511DFE5BD6002D5594 /* 6.jpg in Resources */,
 				ADF1C0561DFE5BD6002D5594 /* Images.xcassets in Resources */,
 				AD1EEBE41E03BE03001C00B0 /* LICENSE in Resources */,
 				ADF0D6211E0274F9000C8126 /* AnimationCurveViewController.xib in Resources */,
 				AD1EEC5F1E03BE33001C00B0 /* LICENSE in Resources */,
 				ADF1C0441DFE5BD6002D5594 /* FractalViewController.xib in Resources */,
+				AD98B4031E1B4F52004E3AFB /* Fire.png in Resources */,
 				ADF1C0501DFE5BD6002D5594 /* 5.jpg in Resources */,
 				ADF1C0541DFE5BD6002D5594 /* fractal.png in Resources */,
 				ADF1C0531DFE5BD6002D5594 /* closeSwitchBackground.png in Resources */,
@@ -1298,6 +1325,8 @@
 				ADF0D62B1E0274F9000C8126 /* weixinScan.mp3 in Resources */,
 				ADF1C06A1DFE788B002D5594 /* Info.plist in Resources */,
 				ADF0D61F1E0274F9000C8126 /* ImageAnalysisViewController.xib in Resources */,
+				AD98B4051E1B4F52004E3AFB /* Smoke.png in Resources */,
+				AD98B4041E1B4F52004E3AFB /* Fragment.png in Resources */,
 				AD1EEC7A1E03BE33001C00B0 /* MJRefresh.bundle in Resources */,
 				ADF1C04B1DFE5BD6002D5594 /* 0.jpg in Resources */,
 				ADF1C04D1DFE5BD6002D5594 /* 2.jpg in Resources */,
@@ -1386,6 +1415,7 @@
 				AD1EEC661E03BE33001C00B0 /* NSObject+MJCoding.m in Sources */,
 				ADE0DAAD1E038A160050BEB2 /* FSCollectionViewController.m in Sources */,
 				ADE0DB011E0397490050BEB2 /* NSTimer+Blocks.m in Sources */,
+				AD98B4091E1B563B004E3AFB /* FSMorphingLabel+Anvil.m in Sources */,
 				AD1EEC711E03BE33001C00B0 /* MJRefreshAutoGifFooter.m in Sources */,
 				ADF1C0361DFE5BD6002D5594 /* AppDelegate.m in Sources */,
 				AD1EEBE51E03BE03001C00B0 /* README.md in Sources */,
