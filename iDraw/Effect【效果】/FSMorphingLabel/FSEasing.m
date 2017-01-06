@@ -13,7 +13,6 @@
 // c = change
 // d = duration
 
-
 float easeOutQuint(float t, float b, float c, float d)
 {
     float x = (t/d - 1.0);
@@ -52,3 +51,15 @@ float easeOutBounce(float t, float b, float c, float d)
         return c * (7.5625 * t * t + 0.984375) + b;
     }
 }
+
+float clip(float st, float ed, float val)
+{
+    if (val<st) {
+        return st;
+    }
+    if (val>ed) {
+        return ed;
+    }
+    return val;
+}
+

@@ -21,3 +21,6 @@ float easeInQuint(float t, float b, float c, float d);
 float easeOutBack(float t, float b, float c, float d);
 
 float easeOutBounce(float t, float b, float c, float d);
+
+
+float clip(float st, float ed, float val);

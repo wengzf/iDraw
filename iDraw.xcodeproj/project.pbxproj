@@ -125,6 +125,8 @@
 		ADE0DAFF1E0397490050BEB2 /* NSString+NZExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE0DAFA1E0397490050BEB2 /* NSString+NZExtended.m */; };
 		ADE0DB001E0397490050BEB2 /* NSString+URLConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE0DAFC1E0397490050BEB2 /* NSString+URLConvert.m */; };
 		ADE0DB011E0397490050BEB2 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE0DAFE1E0397490050BEB2 /* NSTimer+Blocks.m */; };
+		ADEAB4E71E1F49C90091151F /* FSMorphingLabel+Sparkle.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEAB4E61E1F49C90091151F /* FSMorphingLabel+Sparkle.m */; };
+		ADEAB4EA1E1F70C80091151F /* FSMorphingLabel+Burn.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEAB4E91E1F70C80091151F /* FSMorphingLabel+Burn.m */; };
 		ADF0D61E1E0274F9000C8126 /* ImageAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF0D5FB1E0274F9000C8126 /* ImageAnalysisViewController.m */; };
 		ADF0D61F1E0274F9000C8126 /* ImageAnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF0D5FC1E0274F9000C8126 /* ImageAnalysisViewController.xib */; };
 		ADF0D6201E0274F9000C8126 /* AnimationCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF0D5FF1E0274F9000C8126 /* AnimationCurveViewController.m */; };
@@ -413,6 +415,10 @@
 		ADE0DAFC1E0397490050BEB2 /* NSString+URLConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLConvert.m"; sourceTree = "<group>"; };
 		ADE0DAFD1E0397490050BEB2 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
 		ADE0DAFE1E0397490050BEB2 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		ADEAB4E51E1F49C90091151F /* FSMorphingLabel+Sparkle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSMorphingLabel+Sparkle.h"; sourceTree = "<group>"; };
+		ADEAB4E61E1F49C90091151F /* FSMorphingLabel+Sparkle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Sparkle.m"; sourceTree = "<group>"; };
+		ADEAB4E81E1F70C80091151F /* FSMorphingLabel+Burn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSMorphingLabel+Burn.h"; sourceTree = "<group>"; };
+		ADEAB4E91E1F70C80091151F /* FSMorphingLabel+Burn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Burn.m"; sourceTree = "<group>"; };
 		ADF0D5FA1E0274F9000C8126 /* ImageAnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnalysisViewController.h; sourceTree = "<group>"; };
 		ADF0D5FB1E0274F9000C8126 /* ImageAnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnalysisViewController.m; sourceTree = "<group>"; };
 		ADF0D5FC1E0274F9000C8126 /* ImageAnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAnalysisViewController.xib; sourceTree = "<group>"; };
@@ -1241,6 +1247,10 @@
 				ADF7CE591E1638A00098797D /* FSMorphingLabel+Fall.m */,
 				AD98B4071E1B563B004E3AFB /* FSMorphingLabel+Anvil.h */,
 				AD98B4081E1B563B004E3AFB /* FSMorphingLabel+Anvil.m */,
+				ADEAB4E51E1F49C90091151F /* FSMorphingLabel+Sparkle.h */,
+				ADEAB4E61E1F49C90091151F /* FSMorphingLabel+Sparkle.m */,
+				ADEAB4E81E1F70C80091151F /* FSMorphingLabel+Burn.h */,
+				ADEAB4E91E1F70C80091151F /* FSMorphingLabel+Burn.m */,
 			);
 			path = FSMorphingEffectCategory;
 			sourceTree = "<group>";
@@ -1463,6 +1473,7 @@
 				ADE0DAE71E0396000050BEB2 /* UIView+ImageShot.m in Sources */,
 				ADE0DAE61E0396000050BEB2 /* UIView+Animation.m in Sources */,
 				AD1EEBF01E03BE03001C00B0 /* UIImage+MultiFormat.m in Sources */,
+				ADEAB4EA1E1F70C80091151F /* FSMorphingLabel+Burn.m in Sources */,
 				ADF0D62D1E0274F9000C8126 /* MovingArrow.m in Sources */,
 				AD1EECB41E03BE3C001C00B0 /* AFURLResponseSerialization.m in Sources */,
 				ADF1C0391DFE5BD6002D5594 /* Canvas+IFS.m in Sources */,
@@ -1483,6 +1494,7 @@
 				ADF1C0351DFE5BD6002D5594 /* UIImageView+FSWebCache.m in Sources */,
 				ADE0DABB1E038A460050BEB2 /* FSTestCarouselView.m in Sources */,
 				ADF1C0831DFE7BA3002D5594 /* FSNavigationRouter.m in Sources */,
+				ADEAB4E71E1F49C90091151F /* FSMorphingLabel+Sparkle.m in Sources */,
 				ADF1C07D1DFE7A3A002D5594 /* UIImage+FSForceDecode.m in Sources */,
 				ADF1C03F1DFE5BD6002D5594 /* Canvas+Spiral.m in Sources */,
 				ADF1C0411DFE5BD6002D5594 /* CanvasModel.m in Sources */,

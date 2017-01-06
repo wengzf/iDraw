@@ -36,12 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iDraw/Effect&#x3010;&#x6548;&#x679c;&#x3011;/FSMorphingLabel/FSMorphingLabel.m"
-            timestampString = "504763467.133339"
+            timestampString = "505384886.833632"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "-limboOfCharacter"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "-limboOfNewCharacter:index:process:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iDraw/Effect&#x3010;&#x6548;&#x679c;&#x3011;/FSMorphingLabel/FSMorphingLabel.m"
-            timestampString = "504763467.133339"
+            filePath = "iDraw/Effect&#x3010;&#x6548;&#x679c;&#x3011;/FSMorphingLabel/FSMorphingEffectCategory/FSMorphingLabel+Sparkle.m"
+            timestampString = "505385195.730895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "-limboOfCharacter"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-sparkleLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

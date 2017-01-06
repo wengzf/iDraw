@@ -30,7 +30,7 @@
     morphingLabel.center = self.view.center;
     morphingLabel.textAlignment = NSTextAlignmentCenter;
     
-    morphingLabel.morphingEffect = kMorphingEffectAnvil;
+    morphingLabel.morphingEffect = kMorphingEffectBurn;
     
     [self.view addSubview:morphingLabel];
     
@@ -44,6 +44,11 @@
     [self.view addSubview:btn];
     
     self.view.backgroundColor = [UIColor blackColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+
 }
 
 - (void)btnClked

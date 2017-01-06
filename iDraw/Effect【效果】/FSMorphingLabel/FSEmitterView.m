@@ -17,7 +17,8 @@
     if (self = [super init]) {
         
         self.cell.name = name;
-        self.cell.contents = [UIImage imageNamed:particleName];
+        UIImage *img = [UIImage imageNamed:particleName];
+        self.cell.contents = (__bridge id) img.CGImage;
         
         self.duration = duration;
     }
@@ -26,32 +27,14 @@
 - (CAEmitterLayer *)layer
 {
     if (_layer == nil){
-        _layer = [CAEmitterLayer new];
-        _layer.emitterPosition = CGPointMake(10, 10);
-        _layer.emitterSize = CGSizeMake(10, 1);
-        _layer.renderMode = kCAEmitterLayerAdditive;
-        _layer.emitterShape = kCAEmitterLayerLine;
+        _layer = [[CAEmitterLayer alloc] init];
     }
     return _layer;
 }
 - (CAEmitterCell *)cell
 {
     if (_cell == nil){
-        _cell = [CAEmitterCell new];
-        _cell.name = @"sparkle";
-        _cell.birthRate = 150;
-        _cell.velocity = 50.0;
-        _cell.velocityRange = 80;
-        _cell.lifetime = 0.16;
-        _cell.lifetimeRange = 0.1;
-        
-        _cell.emissionLongitude = M_PI;
-        _cell.emissionRange = M_PI;
-        _cell.scale = 0.1;
-        
-        _cell.yAcceleration = 100;
-        _cell.scaleSpeed = -0.006;
-        _cell.scaleRange = 0.1;
+        _cell = [[CAEmitterCell alloc] init];
     }
     return _cell;
 }
@@ -107,6 +90,7 @@
                                          duration:duration];
         
         closure(emitter.layer, emitter.cell);
+//        emitter.layer.frame = self.layer.bounds;
         [self.layer addSublayer:emitter.layer];
         [self.emitters setObject:emitter forKey:name];
     }
@@ -124,6 +108,7 @@
     for (FSEmitter *emitter in self.emitters.allValues) {
         [emitter.layer removeFromSuperlayer];
     }
+    [self.emitters removeAllObjects];
     
 }
 

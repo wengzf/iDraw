@@ -14,7 +14,6 @@
 #import "FSEmitterView.h"
 
 
-
 typedef void (^FSMorphingStartClosure)(void);
 
 typedef FSCharacterLimbo * (^FSMorphingEffectClosure)(unichar ch, NSInteger index, float progress);

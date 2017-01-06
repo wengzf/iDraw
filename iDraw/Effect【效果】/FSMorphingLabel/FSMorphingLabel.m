@@ -10,6 +10,13 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
 
+
+#import "FSMorphingLabel+Evaporate.h"
+#import "FSMorphingLabel+Fall.h"
+#import "FSMorphingLabel+Anvil.h"
+#import "FSMorphingLabel+Sparkle.h"
+#import "FSMorphingLabel+Burn.h"
+
 //@interface FSMorphingLabel()
 //{
 //}
@@ -31,8 +38,13 @@
     }
 }
 
-- (void)configureInit
+- (FSEmitterView *)emitterView
 {
+    if (_emitterView == nil) {
+        _emitterView = [[FSEmitterView alloc] initWithFrame:self.bounds];
+        [self addSubview:_emitterView];
+    }
+    return _emitterView;
 }
 
 - (void)setText:(NSString *)text

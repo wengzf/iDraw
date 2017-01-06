@@ -24,13 +24,13 @@
             CGRect centerRect = newRects[centerIndex];
             
             [self.emitterView createEmitter:@"leftSmoke"
-                               particleName:@"smoke"
+                               particleName:@"Smoke"
                                    duration:0.6
                            configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                                layer.emitterSize = CGSizeMake(1, 1);
                                layer.emitterPosition = CGPointMake(centerRect.origin.x, centerRect.origin.y + centerRect.size.height / 1.3);
                                
-                               cell.emissionLongitude = -M_PI_2;
+                               cell.emissionLongitude = M_PI;
                                cell.emissionRange = M_PI_4 / 5.0;
                                cell.scale = self.font.pointSize/90.0;
                                cell.scaleSpeed = self.font.pointSize/130;
@@ -45,13 +45,13 @@
                            }];
             
             [self.emitterView createEmitter:@"rightSmoke"
-                               particleName:@"smoke"
+                               particleName:@"Smoke"
                                    duration:0.6
                            configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                                layer.emitterSize = CGSizeMake(1, 1);
                                layer.emitterPosition = CGPointMake(centerRect.origin.x, centerRect.origin.y + centerRect.size.height / 1.3);
                                
-                               cell.emissionLongitude = -M_PI_2;
+                               cell.emissionLongitude = 0;
                                cell.emissionRange = M_PI_4 / 5.0;
                                cell.scale = self.font.pointSize/90.0;
                                cell.scaleSpeed = self.font.pointSize/130;
@@ -81,7 +81,7 @@
                                cell.yAcceleration = 0;
                                cell.xAcceleration = 10 * arc4random_uniform(10);
                                
-                               cell.emissionLongitude = -M_PI_2;
+                               cell.emissionLongitude = M_PI;
                                cell.emissionRange = M_PI_4 / 5.0;
                                cell.alphaSpeed = -2;
                                
@@ -104,7 +104,7 @@
                                cell.yAcceleration = 0;
                                cell.xAcceleration = -10 * arc4random_uniform(10);
                                
-                               cell.emissionLongitude = M_PI_2;
+                               cell.emissionLongitude = 0;
                                cell.emissionRange = M_PI_4 / 5.0;
                                cell.alphaSpeed = -2;
                                
@@ -123,12 +123,12 @@
                                cell.color = self.textColor.CGColor;
                                cell.birthRate = 60;
                                cell.velocity = 250;
-                               cell.velocityRange = arc4random_uniform(20);
+                               cell.velocityRange = arc4random_uniform(20)+30;
                                
                                cell.yAcceleration = 500;
                                
                                cell.emissionLongitude = -M_PI_2;
-                               cell.emissionRange = M_PI_4 / 5.0;
+                               cell.emissionRange = M_PI_2;
                                cell.alphaSpeed = -1;
                                
                                cell.lifetime = morphingDuration;
@@ -186,40 +186,40 @@
             
             if (progress > morphingDuration * 0.5) {
                 float end = morphingDuration * 0.55;
-                [[self.emitterView createEmitter:@"fragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                [[[self.emitterView createEmitter:@"fragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                 }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                     if (progress > end){
                         layer.birthRate = 0;
                     }
-                }];
-                [[self.emitterView createEmitter:@"leftFragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                }] play];
+                [[[self.emitterView createEmitter:@"leftFragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                 }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                     if (progress > end){
                         layer.birthRate = 0;
                     }
-                }];
-                [[self.emitterView createEmitter:@"rightFragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                }] play];
+                [[[self.emitterView createEmitter:@"rightFragments" particleName:@"Fragment" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                 }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                     if (progress > end){
                         layer.birthRate = 0;
                     }
-                }];
+                }] play];
             }
             if (progress > morphingDuration * 0.63) {
                 float end = morphingDuration * 0.7;
                 
-                [[self.emitterView createEmitter:@"leftSmoke" particleName:@"Smoke" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                [[[self.emitterView createEmitter:@"leftSmoke" particleName:@"Smoke" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                 }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                     if (progress > end){
                         layer.birthRate = 0;
                     }
-                }];
-                [[self.emitterView createEmitter:@"rightSmoke" particleName:@"Smoke" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                }] play];
+                [[[self.emitterView createEmitter:@"rightSmoke" particleName:@"Smoke" duration:0.6 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                 }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
                     if (progress > end){
                         layer.birthRate = 0;
                     }
-                }];
+                }] play];
             }
             
             FSCharacterLimbo *limbo = [FSCharacterLimbo new];
