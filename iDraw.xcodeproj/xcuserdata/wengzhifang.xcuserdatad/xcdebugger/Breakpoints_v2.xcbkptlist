@@ -4,70 +4,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iDraw/iDraw/TableViewController.m"
-            timestampString = "499934911.735637"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-tableView:heightForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iDraw/iDraw/TableViewController.m"
-            timestampString = "499934911.735637"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iDraw/FSCloseSwithView.m"
-            timestampString = "500873206.57429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "518"
-            endingLineNumber = "518"
-            landmarkName = "-calArrWithStartVal:endVal:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iDraw/FSCloseSwithView.m"
-            timestampString = "500873206.57429"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
-            landmarkName = "-cancel"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -83,13 +19,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSCarouselView.m"
-            timestampString = "501676939.944008"
+            filePath = "iDraw/Effect&#x3010;&#x6548;&#x679c;&#x3011;/FSMorphingLabel/FSMorphingEffectCategory/FSEffectLabel+Evaporate.h"
+            timestampString = "504757949.946317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "389"
-            endingLineNumber = "389"
-            landmarkName = "-step"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "@interface FSEffectLabel(Evaporate)"
+            landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iDraw/Effect&#x3010;&#x6548;&#x679c;&#x3011;/FSMorphingLabel/FSMorphingLabel.m"
+            timestampString = "505384886.833632"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "-limboOfNewCharacter:index:process:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -99,45 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSCarouselView.m"
-            timestampString = "501676939.944008"
+            filePath = "iDraw/Effect&#x3010;&#x6548;&#x679c;&#x3011;/FSMorphingLabel/FSMorphingEffectCategory/FSMorphingLabel+Sparkle.m"
+            timestampString = "505385195.730895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "405"
-            endingLineNumber = "405"
-            landmarkName = "-step"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSCarouselView.m"
-            timestampString = "501676939.944008"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "560"
-            endingLineNumber = "560"
-            landmarkName = "-didPan:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iDraw/&#x9ad8;&#x4eff;&#x63a7;&#x4ef6;/&#x4eff;Safari&#x63a7;&#x4ef6;/FSCarouselView.m"
-            timestampString = "501676939.944008"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "607"
-            endingLineNumber = "607"
-            landmarkName = "-shouldDecelerate"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-sparkleLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
