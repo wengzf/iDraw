@@ -15,6 +15,7 @@
 
 #import "Macro.h"
 #import "CanvasModel.h"
+#import "FSNavigationRouter.h"
 
 
 #endif

@@ -35,7 +35,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
     // tableview 数据初始化
     {
@@ -79,7 +78,16 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self testScrollView];
+//    [self testScrollView];
+    [self testRecordPoint];
+}
+
+- (void)testRecordPoint
+{
+    // CBStoreHouse 描点
+    [[FSNavigationRouter shareInstance] presentCurrentVC:self
+                                                      to:@"RecordPointToolViewController"
+                                              withParams:nil];
 }
 - (void)testUberStartViewController
 {

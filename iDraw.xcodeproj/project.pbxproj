@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2141D37E1DED6FFA007CA1CC /* RecordPointToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141D37D1DED6FFA007CA1CC /* RecordPointToolViewController.m */; };
+		2141D38A1DED83AD007CA1CC /* FSNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141D3871DED83AD007CA1CC /* FSNavigationRouter.m */; };
+		2141D38B1DED83AD007CA1CC /* NSObject+FSKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2141D3891DED83AD007CA1CC /* NSObject+FSKeyValue.m */; };
+		2141D38D1DED8519007CA1CC /* denglu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2141D38C1DED8519007CA1CC /* denglu.png */; };
 		21578B651ACD29A700C09D49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21578B641ACD29A700C09D49 /* main.m */; };
 		21578B681ACD29A700C09D49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21578B671ACD29A700C09D49 /* AppDelegate.m */; };
 		21578B6B1ACD29A700C09D49 /* iDraw.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21578B691ACD29A700C09D49 /* iDraw.xcdatamodeld */; };
@@ -73,6 +77,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2141D37C1DED6FFA007CA1CC /* RecordPointToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordPointToolViewController.h; sourceTree = "<group>"; };
+		2141D37D1DED6FFA007CA1CC /* RecordPointToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordPointToolViewController.m; sourceTree = "<group>"; };
+		2141D3861DED83AD007CA1CC /* FSNavigationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNavigationRouter.h; sourceTree = "<group>"; };
+		2141D3871DED83AD007CA1CC /* FSNavigationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNavigationRouter.m; sourceTree = "<group>"; };
+		2141D3881DED83AD007CA1CC /* NSObject+FSKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FSKeyValue.h"; sourceTree = "<group>"; };
+		2141D3891DED83AD007CA1CC /* NSObject+FSKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FSKeyValue.m"; sourceTree = "<group>"; };
+		2141D38C1DED8519007CA1CC /* denglu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = denglu.png; sourceTree = "<group>"; };
 		21578B5F1ACD29A700C09D49 /* iDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21578B631ACD29A700C09D49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21578B641ACD29A700C09D49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -172,6 +183,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2141D37B1DED6FC4007CA1CC /* Tools 工具 */ = {
+			isa = PBXGroup;
+			children = (
+				2141D3851DED83AD007CA1CC /* NavigationRouter 导航 */,
+				2141D37C1DED6FFA007CA1CC /* RecordPointToolViewController.h */,
+				2141D37D1DED6FFA007CA1CC /* RecordPointToolViewController.m */,
+			);
+			path = "Tools 工具";
+			sourceTree = "<group>";
+		};
+		2141D3851DED83AD007CA1CC /* NavigationRouter 导航 */ = {
+			isa = PBXGroup;
+			children = (
+				2141D3861DED83AD007CA1CC /* FSNavigationRouter.h */,
+				2141D3871DED83AD007CA1CC /* FSNavigationRouter.m */,
+				2141D3881DED83AD007CA1CC /* NSObject+FSKeyValue.h */,
+				2141D3891DED83AD007CA1CC /* NSObject+FSKeyValue.m */,
+			);
+			path = "NavigationRouter 导航";
+			sourceTree = "<group>";
+		};
 		21578B561ACD29A700C09D49 = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +226,9 @@
 		21578B611ACD29A700C09D49 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
+				2141D38C1DED8519007CA1CC /* denglu.png */,
 				217076381B40E47200D72AD3 /* Thinking.h */,
+				2141D37B1DED6FC4007CA1CC /* Tools 工具 */,
 				21578BBC1ACD7C6600C09D49 /* Canvas 海龟画布 */,
 				AD1E5C941DDC11AB008084DE /* 高仿控件 */,
 				21578B951ACD2C2000C09D49 /* iDraw */,
@@ -468,6 +502,7 @@
 				21578B9D1ACD2C2000C09D49 /* FractalViewController.xib in Resources */,
 				ADA1200B1DCC615700264B37 /* TableViewController.xib in Resources */,
 				AD1E5CAC1DDC1249008084DE /* sao.png in Resources */,
+				2141D38D1DED8519007CA1CC /* denglu.png in Resources */,
 				AD1E5CA91DDC1222008084DE /* FSScanQRCodeViewController.xib in Resources */,
 				21578B731ACD29A700C09D49 /* Images.xcassets in Resources */,
 				ADF29ECC1DD5CF7B00E103E4 /* closeSwitchBackground.png in Resources */,
@@ -490,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2170C88B1BAA6C9200F8B0AD /* Canvas+Path.m in Sources */,
+				2141D38A1DED83AD007CA1CC /* FSNavigationRouter.m in Sources */,
 				21578BD61ACF7E8800C09D49 /* Canvas+IFS.m in Sources */,
 				ADF23B161DDDA2AC003EE458 /* FSTestCarouselView.m in Sources */,
 				21578BCB1ACD7C6600C09D49 /* Canvas.m in Sources */,
@@ -510,6 +546,7 @@
 				21578BC51ACD7C6600C09D49 /* Canvas+AboresentLung.m in Sources */,
 				ADEF4A951DC2F1DA00B86B61 /* CanvasModel.m in Sources */,
 				AD1E5C9F1DDC11AB008084DE /* UberStartViewController.m in Sources */,
+				2141D38B1DED83AD007CA1CC /* NSObject+FSKeyValue.m in Sources */,
 				21578BCE1ACD835A00C09D49 /* Turtle.m in Sources */,
 				21578BC91ACD7C6600C09D49 /* Canvas+SierpinskiTriangle.m in Sources */,
 				AD1E5CAF1DDC3750008084DE /* FSCarouselView.m in Sources */,
@@ -517,6 +554,7 @@
 				ADA1200A1DCC615700264B37 /* TableViewController.m in Sources */,
 				21578B651ACD29A700C09D49 /* main.m in Sources */,
 				AD1E5CA11DDC11AB008084DE /* FSCloseSwithView.m in Sources */,
+				2141D37E1DED6FFA007CA1CC /* RecordPointToolViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
