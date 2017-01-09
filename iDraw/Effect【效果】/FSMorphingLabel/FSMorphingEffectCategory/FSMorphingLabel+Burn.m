@@ -93,31 +93,33 @@
                                      
                                  }] play];
                 
-//                [[[self.emitterView createEmitter:[NSString stringWithFormat:@"s%ld",(long)index]
-//                                     particleName:@"Smoke"
-//                                         duration:morphingDuration
-//                                 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
-//                                     
-//                                     layer.emitterSize = CGSizeMake(rect.size.width, 1);
-//                                     layer.renderMode = kCAEmitterLayerAdditive;
-//                                     layer.emitterMode = kCAEmitterLayerVolume;
-//                                     
-//                                     cell.emissionLongitude =  M_PI_2;
-//                                     cell.emissionRange = M_PI_4;
-//                                     
-//                                     cell.scale = self.font.pointSize / 40;
-//                                     cell.scaleSpeed = self.font.pointSize / 100;
-//                                     cell.birthRate = self.font.pointSize;
-//                                     cell.alphaSpeed = morphingDuration * -3;
-//                                     cell.yAcceleration = -5;
-//                                     cell.velocity = 20 + arc4random_uniform(15);
-//                                     cell.velocityRange = 20;
-//                                     cell.spin = arc4random_uniform(30)/10.0;
-//                                     cell.spinRange = 3;
-//                                     cell.lifetime = morphingDuration;
-//                                 }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
-//                                     layer.emitterPosition = emitterPosition;
-//                                 }] play];
+                [[[self.emitterView createEmitter:[NSString stringWithFormat:@"s%ld",(long)index]
+                                     particleName:@"Smoke"
+                                         duration:morphingDuration
+                                 configureClosure:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                                     
+                                     layer.emitterSize = CGSizeMake(rect.size.width, 10);
+                                     
+                                     layer.renderMode = kCAEmitterLayerAdditive;
+                                     layer.emitterMode = kCAEmitterLayerVolume;
+                                     
+                                     cell.emissionLongitude = -M_PI_2;
+                                     cell.emissionRange = M_PI_4;
+                                     
+                                     cell.scale = self.font.pointSize / 40;
+                                     cell.scaleSpeed = self.font.pointSize / 100;
+                                     cell.birthRate = self.font.pointSize/ (arc4random_uniform(10) + 10);
+                                     cell.alphaSpeed = morphingDuration * -3;
+                                     cell.yAcceleration = -5;
+                                     cell.velocity = 15 + arc4random_uniform(15);
+                                     cell.velocityRange = 15;
+                                     cell.spin = arc4random_uniform(30)/10.0;
+                                     cell.spinRange = 3;
+                                     cell.lifetime = morphingDuration;
+                                     
+                                 }] update:^(CAEmitterLayer *layer, CAEmitterCell *cell) {
+                                     layer.emitterPosition = emitterPosition;
+                                 }] play];
             }
             
             FSCharacterLimbo *limbo = [FSCharacterLimbo new];

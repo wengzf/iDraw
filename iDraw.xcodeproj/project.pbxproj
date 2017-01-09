@@ -87,6 +87,7 @@
 		AD1EECBE1E03BE3C001C00B0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EECAA1E03BE3C001C00B0 /* UIRefreshControl+AFNetworking.m */; };
 		AD1EECBF1E03BE3C001C00B0 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EECAC1E03BE3C001C00B0 /* UIWebView+AFNetworking.m */; };
 		AD3DD6EC1E0CD34200847628 /* FSMushroomStreetGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3DD6EB1E0CD34200847628 /* FSMushroomStreetGuideView.m */; };
+		AD7D72DE1E232FED004EE567 /* FSMorphingLabel+Pixelate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7D72DD1E232FED004EE567 /* FSMorphingLabel+Pixelate.m */; };
 		AD8F67931E09197F00271848 /* FSEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67921E09197F00271848 /* FSEasing.m */; };
 		AD8F67961E093A5800271848 /* FSCharacterDiffResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67951E093A5800271848 /* FSCharacterDiffResult.m */; };
 		AD8F67991E09518500271848 /* FSCharacterLimbo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8F67981E09518500271848 /* FSCharacterLimbo.m */; };
@@ -344,6 +345,8 @@
 		AD1EECAC1E03BE3C001C00B0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		AD3DD6EA1E0CD34200847628 /* FSMushroomStreetGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMushroomStreetGuideView.h; sourceTree = "<group>"; };
 		AD3DD6EB1E0CD34200847628 /* FSMushroomStreetGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMushroomStreetGuideView.m; sourceTree = "<group>"; };
+		AD7D72DC1E232FED004EE567 /* FSMorphingLabel+Pixelate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSMorphingLabel+Pixelate.h"; sourceTree = "<group>"; };
+		AD7D72DD1E232FED004EE567 /* FSMorphingLabel+Pixelate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Pixelate.m"; sourceTree = "<group>"; };
 		AD8F67911E09197F00271848 /* FSEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEasing.h; sourceTree = "<group>"; };
 		AD8F67921E09197F00271848 /* FSEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEasing.m; sourceTree = "<group>"; };
 		AD8F67941E093A5800271848 /* FSCharacterDiffResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCharacterDiffResult.h; sourceTree = "<group>"; };
@@ -1251,6 +1254,8 @@
 				ADEAB4E61E1F49C90091151F /* FSMorphingLabel+Sparkle.m */,
 				ADEAB4E81E1F70C80091151F /* FSMorphingLabel+Burn.h */,
 				ADEAB4E91E1F70C80091151F /* FSMorphingLabel+Burn.m */,
+				AD7D72DC1E232FED004EE567 /* FSMorphingLabel+Pixelate.h */,
+				AD7D72DD1E232FED004EE567 /* FSMorphingLabel+Pixelate.m */,
 			);
 			path = FSMorphingEffectCategory;
 			sourceTree = "<group>";
@@ -1412,6 +1417,7 @@
 				AD1EECAD1E03BE3C001C00B0 /* AFHTTPRequestOperation.m in Sources */,
 				AD1EECB81E03BE3C001C00B0 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				ADE0DABA1E038A460050BEB2 /* FSScrollView.m in Sources */,
+				AD7D72DE1E232FED004EE567 /* FSMorphingLabel+Pixelate.m in Sources */,
 				ADF1C0371DFE5BD6002D5594 /* Canvas+AboresentLung.m in Sources */,
 				ADD197BE1E0156D300FA3713 /* FSJSONSerialization.m in Sources */,
 				ADF1C0671DFE5BD6002D5594 /* main.m in Sources */,
@@ -1604,6 +1610,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4JVDCH8EHZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iDraw/PrefixHeader.pch";
@@ -1622,6 +1629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4JVDCH8EHZ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iDraw/PrefixHeader.pch";
