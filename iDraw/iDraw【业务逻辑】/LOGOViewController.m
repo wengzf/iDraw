@@ -19,6 +19,7 @@
 #import "UIImageView+FSWebCache.h"
 
 #import "TestMorphingLabelViewController.h"
+#import "TestCoreImageViewController.h"
 
 @interface LOGOViewController ()
 {
@@ -83,9 +84,15 @@
 - (void)viewDidAppear:(BOOL)animated
 {
      // morphing Label 测试
-    [self testMorphingLabel];
+    [self testCoreImage];
 }
 
+
+- (void)testCoreImage
+{
+    TestCoreImageViewController *vc = [TestCoreImageViewController new];
+    [self presentViewController:vc animated:YES completion:NULL];
+}
 
 // morphing Label 测试
 - (void)testMorphingLabel

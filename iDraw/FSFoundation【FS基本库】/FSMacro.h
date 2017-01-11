@@ -17,8 +17,6 @@
 
 
 
-
-
 /*--------------------------------视图--------------------------------*/
 #define KeyWindow  ([UIApplication sharedApplication].keyWindow)
 

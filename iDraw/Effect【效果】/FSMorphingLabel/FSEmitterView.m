@@ -90,7 +90,6 @@
                                          duration:duration];
         
         closure(emitter.layer, emitter.cell);
-//        emitter.layer.frame = self.layer.bounds;
         [self.layer addSublayer:emitter.layer];
         [self.emitters setObject:emitter forKey:name];
     }

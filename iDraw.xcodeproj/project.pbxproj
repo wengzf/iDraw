@@ -100,7 +100,14 @@
 		AD98B4061E1B4F52004E3AFB /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = AD98B4021E1B4F52004E3AFB /* Sparkle.png */; };
 		AD98B4091E1B563B004E3AFB /* FSMorphingLabel+Anvil.m in Sources */ = {isa = PBXBuildFile; fileRef = AD98B4081E1B563B004E3AFB /* FSMorphingLabel+Anvil.m */; };
 		ADA0BEC21E1676FA003AAD52 /* FSEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */; };
-		ADD15FD31E0A7E2B00A5200E /* FSGridLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */; };
+		ADB63C331E2647DC00746CEF /* IMG_0072.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2B1E2647DC00746CEF /* IMG_0072.PNG */; };
+		ADB63C341E2647DC00746CEF /* IMG_0073.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2C1E2647DC00746CEF /* IMG_0073.PNG */; };
+		ADB63C351E2647DC00746CEF /* IMG_0074.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2D1E2647DC00746CEF /* IMG_0074.PNG */; };
+		ADB63C361E2647DC00746CEF /* IMG_0075.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2E1E2647DC00746CEF /* IMG_0075.PNG */; };
+		ADB63C371E2647DC00746CEF /* IMG_0938.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2F1E2647DC00746CEF /* IMG_0938.PNG */; };
+		ADB63C381E2647DC00746CEF /* IMG_0939.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C301E2647DC00746CEF /* IMG_0939.PNG */; };
+		ADB63C391E2647DC00746CEF /* IMG_0940.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C311E2647DC00746CEF /* IMG_0940.PNG */; };
+		ADB63C3A1E2647DC00746CEF /* IMG_0941.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C321E2647DC00746CEF /* IMG_0941.PNG */; };
 		ADD197BE1E0156D300FA3713 /* FSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */; };
 		ADE0DAAD1E038A160050BEB2 /* FSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE0DAAB1E038A160050BEB2 /* FSCollectionViewController.m */; };
 		ADE0DAAE1E038A160050BEB2 /* FSCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE0DAAC1E038A160050BEB2 /* FSCollectionViewController.xib */; };
@@ -129,6 +136,10 @@
 		ADE0DB011E0397490050BEB2 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE0DAFE1E0397490050BEB2 /* NSTimer+Blocks.m */; };
 		ADEAB4E71E1F49C90091151F /* FSMorphingLabel+Sparkle.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEAB4E61E1F49C90091151F /* FSMorphingLabel+Sparkle.m */; };
 		ADEAB4EA1E1F70C80091151F /* FSMorphingLabel+Burn.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEAB4E91E1F70C80091151F /* FSMorphingLabel+Burn.m */; };
+		ADEDFCB01E25CE4D00837228 /* TestCoreImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEDFCAE1E25CE4D00837228 /* TestCoreImageViewController.m */; };
+		ADEDFCB11E25CE4D00837228 /* TestCoreImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADEDFCAF1E25CE4D00837228 /* TestCoreImageViewController.xib */; };
+		ADEDFCF61E26194A00837228 /* RWHLoanSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEDFCF41E26194A00837228 /* RWHLoanSuccessViewController.m */; };
+		ADEDFCF71E26194A00837228 /* RWHLoanSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADEDFCF51E26194A00837228 /* RWHLoanSuccessViewController.xib */; };
 		ADF0D61E1E0274F9000C8126 /* ImageAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF0D5FB1E0274F9000C8126 /* ImageAnalysisViewController.m */; };
 		ADF0D61F1E0274F9000C8126 /* ImageAnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF0D5FC1E0274F9000C8126 /* ImageAnalysisViewController.xib */; };
 		ADF0D6201E0274F9000C8126 /* AnimationCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF0D5FF1E0274F9000C8126 /* AnimationCurveViewController.m */; };
@@ -367,8 +378,14 @@
 		AD98B4081E1B563B004E3AFB /* FSMorphingLabel+Anvil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Anvil.m"; sourceTree = "<group>"; };
 		ADA0BEC01E1676FA003AAD52 /* FSEmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmitterView.h; sourceTree = "<group>"; };
 		ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmitterView.m; sourceTree = "<group>"; };
-		ADD15FD11E0A7E2B00A5200E /* FSGridLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSGridLabel.h; sourceTree = "<group>"; };
-		ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSGridLabel.m; sourceTree = "<group>"; };
+		ADB63C2B1E2647DC00746CEF /* IMG_0072.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0072.PNG; sourceTree = "<group>"; };
+		ADB63C2C1E2647DC00746CEF /* IMG_0073.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0073.PNG; sourceTree = "<group>"; };
+		ADB63C2D1E2647DC00746CEF /* IMG_0074.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0074.PNG; sourceTree = "<group>"; };
+		ADB63C2E1E2647DC00746CEF /* IMG_0075.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0075.PNG; sourceTree = "<group>"; };
+		ADB63C2F1E2647DC00746CEF /* IMG_0938.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0938.PNG; sourceTree = "<group>"; };
+		ADB63C301E2647DC00746CEF /* IMG_0939.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0939.PNG; sourceTree = "<group>"; };
+		ADB63C311E2647DC00746CEF /* IMG_0940.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0940.PNG; sourceTree = "<group>"; };
+		ADB63C321E2647DC00746CEF /* IMG_0941.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0941.PNG; sourceTree = "<group>"; };
 		ADD197BC1E0156D300FA3713 /* FSJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSJSONSerialization.h; sourceTree = "<group>"; };
 		ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSJSONSerialization.m; sourceTree = "<group>"; };
 		ADE0DAAA1E038A160050BEB2 /* FSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCollectionViewController.h; sourceTree = "<group>"; };
@@ -424,6 +441,12 @@
 		ADEAB4E61E1F49C90091151F /* FSMorphingLabel+Sparkle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Sparkle.m"; sourceTree = "<group>"; };
 		ADEAB4E81E1F70C80091151F /* FSMorphingLabel+Burn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSMorphingLabel+Burn.h"; sourceTree = "<group>"; };
 		ADEAB4E91E1F70C80091151F /* FSMorphingLabel+Burn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Burn.m"; sourceTree = "<group>"; };
+		ADEDFCAD1E25CE4D00837228 /* TestCoreImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCoreImageViewController.h; sourceTree = "<group>"; };
+		ADEDFCAE1E25CE4D00837228 /* TestCoreImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCoreImageViewController.m; sourceTree = "<group>"; };
+		ADEDFCAF1E25CE4D00837228 /* TestCoreImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCoreImageViewController.xib; sourceTree = "<group>"; };
+		ADEDFCF31E26194A00837228 /* RWHLoanSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWHLoanSuccessViewController.h; sourceTree = "<group>"; };
+		ADEDFCF41E26194A00837228 /* RWHLoanSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWHLoanSuccessViewController.m; sourceTree = "<group>"; };
+		ADEDFCF51E26194A00837228 /* RWHLoanSuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWHLoanSuccessViewController.xib; sourceTree = "<group>"; };
 		ADF0D5FA1E0274F9000C8126 /* ImageAnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnalysisViewController.h; sourceTree = "<group>"; };
 		ADF0D5FB1E0274F9000C8126 /* ImageAnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAnalysisViewController.m; sourceTree = "<group>"; };
 		ADF0D5FC1E0274F9000C8126 /* ImageAnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAnalysisViewController.xib; sourceTree = "<group>"; };
@@ -861,8 +884,6 @@
 			isa = PBXGroup;
 			children = (
 				AD98B3FE1E1B4F52004E3AFB /* Particles */,
-				ADD15FD11E0A7E2B00A5200E /* FSGridLabel.h */,
-				ADD15FD21E0A7E2B00A5200E /* FSGridLabel.m */,
 				ADF1DD001E151F1F00094A0A /* FSMorphingEffectCategory */,
 				AD8F67911E09197F00271848 /* FSEasing.h */,
 				AD8F67921E09197F00271848 /* FSEasing.m */,
@@ -892,6 +913,21 @@
 				AD98B4021E1B4F52004E3AFB /* Sparkle.png */,
 			);
 			path = Particles;
+			sourceTree = "<group>";
+		};
+		ADB63C2A1E2647DC00746CEF /* imgage */ = {
+			isa = PBXGroup;
+			children = (
+				ADB63C2B1E2647DC00746CEF /* IMG_0072.PNG */,
+				ADB63C2C1E2647DC00746CEF /* IMG_0073.PNG */,
+				ADB63C2D1E2647DC00746CEF /* IMG_0074.PNG */,
+				ADB63C2E1E2647DC00746CEF /* IMG_0075.PNG */,
+				ADB63C2F1E2647DC00746CEF /* IMG_0938.PNG */,
+				ADB63C301E2647DC00746CEF /* IMG_0939.PNG */,
+				ADB63C311E2647DC00746CEF /* IMG_0940.PNG */,
+				ADB63C321E2647DC00746CEF /* IMG_0941.PNG */,
+			);
+			path = imgage;
 			sourceTree = "<group>";
 		};
 		ADD197BB1E0156D300FA3713 /* FSJSONSerialization */ = {
@@ -1017,9 +1053,20 @@
 			path = FoundationExtension;
 			sourceTree = "<group>";
 		};
+		ADEDFCAC1E25CE0200837228 /* FSCoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				ADEDFCAD1E25CE4D00837228 /* TestCoreImageViewController.h */,
+				ADEDFCAE1E25CE4D00837228 /* TestCoreImageViewController.m */,
+				ADEDFCAF1E25CE4D00837228 /* TestCoreImageViewController.xib */,
+			);
+			path = FSCoreImage;
+			sourceTree = "<group>";
+		};
 		ADF0D5F81E0274F9000C8126 /* Effect【效果】 */ = {
 			isa = PBXGroup;
 			children = (
+				ADEDFCAC1E25CE0200837228 /* FSCoreImage */,
 				AD3DD6E91E0CD1DB00847628 /* FSMushroomGuidePage */,
 				AD8F67901E09192700271848 /* FSMorphingLabel */,
 				ADE0DAC31E038A910050BEB2 /* FSCloseSwithView 【通知关闭按钮】 */,
@@ -1112,6 +1159,7 @@
 		ADF1BFC01DFE5B7A002D5594 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
+				ADB63C2A1E2647DC00746CEF /* imgage */,
 				ADF1C0321DFE5BD6002D5594 /* Thinking.h */,
 				ADE0DADB1E0392360050BEB2 /* Library【第三方库】 */,
 				ADF0D5F81E0274F9000C8126 /* Effect【效果】 */,
@@ -1129,8 +1177,8 @@
 		ADF1BFD81DFE5BD6002D5594 /* FSFoundation【FS基本库】 */ = {
 			isa = PBXGroup;
 			children = (
-				ADE0DAF81E03973E0050BEB2 /* FoundationExtension */,
 				ADF1BFE11DFE5BD6002D5594 /* FSMacro.h */,
+				ADE0DAF81E03973E0050BEB2 /* FoundationExtension */,
 				ADF1C07E1DFE7BA3002D5594 /* FSNavigationRouter */,
 				ADD197BB1E0156D300FA3713 /* FSJSONSerialization */,
 				ADF1BFDC1DFE5BD6002D5594 /* FSWebImage */,
@@ -1159,18 +1207,21 @@
 				ADF1BFE41DFE5BD6002D5594 /* AppDelegate.h */,
 				ADF1BFE51DFE5BD6002D5594 /* AppDelegate.m */,
 				ADF1BFE61DFE5BD6002D5594 /* Canvas【画布】 */,
-				ADF1BFF61DFE5BD6002D5594 /* FractalViewController.h */,
-				ADF1BFF71DFE5BD6002D5594 /* FractalViewController.m */,
-				ADF1BFF81DFE5BD6002D5594 /* FractalViewController.xib */,
 				ADF1BFF91DFE5BD6002D5594 /* LOGOViewController.h */,
 				ADF1BFFA1DFE5BD6002D5594 /* LOGOViewController.m */,
 				ADF1BFFB1DFE5BD6002D5594 /* LOGOViewController.xib */,
+				ADF1BFF61DFE5BD6002D5594 /* FractalViewController.h */,
+				ADF1BFF71DFE5BD6002D5594 /* FractalViewController.m */,
+				ADF1BFF81DFE5BD6002D5594 /* FractalViewController.xib */,
 				ADF1BFFC1DFE5BD6002D5594 /* TableViewCell.h */,
 				ADF1BFFD1DFE5BD6002D5594 /* TableViewCell.m */,
 				ADF1BFFE1DFE5BD6002D5594 /* TableViewCell.xib */,
 				ADF1BFFF1DFE5BD6002D5594 /* TableViewController.h */,
 				ADF1C0001DFE5BD6002D5594 /* TableViewController.m */,
 				ADF1C0011DFE5BD6002D5594 /* TableViewController.xib */,
+				ADEDFCF31E26194A00837228 /* RWHLoanSuccessViewController.h */,
+				ADEDFCF41E26194A00837228 /* RWHLoanSuccessViewController.m */,
+				ADEDFCF51E26194A00837228 /* RWHLoanSuccessViewController.xib */,
 			);
 			path = "iDraw【业务逻辑】";
 			sourceTree = "<group>";
@@ -1330,13 +1381,18 @@
 				ADF0D6211E0274F9000C8126 /* AnimationCurveViewController.xib in Resources */,
 				AD1EEC5F1E03BE33001C00B0 /* LICENSE in Resources */,
 				ADF1C0441DFE5BD6002D5594 /* FractalViewController.xib in Resources */,
+				ADEDFCB11E25CE4D00837228 /* TestCoreImageViewController.xib in Resources */,
 				AD98B4031E1B4F52004E3AFB /* Fire.png in Resources */,
+				ADB63C361E2647DC00746CEF /* IMG_0075.PNG in Resources */,
 				AD7EECFA1E23A45600FBD74D /* TestMorphingLabelViewController.xib in Resources */,
+				ADB63C371E2647DC00746CEF /* IMG_0938.PNG in Resources */,
 				ADF1C0501DFE5BD6002D5594 /* 5.jpg in Resources */,
 				ADF1C0541DFE5BD6002D5594 /* fractal.png in Resources */,
 				ADF1C0531DFE5BD6002D5594 /* closeSwitchBackground.png in Resources */,
 				ADF1C0521DFE5BD6002D5594 /* 7.jpg in Resources */,
 				AD1EECB61E03BE3C001C00B0 /* LICENSE in Resources */,
+				ADB63C341E2647DC00746CEF /* IMG_0073.PNG in Resources */,
+				ADB63C351E2647DC00746CEF /* IMG_0074.PNG in Resources */,
 				ADF1C0551DFE5BD6002D5594 /* pen.png in Resources */,
 				AD1EEC5C1E03BE33001C00B0 /* LICENSE in Resources */,
 				AD1EEBFB1E03BE07001C00B0 /* SVProgressHUD.bundle in Resources */,
@@ -1346,14 +1402,19 @@
 				ADF0D61F1E0274F9000C8126 /* ImageAnalysisViewController.xib in Resources */,
 				AD98B4051E1B4F52004E3AFB /* Smoke.png in Resources */,
 				AD98B4041E1B4F52004E3AFB /* Fragment.png in Resources */,
+				ADB63C381E2647DC00746CEF /* IMG_0939.PNG in Resources */,
 				AD1EEC7A1E03BE33001C00B0 /* MJRefresh.bundle in Resources */,
 				ADF1C04B1DFE5BD6002D5594 /* 0.jpg in Resources */,
 				ADF1C04D1DFE5BD6002D5594 /* 2.jpg in Resources */,
 				ADF1C0481DFE5BD6002D5594 /* TableViewCell.xib in Resources */,
+				ADB63C331E2647DC00746CEF /* IMG_0072.PNG in Resources */,
+				ADB63C391E2647DC00746CEF /* IMG_0940.PNG in Resources */,
 				ADF1C04C1DFE5BD6002D5594 /* 1.jpg in Resources */,
 				ADF1C0661DFE5BD6002D5594 /* LaunchScreen.xib in Resources */,
 				ADF1C0461DFE5BD6002D5594 /* LOGOViewController.xib in Resources */,
 				ADF1C04F1DFE5BD6002D5594 /* 4.jpg in Resources */,
+				ADEDFCF71E26194A00837228 /* RWHLoanSuccessViewController.xib in Resources */,
+				ADB63C3A1E2647DC00746CEF /* IMG_0941.PNG in Resources */,
 				AD1EEC6B1E03BE33001C00B0 /* LICENSE in Resources */,
 				ADF0D6291E0274F9000C8126 /* FSScanQRCodeViewController.xib in Resources */,
 				ADF0D62A1E0274F9000C8126 /* sao.png in Resources */,
@@ -1390,6 +1451,7 @@
 				ADF7CE5A1E1638A00098797D /* FSMorphingLabel+Fall.m in Sources */,
 				AD1EECB31E03BE3C001C00B0 /* AFURLRequestSerialization.m in Sources */,
 				AD1EEC6E1E03BE33001C00B0 /* MJRefreshComponent.m in Sources */,
+				ADEDFCB01E25CE4D00837228 /* TestCoreImageViewController.m in Sources */,
 				ADF1C03C1DFE5BD6002D5594 /* Canvas+Path.m in Sources */,
 				AD1EEBE91E03BE03001C00B0 /* SDWebImageDecoder.m in Sources */,
 				AD1EEC781E03BE33001C00B0 /* MJRefreshNormalHeader.m in Sources */,
@@ -1401,6 +1463,7 @@
 				AD1EEC671E03BE33001C00B0 /* NSObject+MJKeyValue.m in Sources */,
 				AD1EECB71E03BE3C001C00B0 /* README.md in Sources */,
 				ADF1C07C1DFE7A3A002D5594 /* FSWebImageManager.m in Sources */,
+				ADEDFCF61E26194A00837228 /* RWHLoanSuccessViewController.m in Sources */,
 				AD1EEC6D1E03BE33001C00B0 /* MJRefreshBackFooter.m in Sources */,
 				ADE0DAD91E0391D80050BEB2 /* FSPopMenu.m in Sources */,
 				ADE0DAF31E03967D0050BEB2 /* UIImage+ImageEffects.m in Sources */,
@@ -1444,7 +1507,6 @@
 				ADF1C0451DFE5BD6002D5594 /* LOGOViewController.m in Sources */,
 				ADF1C03E1DFE5BD6002D5594 /* Canvas+SierpinskiTriangle.m in Sources */,
 				AD1EEC831E03BE33001C00B0 /* NSString+Encrypt3DESandBase64.m in Sources */,
-				ADD15FD31E0A7E2B00A5200E /* FSGridLabel.m in Sources */,
 				AD1EEC741E03BE33001C00B0 /* MJRefreshBackGifFooter.m in Sources */,
 				ADF0D6281E0274F9000C8126 /* FSScanQRCodeViewController.m in Sources */,
 				ADF0D61E1E0274F9000C8126 /* ImageAnalysisViewController.m in Sources */,
