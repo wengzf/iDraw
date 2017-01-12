@@ -33,7 +33,7 @@
 
 - (void)openGLES
 {
-    UIImage *showImage = [UIImage imageNamed:@"closeSwitchBackground"];
+    UIImage *showImage = [UIImage imageNamed:@"renwohua"];
     CGRect rect = CGRectMake(0, 0, showImage.size.width, showImage.size.height);
     
     // 获取OpenGLES渲染的上下文
@@ -42,6 +42,7 @@
     // 创建出渲染的buffer
     _glkView = [[GLKView alloc] initWithFrame:rect
                                       context:eagContext];
+    [_glkView bindDrawable];
     [self.view addSubview:_glkView];
     
     // 创建出CoreImage用的上下文
@@ -51,6 +52,7 @@
     _ciImage = [[CIImage alloc] initWithImage:showImage];
     
     _filter = [CIFilter filterWithName:@"CISepiaTone"];
+    
     [_filter setValue:_ciImage forKey:kCIInputImageKey];
     [_filter setValue:@0 forKey:kCIInputIntensityKey];
     
@@ -58,7 +60,23 @@
     [_ciCicontext drawImage:[_filter outputImage]
                      inRect:CGRectMake(0, 0, _glkView.drawableWidth, _glkView.drawableHeight)
                    fromRect:[_ciImage extent]];
+    [_glkView display];
+    
+    // 添加滑动条
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(0, 400, 320, 20)];
+    [slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider];
  }
+- (void)sliderValueChanged:(UISlider *)slider
+{
+    [_filter setValue:@(slider.value) forKey:kCIInputIntensityKey];
+    
+    // 开始渲染
+    [_ciCicontext drawImage:[_filter outputImage]
+                     inRect:CGRectMake(0, 0, _glkView.drawableWidth, _glkView.drawableHeight)
+                   fromRect:[_ciImage extent]];
+    [_glkView display];
+}
 
 - (void)basicFilter
 {

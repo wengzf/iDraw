@@ -100,14 +100,14 @@
 		AD98B4061E1B4F52004E3AFB /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = AD98B4021E1B4F52004E3AFB /* Sparkle.png */; };
 		AD98B4091E1B563B004E3AFB /* FSMorphingLabel+Anvil.m in Sources */ = {isa = PBXBuildFile; fileRef = AD98B4081E1B563B004E3AFB /* FSMorphingLabel+Anvil.m */; };
 		ADA0BEC21E1676FA003AAD52 /* FSEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */; };
-		ADB63C331E2647DC00746CEF /* IMG_0072.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2B1E2647DC00746CEF /* IMG_0072.PNG */; };
-		ADB63C341E2647DC00746CEF /* IMG_0073.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2C1E2647DC00746CEF /* IMG_0073.PNG */; };
-		ADB63C351E2647DC00746CEF /* IMG_0074.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2D1E2647DC00746CEF /* IMG_0074.PNG */; };
-		ADB63C361E2647DC00746CEF /* IMG_0075.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2E1E2647DC00746CEF /* IMG_0075.PNG */; };
-		ADB63C371E2647DC00746CEF /* IMG_0938.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2F1E2647DC00746CEF /* IMG_0938.PNG */; };
-		ADB63C381E2647DC00746CEF /* IMG_0939.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C301E2647DC00746CEF /* IMG_0939.PNG */; };
-		ADB63C391E2647DC00746CEF /* IMG_0940.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C311E2647DC00746CEF /* IMG_0940.PNG */; };
-		ADB63C3A1E2647DC00746CEF /* IMG_0941.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C321E2647DC00746CEF /* IMG_0941.PNG */; };
+		ADB63C331E2647DC00746CEF /* mogu_6_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2B1E2647DC00746CEF /* mogu_6_1.png */; };
+		ADB63C341E2647DC00746CEF /* mogu_6_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2C1E2647DC00746CEF /* mogu_6_2.png */; };
+		ADB63C351E2647DC00746CEF /* mogu_6_3.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2D1E2647DC00746CEF /* mogu_6_3.png */; };
+		ADB63C361E2647DC00746CEF /* mogu_6_4.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2E1E2647DC00746CEF /* mogu_6_4.png */; };
+		ADB63C371E2647DC00746CEF /* mogu_5_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C2F1E2647DC00746CEF /* mogu_5_1.png */; };
+		ADB63C381E2647DC00746CEF /* mogu_5_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C301E2647DC00746CEF /* mogu_5_2.png */; };
+		ADB63C391E2647DC00746CEF /* mogu_5_3.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C311E2647DC00746CEF /* mogu_5_3.png */; };
+		ADB63C3A1E2647DC00746CEF /* mogu_5_4.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C321E2647DC00746CEF /* mogu_5_4.png */; };
 		ADD197BE1E0156D300FA3713 /* FSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */; };
 		ADE0DAAD1E038A160050BEB2 /* FSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE0DAAB1E038A160050BEB2 /* FSCollectionViewController.m */; };
 		ADE0DAAE1E038A160050BEB2 /* FSCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE0DAAC1E038A160050BEB2 /* FSCollectionViewController.xib */; };
@@ -155,6 +155,9 @@
 		ADF0D6351E027A6C000C8126 /* TestMovingArrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF0D6341E027A6C000C8126 /* TestMovingArrowViewController.m */; };
 		ADF0D6381E027AF0000C8126 /* TestFSIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF0D6371E027AF0000C8126 /* TestFSIndicatorViewController.m */; };
 		ADF0D63B1E027BEC000C8126 /* LoadingCheckView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF0D63A1E027BEC000C8126 /* LoadingCheckView.m */; };
+		ADF128CC1E272376003D4EA5 /* renwohua.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF128CB1E272376003D4EA5 /* renwohua.png */; };
+		ADF128D01E275DBA003D4EA5 /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF128CE1E275DBA003D4EA5 /* VisualEffectViewController.m */; };
+		ADF128D11E275DBA003D4EA5 /* VisualEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF128CF1E275DBA003D4EA5 /* VisualEffectViewController.xib */; };
 		ADF1C0351DFE5BD6002D5594 /* UIImageView+FSWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1BFE01DFE5BD6002D5594 /* UIImageView+FSWebCache.m */; };
 		ADF1C0361DFE5BD6002D5594 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1BFE51DFE5BD6002D5594 /* AppDelegate.m */; };
 		ADF1C0371DFE5BD6002D5594 /* Canvas+AboresentLung.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF1BFE71DFE5BD6002D5594 /* Canvas+AboresentLung.m */; };
@@ -378,14 +381,14 @@
 		AD98B4081E1B563B004E3AFB /* FSMorphingLabel+Anvil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSMorphingLabel+Anvil.m"; sourceTree = "<group>"; };
 		ADA0BEC01E1676FA003AAD52 /* FSEmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEmitterView.h; sourceTree = "<group>"; };
 		ADA0BEC11E1676FA003AAD52 /* FSEmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEmitterView.m; sourceTree = "<group>"; };
-		ADB63C2B1E2647DC00746CEF /* IMG_0072.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0072.PNG; sourceTree = "<group>"; };
-		ADB63C2C1E2647DC00746CEF /* IMG_0073.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0073.PNG; sourceTree = "<group>"; };
-		ADB63C2D1E2647DC00746CEF /* IMG_0074.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0074.PNG; sourceTree = "<group>"; };
-		ADB63C2E1E2647DC00746CEF /* IMG_0075.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0075.PNG; sourceTree = "<group>"; };
-		ADB63C2F1E2647DC00746CEF /* IMG_0938.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0938.PNG; sourceTree = "<group>"; };
-		ADB63C301E2647DC00746CEF /* IMG_0939.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0939.PNG; sourceTree = "<group>"; };
-		ADB63C311E2647DC00746CEF /* IMG_0940.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0940.PNG; sourceTree = "<group>"; };
-		ADB63C321E2647DC00746CEF /* IMG_0941.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0941.PNG; sourceTree = "<group>"; };
+		ADB63C2B1E2647DC00746CEF /* mogu_6_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_6_1.png; sourceTree = "<group>"; };
+		ADB63C2C1E2647DC00746CEF /* mogu_6_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_6_2.png; sourceTree = "<group>"; };
+		ADB63C2D1E2647DC00746CEF /* mogu_6_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_6_3.png; sourceTree = "<group>"; };
+		ADB63C2E1E2647DC00746CEF /* mogu_6_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_6_4.png; sourceTree = "<group>"; };
+		ADB63C2F1E2647DC00746CEF /* mogu_5_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_5_1.png; sourceTree = "<group>"; };
+		ADB63C301E2647DC00746CEF /* mogu_5_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_5_2.png; sourceTree = "<group>"; };
+		ADB63C311E2647DC00746CEF /* mogu_5_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_5_3.png; sourceTree = "<group>"; };
+		ADB63C321E2647DC00746CEF /* mogu_5_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_5_4.png; sourceTree = "<group>"; };
 		ADD197BC1E0156D300FA3713 /* FSJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSJSONSerialization.h; sourceTree = "<group>"; };
 		ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSJSONSerialization.m; sourceTree = "<group>"; };
 		ADE0DAAA1E038A160050BEB2 /* FSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCollectionViewController.h; sourceTree = "<group>"; };
@@ -471,6 +474,10 @@
 		ADF0D6371E027AF0000C8126 /* TestFSIndicatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFSIndicatorViewController.m; sourceTree = "<group>"; };
 		ADF0D6391E027BEC000C8126 /* LoadingCheckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingCheckView.h; sourceTree = "<group>"; };
 		ADF0D63A1E027BEC000C8126 /* LoadingCheckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingCheckView.m; sourceTree = "<group>"; };
+		ADF128CB1E272376003D4EA5 /* renwohua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = renwohua.png; sourceTree = "<group>"; };
+		ADF128CD1E275DBA003D4EA5 /* VisualEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualEffectViewController.h; sourceTree = "<group>"; };
+		ADF128CE1E275DBA003D4EA5 /* VisualEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisualEffectViewController.m; sourceTree = "<group>"; };
+		ADF128CF1E275DBA003D4EA5 /* VisualEffectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisualEffectViewController.xib; sourceTree = "<group>"; };
 		ADF1BFBE1DFE5B7A002D5594 /* iDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF1BFDF1DFE5BD6002D5594 /* UIImageView+FSWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FSWebCache.h"; sourceTree = "<group>"; };
 		ADF1BFE01DFE5BD6002D5594 /* UIImageView+FSWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FSWebCache.m"; sourceTree = "<group>"; };
@@ -918,14 +925,15 @@
 		ADB63C2A1E2647DC00746CEF /* imgage */ = {
 			isa = PBXGroup;
 			children = (
-				ADB63C2B1E2647DC00746CEF /* IMG_0072.PNG */,
-				ADB63C2C1E2647DC00746CEF /* IMG_0073.PNG */,
-				ADB63C2D1E2647DC00746CEF /* IMG_0074.PNG */,
-				ADB63C2E1E2647DC00746CEF /* IMG_0075.PNG */,
-				ADB63C2F1E2647DC00746CEF /* IMG_0938.PNG */,
-				ADB63C301E2647DC00746CEF /* IMG_0939.PNG */,
-				ADB63C311E2647DC00746CEF /* IMG_0940.PNG */,
-				ADB63C321E2647DC00746CEF /* IMG_0941.PNG */,
+				ADF128CB1E272376003D4EA5 /* renwohua.png */,
+				ADB63C2B1E2647DC00746CEF /* mogu_6_1.png */,
+				ADB63C2C1E2647DC00746CEF /* mogu_6_2.png */,
+				ADB63C2D1E2647DC00746CEF /* mogu_6_3.png */,
+				ADB63C2E1E2647DC00746CEF /* mogu_6_4.png */,
+				ADB63C2F1E2647DC00746CEF /* mogu_5_1.png */,
+				ADB63C301E2647DC00746CEF /* mogu_5_2.png */,
+				ADB63C311E2647DC00746CEF /* mogu_5_3.png */,
+				ADB63C321E2647DC00746CEF /* mogu_5_4.png */,
 			);
 			path = imgage;
 			sourceTree = "<group>";
@@ -1059,6 +1067,9 @@
 				ADEDFCAD1E25CE4D00837228 /* TestCoreImageViewController.h */,
 				ADEDFCAE1E25CE4D00837228 /* TestCoreImageViewController.m */,
 				ADEDFCAF1E25CE4D00837228 /* TestCoreImageViewController.xib */,
+				ADF128CD1E275DBA003D4EA5 /* VisualEffectViewController.h */,
+				ADF128CE1E275DBA003D4EA5 /* VisualEffectViewController.m */,
+				ADF128CF1E275DBA003D4EA5 /* VisualEffectViewController.xib */,
 			);
 			path = FSCoreImage;
 			sourceTree = "<group>";
@@ -1379,42 +1390,44 @@
 				ADF1C0561DFE5BD6002D5594 /* Images.xcassets in Resources */,
 				AD1EEBE41E03BE03001C00B0 /* LICENSE in Resources */,
 				ADF0D6211E0274F9000C8126 /* AnimationCurveViewController.xib in Resources */,
+				ADF128D11E275DBA003D4EA5 /* VisualEffectViewController.xib in Resources */,
 				AD1EEC5F1E03BE33001C00B0 /* LICENSE in Resources */,
 				ADF1C0441DFE5BD6002D5594 /* FractalViewController.xib in Resources */,
 				ADEDFCB11E25CE4D00837228 /* TestCoreImageViewController.xib in Resources */,
 				AD98B4031E1B4F52004E3AFB /* Fire.png in Resources */,
-				ADB63C361E2647DC00746CEF /* IMG_0075.PNG in Resources */,
+				ADB63C361E2647DC00746CEF /* mogu_6_4.png in Resources */,
 				AD7EECFA1E23A45600FBD74D /* TestMorphingLabelViewController.xib in Resources */,
-				ADB63C371E2647DC00746CEF /* IMG_0938.PNG in Resources */,
+				ADB63C371E2647DC00746CEF /* mogu_5_1.png in Resources */,
 				ADF1C0501DFE5BD6002D5594 /* 5.jpg in Resources */,
 				ADF1C0541DFE5BD6002D5594 /* fractal.png in Resources */,
 				ADF1C0531DFE5BD6002D5594 /* closeSwitchBackground.png in Resources */,
 				ADF1C0521DFE5BD6002D5594 /* 7.jpg in Resources */,
 				AD1EECB61E03BE3C001C00B0 /* LICENSE in Resources */,
-				ADB63C341E2647DC00746CEF /* IMG_0073.PNG in Resources */,
-				ADB63C351E2647DC00746CEF /* IMG_0074.PNG in Resources */,
+				ADB63C341E2647DC00746CEF /* mogu_6_2.png in Resources */,
+				ADB63C351E2647DC00746CEF /* mogu_6_3.png in Resources */,
 				ADF1C0551DFE5BD6002D5594 /* pen.png in Resources */,
 				AD1EEC5C1E03BE33001C00B0 /* LICENSE in Resources */,
 				AD1EEBFB1E03BE07001C00B0 /* SVProgressHUD.bundle in Resources */,
 				ADE0DAAE1E038A160050BEB2 /* FSCollectionViewController.xib in Resources */,
 				ADF0D62B1E0274F9000C8126 /* weixinScan.mp3 in Resources */,
+				ADF128CC1E272376003D4EA5 /* renwohua.png in Resources */,
 				ADF1C06A1DFE788B002D5594 /* Info.plist in Resources */,
 				ADF0D61F1E0274F9000C8126 /* ImageAnalysisViewController.xib in Resources */,
 				AD98B4051E1B4F52004E3AFB /* Smoke.png in Resources */,
 				AD98B4041E1B4F52004E3AFB /* Fragment.png in Resources */,
-				ADB63C381E2647DC00746CEF /* IMG_0939.PNG in Resources */,
+				ADB63C381E2647DC00746CEF /* mogu_5_2.png in Resources */,
 				AD1EEC7A1E03BE33001C00B0 /* MJRefresh.bundle in Resources */,
 				ADF1C04B1DFE5BD6002D5594 /* 0.jpg in Resources */,
 				ADF1C04D1DFE5BD6002D5594 /* 2.jpg in Resources */,
 				ADF1C0481DFE5BD6002D5594 /* TableViewCell.xib in Resources */,
-				ADB63C331E2647DC00746CEF /* IMG_0072.PNG in Resources */,
-				ADB63C391E2647DC00746CEF /* IMG_0940.PNG in Resources */,
+				ADB63C331E2647DC00746CEF /* mogu_6_1.png in Resources */,
+				ADB63C391E2647DC00746CEF /* mogu_5_3.png in Resources */,
 				ADF1C04C1DFE5BD6002D5594 /* 1.jpg in Resources */,
 				ADF1C0661DFE5BD6002D5594 /* LaunchScreen.xib in Resources */,
 				ADF1C0461DFE5BD6002D5594 /* LOGOViewController.xib in Resources */,
 				ADF1C04F1DFE5BD6002D5594 /* 4.jpg in Resources */,
 				ADEDFCF71E26194A00837228 /* RWHLoanSuccessViewController.xib in Resources */,
-				ADB63C3A1E2647DC00746CEF /* IMG_0941.PNG in Resources */,
+				ADB63C3A1E2647DC00746CEF /* mogu_5_4.png in Resources */,
 				AD1EEC6B1E03BE33001C00B0 /* LICENSE in Resources */,
 				ADF0D6291E0274F9000C8126 /* FSScanQRCodeViewController.xib in Resources */,
 				ADF0D62A1E0274F9000C8126 /* sao.png in Resources */,
@@ -1433,6 +1446,7 @@
 			files = (
 				AD1EEC7B1E03BE33001C00B0 /* MJRefreshConst.m in Sources */,
 				AD8F67991E09518500271848 /* FSCharacterLimbo.m in Sources */,
+				ADF128D01E275DBA003D4EA5 /* VisualEffectViewController.m in Sources */,
 				AD1EEBE71E03BE03001C00B0 /* SDImageCache.m in Sources */,
 				AD1EECBB1E03BE3C001C00B0 /* UIButton+AFNetworking.m in Sources */,
 				AD1EECB91E03BE3C001C00B0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,

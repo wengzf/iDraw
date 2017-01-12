@@ -21,6 +21,9 @@
 #import "TestMorphingLabelViewController.h"
 #import "TestCoreImageViewController.h"
 
+
+#import "VisualEffectViewController.h"
+
 @interface LOGOViewController ()
 {
     NSArray *sectionNamesArr;
@@ -84,10 +87,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
      // morphing Label 测试
-    [self testCoreImage];
+    [self testVisualEffectViewController];
 }
 
-
+- (void)testVisualEffectViewController
+{
+    VisualEffectViewController *vc = [VisualEffectViewController new];
+    [self presentViewController:vc animated:YES completion:NULL];
+}
 - (void)testCoreImage
 {
     TestCoreImageViewController *vc = [TestCoreImageViewController new];
