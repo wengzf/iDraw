@@ -1172,8 +1172,8 @@
 		ADF1BFC01DFE5B7A002D5594 /* iDraw */ = {
 			isa = PBXGroup;
 			children = (
-				ADB63C2A1E2647DC00746CEF /* imgage */,
 				ADF1C0321DFE5BD6002D5594 /* Thinking.h */,
+				ADB63C2A1E2647DC00746CEF /* imgage */,
 				ADE0DADB1E0392360050BEB2 /* Library【第三方库】 */,
 				ADF0D5F81E0274F9000C8126 /* Effect【效果】 */,
 				ADF1BFD81DFE5BD6002D5594 /* FSFoundation【FS基本库】 */,

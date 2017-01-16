@@ -54,8 +54,8 @@
 
 - (void)picture72
 {
-    CGFloat len = 150;
-    int count = 9;
+    CGFloat len = 100;
+    int count = 6;
     CGFloat unitLen = len/count;
     
     // 从底部开始绘制
@@ -66,6 +66,28 @@
         RT(90)
     }
     
+    UFD(unitLen)
+    RT90 FD(unitLen) LT90
+    FD(unitLen*5)
+    
+    UBK(len)
+    RT90 UFD(unitLen)
+    LT90
+    FD(unitLen*5)
+    RT90 FD(unitLen*4)
+    
+    RT90 UFD(unitLen)
+    RT90 FD(unitLen*3)
+    LT90 FD(unitLen*2)
+    LT90 FD(unitLen*3)
+    
+    LT90 UFD(unitLen)
+    LT90 FD(unitLen*2)
+    
+    UBK(unitLen*2)
+    LT90 UFD(unitLen*2)
+    RT90 FD(unitLen*3)
+    LT90 FD(unitLen)
 }
 
 @end

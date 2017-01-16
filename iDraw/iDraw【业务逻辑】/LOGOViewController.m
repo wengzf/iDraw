@@ -85,7 +85,7 @@
     // 海龟初始化
     DRAWINVIEW([Canvas sharedInstance]);
     
-    [[Canvas sharedInstance] picture99];
+    [[Canvas sharedInstance] picture72];
     
     CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] initWithLayer:[Canvas sharedInstance].layer];
     
@@ -96,6 +96,11 @@
     shapeLayer.strokeColor = [UIColor darkGrayColor].CGColor;
     
     shapeLayer.lineWidth = 3;
+
+    
+    shapeLayer.shadowOffset = CGSizeMake(0, 0);
+    shapeLayer.shadowRadius = 10;
+    shapeLayer.shadowColor = [UIColor darkGrayColor].CGColor;
     
     [[Canvas sharedInstance].layer addSublayer:shapeLayer];
     

@@ -109,6 +109,10 @@
 
 - (void) bk:(CGFloat) len;
 
+- (void) ufd:(CGFloat) len;
+
+- (void) ubk:(CGFloat) len;
+
 - (void) rt:(CGFloat) angle;
 
 - (void) lt:(CGFloat) angle;
@@ -129,6 +133,8 @@
 - (void) circleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle; // 向右画弧
 - (void) leftCircleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle; // 向左画弧
 
+- (void) addQuarCurveTo:(CGPoint) endPoint controlPoint:(CGPoint) controlPoint;
 
+- (void) addCurveToPoint:(CGPoint)endPoint controlPoint1:(CGPoint)controlPoint1 controlPoint2:(CGPoint)controlPoint2;
 
 @end
