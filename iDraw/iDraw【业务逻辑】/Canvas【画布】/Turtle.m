@@ -43,14 +43,17 @@
     // 抬笔设置
     flagPenDown = YES;
     
-    // 形状绘制初始化
-    [self beginPath];
+    // 路径初始化
+    if (shapePath) {
+        CGPathRelease(shapePath);
+    }
     shapePath = CGPathCreateMutable();
     CGPathMoveToPoint(shapePath, NULL, self.curPos.x, self.curPos.y);
+    
 }
 
 // 通过视图来初始化， curpos
-- (void) initWithView:(UIView *) view{
+- (void)initWithView:(UIView *) view{
     
     // 初始化海龟位置
     width = view.bounds.size.width/2;
@@ -59,23 +62,22 @@
     
     [self reset];
 }
-
-- (void) penup     // 抬笔
+- (void)penup     // 抬笔
 {
     flagPenDown = NO;
 }
-- (void) pendown
+- (void)pendown
 {
     flagPenDown = YES;
 }
 
-- (void) moveToPoint:(CGPoint) pos
+- (void)moveToPoint:(CGPoint) pos
 {
     self.curPos = pos;
     CGPathMoveToPoint(shapePath, NULL, pos.x, pos.y);
 }
 
-- (void) lineToPoint:(CGPoint) pos
+- (void)lineToPoint:(CGPoint) pos
 {
     if (flagPenDown) {
         CGPathAddLineToPoint(shapePath, NULL, pos.x, pos.y);
@@ -85,7 +87,7 @@
     self.curPos = pos;
 }
 
-- (void) fd:(CGFloat) len
+- (void)fd:(CGFloat) len
 {
     // 根据当前位置和角度，计算出终点，然后画线
     double x;
@@ -100,11 +102,11 @@
     }else{
         CGPathMoveToPoint(shapePath, NULL, x, y);
     }
-
+    
     self.curPos = CGPointMake(x, y);
 }
 
-- (void) bk:(CGFloat) len
+- (void)bk:(CGFloat) len
 {
     // 根据当前位置和角度，计算出终点，然后画线
     double x;
@@ -120,11 +122,23 @@
     }else{
         CGPathMoveToPoint(shapePath, NULL, x, y);
     }
-
+    
     self.curPos = CGPointMake(x, y);
 }
+- (void)ufd:(CGFloat) len
+{
+    [self penup];
+    [self fd:len];
+    [self pendown];
+}
+- (void)ubk:(CGFloat) len
+{
+    [self penup];
+    [self bk:len];
+    [self pendown];
+}
 
-- (void) rt:(CGFloat) angle
+- (void)rt:(CGFloat) angle
 {
     // 重新计算方向向量
     _curAngle -= angle;
@@ -138,7 +152,7 @@
     angleVec.y = sin(angRadix);
  
 }
-- (void) lt:(CGFloat) angle;
+- (void)lt:(CGFloat) angle;
 {
     _curAngle += angle;
     
@@ -151,40 +165,39 @@
     angleVec.y = sin(angRadix);
 }
 
-- (void) savePosState      // 保存当前位置信息，（包括海龟角度）
+- (void)savePosState      // 保存当前位置信息，（包括海龟角度）
 {
     backUpPos = _curPos;
     backUpAngle = _curAngle;
 }
-- (void) restorePosState   // 恢复到最近的一次位置保存信息
+- (void)restorePosState   // 恢复到最近的一次位置保存信息
 {
     [self moveToPoint:backUpPos];
     self.curAngle = backUpAngle;
 }
 
 
-- (void) beginPath
+- (void)beginPath
+{
+    posStack[top++] = self.curPos;
+}
+- (void)endPath
+{
+    [self lineToPoint:posStack[--top]];
+}
+
+- (void)solidPolygon:(CGFloat) len edgeNum:(int) num angle:(CGFloat) angle
 {
     if (shapePath) {
         CGPathRelease(shapePath);
     }
-    
     shapePath = CGPathCreateMutable();
-
     CGPathMoveToPoint(shapePath, NULL, self.curPos.x, self.curPos.y);
-}
-- (void) endPath
-{
     
-}
-
-- (void) solidPolygon:(CGFloat) len edgeNum:(int) num angle:(CGFloat) angle
-{
-    [self beginPath];
     [self polygon:len edgeNum:num angle:angle];
     [self endPath];
 }
-- (void) polygon:(CGFloat) len edgeNum:(int) num angle:(CGFloat) angle
+- (void)polygon:(CGFloat) len edgeNum:(int) num angle:(CGFloat) angle
 {
     for (int i=0; i<num; ++i)
     {
@@ -192,7 +205,7 @@
         [self rt:angle];
     }
 }
-- (void) regularPolygon:(CGFloat) len edgeNum:(int) num
+- (void)regularPolygon:(CGFloat) len edgeNum:(int) num
 {
     CGFloat angle = 360.0 / num;
     for (int i=0; i<num; ++i)
@@ -202,7 +215,7 @@
     }
 }
 
-- (void) circleRadius:(CGFloat) radius
+- (void)circleRadius:(CGFloat) radius
 {
     // 通过每次旋转1°
     CGFloat len = radius * M_PI / 180.0;
@@ -213,7 +226,7 @@
     }
 }
 
-- (void) circleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle
+- (void)circleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle
 {
     // 根据角度的精度进行优化
     // 确定精度
@@ -232,7 +245,7 @@
         [self rt:accuracy];
     }
 }
-- (void) leftCircleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle // 向左画弧
+- (void)leftCircleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle // 向左画弧
 {
     // 根据角度的精度进行优化
     // 确定精度
@@ -252,9 +265,8 @@
     }
 }
 
-
 #pragma mark - getter and setter
-- (void) setCurAngle:(CGFloat)curAngle
+- (void)setCurAngle:(CGFloat)curAngle
 {
     while (curAngle<0) {
         curAngle += 360;

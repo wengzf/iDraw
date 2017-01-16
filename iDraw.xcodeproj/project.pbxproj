@@ -108,6 +108,7 @@
 		ADB63C381E2647DC00746CEF /* mogu_5_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C301E2647DC00746CEF /* mogu_5_2.png */; };
 		ADB63C391E2647DC00746CEF /* mogu_5_3.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C311E2647DC00746CEF /* mogu_5_3.png */; };
 		ADB63C3A1E2647DC00746CEF /* mogu_5_4.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63C321E2647DC00746CEF /* mogu_5_4.png */; };
+		ADBD0D0D1E2CA1AA004AC297 /* Canvas+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBD0D0C1E2CA1AA004AC297 /* Canvas+Geometry.m */; };
 		ADD197BE1E0156D300FA3713 /* FSJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */; };
 		ADE0DAAD1E038A160050BEB2 /* FSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE0DAAB1E038A160050BEB2 /* FSCollectionViewController.m */; };
 		ADE0DAAE1E038A160050BEB2 /* FSCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE0DAAC1E038A160050BEB2 /* FSCollectionViewController.xib */; };
@@ -389,6 +390,7 @@
 		ADB63C301E2647DC00746CEF /* mogu_5_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_5_2.png; sourceTree = "<group>"; };
 		ADB63C311E2647DC00746CEF /* mogu_5_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_5_3.png; sourceTree = "<group>"; };
 		ADB63C321E2647DC00746CEF /* mogu_5_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mogu_5_4.png; sourceTree = "<group>"; };
+		ADBD0D0C1E2CA1AA004AC297 /* Canvas+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Canvas+Geometry.m"; sourceTree = "<group>"; };
 		ADD197BC1E0156D300FA3713 /* FSJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSJSONSerialization.h; sourceTree = "<group>"; };
 		ADD197BD1E0156D300FA3713 /* FSJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSJSONSerialization.m; sourceTree = "<group>"; };
 		ADE0DAAA1E038A160050BEB2 /* FSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCollectionViewController.h; sourceTree = "<group>"; };
@@ -1215,9 +1217,9 @@
 		ADF1BFE31DFE5BD6002D5594 /* iDraw【业务逻辑】 */ = {
 			isa = PBXGroup;
 			children = (
+				ADF1BFE61DFE5BD6002D5594 /* Canvas【画布】 */,
 				ADF1BFE41DFE5BD6002D5594 /* AppDelegate.h */,
 				ADF1BFE51DFE5BD6002D5594 /* AppDelegate.m */,
-				ADF1BFE61DFE5BD6002D5594 /* Canvas【画布】 */,
 				ADF1BFF91DFE5BD6002D5594 /* LOGOViewController.h */,
 				ADF1BFFA1DFE5BD6002D5594 /* LOGOViewController.m */,
 				ADF1BFFB1DFE5BD6002D5594 /* LOGOViewController.xib */,
@@ -1249,6 +1251,7 @@
 				ADF1BFED1DFE5BD6002D5594 /* Canvas+PeanoCurve.m */,
 				ADF1BFEE1DFE5BD6002D5594 /* Canvas+SierpinskiTriangle.m */,
 				ADF1BFEF1DFE5BD6002D5594 /* Canvas+Spiral.m */,
+				ADBD0D0C1E2CA1AA004AC297 /* Canvas+Geometry.m */,
 				ADF1BFF01DFE5BD6002D5594 /* Canvas.h */,
 				ADF1BFF11DFE5BD6002D5594 /* Canvas.m */,
 				ADF1BFF21DFE5BD6002D5594 /* CanvasModel.h */,
@@ -1495,6 +1498,7 @@
 				ADF1C0381DFE5BD6002D5594 /* Canvas+BinaryTree.m in Sources */,
 				ADE0DB001E0397490050BEB2 /* NSString+URLConvert.m in Sources */,
 				ADF1C0421DFE5BD6002D5594 /* Turtle.m in Sources */,
+				ADBD0D0D1E2CA1AA004AC297 /* Canvas+Geometry.m in Sources */,
 				AD1EECAD1E03BE3C001C00B0 /* AFHTTPRequestOperation.m in Sources */,
 				AD1EECB81E03BE3C001C00B0 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				ADE0DABA1E038A460050BEB2 /* FSScrollView.m in Sources */,

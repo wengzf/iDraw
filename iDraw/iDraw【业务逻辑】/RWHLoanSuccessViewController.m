@@ -23,9 +23,10 @@
     
 }
 
-
 - (IBAction)downloadBtnClked:(id)sender {
     NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/cn/app/ren-wo-hua-da-xue-sheng-dai/id1088737488?mt=8"];
     [[UIApplication sharedApplication] openURL:url];
 }
+
+
 @end

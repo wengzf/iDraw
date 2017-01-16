@@ -57,10 +57,6 @@
                                   ];
     }
     
-//    tmpView = [[UIView alloc] initWithFrame:self.view.bounds];
-//    tmpView.backgroundColor = [UIColor whiteColor];
-//    [self.view addSubview:tmpView];
-    
 //    UIViewController *vc = [[UIViewController alloc] init];
 //    
 //    Canvas *canvas = [[Canvas alloc] initWithFrame:vc.view.bounds ];
@@ -72,11 +68,6 @@
 //    [vc.view addSubview:canvas];
 //    
 //    [self.navigationController pushViewController:vc animated:NO];
-
-    
-//    TableViewController *vc = [TableViewController new];
-//    [self presentViewController:vc animated:YES completion:NULL];
-
 }
 
 
@@ -86,15 +77,38 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-     // morphing Label 测试
-    [self testVisualEffectViewController];
+    [self testPictures];
 }
 
+- (void)testPictures
+{
+    // 海龟初始化
+    DRAWINVIEW([Canvas sharedInstance]);
+    
+    [[Canvas sharedInstance] picture99];
+    
+    CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] initWithLayer:[Canvas sharedInstance].layer];
+    
+    shapeLayer.path = TURTLE.shapePath;
+    
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    
+    shapeLayer.strokeColor = [UIColor darkGrayColor].CGColor;
+    
+    shapeLayer.lineWidth = 3;
+    
+    [[Canvas sharedInstance].layer addSublayer:shapeLayer];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:[Canvas sharedInstance]];
+}
+
+// 毛玻璃效果
 - (void)testVisualEffectViewController
 {
     VisualEffectViewController *vc = [VisualEffectViewController new];
     [self presentViewController:vc animated:YES completion:NULL];
 }
+// 滤镜使用
 - (void)testCoreImage
 {
     TestCoreImageViewController *vc = [TestCoreImageViewController new];
@@ -125,6 +139,8 @@
 {
     
 }
+
+
 
 // 仿Uber开启启动页面
 - (void)testUberStartViewController

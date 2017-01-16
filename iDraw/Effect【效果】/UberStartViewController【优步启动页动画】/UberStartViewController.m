@@ -241,8 +241,6 @@ const CGFloat thinWidth = 0.75;
     
     // 0xFFFF
     // 使用8进制表示法表示4个象限的12种路线走法
-    
-    
     NSArray *arr1 = @[@"010001000100", @"000000000000", @"001000010011",
                       @"000000000000", @"000010011001", @"000000000000" ];
     
@@ -384,12 +382,9 @@ const CGFloat thinWidth = 0.75;
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"strokeStart"];
     
-    
     // 变速
     
     // 先慢后快   先粗后细   先深后淡
-    
-    
 }
 
 @end

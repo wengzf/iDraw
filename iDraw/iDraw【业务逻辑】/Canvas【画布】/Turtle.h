@@ -32,6 +32,9 @@
 #define FD(len) [TURTLE fd:len];
 #define BK(len) [TURTLE bk:len];
 
+#define UFD(len) [TURTLE ufd:len];
+#define UBK(len) [TURTLE ubk:len];
+
 #define RT(angle) [TURTLE rt:angle];
 #define LT(angle) [TURTLE lt:angle];
 
@@ -50,6 +53,11 @@
 #define SAVE [TURTLE savePosState];
 #define RESTORE [TURTLE restorePosState];
 
+#define CURRENTPOS [TURTLE curPos];
+
+#define BEGINPATH [TURTLE beginPath];
+#define ENDPATH [TURTLE endPath];
+
 
 
 @interface Turtle : NSObject
@@ -66,10 +74,12 @@
     
     CGMutablePathRef shapePath;     // 需要保证区间的闭合
     
-    
     // 用于备份的位置信息
     CGPoint backUpPos;
     CGFloat backUpAngle;
+    
+    CGPoint posStack[100];          // 最多存储100个保存的点
+    NSInteger top;                  // 栈顶指针
 }
 + (Turtle *) shareInstance;
 
@@ -105,7 +115,6 @@
 
 - (void) savePosState;      // 保存当前位置信息，（包括海龟角度）
 - (void) restorePosState;   // 恢复到最近的一次位置保存信息
-
 
 - (void) beginPath;     // 开始绘制路径
 

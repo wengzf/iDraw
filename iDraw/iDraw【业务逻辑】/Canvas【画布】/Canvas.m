@@ -388,7 +388,6 @@
     }
 }
 
-
 // 波浪线
 - (void) tildeWithRadius:(CGFloat) radius angle:(CGFloat) angle
 {
@@ -458,10 +457,5 @@
     
     free(points);
 }
-
-
-
-
-
 
 @end
