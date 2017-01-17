@@ -266,7 +266,7 @@
 }
 
 // 单个控制点的二次贝塞尔曲线
-- (void)addQuarCurveTo:(CGPoint) endPoint controlPoint:(CGPoint) controlPoint
+- (void)addQuadCurveTo:(CGPoint) endPoint controlPoint:(CGPoint) controlPoint
 {
     // 划分出100条线段来绘制bezier曲线
     double curX = self.curPos.x;
@@ -285,8 +285,8 @@
         a = i / 100.0;
         b = 1 - a;
         CGPoint pos;
-        pos.x = curX*b*b + controlX*a*b + endX*a*a;
-        pos.y = curY*b*b + controlY*a*b + endY*a*a;
+        pos.x = curX*b*b + 2*controlX*a*b + endX*a*a;
+        pos.y = curY*b*b + 2*controlY*a*b + endY*a*a;
         
         [self lineToPoint:pos];
     }
@@ -314,8 +314,8 @@
         a = i / 100.0;
         b = 1 - a;
         CGPoint pos;
-        pos.x = curX*b*b*b + controlX1*a*b*b + controlX2*a*a*b + endX*a*a*a;
-        pos.y = curY*b*b*b + controlY1*a*b*b + controlY2*a*a*b + endY*a*a*a;
+        pos.x = curX*b*b*b + 3*controlX1*a*b*b + 3*controlX2*a*a*b + endX*a*a*a;
+        pos.y = curY*b*b*b + 3*controlY1*a*b*b + 3*controlY2*a*a*b + endY*a*a*a;
         
         [self lineToPoint:pos];
     }

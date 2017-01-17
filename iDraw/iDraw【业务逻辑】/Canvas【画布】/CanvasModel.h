@@ -21,7 +21,9 @@
 
 @property (nonatomic, strong) NSDictionary *keyFunctionDic;
 
-- (CanvasModel *)shareInstance;
++ (CanvasModel *)shareInstance;
+
+- (NSString *)selectorNameForKey:(NSString *)key;
 
 
 

@@ -58,6 +58,8 @@
 #define BEGINPATH [TURTLE beginPath];
 #define ENDPATH [TURTLE endPath];
 
+#define QUADCURVETO(endPoint,controlPoint) [TURTLE addQuadCurveTo:(endPoint) controlPoint:(controlPoint)];
+#define CURVETO(endPoint,controlPoint1,controlPoint2) [TURTLE addCurveToPoint:(endPoint) controlPoint1:(controlPoint1) controlPoint2:(controlPoint2)];
 
 
 @interface Turtle : NSObject
@@ -133,7 +135,7 @@
 - (void) circleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle; // 向右画弧
 - (void) leftCircleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle; // 向左画弧
 
-- (void) addQuarCurveTo:(CGPoint) endPoint controlPoint:(CGPoint) controlPoint;
+- (void) addQuadCurveTo:(CGPoint) endPoint controlPoint:(CGPoint) controlPoint;
 
 - (void) addCurveToPoint:(CGPoint)endPoint controlPoint1:(CGPoint)controlPoint1 controlPoint2:(CGPoint)controlPoint2;
 

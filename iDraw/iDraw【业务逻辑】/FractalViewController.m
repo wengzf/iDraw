@@ -39,13 +39,20 @@
                                   @[@"Mandelbrot集", @"Julia集" ]
                                   ];
     }
-
-    
-
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-//    self.view.backgroundColor = [UIColor blueColor];
+    UIViewController *vc = [UIViewController new];
+    
+    Canvas *canvas = [[Canvas alloc] initWithFrame:ScreenBounds];
+    
+    canvas.controlStr = @"Julia集";
+    
+    [canvas drawPicture];
+    
+    [vc.view addSubview:canvas];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

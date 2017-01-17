@@ -7,16 +7,14 @@
 //
 
 #import "Canvas.h"
-
+#import "CanvasModel.h"
 
 @interface Canvas()
 {
 }
 @end
 
-
 @implementation Canvas
-
 
 + (Canvas *) sharedInstance
 {
@@ -44,130 +42,16 @@
     // 海龟初始化
     DRAWINVIEW(self);
     
-    if ([_controlStr isEqualToString:@"莲花"]) {
-        [self lotusFlower];
-        
-    }else if ([_controlStr isEqualToString:@"菊花"]){
-        [self chrysanthemum];
-        
-    }else if ([_controlStr isEqualToString:@"大理花"]){
-        [self flowerWithLeaf];
-        
-    }else if ([_controlStr isEqualToString:@"圆形正方形错觉"]){
-        [self circleSquareCollimationError];
-        
-    }else if ([_controlStr isEqualToString:@"普通螺线"]){
-        [self spirals];
-        
-    }else if ([_controlStr isEqualToString:@"多边形螺线"]){
-        [self polygonSpiral];
-        
-    }else if ([_controlStr isEqualToString:@"黄金分割螺线"]){
-        [self goldenSplitSpirals];
-        
-    }else if ([_controlStr isEqualToString:@"正多边形螺线"]){
-        [self regularPolygonSpirals];
-        
-    }else if ([_controlStr isEqualToString:@"太阳"]){
-        [self sun];
-        
-    }else if ([_controlStr isEqualToString:@"团锦"]){
-        [self tuanJin];
-        
-    }else if ([_controlStr isEqualToString:@"支付宝完成动画"]){           // 分形部分
-        [self finishPayAnimation];
-        
-    }else if ([_controlStr isEqualToString:@"路径"]){
-//        [self windmill];
-        [self pathAnimation];
-        return;
-        
-    }else if ([_controlStr isEqualToString:@"优步启动页"]){           // 分形部分
-        [self uberAnimation];
-        
-    }else if ([_controlStr isEqualToString:@"线条二叉树"]){           // 分形部分
-        [self binaryTree];
-        
-    }else if ([_controlStr isEqualToString:@"正方形二叉树"]){
-        [self squareBinaryTree];
-        
-    }else if ([_controlStr isEqualToString:@"Sierpinski三角形"]){
-        [self sierpinskiTriangle];
-        
-    }else if ([_controlStr isEqualToString:@"Sierpinski三角形曲线"]){
-        [self sierpinskiTriangleCurve];
-        
-    }else if ([_controlStr isEqualToString:@"aboresent肺"]){
-        [self aboresentLung];
-        
-    }else if ([_controlStr isEqualToString:@"peano曲线"]){
-        [self peanoCurve];
-        
-    }else if ([_controlStr isEqualToString:@"Koch雪花"]){
-        [self kochSnowflakes];
-        
-    }else if ([_controlStr isEqualToString:@"Mandelbrot集"]){
-        //        [self ];
-        
-    }else if ([_controlStr isEqualToString:@"Julia集"]){
-        [self juliaSet];
-        
-    }else if ([_controlStr isEqualToString:@"IFS拼贴树"]){
-        [self ifsCollageTree];
-    }else if ([_controlStr isEqualToString:@"IFS螺旋"]){
-        [self ifsSpiral];
-    }else if ([_controlStr isEqualToString:@"IFS羊齿叶"]){
-        [self ifsCurlyLeaf];
-    }else if ([_controlStr isEqualToString:@"IFS二叉树"]){
-        [self ifsTreeBinary];
-    }else if ([_controlStr isEqualToString:@"IFSSierpinski"]){
-        [self ifsRightAngleSierpinskiTriangle];
+    NSString *selectorName = [[CanvasModel shareInstance] selectorNameForKey:_controlStr];
+    if (selectorName) {
+        SEL sel = NSSelectorFromString(selectorName);
+        if ([self respondsToSelector:sel]) {
+            
+            IMP imp = [self methodForSelector:sel];
+            void (*func)(id, SEL) = (void *)imp;
+            func(self, sel);
+        }
     }
-    
-    // 添加动画
-//    {
-//        CGMutablePathRef path = CGPathCreateMutable();
-//        CGPathAddArc(path, NULL, self.bounds.size.width/2, self.bounds.size.height/2, 100, 0, 6.28, 0);
-//        
-//        
-//        DRAWINVIEW(self);
-//
-//        PU BK(60) LT(90)  FD(100) RT(90) PD
-//        
-//        for (int i=0; i<3; ++i) {
-//            FD(200)
-//            RT(120)
-//        }
-//
-//        CGPathRef path1 = TURTLE.shapePath;
-//        
-//        DRAWINVIEW(self);
-//        LT(90) PU  FD(30) RT(90) PD
-//        for (int i=0; i<4; ++i) {
-//            FD(60)
-//            RT(90)
-//        }
-//        CGPathRef path2 = TURTLE.shapePath;
-//        
-//        
-//    
-//        
-//        CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] initWithLayer:self.layer];
-//        
-//        shapeLayer.path = path2;
-//        shapeLayer.fillColor = [UIColor clearColor].CGColor;
-//        
-//        shapeLayer.strokeColor = [UIColor orangeColor].CGColor;
-//        shapeLayer.lineWidth = 3;
-//        
-//        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
-//        animation.duration = 3;
-//        animation.fromValue = (__bridge id)(path1);
-//        animation.toValue = (__bridge id)(path2);
-//        [shapeLayer addAnimation:animation forKey:@"animation"];
-//        
-//        [self.layer addSublayer:shapeLayer];
-//    }
     
     // 添加动画
     {
@@ -217,14 +101,14 @@
         [TURTLE fd: len/2 ];
         
         [TURTLE circleArcWithRadius:len/2 angle:180];
-    
+        
         [TURTLE rt:90];
         [TURTLE leftCircleArcWithRadius:len/2 angle:90];
         
         [TURTLE rt:180];
         
         [TURTLE leftCircleArcWithRadius:len/2 angle:90];
-
+        
         [TURTLE rt:90];
         
         [TURTLE bk:len/2];
@@ -270,7 +154,7 @@
     }
     RT(90);
     [TURTLE circleArcWithRadius:100 angle:40];
-
+    
 }
 // 画大理花
 - (void) flowerWithLeaf
@@ -372,7 +256,7 @@
 {
     int num = 20;
     CGFloat radius = 50;
-
+    
     for (int i=0; i<num; ++i) {
         [TURTLE circleArcWithRadius:radius angle:120];
         
@@ -457,5 +341,7 @@
     
     free(points);
 }
+
+
 
 @end
