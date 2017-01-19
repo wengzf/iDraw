@@ -24,6 +24,8 @@
 
 #import "VisualEffectViewController.h"
 
+#import "FSMushroomStreetGuideView.h"
+
 @interface LOGOViewController ()
 {
     NSArray *sectionNamesArr;
@@ -62,6 +64,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
 //    [self testPictures];
+    FSMushroomStreetGuideView *view = [[FSMushroomStreetGuideView alloc] init];
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
 
 - (void)testPictures
