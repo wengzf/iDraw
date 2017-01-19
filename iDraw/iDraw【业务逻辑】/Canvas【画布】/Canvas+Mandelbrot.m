@@ -60,7 +60,6 @@
     
     [self juliaSetWithX:x  Y:y  CX:cx CY:cy level:level-1];
     [self juliaSetWithX:-x Y:-y CX:cx CY:cy level:level-1];
-    
 }
 
 // 使用逃逸算法绘制分形

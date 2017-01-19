@@ -92,6 +92,7 @@
     [[Canvas sharedInstance].layer addSublayer:shapeLayer];
     
     [[UIApplication sharedApplication].keyWindow addSubview:[Canvas sharedInstance]];
+    
     //
     {
         UIBezierPath *path = [UIBezierPath bezierPath];
@@ -281,7 +282,6 @@
 // Moving Arrow
 - (void)testMovingArrow
 {
-    
 }
 
 
