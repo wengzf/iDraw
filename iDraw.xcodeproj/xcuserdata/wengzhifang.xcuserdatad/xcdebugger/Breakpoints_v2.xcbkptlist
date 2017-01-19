@@ -52,12 +52,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iDraw/iDraw&#x3010;&#x4e1a;&#x52a1;&#x903b;&#x8f91;&#x3011;/LOGOViewController.m"
-            timestampString = "506343178.742087"
+            timestampString = "506518952.601772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "-didPan:"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "-didTap:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

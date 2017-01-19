@@ -86,6 +86,7 @@
 		AD1EECBD1E03BE3C001C00B0 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EECA81E03BE3C001C00B0 /* UIProgressView+AFNetworking.m */; };
 		AD1EECBE1E03BE3C001C00B0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EECAA1E03BE3C001C00B0 /* UIRefreshControl+AFNetworking.m */; };
 		AD1EECBF1E03BE3C001C00B0 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EECAC1E03BE3C001C00B0 /* UIWebView+AFNetworking.m */; };
+		AD37B9171E30CC1900E2C813 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD37B9161E30CC1900E2C813 /* ShadowView.m */; };
 		AD3DD6EC1E0CD34200847628 /* FSMushroomStreetGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3DD6EB1E0CD34200847628 /* FSMushroomStreetGuideView.m */; };
 		AD7D72DE1E232FED004EE567 /* FSMorphingLabel+Pixelate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7D72DD1E232FED004EE567 /* FSMorphingLabel+Pixelate.m */; };
 		AD7EECF91E23A45600FBD74D /* TestMorphingLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7EECF71E23A45600FBD74D /* TestMorphingLabelViewController.m */; };
@@ -359,6 +360,8 @@
 		AD1EECAA1E03BE3C001C00B0 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		AD1EECAB1E03BE3C001C00B0 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		AD1EECAC1E03BE3C001C00B0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		AD37B9151E30CC1900E2C813 /* ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
+		AD37B9161E30CC1900E2C813 /* ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
 		AD3DD6EA1E0CD34200847628 /* FSMushroomStreetGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMushroomStreetGuideView.h; sourceTree = "<group>"; };
 		AD3DD6EB1E0CD34200847628 /* FSMushroomStreetGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMushroomStreetGuideView.m; sourceTree = "<group>"; };
 		AD7D72DC1E232FED004EE567 /* FSMorphingLabel+Pixelate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSMorphingLabel+Pixelate.h"; sourceTree = "<group>"; };
@@ -885,6 +888,8 @@
 			children = (
 				AD3DD6EA1E0CD34200847628 /* FSMushroomStreetGuideView.h */,
 				AD3DD6EB1E0CD34200847628 /* FSMushroomStreetGuideView.m */,
+				AD37B9151E30CC1900E2C813 /* ShadowView.h */,
+				AD37B9161E30CC1900E2C813 /* ShadowView.m */,
 			);
 			path = FSMushroomGuidePage;
 			sourceTree = "<group>";
@@ -1464,6 +1469,7 @@
 				AD1EEC7C1E03BE33001C00B0 /* UIScrollView+MJExtension.m in Sources */,
 				AD7EECF91E23A45600FBD74D /* TestMorphingLabelViewController.m in Sources */,
 				AD1EEC7E1E03BE33001C00B0 /* UIView+MJExtension.m in Sources */,
+				AD37B9171E30CC1900E2C813 /* ShadowView.m in Sources */,
 				ADE0DAF71E0396D10050BEB2 /* NZProgressBarView.m in Sources */,
 				ADF7CE5A1E1638A00098797D /* FSMorphingLabel+Fall.m in Sources */,
 				AD1EECB31E03BE3C001C00B0 /* AFURLRequestSerialization.m in Sources */,

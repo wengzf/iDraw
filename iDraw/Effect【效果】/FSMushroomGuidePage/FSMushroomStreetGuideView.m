@@ -9,7 +9,9 @@
 #import "FSMushroomStreetGuideView.h"
 #import "UIView+XQ.h"
 
+#import "ShadowView.h"
 
+#import "FSEffectLabel.h"
 
 
 @interface FSMushroomStreetGuideView()<UIScrollViewDelegate>
@@ -149,12 +151,15 @@
         contentPictureView.backgroundColor = [UIColor whiteColor];
         contentPictureView.top = 112;
         contentPictureView.centerX = centerX;
-        contentPictureView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        contentPictureView.layer.borderWidth = 1;
+        contentPictureView.layer.cornerRadius = 6;
+//        contentPictureView.layer.masksToBounds = YES;
         [self addSubview:contentPictureView];
         
         // 阴影设置
-//        contentPictureView.
+        contentPictureView.layer.shadowOffset = CGSizeMake(0, 0);
+        contentPictureView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+        contentPictureView.layer.shadowRadius = 15;
+        contentPictureView.layer.shadowOpacity = 0.5;
     }
     
     // 第一页
@@ -370,6 +375,13 @@
     [self bringSubviewToFront:contentPictureView];
     
     [self justShowIndex:0];
+    
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+//    label.font = [UIFont systemFontOfSize:40 weight:1.4];
+//    label.text = @"相框";
+//    label.textColor = [UIColor blackColor];
+//    [contentPictureView addSubview:label];
+    
 }
 - (UIImageView *)imageViewWithName:(NSString *)name
 {
@@ -487,17 +499,14 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
             secondLeft.centerX = calculate(centerX, 0-30, 230, 270, offset);
             secondRight.centerX = calculate(centerX, ScreenWidth+30, 230, 270, offset);
         }
-        
     }
     
     // 第三页
     {
-        
     }
     
     // 第四页
     {
-        
     }
 }
 
@@ -511,7 +520,6 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
             [self hideGroup:groupArr[i]];
         }
     }
-    
 }
 
 - (void)showGroup:(NSArray *)arr
@@ -525,6 +533,12 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
     for (UIView *view in arr) {
         view.alpha = 0;
     }
+}
+
+// 给view添加阴影
+- (void)addShadowToView:(UIView *)view
+{
+    
 }
 
 @end

@@ -21,10 +21,10 @@
 #import "TestMorphingLabelViewController.h"
 #import "TestCoreImageViewController.h"
 
-
 #import "VisualEffectViewController.h"
-
 #import "FSMushroomStreetGuideView.h"
+
+#import "ShadowView.h"
 
 @interface LOGOViewController ()
 {
@@ -64,6 +64,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
 //    [self testPictures];
+    
     FSMushroomStreetGuideView *view = [[FSMushroomStreetGuideView alloc] init];
     [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
