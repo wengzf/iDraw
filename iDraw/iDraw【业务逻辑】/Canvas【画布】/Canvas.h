@@ -127,6 +127,14 @@
 @end
 
 
+@interface Canvas (Geometry)
+
+- (void)picture99;
+- (void)picture72;
+
+@end
+
+
 
 
 

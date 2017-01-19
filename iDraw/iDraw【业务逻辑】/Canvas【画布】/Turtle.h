@@ -32,6 +32,9 @@
 #define FD(len) [TURTLE fd:len];
 #define BK(len) [TURTLE bk:len];
 
+#define UFD(len) [TURTLE ufd:len];
+#define UBK(len) [TURTLE ubk:len];
+
 #define RT(angle) [TURTLE rt:angle];
 #define LT(angle) [TURTLE lt:angle];
 
@@ -50,6 +53,13 @@
 #define SAVE [TURTLE savePosState];
 #define RESTORE [TURTLE restorePosState];
 
+#define CURRENTPOS [TURTLE curPos];
+
+#define BEGINPATH [TURTLE beginPath];
+#define ENDPATH [TURTLE endPath];
+
+#define QUADCURVETO(endPoint,controlPoint) [TURTLE addQuadCurveTo:(endPoint) controlPoint:(controlPoint)];
+#define CURVETO(endPoint,controlPoint1,controlPoint2) [TURTLE addCurveToPoint:(endPoint) controlPoint1:(controlPoint1) controlPoint2:(controlPoint2)];
 
 
 @interface Turtle : NSObject
@@ -66,10 +76,12 @@
     
     CGMutablePathRef shapePath;     // 需要保证区间的闭合
     
-    
     // 用于备份的位置信息
     CGPoint backUpPos;
     CGFloat backUpAngle;
+    
+    CGPoint posStack[100];          // 最多存储100个保存的点
+    NSInteger top;                  // 栈顶指针
 }
 + (Turtle *) shareInstance;
 
@@ -99,13 +111,16 @@
 
 - (void) bk:(CGFloat) len;
 
+- (void) ufd:(CGFloat) len;
+
+- (void) ubk:(CGFloat) len;
+
 - (void) rt:(CGFloat) angle;
 
 - (void) lt:(CGFloat) angle;
 
 - (void) savePosState;      // 保存当前位置信息，（包括海龟角度）
 - (void) restorePosState;   // 恢复到最近的一次位置保存信息
-
 
 - (void) beginPath;     // 开始绘制路径
 
@@ -120,6 +135,8 @@
 - (void) circleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle; // 向右画弧
 - (void) leftCircleArcWithRadius:(CGFloat)radius angle:(CGFloat) angle; // 向左画弧
 
+- (void) addQuadCurveTo:(CGPoint) endPoint controlPoint:(CGPoint) controlPoint;
 
+- (void) addCurveToPoint:(CGPoint)endPoint controlPoint1:(CGPoint)controlPoint1 controlPoint2:(CGPoint)controlPoint2;
 
 @end

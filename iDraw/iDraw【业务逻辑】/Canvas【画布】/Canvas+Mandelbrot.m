@@ -29,9 +29,8 @@
     double wx,wy;
     double theta =0, r;
 
-    
-    m = (x*20 + 180);
-    n = (y*40 + 320);
+    m = (x*120 + 120);
+    n = (y*120 + 300);
     
     MOVETO(CGPointMake(m, n));
     LINETO(CGPointMake(m+1, n));

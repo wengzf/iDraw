@@ -10,11 +10,11 @@
 
 @implementation CanvasModel
 
-- (CanvasModel *)shareInstance
++ (CanvasModel *)shareInstance
 {
     static CanvasModel *model;
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    dispatch_once(&onceToken,^{
         model = [[CanvasModel alloc] init];
     });
     return model;
@@ -24,34 +24,96 @@
 {
     self = [super init];
     
-    _keyFunctionDic = @{};
+    _keyFunctionDic =
+    @{
+      @"莲花":
+          @"lotusFlower",
+      
+      @"菊花":
+          @"chrysanthemum",
+      
+      @"大理花":
+          @"flowerWithLeaf",
+      
+      @"圆形正方形错觉":
+          @"circleSquareCollimationError",
+      
+      @"普通螺线":
+          @"spirals",
+      
+      @"多边形螺线":
+          @"polygonSpiral",
+      
+      @"黄金分割螺线":
+          @"goldenSplitSpirals",
+      
+      @"正多边形螺线":
+          @"regularPolygonSpirals",
+      
+      @"太阳":
+          @"sun",
+      
+      @"团锦":
+          @"tuanJin",
+      
+      @"支付宝完成动画":
+          @"finishPayAnimation",
+      
+      @"路径":
+          @"pathAnimation",
+      
+      @"优步启动页":
+          @"uberAnimation",
+      
+      @"线条二叉树":
+          @"binaryTree",
+      
+      @"正方形二叉树":
+          @"squareBinaryTree",
+      
+      @"Sierpinski三角形":
+          @"sierpinskiTriangle",
+      
+      @"Sierpinski三角形曲线":
+          @"sierpinskiTriangleCurve",
+      
+      @"aboresent肺":
+          @"aboresentLung",
+      
+      @"peano曲线":
+          @"peanoCurve",
+      
+      @"Koch雪花":
+          @"kochSnowflakes",
+      
+      @"Mandelbrot集":
+          @"",
+      
+      @"Julia集":
+          @"juliaSet",
+      
+      @"IFS拼贴树":
+          @"ifsCollageTree",
+      
+      @"IFS螺旋":
+          @"ifsSpiral",
+      
+      @"IFS羊齿叶":
+          @"ifsCurlyLeaf",
+      
+      @"IFS二叉树":
+          @"ifsTreeBinary",
+      
+      @"IFSSierpinski":
+          @"ifsRightAngleSierpinskiTriangle"};
     
-    
-    
-//    sectionNamesArr = @[@"花卉", @"错觉", @"螺线", @"IFS", @"路径",@"其它"];
-//    
-//    rowNameWithSectionArr = @[@[@"莲花", @"菊花", @"大理花"],
-//                              @[@"圆形正方形错觉"],
-//                              @[@"普通螺线", @"多边形螺线", @"黄金分割螺线", @"正多边形螺线"],
-//                              @[@"IFSSierpinski", @"IFS拼贴树", @"IFS螺旋", @"IFS羊齿叶", @"IFS二叉树"],
-//                              @[@"支付宝完成动画", @"路径",@"优步启动页动画"],
-//                              @[@"太阳", @"团锦" ],
-//                              ];
-//    
-//    // 对应的函数名称
-//    
-//    
-//    sectionNamesArr = @[@"树", @"三角形", @"曲线", @"Mandelbrot集"];
-//    
-//    rowNameWithSectionArr = @[@[@"线条二叉树", @"正方形二叉树"],
-//                              @[@"Sierpinski三角形", @"Sierpinski三角形曲线", @"aboresent肺"],
-//                              @[@"peano曲线", @"Koch雪花"],
-//                              @[@"Mandelbrot集", @"Julia集" ]
-//                              ];
-//}
-
-
     return self;
+}
+
+- (NSString *)selectorNameForKey:(NSString *)key
+{
+    NSString *str = _keyFunctionDic[key];
+    return str;
 }
 
 

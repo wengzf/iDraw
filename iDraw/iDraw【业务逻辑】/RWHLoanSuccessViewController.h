@@ -15,7 +15,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
+
 - (IBAction)downloadBtnClked:(id)sender;
+
+
+
 
 
 @end
