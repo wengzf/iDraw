@@ -10,6 +10,10 @@
 
 @interface UIView (Category)
 
+
+
+
+
 /**
  *  生成一个frame = CGRectZero的 View，并设置translatesAutoresizingMaskIntoConstraints = NO
  *  backgroundcolor=[uicolor clear]
