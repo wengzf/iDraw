@@ -10,6 +10,14 @@
 
 @interface UIView (XQ)
 
+
+// 设置cornerRadius
+- (void)setCornerRadius:(CGFloat)cornerRadius;
+
+// 设置路径阴影
+- (void)setShadowRadius:(CGFloat)radius;
+
+
 /**
  * Shortcut for frame.size.witdth*0.5
  */

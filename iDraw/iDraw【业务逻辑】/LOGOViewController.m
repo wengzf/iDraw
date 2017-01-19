@@ -20,9 +20,8 @@
 
 #import "TestMorphingLabelViewController.h"
 #import "TestCoreImageViewController.h"
-
-
 #import "VisualEffectViewController.h"
+#import "FSMushroomStreetGuideView.h"
 
 @interface LOGOViewController ()
 {
@@ -87,9 +86,16 @@
 - (void)viewDidAppear:(BOOL)animated
 {
      // morphing Label 测试
-    [self testVisualEffectViewController];
+    [self testMushroomStreetGuideView];
 }
 
+
+- (void)testMushroomStreetGuideView
+{
+    FSMushroomStreetGuideView *view = [FSMushroomStreetGuideView new];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
+}
 - (void)testVisualEffectViewController
 {
     VisualEffectViewController *vc = [VisualEffectViewController new];

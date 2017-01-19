@@ -522,7 +522,7 @@
 		ADF1C00C1DFE5BD6002D5594 /* closeSwitchBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeSwitchBackground.png; sourceTree = "<group>"; };
 		ADF1C00D1DFE5BD6002D5594 /* fractal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fractal.png; sourceTree = "<group>"; };
 		ADF1C00E1DFE5BD6002D5594 /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
-		ADF1C00F1DFE5BD6002D5594 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ADF1C00F1DFE5BD6002D5594 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Resource【资源】/Images.xcassets"; sourceTree = "<group>"; };
 		ADF1C02F1DFE5BD6002D5594 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		ADF1C0301DFE5BD6002D5594 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADF1C0321DFE5BD6002D5594 /* Thinking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thinking.h; path = "Supporting Files/Thinking.h"; sourceTree = "<group>"; };
@@ -1178,6 +1178,7 @@
 				ADE0DACA1E0391D80050BEB2 /* FSSeriesControl【FS系列控件】 */,
 				ADF1BFE31DFE5BD6002D5594 /* iDraw【业务逻辑】 */,
 				ADF1C0021DFE5BD6002D5594 /* Resource【资源】 */,
+				ADF1C00F1DFE5BD6002D5594 /* Images.xcassets */,
 				ADF1C02D1DFE5BD6002D5594 /* Supporting Files */,
 				ADF1C0691DFE788B002D5594 /* Info.plist */,
 				ADF1C0681DFE7828002D5594 /* PrefixHeader.pch */,
@@ -1263,7 +1264,6 @@
 			isa = PBXGroup;
 			children = (
 				ADF1C0031DFE5BD6002D5594 /* Image */,
-				ADF1C00F1DFE5BD6002D5594 /* Images.xcassets */,
 			);
 			path = "Resource【资源】";
 			sourceTree = "<group>";
