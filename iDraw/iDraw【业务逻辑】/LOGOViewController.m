@@ -32,7 +32,6 @@
     
     NSArray *rowNameWithSectionArr;     // 二维
     
-    //
     CAShapeLayer *shapeLayer;
 }
 
@@ -131,7 +130,7 @@
 - (void)didTap:(UITapGestureRecognizer *)tapGesture
 {
     CGPoint pos = [tapGesture locationInView:nil];
-    NSLog(@"%f %f",pos.x, pos.y);
+
     // 海龟初始化
     DRAWINVIEW([Canvas sharedInstance]);
     

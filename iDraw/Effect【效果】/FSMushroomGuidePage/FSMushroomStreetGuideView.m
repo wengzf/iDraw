@@ -79,6 +79,7 @@
     // Layout
     CGFloat topMargin;
     CGFloat centerX;
+    
 }
 
 @end
@@ -157,9 +158,9 @@
         
         // 阴影设置
         contentPictureView.layer.shadowOffset = CGSizeMake(0, 0);
-        contentPictureView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+        contentPictureView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
         contentPictureView.layer.shadowRadius = 15;
-        contentPictureView.layer.shadowOpacity = 0.5;
+        contentPictureView.layer.shadowOpacity = 0.6;
     }
     
     // 第一页
@@ -421,6 +422,10 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
     
     return res;
 }
+float calculateBoundDelta(float begin, float end, float lowerBound, float delta, float curVal)
+{
+    return calculate(begin, end, lowerBound, lowerBound+delta, curVal);
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -498,15 +503,116 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
             
             secondLeft.centerX = calculate(centerX, 0-30, 230, 270, offset);
             secondRight.centerX = calculate(centerX, ScreenWidth+30, 230, 270, offset);
+        }else{
+            // 隐藏
+            secondLeft.alpha = calculate(0, 1, ScreenWidth, ScreenWidth, offset);
+            secondRight.alpha = calculate(0, 1, ScreenWidth, 230, offset);
+            
+            secondLeft.centerX = calculate(centerX, 0-30, ScreenWidth, 270, offset);
+            secondRight.centerX = calculate(ScreenWidth+30, centerX, ScreenWidth, 270, offset);
         }
     }
     
     // 第三页
     {
+//        thirdCicle = [self imageViewWithName:@"3-circle"];
+//        thirdLabel = [self imageViewWithName:@"3-label"];   // thirdContentView
+//        
+//        thirdModel1 = [self imageViewWithName:@"3-model1"];    // contentPicture
+//        thirdModel2 = [self imageViewWithName:@"3-model2"];    // contentPicture
+//        thirdModel3 = [self imageViewWithName:@"3-model3"];    // contentPicture
+//        thirdModel4 = [self imageViewWithName:@"3-model4"];    // contentPicture
+//        thirdModel5 = [self imageViewWithName:@"3-model5"];    // contentPicture
+//        thirdModel6 = [self imageViewWithName:@"3-model6"];    // contentPicture
+        
+        
+//        320 640
+        if (offset < 640) {
+            CGFloat st = ScreenWidth * 1.2;
+            CGFloat dis = ScreenWidth * 0.5;
+            CGFloat delta = ScreenWidth * 0.05;
+            
+            thirdModel1.alpha = calculate(0, 1, st, st+dis, offset);
+            
+            st+=delta;
+            thirdModel2.alpha = calculate(0, 1, st, st+dis, offset);
+            
+            st+=delta;
+            thirdModel3.alpha = calculate(0, 1, st, st+dis, offset);
+            
+            st+=delta;
+            thirdModel4.alpha = calculate(0, 1, st, st+dis, offset);
+            
+            st+=delta;
+            thirdModel5.alpha = calculate(0, 1, st, st+dis, offset);
+            
+            st+=delta;
+            thirdModel6.alpha = calculate(0, 1, st, st+dis, offset);
+        }else{
+            CGFloat st = ScreenWidth * 2.2;
+            CGFloat dis = ScreenWidth * 0.5;
+            CGFloat delta = ScreenWidth * 0.05;
+            
+            // 相框旋转
+            CGFloat angle = calculate(0, M_PI_4, st, st+dis, offset);
+            CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
+            contentPictureView.transform = transform;
+            
+            // 模特消失
+            
+            st+=delta;
+            thirdModel3.alpha = calculate(1, 0, st, st+dis, offset);
+            thirdModel4.alpha = calculate(1, 0, st, st+dis, offset);
+            
+            st+=delta;
+            thirdModel2.alpha = calculate(1, 0, st, st+dis, offset);
+            thirdModel5.alpha = calculate(1, 0, st, st+dis, offset);
+            
+            st+=delta;
+            thirdModel1.alpha = calculate(1, 0, st, st+dis, offset);
+            thirdModel6.alpha = calculate(1, 0, st, st+dis, offset);
+        }
     }
     
     // 第四页
     {
+        // 相框动画，旋转缩小
+        
+        
+        // 相框内部内容
+        
+        CGFloat st = ScreenWidth * 3.2;
+        CGFloat dis1 = ScreenWidth * 0.1;
+        CGFloat dis2 = ScreenWidth * 0.5;
+        CGFloat delta = ScreenWidth * 0.05;
+        
+        forthTop.alpha = calculate(0, 1, st, st+dis1, offset);
+        
+        st+=delta;
+        forthInfo.alpha = calculate(0, 1, st, st+dis1, offset);
+        
+        st+=delta;
+        forthModel1.alpha = calculate(0, 1, st, st+dis2, offset);
+        
+        st+=delta;
+        forthModel2.alpha = calculate(0, 1, st, st+dis2, offset);
+        
+        st+=delta;
+        forthModel3.alpha = calculate(0, 1, st, st+dis2, offset);
+        
+        
+        // 左右两张图片
+        
+        
+//        forthBtn;
+//         *forthInfo;
+//         *forthLabel;
+//         *forthLeft;
+//         *forthRight;
+//         *forthTop;
+        
+        
+        //
     }
 }
 
