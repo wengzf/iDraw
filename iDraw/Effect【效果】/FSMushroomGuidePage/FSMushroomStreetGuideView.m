@@ -8,9 +8,7 @@
 
 #import "FSMushroomStreetGuideView.h"
 #import "UIView+XQ.h"
-
 #import "ShadowView.h"
-
 #import "FSEffectLabel.h"
 
 
@@ -74,12 +72,13 @@
     UIScrollView *contentScrollView;
     
     // pageControl
-    UIPageControl *pageControl;
+    UIView *pageControlView;
+    NSMutableArray *pageIndicatorArr;
+    UIColor *pageColor;
     
     // Layout
     CGFloat topMargin;
     CGFloat centerX;
-    
 }
 
 @end
@@ -361,28 +360,42 @@
     
     // pageControl
     {
-        pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-        pageControl.numberOfPages = 4;
-        pageControl.pageIndicatorTintColor = [UIColor blackColor];
-        pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
+        pageColor = GRAY(214);
         
-        pageControl.bottom = ScreenHeight - 30;
-        pageControl.centerX = centerX;
+        pageControlView = [[UIView alloc] init];
+        pageIndicatorArr = [NSMutableArray array];
+        CGFloat radius = 10;
+        CGRect frame = CGRectMake(0, 0, radius, radius);
         
-        [self addSubview:pageControl];
+        for (int i=0; i<4; ++i) {
+            UIView *page = [[UIView alloc] initWithFrame:frame];
+            if (i==0) {
+                page.backgroundColor = pageColor;
+            }else{
+                page.backgroundColor = [UIColor whiteColor];
+            }
+            
+            page.layer.cornerRadius = radius/2;
+            page.layer.borderWidth = 2;
+            page.layer.borderColor = pageColor.CGColor;
+        
+            [pageIndicatorArr addObject:page];
+            
+            [pageControlView addSubview:page];
+            frame.origin.x += frame.size.width*2.5;
+        }
+        pageControlView.width  = radius*8.5;
+        pageControlView.height = radius;
+        pageControlView.bottom = ScreenHeight - 40;
+        pageControlView.centerX = ScreenWidth/2;
+        
+        [self addSubview:pageControlView];
     }
     
     // 移动相框到最顶层
     [self bringSubviewToFront:contentPictureView];
     
     [self justShowIndex:0];
-    
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
-//    label.font = [UIFont systemFontOfSize:40 weight:1.4];
-//    label.text = @"相框";
-//    label.textColor = [UIColor blackColor];
-//    [contentPictureView addSubview:label];
-    
 }
 - (UIImageView *)imageViewWithName:(NSString *)name
 {
@@ -401,7 +414,6 @@
     
     return imgview;
 }
-
 
 #pragma mark - ScrollView 代理
 
@@ -422,19 +434,28 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
     
     return res;
 }
-float calculateBoundDelta(float begin, float end, float lowerBound, float delta, float curVal)
-{
-    return calculate(begin, end, lowerBound, lowerBound+delta, curVal);
-}
 
+- (void)setPageControlColorWithOffset:(CGFloat) offset
+{
+    int curIndex = offset / ScreenWidth;
+    int nextIndex = curIndex+1;
+    
+    CGFloat alpha = 1 - (offset-curIndex*ScreenWidth)/ScreenWidth;
+    UIView *view = pageIndicatorArr[curIndex];
+    view.backgroundColor = [pageColor colorWithAlphaComponent:alpha];
+    
+    if (nextIndex<pageIndicatorArr.count) {
+        
+        alpha = (offset - curIndex*ScreenWidth) / ScreenWidth;
+        view = pageIndicatorArr[nextIndex];
+        view.backgroundColor = [pageColor colorWithAlphaComponent:alpha];
+    }
+}
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offset = scrollView.contentOffset.x;
-    int curIndex = offset / ScreenWidth;
-    if (curIndex != pageControl.currentPage) {
-        pageControl.currentPage = curIndex;
-//        [self justShowIndex:curIndex];
-    }
+    
+    [self setPageControlColorWithOffset:offset];
     // 动画
     // 第一页跟第二页之间
     
@@ -463,7 +484,6 @@ float calculateBoundDelta(float begin, float end, float lowerBound, float delta,
         
         // 相框高度
         if (offset <= 230) {
-            
             contentPictureView.height = calculate(156, 276, 0, 230, offset);
         }
     }
@@ -496,6 +516,23 @@ float calculateBoundDelta(float begin, float end, float lowerBound, float delta,
         secondImage3.height = tmp;
         secondImage3.alpha = calculate(0, 1, 220, 260, offset);
         
+        // 三个model的隐藏
+        if (offset>=ScreenWidth) {
+        
+            CGFloat delta = 0;
+            
+            delta += 20;
+            secondImage1.alpha = calculate(1, 0, ScreenWidth+delta, ScreenWidth*1.1+delta, offset);
+            secondAvatar.alpha = calculate(1, 0, ScreenWidth+delta, ScreenWidth*1.1+delta, offset);
+            
+            delta += 20;
+            secondImage2.alpha = calculate(1, 0, ScreenWidth+delta, ScreenWidth*1.1+delta, offset);
+            secondInfo.alpha = calculate(1, 0, ScreenWidth+delta, ScreenWidth*1.1+delta+20, offset);
+            
+            delta += 20;
+            secondImage3.alpha = calculate(1, 0, ScreenWidth+delta, ScreenWidth*1.1+delta, offset);
+        }
+        
         // 中间两页从中间移动往两边, 第三个model出来的时候
         if (offset<320) {
             secondLeft.alpha = calculate(0, 1, 220, 230, offset);
@@ -505,32 +542,23 @@ float calculateBoundDelta(float begin, float end, float lowerBound, float delta,
             secondRight.centerX = calculate(centerX, ScreenWidth+30, 230, 270, offset);
         }else{
             // 隐藏
-            secondLeft.alpha = calculate(0, 1, ScreenWidth, ScreenWidth, offset);
-            secondRight.alpha = calculate(0, 1, ScreenWidth, 230, offset);
+            secondLeft.alpha = calculate(1, 0, ScreenWidth, ScreenWidth*1.6, offset);
+            secondRight.alpha = calculate(1, 0, ScreenWidth*1.5, ScreenWidth*1.8, offset);
             
-            secondLeft.centerX = calculate(centerX, 0-30, ScreenWidth, 270, offset);
-            secondRight.centerX = calculate(ScreenWidth+30, centerX, ScreenWidth, 270, offset);
+            secondLeft.centerX = calculate(-30, -130, ScreenWidth, ScreenWidth+100, offset);
+            secondRight.centerX = calculate(ScreenWidth+30, centerX, ScreenWidth, ScreenWidth+ScreenWidth+30-centerX, offset);
         }
+        
+        
     }
     
     // 第三页
     {
-//        thirdCicle = [self imageViewWithName:@"3-circle"];
-//        thirdLabel = [self imageViewWithName:@"3-label"];   // thirdContentView
-//        
-//        thirdModel1 = [self imageViewWithName:@"3-model1"];    // contentPicture
-//        thirdModel2 = [self imageViewWithName:@"3-model2"];    // contentPicture
-//        thirdModel3 = [self imageViewWithName:@"3-model3"];    // contentPicture
-//        thirdModel4 = [self imageViewWithName:@"3-model4"];    // contentPicture
-//        thirdModel5 = [self imageViewWithName:@"3-model5"];    // contentPicture
-//        thirdModel6 = [self imageViewWithName:@"3-model6"];    // contentPicture
-        
-        
 //        320 640
-        if (offset < 640) {
+        if (offset < ScreenWidth*2) {
             CGFloat st = ScreenWidth * 1.2;
             CGFloat dis = ScreenWidth * 0.5;
-            CGFloat delta = ScreenWidth * 0.05;
+            CGFloat delta = ScreenWidth * 0.08;
             
             thirdModel1.alpha = calculate(0, 1, st, st+dis, offset);
             
@@ -549,28 +577,46 @@ float calculateBoundDelta(float begin, float end, float lowerBound, float delta,
             st+=delta;
             thirdModel6.alpha = calculate(0, 1, st, st+dis, offset);
         }else{
-            CGFloat st = ScreenWidth * 2.2;
+            CGFloat st = ScreenWidth * 2;
             CGFloat dis = ScreenWidth * 0.5;
-            CGFloat delta = ScreenWidth * 0.05;
+            CGFloat delta = ScreenWidth * 0.08;
             
             // 相框旋转
-            CGFloat angle = calculate(0, M_PI_4, st, st+dis, offset);
-            CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
+            CGFloat angle = calculate(0, -M_PI_4/2, st, st+dis, offset);
+            
+            CGAffineTransform transform;
+            transform = CGAffineTransformMakeRotation(angle);
             contentPictureView.transform = transform;
             
+            // 相框 frame计算
+            
+            
             // 模特消失
+            CGFloat scale;
+            st+=delta;
+            thirdModel3.alpha = calculate(1, 0.5, st, st+dis, offset);
+            thirdModel4.alpha = calculate(1, 0.5, st, st+dis, offset);
+            
+            scale = calculate(1, 0, st, st+dis, offset);
+            transform = CGAffineTransformMakeScale(scale, scale);
+            thirdModel3.transform = transform;
+            thirdModel4.transform = transform;
             
             st+=delta;
-            thirdModel3.alpha = calculate(1, 0, st, st+dis, offset);
-            thirdModel4.alpha = calculate(1, 0, st, st+dis, offset);
+            thirdModel2.alpha = calculate(1, 0.5, st, st+dis, offset);
+            thirdModel5.alpha = calculate(1, 0.5, st, st+dis, offset);
+            scale = calculate(1, 0, st, st+dis, offset);
+            transform = CGAffineTransformMakeScale(scale, scale);
+            thirdModel2.transform = transform;
+            thirdModel5.transform = transform;
             
             st+=delta;
-            thirdModel2.alpha = calculate(1, 0, st, st+dis, offset);
-            thirdModel5.alpha = calculate(1, 0, st, st+dis, offset);
-            
-            st+=delta;
-            thirdModel1.alpha = calculate(1, 0, st, st+dis, offset);
-            thirdModel6.alpha = calculate(1, 0, st, st+dis, offset);
+            thirdModel1.alpha = calculate(1, 0.5, st, st+dis, offset);
+            thirdModel6.alpha = calculate(1, 0.5, st, st+dis, offset);
+            scale = calculate(1, 0, st, st+dis, offset);
+            transform = CGAffineTransformMakeScale(scale, scale);
+            thirdModel1.transform = transform;
+            thirdModel6.transform = transform;
         }
     }
     
@@ -581,7 +627,7 @@ float calculateBoundDelta(float begin, float end, float lowerBound, float delta,
         
         // 相框内部内容
         
-        CGFloat st = ScreenWidth * 3.2;
+        CGFloat st = ScreenWidth * 2.2;
         CGFloat dis1 = ScreenWidth * 0.1;
         CGFloat dis2 = ScreenWidth * 0.5;
         CGFloat delta = ScreenWidth * 0.05;
@@ -600,19 +646,12 @@ float calculateBoundDelta(float begin, float end, float lowerBound, float delta,
         st+=delta;
         forthModel3.alpha = calculate(0, 1, st, st+dis2, offset);
         
-        
         // 左右两张图片
+        forthLeft.alpha = calculate(0, 1, ScreenWidth*2.5, ScreenWidth*2.6, offset);
+        forthRight.alpha = calculate(0, 1, ScreenWidth*2.5, ScreenWidth*2.6, offset);
         
-        
-//        forthBtn;
-//         *forthInfo;
-//         *forthLabel;
-//         *forthLeft;
-//         *forthRight;
-//         *forthTop;
-        
-        
-        //
+        forthLeft.centerX = calculate(centerX, 0-30, ScreenWidth*2.5, ScreenWidth*2.6, offset);
+        forthRight.centerX = calculate(centerX, ScreenWidth+30, ScreenWidth*2.5, ScreenWidth*2.6, offset);
     }
 }
 
