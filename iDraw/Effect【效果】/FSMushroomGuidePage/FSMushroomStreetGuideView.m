@@ -185,7 +185,6 @@
         firstInfo.frame = CGRectMake(3, 108, contentPictureView.width-8, 40);   // 文字信息
         [contentPictureView addSubview:firstInfo];
         
-        
         // 相框底下模特
         firstModel.top = 274;
         firstModel.centerX = centerX;
@@ -202,7 +201,6 @@
         secondLabel  = [self imageViewWithName:@"2-label"]; // second
         secondLeft   = [self imageViewWithName:@"2-left"];              // self
         secondRight  = [self imageViewWithName:@"2-right"];             // self
-        
         
         // 组
         [groupArr2 addObject:secondAvatar];
@@ -224,7 +222,7 @@
         // 相框   220, 276   top=138
         CGFloat top = 138;
         tmp = 34/80.0;
-        secondAvatar.frame = CGRectMake(4, 4, 183*tmp, 80*tmp);     //      183*80
+        secondAvatar.frame = CGRectMake(4, 8, 183*tmp, 80*tmp);     //      183*80
         secondAvatar.contentMode = UIViewContentModeLeft;
         [contentPictureView addSubview:secondAvatar];
         
@@ -237,17 +235,19 @@
         secondImage3.frame = CGRectMake(148, 126, 68, 68);     // 160*160
         [contentPictureView addSubview:secondImage3];
         
-        secondInfo.frame = CGRectMake(8, 194, 204, 149*204/473.0);     // 473*149
+        secondInfo.frame = CGRectMake(8, 198, 204, 149*204/473.0);     // 473*149
         [contentPictureView addSubview:secondInfo];
         
         // 左右两张图片
         CGSize size = CGSizeMake(520*260/650.0, 260);
         secondLeft.frame = CGRectMake(0, 0, size.width, size.height);     // 520*650
+        secondLeft.alpha = 0.6;
         secondLeft.top = top-4;
         secondLeft.right = 20;
         [self addSubview:secondLeft];
         
         secondRight.frame = CGRectMake(0, 0, size.width, size.height);     // 520*650
+        secondRight.alpha = 0.6;
         secondRight.top = top-4;
         secondRight.left = ScreenWidth - 20;
         [self addSubview:secondRight];
@@ -535,18 +535,18 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
         
         // 中间两页从中间移动往两边, 第三个model出来的时候
         if (offset<320) {
-            secondLeft.alpha = calculate(0, 1, 220, 230, offset);
-            secondRight.alpha = calculate(0, 1, 220, 230, offset);
+            secondLeft.alpha = calculate(0, 0.6, 220, 230, offset);
+            secondRight.alpha = calculate(0, 0.6, 220, 230, offset);
             
-            secondLeft.centerX = calculate(centerX, 0-30, 230, 270, offset);
-            secondRight.centerX = calculate(centerX, ScreenWidth+30, 230, 270, offset);
+            secondLeft.centerX = calculate(centerX, -ScreenWidth*0.25, 230, 270, offset);
+            secondRight.centerX = calculate(centerX, ScreenWidth*1.25, 230, 270, offset);
         }else{
             // 隐藏
-            secondLeft.alpha = calculate(1, 0, ScreenWidth, ScreenWidth*1.6, offset);
-            secondRight.alpha = calculate(1, 0, ScreenWidth*1.5, ScreenWidth*1.8, offset);
+            secondLeft.alpha = calculate(0.6, 0, ScreenWidth, ScreenWidth*1.6, offset);
+            secondRight.alpha = calculate(0.6, 0, ScreenWidth*1.5, ScreenWidth*1.8, offset);
             
-            secondLeft.centerX = calculate(-30, -130, ScreenWidth, ScreenWidth+100, offset);
-            secondRight.centerX = calculate(ScreenWidth+30, centerX, ScreenWidth, ScreenWidth+ScreenWidth+30-centerX, offset);
+            secondLeft.centerX = calculate(-ScreenWidth*0.25, -ScreenWidth*0.4-100, ScreenWidth, ScreenWidth+100, offset);
+            secondRight.centerX = calculate(ScreenWidth*1.25, centerX, ScreenWidth, ScreenWidth+ScreenWidth+30-centerX, offset);
         }
         
         
@@ -623,7 +623,6 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
     // 第四页
     {
         // 相框动画，旋转缩小
-        
         
         // 相框内部内容
         

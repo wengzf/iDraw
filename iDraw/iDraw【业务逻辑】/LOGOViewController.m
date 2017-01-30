@@ -64,6 +64,8 @@
 {
 //    [self testPictures];
     
+    
+//    [self testMorphingLabel];
     FSMushroomStreetGuideView *view = [[FSMushroomStreetGuideView alloc] init];
     [[UIApplication sharedApplication].keyWindow addSubview:view];
 }

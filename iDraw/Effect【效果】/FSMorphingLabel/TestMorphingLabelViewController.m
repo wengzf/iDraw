@@ -69,8 +69,8 @@
                      @"but the boy asks,", @"'What can I do with it?'.", @"- Steve Jobs",
                      @"", @"Swift", @"Objective-C", @"iPhone", @"iPad", @"Mac Mini",
                      @"MacBook Pro🔥", @"Mac Pro⚡️",
-                     //     @"爱老婆",
-                     //     @"老婆和儿子"
+//                     @"爱老婆",
+//                     @"老婆和儿子"
                      ];
     morphingLabel.text = arr[count % arr.count];
     
