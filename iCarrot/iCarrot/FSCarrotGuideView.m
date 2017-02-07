@@ -52,12 +52,10 @@
 
 - (void)viewDidLoad
 {
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    
 }
 
 #pragma -initViews
@@ -124,7 +122,6 @@
         
         label1.text = cstr1;
         label2.text = cstr2;
-        arrowImage.hidden = YES;
         
         [label1 sizeToFit];
         [label2 sizeToFit];
@@ -138,7 +135,6 @@
         
         label1.text = cstr1;
         label2.text = cstr2;
-        arrowImage.hidden = NO;
         
         [label1 sizeToFit];
         [label2 sizeToFit];
