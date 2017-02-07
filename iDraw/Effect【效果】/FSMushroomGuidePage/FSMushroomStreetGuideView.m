@@ -493,24 +493,16 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
             
 //            contentPictureView.top    = calculate(100, 115, 480, 640, offset);
 //            contentBackgroundView.top = calculate(100, 115, 480, 640, offset);
-        }else if (offset < 200) {
-            
-            contentPictureView.top    = calculate(112, 80, 0, 200, offset);
-            contentBackgroundView.top = calculate(112, 80, 0, 200, offset);
         }
         
         // 相框高度
-        if (offset <= 320) {
+        if (offset <= ScreenWidth) {
             contentPictureView.height    = calculate(156, 280, 0, 230, offset);
             contentBackgroundView.height = calculate(156, 280, 0, 230, offset);
         }else if (offset >= ScreenWidth*2) {
-            // contentPictureView.height    = calculate(156, 280, 0, 230, offset);
             contentBackgroundView.height = calculate(156, 280,  ScreenWidth*2,  ScreenWidth*2.4, offset);
         }else {
-//            contentPictureView.height    = calculate(156, 280, 0, 230, offset);
-//            contentBackgroundView.height = calculate(156, 280, 0, 230, offset);
-            
-            
+
             contentBackgroundView.height = calculate(280, 228,  ScreenWidth*2,  ScreenWidth*2.4, offset);
         }
         
@@ -525,12 +517,10 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
             contentPictureView.centerX = ScreenWidth/2;
             contentBackgroundView.centerX = ScreenWidth/2;
         }else{
-            
             contentBackgroundView.width = calculate(196, 145, ScreenWidth*2, ScreenWidth*2.4, offset);
             
             
-            contentBackgroundView.centerX = contentPictureView.centerX;
-            contentBackgroundView.centerY = contentPictureView.centerY;
+            contentBackgroundView.center = contentPictureView.inCenter;
         }
         
     }
