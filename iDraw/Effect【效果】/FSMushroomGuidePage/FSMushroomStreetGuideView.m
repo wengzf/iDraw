@@ -13,6 +13,7 @@
 {
     // 中间的相框
     UIView *contentPictureView;
+    UIView *contentBackgroundView;
     
     // 第一页
     UIImageView *firstInfo;
@@ -157,19 +158,26 @@
     
     // 相框初始化
     {
+        // 相框背景和阴影
+        contentBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 220, 156)];
+        contentBackgroundView.backgroundColor = [UIColor whiteColor];
+        contentBackgroundView.top = 112;
+        contentBackgroundView.centerX = centerX;
+        contentBackgroundView.layer.cornerRadius = 6;
+        [self addSubview:contentBackgroundView];
+        
+        contentBackgroundView.layer.shadowOffset = CGSizeMake(0, 0);
+        contentBackgroundView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        contentBackgroundView.layer.shadowRadius = 15;
+        contentBackgroundView.layer.shadowOpacity = 0.6;
+        
+        // 相框container
         contentPictureView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 220, 156)];
-        contentPictureView.backgroundColor = [UIColor whiteColor];
+        contentPictureView.backgroundColor = [UIColor clearColor];
         contentPictureView.top = 112;
         contentPictureView.centerX = centerX;
         contentPictureView.layer.cornerRadius = 6;
-//        contentPictureView.layer.masksToBounds = YES;
         [self addSubview:contentPictureView];
-        
-        // 阴影设置
-        contentPictureView.layer.shadowOffset = CGSizeMake(0, 0);
-        contentPictureView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-        contentPictureView.layer.shadowRadius = 15;
-        contentPictureView.layer.shadowOpacity = 0.6;
     }
     
     // 第一页
@@ -229,10 +237,10 @@
         // 临时比例计算
         CGFloat tmp;
         
-        // 相框   220, 276   top=138
+        // 相框   220, 280   top=138
         CGFloat top = 138;
         tmp = 34/80.0;
-        secondAvatar.frame = CGRectMake(4, 8, 183*tmp, 80*tmp);     //      183*80
+        secondAvatar.frame = CGRectMake(8, 10, 183*tmp, 80*tmp);     //      183*80
         secondAvatar.contentMode = UIViewContentModeLeft;
         [contentPictureView addSubview:secondAvatar];
         
@@ -245,7 +253,7 @@
         secondImage3.frame = CGRectMake(148, 126, 68, 68);     // 160*160
         [contentPictureView addSubview:secondImage3];
         
-        secondInfo.frame = CGRectMake(8, 198, 204, 149*204/473.0);     // 473*149
+        secondInfo.frame = CGRectMake(8, 202, 204, 149*204/473.0);     // 473*149
         [contentPictureView addSubview:secondInfo];
         
         // 左右两张图片
@@ -289,23 +297,24 @@
         [thirdContentView addSubview:thirdLabel];
         
         
-        // 相框   196*282             (196 - 16) / 3 = 60    (280-12)/2=136
-        thirdModel1.frame = CGRectMake(4, 4, 60, 136);     // 140*315
+        // 相框   196*282             (196 - 16) / 3 = 60    (280-12)/2=134
+        CGFloat offset = 12;
+        thirdModel1.frame = CGRectMake(4+offset, 4, 60, 134);     // 140*315
         [contentPictureView addSubview:thirdModel1];
         
-        thirdModel2.frame = CGRectMake(68, 4, 60, 136);     // 140*315
+        thirdModel2.frame = CGRectMake(68+offset, 4, 60, 134);     // 140*315
         [contentPictureView addSubview:thirdModel2];
         
-        thirdModel3.frame = CGRectMake(132, 4, 60, 136);     // 140*315
+        thirdModel3.frame = CGRectMake(132+offset, 4, 60, 134);     // 140*315
         [contentPictureView addSubview:thirdModel3];
         
-        thirdModel4.frame = CGRectMake(4, 144, 60, 136);     // 140*315
+        thirdModel4.frame = CGRectMake(4+offset, 142, 60, 134);     // 140*315
         [contentPictureView addSubview:thirdModel4];
         
-        thirdModel5.frame = CGRectMake(68, 144, 60, 136);     // 140*315
+        thirdModel5.frame = CGRectMake(68+offset, 142, 60, 134);     // 140*315
         [contentPictureView addSubview:thirdModel5];
         
-        thirdModel6.frame = CGRectMake(132, 144, 60, 136);     // 140*315
+        thirdModel6.frame = CGRectMake(132+offset, 142, 60, 134);     // 140*315
         [contentPictureView addSubview:thirdModel6];
     }
     
@@ -339,24 +348,26 @@
         
         
         // 相框   145, 228
-        forthTop.frame = CGRectMake(4, 4, 137, 74);     // 328*176
+        CGFloat xOffset = (220-145)/2;
+        CGFloat yOffset = (280-228)/2;
+        forthTop.frame = CGRectMake(4+xOffset, 4+yOffset, 137, 74);     // 328*176
         [contentPictureView addSubview:forthTop];
         
-        forthInfo.frame = CGRectMake(4, 84, 137, 62);     // 312*141
+        forthInfo.frame = CGRectMake(4+xOffset, 84+yOffset, 137, 62);     // 312*141
         [contentPictureView addSubview:forthInfo];
         
         // (145-16)/3 = 43   66
-        forthModel1.frame = CGRectMake(4, 154, 43, 66);     // 104*160
+        forthModel1.frame = CGRectMake(4+xOffset, 154+yOffset, 43, 66);     // 104*160
         [contentPictureView addSubview:forthModel1];
         
-        forthModel2.frame = CGRectMake(51, 154, 43, 66);     // 104*160
+        forthModel2.frame = CGRectMake(51+xOffset, 154+yOffset, 43, 66);     // 104*160
         [contentPictureView addSubview:forthModel2];
         
-        forthModel3.frame = CGRectMake(98, 154, 43, 66);     // 104*160
+        forthModel3.frame = CGRectMake(98+xOffset, 154+yOffset, 43, 66);     // 104*160
         [contentPictureView addSubview:forthModel3];
         
         // 左右两张图片
-        CGSize size = CGSizeMake(520*260/650.0, 260);
+        CGSize size = CGSizeMake(145, 228);
         forthLeft.frame = CGRectMake(0, 0, size.width, size.height);     // 561*697
         forthLeft.top = contentPictureView.top-4;
         forthLeft.right = 50;
@@ -403,6 +414,7 @@
     }
     
     // 移动相框到最顶层
+    [self bringSubviewToFront:contentBackgroundView];
     [self bringSubviewToFront:contentPictureView];
     
     [self justShowIndex:0];
@@ -478,24 +490,49 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
         // 相框originY
         if (offset < 160) {
             contentPictureView.top    = calculate(112, 80, 0, 160, offset);
+            contentBackgroundView.top = calculate(112, 80, 0, 160, offset);
         }else if (offset < 320) {
             
             contentPictureView.top    = calculate(80, 138, 160, 320, offset);
-        }else if (offset < 200) {
+            contentBackgroundView.top = calculate(80, 138, 160, 320, offset);
+        }else if (offset < 480) {
             
-            contentPictureView.top    = calculate(112, 80, 0, 200, offset);
-        }else if (offset < 200) {
+            contentPictureView.top    = calculate(138, 115, 320, 480, offset);
+            contentBackgroundView.top = calculate(138, 115, 320, 480, offset);
+        }else if (offset < 640) {
             
-            contentPictureView.top    = calculate(112, 80, 0, 200, offset);
-        }else if (offset < 200) {
-            
-            contentPictureView.top    = calculate(112, 80, 0, 200, offset);
+//            contentPictureView.top    = calculate(100, 115, 480, 640, offset);
+//            contentBackgroundView.top = calculate(100, 115, 480, 640, offset);
         }
         
         // 相框高度
-        if (offset <= 230) {
-            contentPictureView.height = calculate(156, 276, 0, 230, offset);
+        if (offset <= ScreenWidth) {
+            contentPictureView.height    = calculate(156, 280, 0, 230, offset);
+            contentBackgroundView.height = calculate(156, 280, 0, 230, offset);
+        }else if (offset >= ScreenWidth*2) {
+            contentBackgroundView.height = calculate(156, 280,  ScreenWidth*2,  ScreenWidth*2.4, offset);
+        }else {
+
+            contentBackgroundView.height = calculate(280, 228,  ScreenWidth*2,  ScreenWidth*2.4, offset);
         }
+        
+        //  145, 228  第四个相框的高度
+        
+        // 相框阴影宽度
+        if (offset <= 640) {
+//            contentPictureView.width    = calculate(220, 196, ScreenWidth*1.6, ScreenWidth*1.8, offset);
+            contentBackgroundView.width = calculate(220, 196, ScreenWidth*1.6, ScreenWidth*1.8, offset);
+            
+            
+            contentPictureView.centerX = ScreenWidth/2;
+            contentBackgroundView.centerX = ScreenWidth/2;
+        }else{
+            contentBackgroundView.width = calculate(196, 145, ScreenWidth*2, ScreenWidth*2.4, offset);
+            
+            
+            contentBackgroundView.center = contentPictureView.inCenter;
+        }
+        
     }
     
     // 第一页
@@ -562,7 +599,7 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
         
     }
     
-    // 第三页
+    // 第三页  和 相框旋转
     {
 //        320 640
         if (offset < ScreenWidth*2) {
@@ -588,8 +625,8 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
             thirdModel6.alpha = calculate(0, 1, st, st+dis, offset);
         }else{
             CGFloat st = ScreenWidth * 2;
-            CGFloat dis = ScreenWidth * 0.5;
-            CGFloat delta = ScreenWidth * 0.08;
+            CGFloat dis = ScreenWidth * 0.25;
+            CGFloat delta = ScreenWidth * 0.05;
             
             // 相框旋转
             CGFloat angle = calculate(0, -M_PI_4/2, st, st+dis, offset);
@@ -597,9 +634,9 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
             CGAffineTransform transform;
             transform = CGAffineTransformMakeRotation(angle);
             contentPictureView.transform = transform;
+            contentBackgroundView.transform = transform;
             
             // 相框 frame计算
-            
             
             // 模特消失
             CGFloat scale;
@@ -636,9 +673,9 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
         
         // 相框内部内容
         
-        CGFloat st = ScreenWidth * 2.2;
+        CGFloat st = ScreenWidth * 2.46;
         CGFloat dis1 = ScreenWidth * 0.1;
-        CGFloat dis2 = ScreenWidth * 0.5;
+        CGFloat dis2 = ScreenWidth * 0.2;
         CGFloat delta = ScreenWidth * 0.05;
         
         forthTop.alpha = calculate(0, 1, st, st+dis1, offset);
@@ -646,14 +683,28 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
         st+=delta;
         forthInfo.alpha = calculate(0, 1, st, st+dis1, offset);
         
+        CGRect frame;
         st+=delta;
         forthModel1.alpha = calculate(0, 1, st, st+dis2, offset);
+        frame = forthModel1.frame;
+        frame.size.width = calculate(0, 43, st, st+dis2, offset);
+        frame.size.height = calculate(0, 66, st, st+dis2, offset);
+        forthModel1.frame = frame;
+        // 104 160
         
         st+=delta;
         forthModel2.alpha = calculate(0, 1, st, st+dis2, offset);
+        frame = forthModel2.frame;
+        frame.size.width = calculate(0, 43, st, st+dis2, offset);
+        frame.size.height = calculate(0, 66, st, st+dis2, offset);
+        forthModel2.frame = frame;
         
         st+=delta;
         forthModel3.alpha = calculate(0, 1, st, st+dis2, offset);
+        frame = forthModel3.frame;
+        frame.size.width = calculate(0, 43, st, st+dis2, offset);
+        frame.size.height = calculate(0, 66, st, st+dis2, offset);
+        forthModel3.frame = frame;
         
         // 左右两张图片
         forthLeft.alpha = calculate(0, 1, ScreenWidth*2.5, ScreenWidth*2.6, offset);
@@ -661,9 +712,11 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
         
         forthLeft.centerX = calculate(centerX, 0-30, ScreenWidth*2.5, ScreenWidth*2.6, offset);
         forthRight.centerX = calculate(centerX, ScreenWidth+30, ScreenWidth*2.5, ScreenWidth*2.6, offset);
+        
+        forthLeft.centerY = contentPictureView.centerY;
+        forthRight.centerY = contentPictureView.centerY;
     }
 }
-
 
 - (void)justShowIndex:(NSInteger)index
 {
