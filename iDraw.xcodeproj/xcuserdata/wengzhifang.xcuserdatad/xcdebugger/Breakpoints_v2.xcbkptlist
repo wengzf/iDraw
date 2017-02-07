@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iDraw/iDraw&#x3010;&#x4e1a;&#x52a1;&#x903b;&#x8f91;&#x3011;/LOGOViewController.m"
-            timestampString = "506518952.601772"
+            timestampString = "508145491.866387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-didTap:"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,6 +74,22 @@
             startingLineNumber = "286"
             endingLineNumber = "286"
             landmarkName = "-addQuadCurveTo:controlPoint:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iDraw/Effect&#x3010;&#x6548;&#x679c;&#x3011;/FSScanQRCodeViewController&#x3010;&#x626b;&#x4e00;&#x626b;&#x3011;/FSScanQRCodeViewController.m"
+            timestampString = "508147113.991114"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-viewWillAppear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

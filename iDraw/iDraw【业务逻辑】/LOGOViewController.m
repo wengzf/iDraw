@@ -26,6 +26,8 @@
 
 #import "ShadowView.h"
 
+#import "FSScanQRCodeViewController.h"
+
 @interface LOGOViewController ()
 {
     NSArray *sectionNamesArr;
@@ -63,13 +65,23 @@
 - (void)viewDidAppear:(BOOL)animated
 {
 //    [self testPictures];
-    
-    
 //    [self testMorphingLabel];
     FSMushroomStreetGuideView *view = [[FSMushroomStreetGuideView alloc] init];
     [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
+- (void)btnClked
+{
+    FSScanQRCodeViewController *vc = [[FSScanQRCodeViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:NULL];
+}
 
+- (void)testScanQRCode
+{
+    UIButton *btn = [[UIButton alloc] initWithFrame:ScreenBounds];
+    [btn setTitle:@"扫扫看" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnClked) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
 - (void)testPictures
 {
     // 海龟初始化

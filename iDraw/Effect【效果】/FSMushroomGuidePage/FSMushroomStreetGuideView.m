@@ -8,9 +8,6 @@
 
 #import "FSMushroomStreetGuideView.h"
 #import "UIView+XQ.h"
-#import "ShadowView.h"
-#import "FSEffectLabel.h"
-
 
 @interface FSMushroomStreetGuideView()<UIScrollViewDelegate>
 {
@@ -70,6 +67,7 @@
     CGFloat proportion;
     
     UIScrollView *contentScrollView;
+    UIScrollView *gestureScrollView;
     
     // pageControl
     UIView *pageControlView;
@@ -109,11 +107,12 @@
     
     // scrollView 初始化
     {
+        // content
         contentScrollView = [[UIScrollView alloc] initWithFrame:ScreenBounds];
         contentScrollView.pagingEnabled = YES;
-        contentScrollView.delegate = self;
         contentScrollView.showsHorizontalScrollIndicator = NO;
         contentScrollView.bounces = NO;
+        contentScrollView.delegate = self;
         [self addSubview:contentScrollView];
         
         CGRect frame = ScreenBounds;
@@ -134,6 +133,17 @@
         [contentScrollView addSubview:forthContentView];
         
         contentScrollView.contentSize =  CGSizeMake(ScreenWidth*4, ScreenHeight);
+        
+        // 手势覆盖表面
+        gestureScrollView = [[UIScrollView alloc] initWithFrame:ScreenBounds];
+        gestureScrollView.pagingEnabled = YES;
+        gestureScrollView.delegate = self;
+        gestureScrollView.showsHorizontalScrollIndicator = NO;
+        gestureScrollView.bounces = NO;
+//        [self addSubview:gestureScrollView];
+        
+        gestureScrollView.backgroundColor = [UIColor clearColor];
+        gestureScrollView.contentSize =  CGSizeMake(ScreenWidth*4, ScreenHeight);
     }
     
     // 组初始化
@@ -455,6 +465,7 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
 {
     CGFloat offset = scrollView.contentOffset.x;
     
+    contentScrollView.contentOffset = CGPointMake(offset, 0);
     [self setPageControlColorWithOffset:offset];
     // 动画
     // 第一页跟第二页之间
@@ -466,7 +477,6 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
     {
         // 相框originY
         if (offset < 160) {
-            
             contentPictureView.top    = calculate(112, 80, 0, 160, offset);
         }else if (offset < 320) {
             

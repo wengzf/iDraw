@@ -8,8 +8,13 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
 
+#import "FSCarrotGuideView.h"
+
+@interface ViewController ()
+{
+    FSCarrotGuideView *vc;
+}
 @end
 
 @implementation ViewController
@@ -17,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    vc = [[FSCarrotGuideView alloc] init];
+    [self.view addSubview:vc.view];
 }
 
 

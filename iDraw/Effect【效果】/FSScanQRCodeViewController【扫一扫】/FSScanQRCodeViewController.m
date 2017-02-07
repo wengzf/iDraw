@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-@interface FSScanQRCodeViewController ()
+@interface FSScanQRCodeViewController ()<UIAlertViewDelegate,AVCaptureMetadataOutputObjectsDelegate>
 {
     CGRect captureBounds;
     BOOL flagAnimationUpDir;
@@ -33,10 +33,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    switch (status) {
+        case AVAuthorizationStatusNotDetermined:{
+            // 许可对话没有出现，发起授权许可
+            
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                //*******************先回主线程
+                if (granted) {
+                    //第一次用户接受
+                    [self setupCamera];
+                }else{
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        //用户拒绝
+                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"你已阻止任我花访问你的相机，请前往设置-隐私-相机中打开" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+                        alert.delegate = self;
+                        [alert show];
+                    });
+                    return;
+                }
+            }];
+            break;
+        }
+        case AVAuthorizationStatusAuthorized:{
+            // 已经开启授权，可继续
+            
+            break;
+        }
+        case AVAuthorizationStatusDenied:
+        case AVAuthorizationStatusRestricted:{
+            // 用户明确地拒绝授权，或者相机设备无法访问
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"你已阻止任我花访问你的相机，请前往设置-隐私-相机中打开" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+            alert.delegate = self;
+            [alert show];
+            
+            return ;
+        }
+            break;
+        default:
+            break;
+    }
+    
     //判断相机权限和是否可用
     {
         NSString *mediaType = AVMediaTypeVideo;
         AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+        
         if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
             
             for (UIView *view in self.view.subviews) {
@@ -49,6 +97,7 @@
         }
         else
         {
+            
             for (UIView *view in self.view.subviews) {
                 view.hidden = NO;
             }
@@ -92,16 +141,16 @@
     }
     
     self.activityIndicatorView.hidden = YES;
-    
-    [self setupCamera];
+ 
 }
+
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    _preview.frame = ScreenBounds;
+    self.preview.frame = ScreenBounds;
     // Start
-    [_session startRunning];
+    [self.session startRunning];
     
     if (self.navigationController.navigationBar.hidden == NO){
         self.navigationController.navigationBar.hidden = YES;
@@ -149,38 +198,43 @@
 
 - (void)setupCamera
 {
-    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
-    _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
+    self.input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
     
-    _output = [[AVCaptureMetadataOutput alloc]init];
-    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    self.output = [[AVCaptureMetadataOutput alloc]init];
+    [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
-    _session = [[AVCaptureSession alloc]init];
-    [_session setSessionPreset:AVCaptureSessionPresetHigh];
-    if ([_session canAddInput:self.input])
+    self.session = [[AVCaptureSession alloc]init];
+    [self.session setSessionPreset:AVCaptureSessionPresetHigh];
+    if ([self.session canAddInput:self.input])
     {
-        [_session addInput:self.input];
+        [self.session addInput:self.input];
     }
     
-    if ([_session canAddOutput:self.output])
+    if ([self.session canAddOutput:self.output])
     {
-        [_session addOutput:self.output];
+        [self.session addOutput:self.output];
     }
     
     // 条码类型 AVMetadataObjectTypeQRCode
-    _output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
+    self.output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
     
     // Preview
-    _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
-    _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    self.preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
+    self.preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
     
     [self.view.layer insertSublayer:self.preview atIndex:0];
 }
 
 - (IBAction)backBtnClked:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
+
+    if (self.navigationController) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 
 #pragma mark AVCaptureMetadataOutputObjectsDelegate
@@ -194,10 +248,10 @@
         stringValue = metadataObject.stringValue;
     
     }
-    [_session stopRunning];
+    [self.session stopRunning];
 
     
-    NSURL *url =  [NSURL URLWithString:stringValue ];
+//    NSURL *url =  [NSURL URLWithString:stringValue ];
 //    BOOL canOpen = [url checkResourceIsReachableAndReturnError:nil];
     BOOL canOpen = YES;
     if (canOpen) {
@@ -216,8 +270,11 @@
         AudioServicesPlaySystemSound(soundID);
         
     }
-
 }
-
+#pragma mark UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self backBtnClked:nil];
+}
 
 @end
