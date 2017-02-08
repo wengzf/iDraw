@@ -1365,9 +1365,9 @@
 				TargetAttributes = {
 					ADF1BFBD1DFE5B7A002D5594 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 4JVDCH8EHZ;
+						DevelopmentTeam = 6T6K856R56;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1702,7 +1702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4JVDCH8EHZ;
+				DEVELOPMENT_TEAM = 6T6K856R56;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iDraw/PrefixHeader.pch";
 				INFOPLIST_FILE = iDraw/Info.plist;
@@ -1710,6 +1710,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzf.iDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9e6d3c93-36e3-4c5c-9966-3b9bcfde06ca";
+				PROVISIONING_PROFILE_SPECIFIER = WZFWildCard;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1721,7 +1723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4JVDCH8EHZ;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iDraw/PrefixHeader.pch";
 				INFOPLIST_FILE = iDraw/Info.plist;
