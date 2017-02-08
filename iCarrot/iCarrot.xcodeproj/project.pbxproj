@@ -15,6 +15,7 @@
 		ADECCE961E34ADDD001D483C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADECCE941E34ADDD001D483C /* Main.storyboard */; };
 		ADECCE981E34ADDD001D483C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADECCE971E34ADDD001D483C /* Assets.xcassets */; };
 		ADECCE9B1E34ADDD001D483C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADECCE991E34ADDD001D483C /* LaunchScreen.storyboard */; };
+		ADFB8A731E4ABA2500EAEADC /* FSArrowTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB8A721E4ABA2500EAEADC /* FSArrowTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		ADECCE971E34ADDD001D483C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADECCE9A1E34ADDD001D483C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADECCE9C1E34ADDD001D483C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADFB8A711E4ABA2500EAEADC /* FSArrowTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSArrowTextView.h; sourceTree = "<group>"; };
+		ADFB8A721E4ABA2500EAEADC /* FSArrowTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSArrowTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				ADECCE921E34ADDD001D483C /* ViewController.m */,
 				AD03B6741E49C48D00C172E4 /* FSCarrotGuideView.h */,
 				AD03B6751E49C48D00C172E4 /* FSCarrotGuideView.m */,
+				ADFB8A711E4ABA2500EAEADC /* FSArrowTextView.h */,
+				ADFB8A721E4ABA2500EAEADC /* FSArrowTextView.m */,
 				ADECCE941E34ADDD001D483C /* Main.storyboard */,
 				ADECCE971E34ADDD001D483C /* Assets.xcassets */,
 				ADECCE991E34ADDD001D483C /* LaunchScreen.storyboard */,
@@ -163,6 +168,7 @@
 			files = (
 				ADECCE931E34ADDD001D483C /* ViewController.m in Sources */,
 				ADECCE901E34ADDD001D483C /* AppDelegate.m in Sources */,
+				ADFB8A731E4ABA2500EAEADC /* FSArrowTextView.m in Sources */,
 				ADECCE8D1E34ADDD001D483C /* main.m in Sources */,
 				AD03B6761E49C48D00C172E4 /* FSCarrotGuideView.m in Sources */,
 				AD03B6791E49CB4C00C172E4 /* UIView+XQ.m in Sources */,

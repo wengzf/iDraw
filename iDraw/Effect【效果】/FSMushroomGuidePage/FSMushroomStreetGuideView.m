@@ -177,6 +177,9 @@
         contentPictureView.top = 112;
         contentPictureView.centerX = centerX;
         contentPictureView.layer.cornerRadius = 6;
+        
+        
+        contentPictureView.backgroundColor = RGBA(0.5, 0.5, 0.8, 0.3);
         [self addSubview:contentPictureView];
     }
     
@@ -634,7 +637,7 @@ float calculate(float begin, float end, float lowerBound, float upperBound, floa
             CGAffineTransform transform;
             transform = CGAffineTransformMakeRotation(angle);
             contentPictureView.transform = transform;
-            contentBackgroundView.transform = transform;
+//            contentBackgroundView.transform = transform;
             
             // 相框 frame计算
             

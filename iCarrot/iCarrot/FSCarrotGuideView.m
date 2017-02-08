@@ -28,13 +28,7 @@
     // Layout
     CGFloat topMargin;
     CGFloat centerX;
-    
-    UILabel *label1;
-    UILabel *label2;
-    NSString *str1;
-    NSString *str2;
-    
-    UIImageView *arrowImage;
+
 }
 @end
 
@@ -61,32 +55,9 @@
 #pragma -initViews
 - (void)initViews
 {
-    str1 = @"看一本新书";
-    str2 = @"平板电脑";
-    
-    label1 = [[UILabel alloc] initWithFrame:CGRectMake(100, 200, 60, 20)];
-    label1.text = str1;
-    label1.textColor = [UIColor orangeColor];
-    label1.font = [UIFont boldSystemFontOfSize:20];
-    [label1 sizeToFit];
-    [self.view addSubview:label1];
-    
-    arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3_thread_arrow"]];
-    [self.view addSubview:arrowImage];
-    
-    label2 = [[UILabel alloc] initWithFrame:CGRectMake(100, 200, 60, 20)];
-    label2.text = str2;
-    label2.textColor = [UIColor greenColor];
-    label2.font = [UIFont boldSystemFontOfSize:20];
-    [label2 sizeToFit];
-    [self.view addSubview:label2];
-    
-    arrowImage.centerY = label1.centerY;
-    label2.centerY = label1.centerY;
-    
-    arrowImage.left = label1.right+4;
-    label2.left = arrowImage.right+4;
-    
+//    str1 = @"看一本新书";
+//    str2 = @"平板电脑";
+
     // content
     contentScrollView = [[UIScrollView alloc] initWithFrame:ScreenBounds];
     contentScrollView.pagingEnabled = YES;
