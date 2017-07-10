@@ -22,9 +22,6 @@
 #import "TestCoreImageViewController.h"
 
 #import "VisualEffectViewController.h"
-#import "FSMushroomStreetGuideView.h"
-
-#import "ShadowView.h"
 
 #import "FSScanQRCodeViewController.h"
 
@@ -61,13 +58,22 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
+    UIViewController *vc = [UIViewController new];
+    
+    Canvas *canvas = [[Canvas alloc] initWithFrame:ScreenBounds];
+    
+    canvas.controlStr = @"Julia集";
+    
+    [canvas drawPicture];
+    
+    [vc.view addSubview:canvas];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)viewDidAppear:(BOOL)animated
 {
 //    [self testPictures];
 //    [self testMorphingLabel];
-    FSMushroomStreetGuideView *view = [[FSMushroomStreetGuideView alloc] init];
-    [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
 - (void)btnClked
 {

@@ -42,17 +42,6 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    UIViewController *vc = [UIViewController new];
-    
-    Canvas *canvas = [[Canvas alloc] initWithFrame:ScreenBounds];
-    
-    canvas.controlStr = @"Julia集";
-    
-    [canvas drawPicture];
-    
-    [vc.view addSubview:canvas];
-    
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

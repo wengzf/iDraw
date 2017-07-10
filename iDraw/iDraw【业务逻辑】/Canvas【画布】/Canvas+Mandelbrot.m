@@ -15,7 +15,7 @@
 {
     printf("%lf %lf %lf %lf",atan(1), atan(0.5), atan(-1), atan(-.05));
     
-    [self juliaSetWithX:1 Y:1 CX:0.235 CY:-0.515 level:15];
+    [self juliaSetWithX:0 Y:0 CX:-0.77 CY:0.08 level:15];
     
 }
 
@@ -29,8 +29,8 @@
     double wx,wy;
     double theta =0, r;
 
-    m = (x*120 + 120);
-    n = (y*120 + 300);
+    m = (x*12 + 120);
+    n = (y*12 + 300);
     
     MOVETO(CGPointMake(m, n));
     LINETO(CGPointMake(m+1, n));
@@ -45,10 +45,10 @@
         theta = M_PI + atan(wy/wx);
     }
     if (wx == 0) {
-        theta = M_PI/2;
+        theta = M_PI/2.0;
     }
 
-    theta /= 2;
+    theta /= 2.0;
     
     r = sqrt(wx*wx + wy*wy);
     
